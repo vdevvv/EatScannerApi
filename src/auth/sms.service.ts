@@ -14,12 +14,18 @@ export class EmailService {
     }
   }
 
-  async sendVerificationCode(email: string, code: string, type: 'email_verification' | 'password_reset') {
+  async sendVerificationCode(
+    email: string,
+    code: string,
+    type: 'email_verification' | 'password_reset',
+  ) {
     const sendGridApiKey = this.configService.get<string>('SENDGRID_API_KEY');
-    
+
     if (!sendGridApiKey) {
       // Fallback to console logging if SendGrid is not configured
-      this.logger.warn('SendGrid API key not configured, logging to console instead');
+      this.logger.warn(
+        'SendGrid API key not configured, logging to console instead',
+      );
       console.log(`\n📧 Email to: ${email}`);
       console.log(`📧 Type: ${type}`);
       console.log(`📧 Verification Code: ${code}`);
@@ -28,16 +34,19 @@ export class EmailService {
     }
 
     try {
-      const subject = type === 'email_verification' 
-        ? 'Verify your email address - UberProject' 
-        : 'Reset your password - UberProject';
+      const subject =
+        type === 'email_verification'
+          ? 'Verify your email address - UberProject'
+          : 'Reset your password - UberProject';
 
       const htmlContent = this.getEmailTemplate(code, type);
       const textContent = this.getTextTemplate(code, type);
 
       const msg = {
         to: email,
-        from: this.configService.get<string>('SENDGRID_FROM_EMAIL') || 'noreply@uberproject.com',
+        from:
+          this.configService.get<string>('SENDGRID_FROM_EMAIL') ||
+          'noreply@uberproject.com',
         subject,
         text: textContent,
         html: htmlContent,
@@ -48,22 +57,29 @@ export class EmailService {
       return true;
     } catch (error) {
       this.logger.error(`Failed to send email to ${email}:`, error);
-      
+
       // Fallback to console logging on error
       console.log(`\n📧 Email to: ${email}`);
       console.log(`📧 Type: ${type}`);
       console.log(`📧 Verification Code: ${code}`);
       console.log(`📧 This code expires in 10 minutes\n`);
-      
+
       return true; // Return true to not break the authentication flow
     }
   }
 
-  private getEmailTemplate(code: string, type: 'email_verification' | 'password_reset'): string {
-    const title = type === 'email_verification' ? 'Verify Your Email' : 'Reset Your Password';
-    const description = type === 'email_verification' 
-      ? 'Please verify your email address to complete your registration.'
-      : 'Use this code to reset your password.';
+  private getEmailTemplate(
+    code: string,
+    type: 'email_verification' | 'password_reset',
+  ): string {
+    const title =
+      type === 'email_verification'
+        ? 'Verify Your Email'
+        : 'Reset Your Password';
+    const description =
+      type === 'email_verification'
+        ? 'Please verify your email address to complete your registration.'
+        : 'Use this code to reset your password.';
 
     return `
       <!DOCTYPE html>
@@ -109,11 +125,18 @@ export class EmailService {
     `;
   }
 
-  private getTextTemplate(code: string, type: 'email_verification' | 'password_reset'): string {
-    const title = type === 'email_verification' ? 'Verify Your Email' : 'Reset Your Password';
-    const description = type === 'email_verification' 
-      ? 'Please verify your email address to complete your registration.'
-      : 'Use this code to reset your password.';
+  private getTextTemplate(
+    code: string,
+    type: 'email_verification' | 'password_reset',
+  ): string {
+    const title =
+      type === 'email_verification'
+        ? 'Verify Your Email'
+        : 'Reset Your Password';
+    const description =
+      type === 'email_verification'
+        ? 'Please verify your email address to complete your registration.'
+        : 'Use this code to reset your password.';
 
     return `
 ${title} - UberProject

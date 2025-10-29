@@ -1,99 +1,86 @@
-import { Injectable, Inject, UnauthorizedException, BadRequestException, ConflictException } from '@nestjs/common';
-import { eq, and, gt } from 'drizzle-orm';
+import {
+  Injectable,
+  BadRequestException,
+  ConflictException,
+  ForbiddenException,
+  NotFoundException,
+} from '@nestjs/common';
 import * as bcrypt from 'bcryptjs';
-import { users, verificationCodes, refreshTokens } from '../database/schema';
-import { db } from '../database/connection';
 import { AuthJwtService } from './jwt.service';
 import { EmailService } from './email.service';
+import {
+  ForgotPasswordDto,
+  LoginDto,
+  RegisterDto,
+  ResetPasswordDto,
+  VerifyCodeDto,
+} from './dto/auth.dto';
+import { PrismaService } from '~/prisma/prisma.service';
+import { VerificationType } from '@prisma/client';
 
 @Injectable()
 export class AuthService {
   constructor(
-    @Inject('DATABASE_CONNECTION')
-    private readonly database: typeof db,
     private readonly jwtService: AuthJwtService,
     private readonly emailService: EmailService,
+    private readonly prisma: PrismaService,
   ) {}
 
-  async register(registerDto: {
-    email: string;
-    password: string;
-    firstName: string;
-    lastName: string;
-    phone?: string;
-  }) {
-    // Check if user already exists by email
-    const existingUserByEmail = await this.database
-      .select()
-      .from(users)
-      .where(eq(users.email, registerDto.email))
-      .limit(1);
+  async register(registerDto: RegisterDto) {
+    const existing = await this.prisma.user.findUnique({
+      where: { email: registerDto.email },
+    });
 
-    if (existingUserByEmail.length > 0) {
+    if (existing) {
       throw new ConflictException('User with this email already exists');
     }
 
-    // Hash password
     const hashedPassword = await bcrypt.hash(registerDto.password, 10);
-
-    // Create user
-    const newUser = await this.database
-      .insert(users)
-      .values({
+    const newUser = await this.prisma.user.create({
+      data: {
         email: registerDto.email,
-        password: hashedPassword,
         firstName: registerDto.firstName,
         lastName: registerDto.lastName,
         phone: registerDto.phone,
-        isEmailVerified: false,
-      })
-      .returning();
+        hashedPassword,
+      },
+    });
 
-    // Generate and send verification code
-    await this.sendVerificationCode(newUser[0].id, 'email_verification');
+    await this.sendVerificationCode(newUser.id, 'email_verification');
 
     return {
       message: 'User registered successfully. Please verify your email.',
-      userId: newUser[0].id,
+      userId: newUser.id,
     };
   }
 
-  async verifyCode(verifyCodeDto: {
-    userId: string;
-    code: string;
-    type: 'email_verification' | 'password_reset';
-  }) {
-    // Find verification code
-    const verificationCode = await this.database
-      .select()
-      .from(verificationCodes)
-      .where(
-        and(
-          eq(verificationCodes.userId, verifyCodeDto.userId),
-          eq(verificationCodes.code, verifyCodeDto.code),
-          eq(verificationCodes.type, verifyCodeDto.type),
-          eq(verificationCodes.isUsed, false),
-          gt(verificationCodes.expiresAt, new Date())
-        )
-      )
-      .limit(1);
+  async verifyCode(verifyCodeDto: VerifyCodeDto) {
+    const verificationCode = await this.prisma.verificationCode.findFirst({
+      where: {
+        userId: verifyCodeDto.userId,
+        code: verifyCodeDto.code,
+        type: verifyCodeDto.type,
+        isUsed: false,
+        expiresAt: {
+          gt: new Date(),
+        },
+      },
+    });
 
-    if (verificationCode.length === 0) {
+    if (!verificationCode) {
       throw new BadRequestException('Invalid or expired verification code');
     }
 
-    // Mark code as used
-    await this.database
-      .update(verificationCodes)
-      .set({ isUsed: true })
-      .where(eq(verificationCodes.id, verificationCode[0].id));
+    await this.prisma.verificationCode.update({
+      where: { id: verificationCode.id },
+      data: { isUsed: true },
+    });
 
-    // If email verification, mark user as verified
-    if (verifyCodeDto.type === 'email_verification') {
-      await this.database
-        .update(users)
-        .set({ isEmailVerified: true })
-        .where(eq(users.id, verifyCodeDto.userId));
+    if (verifyCodeDto.type === VerificationType.email_verification) {
+      await this.prisma.user.update({
+        where: { id: verifyCodeDto.userId },
+        data: { isEmailVerified: true },
+      });
     }
 
     return {
@@ -102,182 +89,118 @@ export class AuthService {
     };
   }
 
-  async login(loginDto: { email: string; password: string }) {
-    // Find user
-    const user = await this.database
-      .select()
-      .from(users)
-      .where(eq(users.email, loginDto.email))
-      .limit(1);
-
-    if (user.length === 0) {
-      throw new UnauthorizedException('Invalid credentials');
-    }
-
-    // Check if email is verified
-    if (!user[0].isEmailVerified) {
-      throw new UnauthorizedException('Please verify your email before logging in');
-    }
-
-    // Check password
-    const isPasswordValid = await bcrypt.compare(loginDto.password, user[0].password!);
-    if (!isPasswordValid) {
-      throw new UnauthorizedException('Invalid credentials');
-    }
-
-    // Generate tokens
-    const accessToken = this.jwtService.generateAccessToken({
-      userId: user[0].id,
-      email: user[0].email,
+  async login(loginDto: LoginDto) {
+    const user = await this.prisma.user.findUnique({
+      where: { email: loginDto.email },
     });
 
-    const refreshToken = this.jwtService.generateRefreshToken({
-      userId: user[0].id,
-      email: user[0].email,
-    });
-
-    // Store refresh token
-    await this.database
-      .insert(refreshTokens)
-      .values({
-        userId: user[0].id,
-        token: refreshToken,
-        expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000), // 7 days
-      });
-
-    return {
-      accessToken,
-      refreshToken,
-      user: {
-        id: user[0].id,
-        email: user[0].email,
-        firstName: user[0].firstName,
-        lastName: user[0].lastName,
-        isEmailVerified: user[0].isEmailVerified,
-      },
-    };
-  }
-
-  async forgotPassword(forgotPasswordDto: { email: string }) {
-    // Find user
-    const user = await this.database
-      .select()
-      .from(users)
-      .where(eq(users.email, forgotPasswordDto.email))
-      .limit(1);
-
-    if (user.length === 0) {
-      // Don't reveal if email exists or not for security
-      return {
-        message: 'If the email exists, a password reset code has been sent',
-      };
+    if (!user || !user.hashedPassword) {
+      throw new ForbiddenException('Wrong email or password');
     }
 
-    // Generate and send verification code
-    await this.sendVerificationCode(user[0].id, 'password_reset');
+    const isPasswordMatches = await bcrypt.compare(
+      loginDto.password,
+      user.hashedPassword,
+    );
 
-    return {
-      message: 'If the email exists, a password reset code has been sent',
-    };
+    if (!isPasswordMatches) {
+      throw new ForbiddenException('Wrong email or password');
+    }
+
+    if (!user.isEmailVerified) {
+      throw new ForbiddenException(
+        'Please verify your email before logging in',
+      );
+    }
+
+    const { accessToken, refreshToken } = await this.jwtService.signTokens({
+      userId: user.id,
+      email: user.email,
+    });
+
+    await this.updateRt(user.id, refreshToken);
+    return { accessToken, refreshToken };
   }
 
-  async resetPassword(resetPasswordDto: {
-    userId: string;
-    code: string;
-    newPassword: string;
-  }) {
-    // Verify the code first
+  async forgotPassword(forgotPasswordDto: ForgotPasswordDto) {
+    const user = await this.prisma.user.findUnique({
+      where: { email: forgotPasswordDto.email },
+    });
+
+    if (!user) throw new NotFoundException('User not found');
+
+    await this.sendVerificationCode(user.id, VerificationType.password_reset);
+    return { message: 'Password reset code has been sent' };
+  }
+
+  async resetPassword(resetPasswordDto: ResetPasswordDto) {
     await this.verifyCode({
       userId: resetPasswordDto.userId,
       code: resetPasswordDto.code,
-      type: 'password_reset',
+      type: VerificationType.password_reset,
     });
 
-    // Hash new password
     const hashedPassword = await bcrypt.hash(resetPasswordDto.newPassword, 10);
+    await this.prisma.user.update({
+      where: { id: resetPasswordDto.userId },
+      data: { hashedPassword },
+    });
 
-    // Update password
-    await this.database
-      .update(users)
-      .set({ password: hashedPassword })
-      .where(eq(users.id, resetPasswordDto.userId));
-
-    return {
-      message: 'Password reset successfully',
-    };
+    return { message: 'Password reset successfully' };
   }
 
-  async refreshToken(refreshToken: string) {
-    try {
-      // Verify refresh token
-      const payload = this.jwtService.verifyRefreshToken(refreshToken);
+  async refreshToken(userId: string, refreshToken: string) {
+    const user = await this.prisma.user.findUnique({
+      where: { id: userId },
+    });
 
-      // Check if token exists in database and is not revoked
-      const tokenRecord = await this.database
-        .select()
-        .from(refreshTokens)
-        .where(
-          and(
-            eq(refreshTokens.token, refreshToken),
-            eq(refreshTokens.isRevoked, false),
-            gt(refreshTokens.expiresAt, new Date())
-          )
-        )
-        .limit(1);
+    if (!user?.hashedRt) throw new NotFoundException('Token not found ');
 
-      if (tokenRecord.length === 0) {
-        throw new UnauthorizedException('Invalid refresh token');
-      }
+    const rtMatches = await bcrypt.compare(refreshToken, user.hashedRt);
+    if (!rtMatches) throw new ForbiddenException('Wrong token');
 
-      // Generate new access token
-      const newAccessToken = this.jwtService.generateAccessToken({
-        userId: payload.userId,
-        email: payload.email,
-      });
+    const tokens = await this.jwtService.signTokens({
+      email: user.email,
+      userId: user.id,
+    });
 
-      return {
-        accessToken: newAccessToken,
-      };
-    } catch (error) {
-      throw new UnauthorizedException('Invalid refresh token');
-    }
+    await this.updateRt(user.id, tokens.refreshToken);
+    return tokens;
   }
 
-  async logout(refreshToken: string) {
-    // Revoke refresh token
-    await this.database
-      .update(refreshTokens)
-      .set({ isRevoked: true })
-      .where(eq(refreshTokens.token, refreshToken));
+  async logout(userId: string) {
+    await this.prisma.user.update({
+      where: { id: userId },
+      data: { hashedRt: null },
+    });
 
-    return {
-      message: 'Logged out successfully',
-    };
+    return { message: 'Logged out successfully' };
   }
 
-  private async sendVerificationCode(userId: string, type: 'email_verification' | 'password_reset') {
-    // Generate 6-digit code
+  async sendVerificationCode(userId: string, type: VerificationType) {
     const code = Math.floor(100000 + Math.random() * 900000).toString();
-
-    // Store verification code
-    await this.database
-      .insert(verificationCodes)
-      .values({
+    const createdCode = await this.prisma.verificationCode.create({
+      data: {
         userId,
         code,
         type,
-        expiresAt: new Date(Date.now() + 10 * 60 * 1000), // 10 minutes
-      });
+        expiresAt: new Date(Date.now() + 10 * 60 * 1000), // 10 min
+      },
+      include: { user: { select: { email: true } } },
+    });
 
-    // Get user email
-    const user = await this.database
-      .select()
-      .from(users)
-      .where(eq(users.id, userId))
-      .limit(1);
+    await this.emailService.sendVerificationCode(
+      createdCode.user.email,
+      code,
+      type,
+    );
+  }
 
-    if (user.length > 0) {
-      await this.emailService.sendVerificationCode(user[0].email, code, type);
-    }
+  private async updateRt(userId: string, rt: string) {
+    const hashedRt = await bcrypt.hash(rt, 10);
+    await this.prisma.user.update({
+      where: { id: userId },
+      data: { hashedRt },
+    });
   }
 }

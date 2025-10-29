@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String   @id @default(uuid())
+  email           String   @unique
+  hashedPassword  String?  @map("hashed_password")
+  hashedRt        String?  @map("hashed_rt")
+  firstName       String   @map("first_name")
+  lastName        String   @map("last_name")
+  phone           String?
+  isEmailVerified Boolean  @default(false) @map("is_email_verified")
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  verificationCodes VerificationCode[]
+
+  @@map("user")
+}
+
+model VerificationCode {
+  id        String             @id @default(uuid())
+  userId    String
+  code      String
+  type      VerificationType
+  isUsed    Boolean            @default(false) @map("is_used")
+  expiresAt DateTime           @map("expires_at")
+  createdAt DateTime           @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@index([userId, code], name: "user_code_idx")
+  @@map("verification_codes")
+}
+
+enum VerificationType {
+  email_verification
+  password_reset
+}
