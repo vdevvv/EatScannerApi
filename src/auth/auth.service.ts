@@ -9,14 +9,16 @@ import * as bcrypt from 'bcryptjs';
 import { AuthJwtService } from './jwt.service';
 import { EmailService } from './email.service';
 import {
+  CompleteRegistrationDto,
   ForgotPasswordDto,
   LoginDto,
-  RegisterDto,
+  RequestEmailVerificationDto,
   ResetPasswordDto,
   VerifyCodeDto,
 } from './dto/auth.dto';
 import { PrismaService } from '~/prisma/prisma.service';
 import { VerificationType } from '@prisma/client';
+import { generateRandomToken } from '~/common/utils/random-token';
 
 @Injectable()
 export class AuthService {
@@ -26,32 +28,22 @@ export class AuthService {
     private readonly prisma: PrismaService,
   ) {}
 
-  async register(registerDto: RegisterDto) {
+  async requestEmailVerification(dto: RequestEmailVerificationDto) {
     const existing = await this.prisma.user.findUnique({
-      where: { email: registerDto.email },
+      where: { email: dto.email },
     });
 
     if (existing) {
       throw new ConflictException('User with this email already exists');
     }
 
-    const hashedPassword = await bcrypt.hash(registerDto.password, 10);
-    const newUser = await this.prisma.user.create({
-      data: {
-        email: registerDto.email,
-        firstName: registerDto.firstName,
-        lastName: registerDto.lastName,
-        phone: registerDto.phone,
-        hashedPassword,
-      },
+    const tempUser = await this.prisma.user.create({
+      data: { email: dto.email },
     });
 
-    await this.sendVerificationCode(newUser.id, 'email_verification');
+    await this.sendVerificationCode(tempUser.id, 'email_verification');
 
-    return {
-      message: 'User registered successfully. Please verify your email.',
-      userId: newUser.id,
-    };
+    return { message: 'Verification code sent to email', userId: tempUser.id };
   }
 
   async verifyCode(verifyCodeDto: VerifyCodeDto) {
@@ -61,9 +53,7 @@ export class AuthService {
         code: verifyCodeDto.code,
         type: verifyCodeDto.type,
         isUsed: false,
-        expiresAt: {
-          gt: new Date(),
-        },
+        expiresAt: { gt: new Date() },
       },
     });
 
@@ -81,12 +71,50 @@ export class AuthService {
         where: { id: verifyCodeDto.userId },
         data: { isEmailVerified: true },
       });
+
+      const { token, expiresAt } = generateRandomToken();
+      await this.prisma.emailVerificationToken.create({
+        data: {
+          userId: verifyCodeDto.userId,
+          token,
+          expiresAt,
+        },
+      });
+
+      return { message: 'Code verified', token };
     }
 
-    return {
-      message: 'Code verified successfully',
-      verified: true,
-    };
+    return { message: 'Code verified successfully', verified: true };
+  }
+
+  async completeRegistration(dto: CompleteRegistrationDto) {
+    const tokenRecord = await this.prisma.emailVerificationToken.findUnique({
+      where: { token: dto.token },
+      include: {
+        user: true,
+      },
+    });
+
+    if (!tokenRecord || tokenRecord.expiresAt < new Date()) {
+      throw new BadRequestException('Invalid or expired registration token');
+    }
+
+    const user = tokenRecord.user;
+    if (!user || !user.isEmailVerified) {
+      throw new BadRequestException('Email not verified');
+    }
+
+    const hashedPassword = await bcrypt.hash(dto.password, 10);
+    const updatedUser = await this.prisma.user.update({
+      where: { id: user.id },
+      data: { hashedPassword },
+    });
+
+    await this.prisma.emailVerificationToken.delete({
+      where: { token: dto.token },
+    });
+
+    return { message: 'Registration complete', userId: updatedUser.id };
   }
 
   async login(loginDto: LoginDto) {
@@ -178,7 +206,7 @@ export class AuthService {
   }
 
   async sendVerificationCode(userId: string, type: VerificationType) {
-    const code = Math.floor(100000 + Math.random() * 900000).toString();
+    const code = Math.floor(10000 + Math.random() * 90000).toString();
     const createdCode = await this.prisma.verificationCode.create({
       data: {
         userId,

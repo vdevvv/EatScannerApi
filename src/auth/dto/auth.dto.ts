@@ -1,33 +1,22 @@
-import {
-  IsEmail,
-  IsEnum,
-  IsNotEmpty,
-  IsOptional,
-  IsPhoneNumber,
-  IsString,
-  Length,
-} from 'class-validator';
+import { IsEmail, IsEnum, IsNotEmpty, IsString, Length } from 'class-validator';
 import { VerificationType } from '@prisma/client';
 
-export class RegisterDto {
+export class RequestEmailVerificationDto {
+  @IsEmail()
+  email: string;
+}
+
+export class CompleteRegistrationDto {
   @IsEmail()
   email: string;
 
+  @IsNotEmpty()
   @IsString()
-  @Length(6, 30)
+  token: string;
+
+  @IsString()
+  @Length(8, 100)
   password: string;
-
-  @IsString()
-  @Length(2, 30)
-  firstName: string;
-
-  @IsString()
-  @Length(2, 30)
-  lastName: string;
-
-  @IsOptional()
-  @IsPhoneNumber()
-  phone: string;
 }
 
 export class LoginDto {
@@ -41,10 +30,12 @@ export class LoginDto {
 }
 
 export class VerifyCodeDto {
+  @IsNotEmpty()
   @IsString()
   userId: string;
 
   @IsString()
+  @IsNotEmpty()
   code: string;
 
   @IsEnum(VerificationType)
@@ -52,6 +43,7 @@ export class VerifyCodeDto {
 }
 
 export class ResendVerifyCodeDto {
+  @IsNotEmpty()
   @IsString()
   userId: string;
 
@@ -67,9 +59,11 @@ export class ForgotPasswordDto {
 
 export class ResetPasswordDto {
   @IsString()
+  @IsNotEmpty()
   userId: string;
 
   @IsString()
+  @IsNotEmpty()
   code: string;
 
   @IsString()

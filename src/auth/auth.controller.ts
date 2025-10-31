@@ -8,10 +8,11 @@ import {
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import {
+  CompleteRegistrationDto,
   ForgotPasswordDto,
   LoginDto,
   RefreshTokenDto,
-  RegisterDto,
+  RequestEmailVerificationDto,
   ResendVerifyCodeDto,
   ResetPasswordDto,
   VerifyCodeDto,
@@ -28,10 +29,17 @@ export class AuthController {
   ) {}
 
   @Public()
-  @Post('register')
-  @HttpCode(HttpStatus.CREATED)
-  async register(@Body() registerDto: RegisterDto) {
-    return this.authService.register(registerDto);
+  @Post('request-email-verification')
+  @HttpCode(HttpStatus.OK)
+  async requestEmailVerification(@Body() dto: RequestEmailVerificationDto) {
+    return this.authService.requestEmailVerification(dto);
+  }
+
+  @Public()
+  @Post('complete-registration')
+  @HttpCode(HttpStatus.OK)
+  async completeRegistration(@Body() dto: CompleteRegistrationDto) {
+    return this.authService.completeRegistration(dto);
   }
 
   @Public()
@@ -51,9 +59,7 @@ export class AuthController {
       verifyCodeDto.type,
     );
 
-    return {
-      message: 'The confirmation email has been sent',
-    };
+    return { message: 'The confirmation email has been sent' };
   }
 
   @Public()
