@@ -7,6 +7,7 @@ import { AtGuard } from './common/guards';
 import { PrismaModule } from './prisma/prisma.module';
 import { VerificationCodeModule } from '~/verification-code/verification-code.module';
 import { ScheduleModule } from '@nestjs/schedule';
+import { FriendshipModule } from '~/friendship/friendship.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { ScheduleModule } from '@nestjs/schedule';
     UserModule,
     AuthModule,
     VerificationCodeModule,
+    FriendshipModule,
   ],
   providers: [
     {

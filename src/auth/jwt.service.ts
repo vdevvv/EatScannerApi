@@ -24,30 +24,4 @@ export class AuthJwtService {
 
     return { accessToken, refreshToken };
   }
-
-  generateAccessToken(payload: JwtPayload) {
-    return this.jwtService.sign(payload, {
-      expiresIn: '15m',
-      secret: this.configService.get<string>('JWT_SECRET'),
-    });
-  }
-
-  generateRefreshToken(payload: JwtPayload) {
-    return this.jwtService.sign(payload, {
-      expiresIn: '7d',
-      secret: this.configService.get<string>('JWT_REFRESH_SECRET'),
-    });
-  }
-
-  verifyAccessToken(token: string) {
-    return this.jwtService.verify<JwtPayload>(token, {
-      secret: this.configService.get<string>('JWT_SECRET'),
-    });
-  }
-
-  verifyRefreshToken(token: string) {
-    return this.jwtService.verify<JwtPayload>(token, {
-      secret: this.configService.get<string>('JWT_REFRESH_SECRET'),
-    });
-  }
 }

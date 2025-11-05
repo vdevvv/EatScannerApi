@@ -6,19 +6,17 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import * as bcrypt from 'bcryptjs';
-import { AuthJwtService } from './jwt.service';
-import { EmailService } from './email.service';
+import {AuthJwtService} from './jwt.service';
+import {EmailService} from './email.service';
 import {
-  CompleteRegistrationDto,
   ForgotPasswordDto,
   LoginDto,
-  RequestEmailVerificationDto,
-  ResetPasswordDto,
+  RequestEmailVerificationDto, SetPasswordDto,
   VerifyCodeDto,
 } from './dto/auth.dto';
-import { PrismaService } from '~/prisma/prisma.service';
-import { VerificationType } from '@prisma/client';
-import { generateRandomToken } from '~/common/utils/random-token';
+import {PrismaService} from '~/prisma/prisma.service';
+import {VerificationType} from '@prisma/client';
+import {generateRandomToken} from '~/common/utils/random-token';
 
 @Injectable()
 export class AuthService {
@@ -26,11 +24,12 @@ export class AuthService {
     private readonly jwtService: AuthJwtService,
     private readonly emailService: EmailService,
     private readonly prisma: PrismaService,
-  ) {}
+  ) {
+  }
 
   async requestEmailVerification(dto: RequestEmailVerificationDto) {
     const existing = await this.prisma.user.findUnique({
-      where: { email: dto.email },
+      where: {email: dto.email},
     });
 
     if (existing) {
@@ -38,12 +37,12 @@ export class AuthService {
     }
 
     const tempUser = await this.prisma.user.create({
-      data: { email: dto.email },
+      data: {email: dto.email},
     });
 
     await this.sendVerificationCode(tempUser.id, 'email_verification');
 
-    return { message: 'Verification code sent to email', userId: tempUser.id };
+    return {message: 'Verification code sent to email', userId: tempUser.id};
   }
 
   async verifyCode(verifyCodeDto: VerifyCodeDto) {
@@ -53,7 +52,7 @@ export class AuthService {
         code: verifyCodeDto.code,
         type: verifyCodeDto.type,
         isUsed: false,
-        expiresAt: { gt: new Date() },
+        expiresAt: {gt: new Date()},
       },
     });
 
@@ -62,37 +61,33 @@ export class AuthService {
     }
 
     await this.prisma.verificationCode.update({
-      where: { id: verificationCode.id },
-      data: { isUsed: true },
+      where: {id: verificationCode.id},
+      data: {isUsed: true},
     });
 
     if (verifyCodeDto.type === VerificationType.email_verification) {
       await this.prisma.user.update({
-        where: { id: verifyCodeDto.userId },
-        data: { isEmailVerified: true },
+        where: {id: verifyCodeDto.userId},
+        data: {isEmailVerified: true},
       });
-
-      const { token, expiresAt } = generateRandomToken();
-      await this.prisma.emailVerificationToken.create({
-        data: {
-          userId: verifyCodeDto.userId,
-          token,
-          expiresAt,
-        },
-      });
-
-      return { message: 'Code verified', token };
     }
 
-    return { message: 'Code verified successfully', verified: true };
+    const {token, expiresAt} = generateRandomToken();
+    await this.prisma.verificationToken.create({
+      data: {
+        userId: verifyCodeDto.userId,
+        token,
+        expiresAt,
+      },
+    });
+
+    return {message: 'Code verified', token};
   }
 
-  async completeRegistration(dto: CompleteRegistrationDto) {
-    const tokenRecord = await this.prisma.emailVerificationToken.findUnique({
-      where: { token: dto.token },
-      include: {
-        user: true,
-      },
+  async setPassword(dto: SetPasswordDto) {
+    const tokenRecord = await this.prisma.verificationToken.findUnique({
+      where: {token: dto.token},
+      include: {user: true},
     });
 
     if (!tokenRecord || tokenRecord.expiresAt < new Date()) {
@@ -106,20 +101,20 @@ export class AuthService {
 
     const hashedPassword = await bcrypt.hash(dto.password, 10);
     const updatedUser = await this.prisma.user.update({
-      where: { id: user.id },
-      data: { hashedPassword },
+      where: {id: user.id},
+      data: {hashedPassword},
     });
 
-    await this.prisma.emailVerificationToken.delete({
-      where: { token: dto.token },
+    await this.prisma.verificationToken.delete({
+      where: {token: dto.token},
     });
 
-    return { message: 'Registration complete', userId: updatedUser.id };
+    return {message: 'Password settled', userId: updatedUser.id};
   }
 
   async login(loginDto: LoginDto) {
     const user = await this.prisma.user.findUnique({
-      where: { email: loginDto.email },
+      where: {email: loginDto.email},
     });
 
     if (!user || !user.hashedPassword) {
@@ -141,45 +136,29 @@ export class AuthService {
       );
     }
 
-    const { accessToken, refreshToken } = await this.jwtService.signTokens({
+    const {accessToken, refreshToken} = await this.jwtService.signTokens({
       userId: user.id,
       email: user.email,
     });
 
     await this.updateRt(user.id, refreshToken);
-    return { accessToken, refreshToken };
+    return {accessToken, refreshToken};
   }
 
   async forgotPassword(forgotPasswordDto: ForgotPasswordDto) {
     const user = await this.prisma.user.findUnique({
-      where: { email: forgotPasswordDto.email },
+      where: {email: forgotPasswordDto.email},
     });
 
     if (!user) throw new NotFoundException('User not found');
 
     await this.sendVerificationCode(user.id, VerificationType.password_reset);
-    return { message: 'Password reset code has been sent' };
-  }
-
-  async resetPassword(resetPasswordDto: ResetPasswordDto) {
-    await this.verifyCode({
-      userId: resetPasswordDto.userId,
-      code: resetPasswordDto.code,
-      type: VerificationType.password_reset,
-    });
-
-    const hashedPassword = await bcrypt.hash(resetPasswordDto.newPassword, 10);
-    await this.prisma.user.update({
-      where: { id: resetPasswordDto.userId },
-      data: { hashedPassword },
-    });
-
-    return { message: 'Password reset successfully' };
+    return {userId: user.id};
   }
 
   async refreshToken(userId: string, refreshToken: string) {
     const user = await this.prisma.user.findUnique({
-      where: { id: userId },
+      where: {id: userId},
     });
 
     if (!user?.hashedRt) throw new NotFoundException('Token not found ');
@@ -198,11 +177,11 @@ export class AuthService {
 
   async logout(userId: string) {
     await this.prisma.user.update({
-      where: { id: userId },
-      data: { hashedRt: null },
+      where: {id: userId},
+      data: {hashedRt: null},
     });
 
-    return { message: 'Logged out successfully' };
+    return {message: 'Logged out successfully'};
   }
 
   async sendVerificationCode(userId: string, type: VerificationType) {
@@ -214,7 +193,7 @@ export class AuthService {
         type,
         expiresAt: new Date(Date.now() + 10 * 60 * 1000), // 10 min
       },
-      include: { user: { select: { email: true } } },
+      include: {user: {select: {email: true}}},
     });
 
     await this.emailService.sendVerificationCode(
@@ -227,8 +206,8 @@ export class AuthService {
   private async updateRt(userId: string, rt: string) {
     const hashedRt = await bcrypt.hash(rt, 10);
     await this.prisma.user.update({
-      where: { id: userId },
-      data: { hashedRt },
+      where: {id: userId},
+      data: {hashedRt},
     });
   }
 }

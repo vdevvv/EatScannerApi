@@ -8,13 +8,11 @@ import {
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import {
-  CompleteRegistrationDto,
   ForgotPasswordDto,
   LoginDto,
   RefreshTokenDto,
   RequestEmailVerificationDto,
-  ResendVerifyCodeDto,
-  ResetPasswordDto,
+  ResendVerifyCodeDto, SetPasswordDto,
   VerifyCodeDto,
 } from './dto/auth.dto';
 import { GetUserId, Public } from '~/common/decorators';
@@ -36,10 +34,10 @@ export class AuthController {
   }
 
   @Public()
-  @Post('complete-registration')
+  @Post('set-password')
   @HttpCode(HttpStatus.OK)
-  async completeRegistration(@Body() dto: CompleteRegistrationDto) {
-    return this.authService.completeRegistration(dto);
+  async setPassword(@Body() dto: SetPasswordDto) {
+    return this.authService.setPassword(dto);
   }
 
   @Public()
@@ -66,21 +64,14 @@ export class AuthController {
   @Post('login')
   @HttpCode(HttpStatus.OK)
   async login(@Body() loginDto: LoginDto) {
-    return await this.authService.login(loginDto);
+    return this.authService.login(loginDto);
   }
 
   @Public()
   @Post('forgot-password')
   @HttpCode(HttpStatus.OK)
   async forgotPassword(@Body() forgotPasswordDto: ForgotPasswordDto) {
-    return await this.authService.forgotPassword(forgotPasswordDto);
-  }
-
-  @Public()
-  @Post('reset-password')
-  @HttpCode(HttpStatus.OK)
-  async resetPassword(@Body() resetPasswordDto: ResetPasswordDto) {
-    return await this.authService.resetPassword(resetPasswordDto);
+    return this.authService.forgotPassword(forgotPasswordDto);
   }
 
   @Public()
