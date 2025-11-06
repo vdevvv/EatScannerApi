@@ -1,6 +1,7 @@
-import {Controller, Delete, Param, Patch, Post} from '@nestjs/common';
+import {Controller, Delete, Get, Param, Patch, Post, Query} from '@nestjs/common';
 import {FriendshipService} from './friendship.service';
 import {GetUserId} from "~/common/decorators";
+import {PageOptionsDto} from "~/common/dto/page";
 
 @Controller('friends')
 export class FriendshipController {
@@ -36,5 +37,13 @@ export class FriendshipController {
     @Param('friendId') friendId: string
   ) {
     return this.friendService.removeFriend(userId, friendId);
+  }
+
+  @Get('my-friends')
+  async getMyFriends(
+    @GetUserId() userId: string,
+    @Query() pageOptionsDto: PageOptionsDto,
+  ) {
+    return this.friendService.getMyFriends(userId, pageOptionsDto)
   }
 }

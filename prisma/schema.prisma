@@ -12,9 +12,10 @@ model User {
   email           String   @unique
   hashedPassword  String?  @map("hashed_password")
   hashedRt        String?  @map("hashed_rt")
-  firstName       String?  @map("first_name")
-  lastName        String?  @map("last_name")
+  fullName        String?  @map("full_name")
+  userName        String?  @map("user_name")
   phone           String?
+  avatar          String   @default("https://res.cloudinary.com/doe6zvkod/image/upload/v1762349108/profile_m2necg.png")
   isEmailVerified Boolean  @default(false) @map("is_email_verified")
   createdAt       DateTime @default(now()) @map("created_at")
   updatedAt       DateTime @updatedAt @map("updated_at")
@@ -59,8 +60,8 @@ model Friendship {
   requesterId String       @map("requester_id")
   receiverId  String       @map("receiver_id")
   status      FriendStatus @default(PENDING)
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
 
   requester User @relation("SentRequests", fields: [requesterId], references: [id], onDelete: Cascade)
   receiver  User @relation("ReceivedRequests", fields: [receiverId], references: [id], onDelete: Cascade)
