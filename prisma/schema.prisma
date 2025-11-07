@@ -69,6 +69,64 @@ model Friendship {
   @@map("friendships")
 }
 
+model Restaurant {
+  id        String   @id @default(uuid())
+  name      String
+  videos    String[]
+  city      String
+  country   String
+  address   String
+  latitude  Float
+  longitude Float
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  menu      Menu?
+
+  @@index([latitude, longitude])
+  @@map("restaurants")
+}
+
+model Menu {
+  id           String   @id @default(uuid())
+  restaurantId String   @unique @map("restaurant_id")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  restaurant Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+  categories Category[]
+
+  @@map("menus")
+}
+
+model Category {
+  id        String   @id @default(uuid())
+  name      String
+  menuId    String   @map("menu_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  menu  Menu       @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  items MenuItem[]
+
+  @@map("categories")
+}
+
+model MenuItem {
+  id          String   @id @default(uuid())
+  name        String
+  price       Decimal  @db.Decimal(10, 2)
+  description String?
+  images      String[]
+  categoryId  String @map("category_id")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@map("menu_items")
+}
+
 enum VerificationType {
   email_verification
   password_reset
