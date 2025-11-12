@@ -14,7 +14,7 @@ export class MenuItemService {
         name: dto.name,
         price: dto.price,
         description: dto.description,
-        images: dto.images,
+        image: dto.image,
         categoryId: dto.categoryId
       }
     })

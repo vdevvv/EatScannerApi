@@ -1,4 +1,4 @@
-import {IsArray, IsNumber, IsOptional, IsString} from "class-validator";
+import {IsNumber, IsOptional, IsString, IsUrl} from "class-validator";
 import {PartialType} from "@nestjs/mapped-types";
 
 export class CreateMenuItemDto {
@@ -12,8 +12,8 @@ export class CreateMenuItemDto {
   @IsString()
   description?: string;
 
-  @IsArray()
-  images: string[];
+  @IsUrl()
+  image: string;
 
   @IsString()
   categoryId: string;

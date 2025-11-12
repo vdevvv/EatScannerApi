@@ -3,6 +3,7 @@ import {GeocodingService} from "~/geocoding/geocoding.service";
 import {CreateRestaurantDto} from "~/restaurant/dto/restaurant.dto";
 import {PrismaService} from "~/prisma/prisma.service";
 import {PageDto, PageMetaDto, PageOptionsDto} from "~/common/dto/page";
+import {Prisma} from "@prisma/client";
 
 @Injectable()
 export class RestaurantService {
@@ -22,7 +23,6 @@ export class RestaurantService {
     return this.prisma.restaurant.create({
       data: {
         name: dto.name,
-        videos: dto.videos,
         city: dto.city,
         country: dto.country,
         address: dto.address,
@@ -38,12 +38,52 @@ export class RestaurantService {
 
   async getRestaurants(pageOptionsDto: PageOptionsDto) {
     const {skip, take} = pageOptionsDto;
+
+    const itemsWhere: Prisma.MenuItemWhereInput = {
+      video: {
+        not: null,
+        notIn: [''],
+      }
+    }
+
+    const where: Prisma.RestaurantWhereInput = {
+      menu: {
+        is: {
+          categories: {
+            some: {
+              items: {
+                some: itemsWhere
+              }
+            }
+          }
+        }
+      }
+    }
     const [data, itemsCount] = await Promise.all([
       this.prisma.restaurant.findMany({
         skip,
         take,
+        where,
+        include: {
+          menu: {
+            include: {
+              categories: {
+                where: {
+                  items: {
+                    some: itemsWhere
+                  }
+                },
+                include: {
+                  items: {
+                    where: itemsWhere
+                  }
+                }
+              }
+            }
+          }
+        },
       }),
-      this.prisma.restaurant.count({})
+      this.prisma.restaurant.count({where})
     ])
 
     const pageMetaDto = new PageMetaDto({pageOptionsDto, itemsCount});

@@ -70,18 +70,19 @@ model Friendship {
 }
 
 model Restaurant {
-  id        String   @id @default(uuid())
-  name      String
-  videos    String[]
-  city      String
-  country   String
-  address   String
-  latitude  Float
-  longitude Float
+  id               String   @id @default(uuid())
+  name             String
+  city             String
+  country          String
+  address          String
+  latitude         Float
+  longitude        Float
+  googleRating     Decimal? @map("google_rating") @db.Decimal(2, 1)
+  trustpilotRating Decimal? @map("trustpilot_rating") @db.Decimal(2, 1)
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
 
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
-  menu      Menu?
+  menu Menu?
 
   @@index([latitude, longitude])
   @@map("restaurants")
@@ -117,8 +118,9 @@ model MenuItem {
   name        String
   price       Decimal  @db.Decimal(10, 2)
   description String?
-  images      String[]
-  categoryId  String @map("category_id")
+  image       String
+  video       String?
+  categoryId  String   @map("category_id")
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @updatedAt @map("updated_at")
 
