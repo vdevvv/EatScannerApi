@@ -10,8 +10,7 @@ export class RestaurantService {
   constructor(
     private readonly geocoding: GeocodingService,
     private readonly prisma: PrismaService,
-  ) {
-  }
+  ) {}
 
   async createRestaurant(dto: CreateRestaurantDto) {
     const {latitude, longitude} = await this.geocoding.geocode(

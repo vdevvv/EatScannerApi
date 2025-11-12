@@ -14,3 +14,29 @@ export type GeocodingResponse = Array<{
   display_name: string
   boundingbox: string[]
 }>
+
+export type GooglePlaceResponse = {
+  candidates: Array<{
+    geometry: {
+      location: {
+        lat: number
+        lng: number
+      }
+      viewport: {
+        northeast: {
+          lat: number
+          lng: number
+        }
+        southwest: {
+          lat: number
+          lng: number
+        }
+      }
+    }
+    name: string
+    place_id: string
+    rating: number
+    user_ratings_total: number
+  }>
+  status: string
+}

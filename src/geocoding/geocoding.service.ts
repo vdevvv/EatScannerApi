@@ -1,4 +1,4 @@
-import {BadGatewayException, BadRequestException, Injectable, Logger, LoggerService} from '@nestjs/common';
+import {BadGatewayException, BadRequestException, Injectable, Logger} from '@nestjs/common';
 import {HttpService} from "@nestjs/axios";
 import {catchError, firstValueFrom} from "rxjs";
 import {AxiosError} from "axios";
@@ -7,12 +7,15 @@ import {GeocodingResponse} from "~/geocoding/types/geocoding.types";
 @Injectable()
 export class GeocodingService {
   private readonly logger = new Logger(GeocodingService.name);
+
   constructor(
     private readonly httpService: HttpService,
-  ) {}
+  ) {
+  }
 
   async geocode(address: string, city: string, country: string) {
     const query = `${address}, ${city}, ${country}`;
+
     const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(
       query
     )}&format=json&limit=1`;
