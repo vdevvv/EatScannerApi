@@ -2,14 +2,13 @@ import {Prisma} from "@prisma/client";
 
 export const restaurants: Prisma.RestaurantCreateInput[] = [
   {
-    name: 'pickl.mena',
+    name: 'Pickl Gardens Plaza',
     country: 'UAE',
-    city: 'Khalifa',
-    address: 'Khalifa City',
-    googleRating: '3.3',
-    trustpilotRating: '4',
-    latitude: 24.4327658,
-    longitude: 54.5655734,
+    city: 'Abu Dhabi',
+    address: 'Pickl Gardens Plaza, Khalifa City, SW18',
+    placeId: 'ChIJLxDGy95FXj4RHBam-zr-9hs',
+    latitude: 24.4329863,
+    longitude: 54.5662353,
     menu: {
       create: {
         categories: {
@@ -73,28 +72,40 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'pitfirepizzabakers',
+    name: 'Pitfire Pizza',
     country: 'UAE',
     city: 'Dubai',
-    address: 'Dubai Hills Estate Hadaeq Sheikh Mohammed Bin Rashid',
-    latitude: 25.1077023,
-    longitude: 55.2404672,
-    googleRating: '5',
-    trustpilotRating: '5',
+    address: 'Pitfire Pizza, Dubai Hills Estate',
+    placeId: 'ChIJXdA7Y5FpXz4Rl0MVSjKjx9U',
+    latitude: 25.1076408,
+    longitude: 55.240382,
     menu: {
       create: {
         categories: {
           create: [
             {
+              name: 'Main dishes',
+              items: {
+                create: [
+                  {
+                    name: 'Baked Mac and Cheese',
+                    price: '14',
+                    image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1763126515/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-11-14_%D0%BE_15.21.31_tweiqs.png',
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763126302/Baked_Mac_and_Cheese_tzjxtf.mp4'
+                  }
+                ]
+              }
+            },
+            {
               name: 'Pizza',
               items: {
                 create: [
                   {
-                    name: 'Pepperoni Primo 10"',
+                    name: 'IYKYK',
                     price: '67',
-                    description: 'A staple pie we rock like no other in Dubai. Need we say more?',
+                    description: 'Mozzarella, Pitfire Bolognese, Red Wine Vinegar, Fresh Basil',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762506720/pitfireh-pizza_sdidqm.webp',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762468009/Who_remembers_our_Pitfire_records_blastfromthepast_PitfirePizza_PitfireDubai_PitfirePizzaDuba_knojwk.mp4',
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763127015/iykyk_fedz3p.mp4',
                   },
                   {
                     name: 'Margherita 10"',
@@ -107,7 +118,6 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Bresaola & Rocket 10',
                     price: '62',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762506828/Bresaola_Rocket10_22_p0w5cx.webp',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762468631/Lunch_deal_More_like_the_real_deal._PitfirePizza_PitfireDubai_DubaiPizza_BestPizzaDubai_xujf40.mp4',
                     description: 'Seasoned tomato sauce with mozzarella, baked then topped withdeli-thin sliced bresaola (air dried beef) and piled high with fresh rocket and shaved parmesan, the rocket arrives packaged separately'
                   },
                   {
@@ -144,14 +154,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'Alsafadi restaurant',
+    name: 'Alsafadi',
     country: 'UAE',
     city: 'Dubai',
-    address: 'Al Rigga Rd Deira',
+    address: 'Alsafadi restaurant, Al Rigga Rd Deira',
     latitude: 25.2632045,
-    longitude: 55.3250661,
-    googleRating: '4.4',
-    trustpilotRating: '4.4',
+    longitude: 55.32506610000001,
+    placeId: 'ChIJk_FT689cXz4RgmjEHf8HKms',
     menu: {
       create: {
         categories: {
@@ -161,25 +170,29 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
               items: {
                 create: [
                   {
+                    name: 'Sandwitch',
+                    price: '30',
+                    image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1763144736/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-11-14_%D0%BE_20.25.22_qqisk3.png',
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763134324/sandwitch_muaeuk.mp4'
+                  },
+                  {
                     name: 'Juicy grilled chicken',
                     price: '80',
                     description: 'Marinated with spices and char-grilled to perfection. A simple dish, rich in authentic flavor.',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762504337/566120962_18532510414058656_3158066376928602230_n_m1dcap.jpg',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762469219/_Happy_international_Chef_s_Day_%D9%86%D9%87%D9%86%D9%8A%D9%94%D9%83%D9%85_%D8%A8%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D8%B4%D9%8A%D9%81_%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A_%D9%85%D9%86_%D8%A7%D9%84%D8%B5%D9%81%D8%AF%D9%8A_alsafadi_%D8%A7%D9%84%D8%B5%D9%81%D8%AF%D9%8A____ex2e0b.mp4',
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763145465/_%D9%84%D8%A7_%D8%AA%D9%81%D9%88%D9%91%D8%AA_%D8%B9%D9%8E_%D8%AD%D8%A7%D9%84%D9%83_%D8%A7%D9%84%D9%84%D8%B0%D9%91%D8%A9_%D8%A7%D8%AA%D9%91%D8%B5%D9%84_%D9%88%D8%A7%D8%B7%D9%84%D8%A8_%D8%A7%D9%84%D8%A7%D9%93%D9%86_%D8%B9%D9%84%D9%89600_500_601Rumor_has_it_that_this_season_our_delici_icdjkn.mp4',
                   },
                   {
                     name: 'Shish Tawouk',
                     price: '76',
                     description: 'Marinated and grilled to perfection.',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762504406/569310420_18533101867058656_3080983263939563066_n_b3aru8.jpg',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762469294/Chef_Omar_introduces_this_month_s_special-_Fish_Kibbeh_A_delicious_harmony_of_fish_grains_and_mvspi1.mp4',
                   },
                   {
                     name: 'Grilled Sea Bass',
                     price: '80',
                     description: 'Simple, fresh, and full of flavor.',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762504505/GrilledSeaBass_vokbxo.jpg',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762469392/Now_Open_in_Dubai_Festival_City_Mall_We_are_thrilled_to_announce_the_opening_of_our_newest_Al_Sa_gvz85i.mp4',
                   }
                 ]
               }
@@ -194,6 +207,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: 'unique, rich, and unforgettable. Don’t miss it!',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762504743/DebsTahiniIceCream_tmex6n.jpg'
                   },
+                  {
+                    name: 'Black Forest cake',
+                    price: '30',
+                    image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1763144976/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-11-14_%D0%BE_20.29.26_opfieq.png',
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763144988/Black_forest_cake_vp4zpb.mp4'
+                  }
                 ]
               }
             },
@@ -217,12 +236,11 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
   {
     name: 'Gazebo',
     country: 'UAE',
-    city: 'Ras Al Khaimah',
-    address: 'Al Manar Mall Dafan Al Nakheel',
-    latitude: 25.7824396,
-    longitude: 55.9649878,
-    googleRating: '3.3',
-    trustpilotRating: '3.4',
+    city: 'Abu Dhabi',
+    address: 'Gazebo Marina Mall Marina Mall Ring Rd opposite Bounce, Ground Floor Al Kasir Al Marina',
+    latitude: 24.476032,
+    longitude: 54.3204901,
+    placeId: 'ChIJJ8WeWQdlXj4RhKwgklaORnE',
     menu: {
       create: {
         categories: {
@@ -248,7 +266,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
               }
             },
             {
-              name: 'Kuch Naram Kuch Garam',
+              name: 'Main dishes',
               items: {
                 create: [
                   {
@@ -256,7 +274,6 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: '28',
                     description: 'An assortment of cheese, veg. and your choice of samosas-mutton mince/chicken mince.',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762507828/Samosa-Platter-2-700x456_odef3r.webp',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762470240/gazeborestaurant3_mqnak4.mp4'
                   },
                   {
                     name: 'Subzi Samoza',
@@ -275,6 +292,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: '18',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762507947/PAPDI-CHAAT-700x456_d56yd6.webp',
                     description: 'Papdi topped with grated mashed potato, whipped yoghurt, green chutney, and tamarind chutney, sprinkled with chaat masala'
+                  },
+                  {
+                    name: 'Shami Kebab',
+                    price: '30',
+                    image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1763145971/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-11-14_%D0%BE_20.45.56_sdatoc.png',
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763145921/shami_kebab_wuj0vw.mp4'
                   }
                 ]
               }
@@ -288,11 +311,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Couqley',
     country: 'UAE',
     city: 'Dubai',
-    address: 'Marasi Dr Business Bay',
+    address: 'Couqley French Brasserie Downtown Dubai Marasi Dr Business Bay',
     latitude: 25.1868174,
     longitude: 55.2715879,
-    googleRating: '4.8',
-    trustpilotRating: '4.6',
+    placeId: 'ChIJV79xPI9pXz4ROGvvXhLZaHc',
     menu: {
       create: {
         categories: {
@@ -305,19 +327,18 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'French fries with meat',
                     price: '60',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762508637/free-with-meat_opx3nb.jpg',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762470753/couqley1_ey0rqp.mp4',
                   },
                   {
                     name: 'Tartar',
                     price: '63',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762508639/tartare_vmk8ik.jpg',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762470812/couqley2_souer9.mp4',
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763146986/tartar_qvbxz9.mp4',
                   },
                   {
                     name: 'Mussels',
                     price: '43',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762508638/mussles_klgfbd.jpg',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762470865/couqley3_qr4ior.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763146503/%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D0%B8%CC%86_stauoa.mp4'
                   }
                 ]
               }
@@ -329,7 +350,8 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                   {
                     name: 'Secret Cocktail',
                     price: '30',
-                    image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762508639/secret-coctail_uyap7a.jpg'
+                    image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1763146795/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-11-14_%D0%BE_20.59.31_wjneli.png',
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763146802/coctail_ccydbv.mp4'
                   },
                   {
                     name: 'Secret Cocktail 2',
@@ -355,9 +377,8 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     city: 'Dubai',
     address: 'High joint Al Manara',
     latitude: 25.1482786,
-    longitude: 55.2129476,
-    googleRating: '5',
-    trustpilotRating: '5',
+    longitude: 55.2155225,
+    placeId: 'ChIJlb53z39rXz4RZ86U8Ak2QLw',
     menu: {
       create: {
         categories: {
@@ -370,13 +391,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Burger',
                     price: '34',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762509460/burger1_uxw3d6.jpg',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762471335/hightjoint1_la97hw.mp4',
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763147440/get_1_mnlrxu.mp4',
                   },
                   {
                     name: 'Burger',
                     price: '33',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762509461/burger2_fjicb7.jpg',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762471437/hightjoin2_xxlw0y.mp4',
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763147438/High_Jamz_fans_raise_your_hands___%EF%B8%8F___%EF%B8%8F_rfh2w5.mp4',
                   },
                   {
                     name: 'Burger',
@@ -415,14 +436,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'Sushiart UAE',
+    name: 'Sushiart',
     country: 'UAE',
     city: 'Abu Dhabi',
-    address: '107 Hamouda Bin Ali Al Dhaheri St Al Maryah Island MI10',
-    latitude: 24.494728,
-    longitude: 54.382669,
-    googleRating: '2.3',
-    trustpilotRating: '2',
+    address: 'The Galleria Al Maryah Island Hamouda Bin Ali Al Dhaheri Street',
+    latitude: 24.5010275,
+    longitude: 54.3902701,
+    placeId: 'ChIJgWk47lRmXj4RhGTNlpyfU-Y',
     menu: {
       create: {
         categories: {
@@ -448,13 +468,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Popular set',
                     price: '70',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762510227/sushi-set2_azwyzi.jpg',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762472245/sushiartuae1_ighcmk.mp4',
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763148449/Where_every_roll_tells_a_story_signaturebox_sushirolls_ybkux3.mp4',
                   },
                   {
                     name: 'Summer Box',
                     price: '70',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762510225/sushi-set_qg6grk.jpg',
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762472247/sushiartuae3_pfhola.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763148605/How_often_do_you_crave_SushiArt_c7lyo9.mp4'
                   }
                 ]
               }
@@ -487,14 +507,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'Zaatarwzeit UAE',
+    name: 'Zaatar w Zeit',
     country: 'UAE',
     city: 'Dubai',
-    address: 'Trade Center First',
+    address: 'Zaatar w Zeit Ground Floor, Al Meraikhi Towers - Sheikh Zayed Rd - Trade Center First',
     latitude: 25.2086823,
-    longitude: 55.2697648,
-    googleRating: '3.3',
-    trustpilotRating: '4',
+    longitude: 55.2723451,
+    placeId: 'ChIJN57CU4hCXz4RzXDrCsCEv9k',
     menu: {
       create: {
         categories: {
@@ -548,11 +567,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Common Grounds',
     country: 'UAE',
     city: 'Dubai',
-    address: 'Mall of the Emirates',
-    latitude: 25.1246352,
-    longitude: 55.199564,
-    googleRating: '3.3',
-    trustpilotRating: '4.4',
+    address: 'Common Grounds Mall of Level 2',
+    latitude: 25.1191192,
+    longitude: 55.2028445,
+    placeId: 'ChIJgRgTOb9rXz4RSGLPQ7vmrhc',
     menu: {
       create: {
         categories: {
@@ -613,11 +631,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Malay Al tawak',
     country: 'UAE',
     city: 'Dubai',
-    address: 'Hessa St Al Barsha',
-    latitude: 25.0935607,
-    longitude: 55.1828425,
-    googleRating: '2.3',
-    trustpilotRating: '2',
+    address: 'Malay Al tawak Hessa St - Al Barsha',
+    latitude: 25.0935306,
+    longitude: 55.1853741,
+    placeId: 'ChIJ8wtbooBrXz4RSBfRCkXxJBk',
     menu: {
       create: {
         categories: {
@@ -678,11 +695,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Find Salt',
     country: 'UAE',
     city: 'Abu Dhabi',
-    address: 'Mohamed Bin Zayed City - Z4',
-    latitude: 24.3643495,
-    longitude: 54.555376,
-    googleRating: '5',
-    trustpilotRating: '5',
+    address: 'Find Salt 9H85+4Q9 - Mohamed Bin Zayed City - Z4',
+    latitude: 24.3643496,
+    longitude: 54.5602469,
+    placeId: 'ChIJIQQGCABHXj4RDR77cAl28e0',
     menu: {
       create: {
         categories: {
@@ -747,14 +763,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'Rascalsdeli',
+    name: 'Rascals Deli',
     country: 'UAE',
     city: 'Dubai',
-    address: 'Wasl Square , Block 7',
+    address: 'Rascals Deli Wasl Square , Block 7',
     latitude: 25.1859602,
-    longitude: 55.237091,
-    googleRating: '4.3',
-    trustpilotRating: '4',
+    longitude: 55.2396659,
+    placeId: 'ChIJBYSglqxdXz4RbRkYX3LRrVE',
     menu: {
       create: {
         categories: {
@@ -820,11 +835,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Acai And Co',
     country: 'UAE',
     city: 'Sharjah',
-    address: 'Muwaileh Commercial - Industrial Area',
-    latitude: 25.3045932,
-    longitude: 55.4672761,
-    googleRating: '3.3',
-    trustpilotRating: '3',
+    address: 'Acai And Co 8F39+RX - Muwaileh Commercial Industrial Area',
+    latitude: 25.3045855,
+    longitude: 55.4699,
+    placeId: 'ChIJofRknztfXz4RhwjqEOVQBEY',
     menu: {
       create: {
         categories: {
@@ -873,7 +887,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
               items: {
                 create: [
                   {
-                    name: '',
+                    name: 'Sandwitch',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762856465/One_stack_endless_flavors_Our_NEW_flatbreads_are_here_to_steal_the_spotlight_are_you_ready_to_ukggrw.jpg',
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762475028/acaiandco3_qobvqf.mp4'
@@ -887,14 +901,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'b.laban.uae1',
+    name: 'B.laban',
     country: 'UAE',
     city: 'Ajman',
-    address: 'Al Rashidiya 1',
-    latitude: 25.3903827,
-    longitude: 55.4583494,
-    googleRating: '1',
-    trustpilotRating: '1',
+    address: 'B.laban 9FQ5+V3V - Al Rashidiya 1',
+    latitude: 25.3896136,
+    longitude: 55.45931599999999,
+    placeId: 'ChIJCdNl20xZXz4R_P55D-m3Tkw',
     menu: {
       create: {
         categories: {
@@ -948,11 +961,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Zaroob',
     country: 'UAE',
     city: 'Dubai',
-    address: 'DIFC',
+    address: 'Zaroob Restaurant - Sheikh Zayed Road Shop 1 - Sheikh Zayed Rd - Trade Center Second - DIFC',
     latitude: 25.2134595,
-    longitude: 55.2750632,
-    googleRating: '3.3',
-    trustpilotRating: '4',
+    longitude: 55.2776381,
+    placeId: 'ChIJJ6ELNoxCXz4RdR1oqL6il1g',
     menu: {
       create: {
         categories: {
@@ -1021,11 +1033,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Low Calories',
     country: 'UAE',
     city: 'Dubai',
-    address: 'Jumeirah 3',
+    address: 'Low Calories 780 Jumeirah Beach Rd - Umm Suqeim Second Jumeirah 3',
     latitude: 25.1505214,
-    longitude: 55.1968515,
-    googleRating: '4',
-    trustpilotRating: '4',
+    longitude: 55.1994264,
+    placeId: 'ChIJfZAqZ3trXz4RrzDTI945p2A',
     menu: {
       create: {
         categories: {

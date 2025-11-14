@@ -9,7 +9,7 @@ import { VerificationCodeModule } from '~/verification-code/verification-code.mo
 import { ScheduleModule } from '@nestjs/schedule';
 import { FriendshipModule } from '~/friendship/friendship.module';
 import { RestaurantModule } from './restaurant/restaurant.module';
-import { GeocodingModule } from './geocoding/geocoding.module';
+import { PlaceModule } from '~/place/place.module';
 import { CategoryModule } from './category/category.module';
 import { MenuItemModule } from './menu/menu-item.module';
 
@@ -25,7 +25,7 @@ import { MenuItemModule } from './menu/menu-item.module';
     VerificationCodeModule,
     FriendshipModule,
     RestaurantModule,
-    GeocodingModule,
+    PlaceModule,
     CategoryModule,
     MenuItemModule,
   ],

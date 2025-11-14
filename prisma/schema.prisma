@@ -70,17 +70,16 @@ model Friendship {
 }
 
 model Restaurant {
-  id               String   @id @default(uuid())
-  name             String
-  city             String
-  country          String
-  address          String
-  latitude         Float
-  longitude        Float
-  googleRating     Decimal? @map("google_rating") @db.Decimal(2, 1)
-  trustpilotRating Decimal? @map("trustpilot_rating") @db.Decimal(2, 1)
-  createdAt        DateTime @default(now()) @map("created_at")
-  updatedAt        DateTime @updatedAt @map("updated_at")
+  id        String   @id @default(uuid())
+  name      String
+  city      String
+  country   String
+  address   String
+  latitude  Float
+  longitude Float
+  placeId   String   @unique @map("place_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   menu Menu?
 

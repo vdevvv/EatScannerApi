@@ -1,20 +1,3 @@
-export type GeocodingResponse = Array<{
-  place_id: number
-  licence: string
-  osm_type: string
-  osm_id: number
-  lat: string
-  lon: string
-  class: string
-  type: string
-  place_rank: number
-  importance: number
-  addresstype: string
-  name: string
-  display_name: string
-  boundingbox: string[]
-}>
-
 export type GooglePlaceResponse = {
   candidates: Array<{
     geometry: {
@@ -39,4 +22,16 @@ export type GooglePlaceResponse = {
     user_ratings_total: number
   }>
   status: string
+}
+
+export type GoogleRatingResponse = {
+  html_attributions: [],
+  result: GoogleRating,
+  status: string
+}
+
+export interface GoogleRating {
+  name: string;
+  rating?: number;
+  user_ratings_total?: number;
 }

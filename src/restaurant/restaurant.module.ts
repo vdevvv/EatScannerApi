@@ -1,10 +1,10 @@
 import {Module} from '@nestjs/common';
 import {RestaurantService} from './restaurant.service';
 import {RestaurantController} from './restaurant.controller';
-import {GeocodingModule} from "~/geocoding/geocoding.module";
+import {PlaceModule} from "~/place/place.module";
 
 @Module({
-  imports: [GeocodingModule],
+  imports: [PlaceModule],
   controllers: [RestaurantController],
   providers: [RestaurantService],
 })
