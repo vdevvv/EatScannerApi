@@ -70,7 +70,6 @@ export class PlaceService {
         toFetch.push(id);
       }
     }
-    console.log(toFetch)
 
     if (toFetch.length === 0) return results;
 

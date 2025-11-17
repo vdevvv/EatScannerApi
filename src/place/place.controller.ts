@@ -5,12 +5,12 @@ import {GetGoogleRatingDto} from "~/place/dto/place.dto";
 
 @Controller('place')
 export class PlaceController {
-  constructor(private readonly geocodeService: PlaceService) {}
+  constructor(private readonly placeService: PlaceService) {}
 
   @Public()
   @Get()
   async get() {
-    return this.geocodeService.geocode(
+    return this.placeService.geocode(
       'Pitfire Pizza, Dubai Hills Estate',
       'Dubai',
       'UAE'
@@ -18,8 +18,8 @@ export class PlaceController {
   }
 
   @Public()
-  @Post()
+  @Post('/reviews')
   async getRatings(@Body() dto: GetGoogleRatingDto) {
-    return this.geocodeService.getPlacesRating(dto.placeIds)
+    return this.placeService.getPlacesRating(dto.placeIds)
   }
 }
