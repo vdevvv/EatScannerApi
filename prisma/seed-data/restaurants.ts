@@ -21,12 +21,14 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Bespoke Your Cheeseburger',
                     price: '34',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762505292/pickl-burder_krnzuk.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762464069/get_bgiptr.mp4',
                     description: 'Single or double chuck patty, cheese, potato bun & your choice of toppings'
                   },
                   {
                     name: 'The New Yorker Cheeseburger',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762787739/chessburger2_jxoqvo.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762467559/WEEKLY_CONTEST_the_thing_that_keeps_happening_even_though_your_brain_swears_last_Monday_was_y_gwcu8m.mp4',
                     price: '32',
                     description: 'Double chuck patty, cheese, tomato, lettuce, secret sauce & potato bun'
@@ -34,6 +36,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                   {
                     name: 'The Original Cheeseburger',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762787739/chessburger3_uxwz7n.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762787089/pickl_burger_3_flrprg.mp4',
                     description: 'Double chuck patty, cheese, dill pickles, white onion, mustard, ketchup & potato bun',
                     price: '32'
@@ -91,6 +94,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Baked Mac and Cheese',
                     price: '14',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1763126515/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-11-14_%D0%BE_15.21.31_tweiqs.png',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763126302/Baked_Mac_and_Cheese_tzjxtf.mp4'
                   }
                 ]
@@ -105,12 +109,14 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: '67',
                     description: 'Mozzarella, Pitfire Bolognese, Red Wine Vinegar, Fresh Basil',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762506720/pitfireh-pizza_sdidqm.webp',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763127015/iykyk_fedz3p.mp4',
                   },
                   {
                     name: 'Margherita 10"',
                     price: '60',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762506769/margarita-pifire_y2elah.webp',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762468734/The_weather_s_testing_us_these_days._PitfirePizza_PitfireDubai_BestPizzaDubai_HellsKitchen_D_ytdkbu.mp4',
                     description: 'Pitfire’s own seasoned tomato sauce, topped with hand torn mozzarella, a drizzle of olive oil, a dash of parmesan and a handful of fresh basil after bake.'
                   },
@@ -173,6 +179,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sandwitch',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1763144736/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-11-14_%D0%BE_20.25.22_qqisk3.png',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763134324/sandwitch_muaeuk.mp4'
                   },
                   {
@@ -180,6 +187,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: '80',
                     description: 'Marinated with spices and char-grilled to perfection. A simple dish, rich in authentic flavor.',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762504337/566120962_18532510414058656_3158066376928602230_n_m1dcap.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763145465/_%D9%84%D8%A7_%D8%AA%D9%81%D9%88%D9%91%D8%AA_%D8%B9%D9%8E_%D8%AD%D8%A7%D9%84%D9%83_%D8%A7%D9%84%D9%84%D8%B0%D9%91%D8%A9_%D8%A7%D8%AA%D9%91%D8%B5%D9%84_%D9%88%D8%A7%D8%B7%D9%84%D8%A8_%D8%A7%D9%84%D8%A7%D9%93%D9%86_%D8%B9%D9%84%D9%89600_500_601Rumor_has_it_that_this_season_our_delici_icdjkn.mp4',
                   },
                   {
@@ -211,6 +219,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Black Forest cake',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1763144976/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-11-14_%D0%BE_20.29.26_opfieq.png',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763144988/Black_forest_cake_vp4zpb.mp4'
                   }
                 ]
@@ -254,12 +263,14 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: '60',
                     description: 'Classic grilled chicken marinated in traditional spices, cream and yoghurt; served bone-in.',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762507252/AFGHANI-MURGH_rtg2ri.webp',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762470110/gazeborestaurant1_dys2s4.mp4',
                   },
                   {
                     name: 'Murgh Gilafi Seekh',
                     price: '80',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762507604/Murgh-Gilafi-Seekh-700x456_tksl2l.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762470184/gazeborestaurant2_hjaq1a.mp4',
                   }
                 ]
@@ -297,6 +308,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Shami Kebab',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1763145971/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-11-14_%D0%BE_20.45.56_sdatoc.png',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763145921/shami_kebab_wuj0vw.mp4'
                   }
                 ]
@@ -332,12 +344,14 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Tartar',
                     price: '63',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762508639/tartare_vmk8ik.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763146986/tartar_qvbxz9.mp4',
                   },
                   {
                     name: 'Mussels',
                     price: '43',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762508638/mussles_klgfbd.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763146503/%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D0%B8%CC%86_stauoa.mp4'
                   }
                 ]
@@ -351,6 +365,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Secret Cocktail',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1763146795/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-11-14_%D0%BE_20.59.31_wjneli.png',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763146802/coctail_ccydbv.mp4'
                   },
                   {
@@ -391,18 +406,21 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Burger',
                     price: '34',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762509460/burger1_uxw3d6.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763147440/get_1_mnlrxu.mp4',
                   },
                   {
                     name: 'Burger',
                     price: '33',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762509461/burger2_fjicb7.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763147438/High_Jamz_fans_raise_your_hands___%EF%B8%8F___%EF%B8%8F_rfh2w5.mp4',
                   },
                   {
                     name: 'Burger',
                     price: '32',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762509461/burger3_ijax5k.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762471438/hightjoin3_f4dq4l.mp4'
                   },
                   {
@@ -454,6 +472,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                   {
                     name: 'Machu Picchu Poke',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762510224/Machu_Picchu_Poke_vhabcd.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762472245/sushiartuae2_qxeaie.mp4',
                     price: 50
                   }
@@ -468,12 +487,14 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Popular set',
                     price: '70',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762510227/sushi-set2_azwyzi.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763148449/Where_every_roll_tells_a_story_signaturebox_sushirolls_ybkux3.mp4',
                   },
                   {
                     name: 'Summer Box',
                     price: '70',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762510225/sushi-set_qg6grk.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763148605/How_often_do_you_crave_SushiArt_c7lyo9.mp4'
                   }
                 ]
@@ -526,18 +547,21 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Kebab',
                     price: '40',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762511161/kebab_ptnmmt.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762791341/zaatwar_kebab_wv9yuy.mp4',
                   },
                   {
                     name: 'Pizza',
                     price: '42',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762511162/pizza_deqyh9.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762791637/zaatarw_pizza_nt0hhx.mp4',
                   },
                   {
                     name: 'Salad',
                     price: '48',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762511163/salad_thbb0o.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762792132/zaatawr_salad_duwvpe.mp4'
                   },
                   {
@@ -583,6 +607,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Bowl of sunshine',
                     price: '50',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762854648/bowl_feia9b.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762854541/salad_bowl_oqq56x.mp4',
                   },
                   {
@@ -606,12 +631,14 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fresh',
                     price: '20',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762511575/fresh_pvxih6.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762853911/fresh_ow8n3j.mp4'
                   },
                   {
                     name: 'Coffee',
                     price: '15',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762511574/coffee_uuejrr.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762854732/coffee_bdqvb0.mp4'
                   },
                   {
@@ -652,6 +679,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sandwitch combo',
                     price: '40',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762512108/sandwich_nx0dd2.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762473787/malakaltawoukuae2_skcufp.mp4',
                   }
                 ]
@@ -665,12 +693,14 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Hommus sandwich',
                     price: '35',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762512106/sandiwch2_gsx2f2.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762473787/malakaltawoukuae3_zjiyzn.mp4'
                   },
                   {
                     name: 'Asian Bowl',
                     price: '33',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762512104/bowl_vyw2gt.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762855435/asian_bowl_oduzud.mp4'
                   },
                   {
@@ -711,6 +741,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Burger',
                     price: '40',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762512671/burger_boxvzb.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762855813/burger_dlq3sk.mp4'
                   },
                   {
@@ -729,12 +760,14 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Cake',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762512672/cake_he6fgn.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762856052/cake_tvzmg2.mp4',
                   },
                   {
                     name: 'Ice cream',
                     price: '20',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762512675/ice-cream_dqhvuy.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762474304/findsalt1_wh9ehk.mp4',
                   },
                   {
@@ -782,6 +815,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'French Dip',
                     price: '25',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762514002/burger_y8jfua.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762474708/rascalsdeli3_wt5ie5.mp4'
                   }, {
                     name: 'Burger',
@@ -791,6 +825,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sandwitch',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762514008/sandwitch_mevyyz.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762474706/rascalsdeli1_utx5fd.mp4',
                   },
                 ]
@@ -804,6 +839,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Donut',
                     price: 15,
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762514006/donut_muevdm.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762856292/donut_kyxgop.mp4'
                   },
                   {
@@ -851,11 +887,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Asia bowl',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762513215/acia_bowl_lpkmem.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762475026/acaiandco1_uun7f7.mp4',
                   }, {
                     name: 'Bowl',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762513216/bowl2_dl3krm.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762475027/acaiandco2_cohlof.mp4',
                   }, {
                     name: 'Bowl',
@@ -890,6 +928,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sandwitch',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762856465/One_stack_endless_flavors_Our_NEW_flatbreads_are_here_to_steal_the_spotlight_are_you_ready_to_ukggrw.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762475028/acaiandco3_qobvqf.mp4'
                   }
                 ]
@@ -920,11 +959,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Choco burger',
                     price: '25',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762514967/sweat_burger_um0hz2.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762475477/b.laban.uae2_ywfiqw.mp4',
                   },
                   {
                     name: 'Qashtota',
                     price: '30',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762857077/get_shcxcy.mp4',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762514966/chocolate_cream_skzujs.jpg',
                   },
@@ -932,6 +973,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Chocolate cake',
                     price: '40',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762514963/chocolate_cake_xgerzc.jpg',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762857218/6_flavour_from_Gelatoty_Roma...From_Italian_gelato_to_Belgian_cake_dart2v.mp4'
                   },
                   {
@@ -977,6 +1019,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Zaroobian Breakfast Tray For 2',
                     price: '88',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762858622/zaroobianbreakfasttrayfor2n_iavwnz.webp',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762858543/get_2_sg2szc.mp4'
                   }
                 ]
@@ -990,6 +1033,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Zaatar',
                     price: '15',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762858755/zaatar_gz7b3n.webp',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762858723/get_3_mbyvo8.mp4',
                   },
                   {
@@ -1002,6 +1046,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sandwitch',
                     price: '35',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762514382/RoastBeef_qehr0a.webp',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762857452/sandwitch_zkop1c.mp4'
                   }
                 ]
@@ -1049,18 +1094,21 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Cake',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762859453/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-11-11_%D0%BE_13.10.26_vbozs0.png',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762859555/cheescake_pjs95b.mp4'
                   },
                   {
                     name: 'Ice Cream',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762861273/%D0%97%D0%BD%D1%96%D0%BC%D0%BE%D0%BA_%D0%B5%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2025-11-11_%D0%BE_13.40.55_fahdyo.png',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762861342/Enjoy_every_bite_of_our_refreshing_high-protein_ice_cream_transporting_you_to_paradise_l_en1nvl.mp4'
                   },
                   {
                     name: 'Cake',
                     price: '30',
                     image: 'https://res.cloudinary.com/doe6zvkod/image/upload/v1762861544/cake_jfk4qm.png',
+                    highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762861532/cake_qfej2o.mp4'
                   }
                 ]

@@ -23,9 +23,14 @@ export class RestaurantController {
     return this.restaurantService.getRestaurants(pageOptionsDto);
   }
 
+  @Public()
   @Get(':id/menu')
   getMenu(@Param('id') id: string) {
     return this.restaurantService.getMenu(id);
   }
 
+  @Get(':id/menu-item')
+  async getMenuItem(@Param('id') id: string) {
+    return this.restaurantService.getMenuItem(id)
+  }
 }

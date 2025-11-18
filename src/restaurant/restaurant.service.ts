@@ -68,10 +68,16 @@ export class RestaurantService {
     return new PageDto(data, pageMetaDto);
   }
 
-  async getMenu(restaurantId: string) {
-    return this.prisma.restaurant.findUnique({
-      where: {id: restaurantId},
-      include: {menu: {include: {categories: {include: {items: true}}}}}
+  async getMenu(menuId: string) {
+    return this.prisma.menu.findUnique({
+      where: {id: menuId},
+      include: {categories: {include: {items: true}}}
+    })
+  }
+
+  async getMenuItem(id: string) {
+    return this.prisma.menuItem.findUnique({
+      where: {id}
     })
   }
 }
