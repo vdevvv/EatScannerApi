@@ -1,6 +1,6 @@
 import {Body, Controller, Get, Param, Post, Query} from '@nestjs/common';
 import {RestaurantService} from './restaurant.service';
-import {CreateRestaurantDto} from "~/restaurant/dto/restaurant.dto";
+import { CreateRestaurantDto } from '~/restaurant/dto/restaurant.dto';
 import {PageOptionsDto} from "~/common/dto/page";
 import {Public} from "~/common/decorators";
 

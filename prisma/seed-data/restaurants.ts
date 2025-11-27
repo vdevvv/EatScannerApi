@@ -1,8 +1,8 @@
-import {Prisma} from "@prisma/client";
+import {Prisma, TagType} from "@prisma/client";
 
 export const restaurants: Prisma.RestaurantCreateInput[] = [
   {
-    name: 'Pickl Gardens Plaza',
+    name: 'Pickl Gardens Plaza', // https://www.talabat.com/uae/restaurant/703527/pickl-dubai-silicon-oasis?aid=1244
     country: 'UAE',
     city: 'Abu Dhabi',
     address: 'Pickl Gardens Plaza, Khalifa City, SW18',
@@ -61,6 +61,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "34.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762464069/get_bgiptr.mp4',
+                    tags: {connect: [{slug: 'american'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-sweets'}]}
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/0EF0687A544AF48963C87E83B191A082",
@@ -93,6 +94,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762467559/WEEKLY_CONTEST_the_thing_that_keeps_happening_even_though_your_brain_swears_last_Monday_was_y_gwcu8m.mp4',
                     price: "49.00",
+                    tags: {connect: [{slug: 'american'}, {slug: 'lunch'}]}
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/869DEC55A2552B2DE4D0190CA5EB1930",
@@ -115,8 +117,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/9A4390EF4BAD5CFE0EF086B9A39D45B7",
                     name: "The BBQ Bacon Cheeseburger Double",
-                    description:
-                      "double patty, bacon, cheese, fried onions, bbq sauce, ranch & potato bun",
+                    description: "double patty, bacon, cheese, fried onions, bbq sauce, ranch & potato bun",
                     price: "54.00",
                   },
                   {
@@ -126,6 +127,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762787089/pickl_burger_3_flrprg.mp4',
                     price: "32.00",
+                    tags: {connect: [{slug: 'american'}, {slug: 'lunch'}]}
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/224ABBE906030C4018AB23305918C7A7",
@@ -554,7 +556,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'Pitfire Pizza',
+    name: 'Pitfire Pizza', // https://www.talabat.com/uae/restaurant/25251/pitfire-pizza-jumeirah-lakes-towers--jlt?aid=1307
     country: 'UAE',
     city: 'Dubai',
     address: 'Pitfire Pizza, Dubai Hills Estate',
@@ -721,6 +723,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "92.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762468734/The_weather_s_testing_us_these_days._PitfirePizza_PitfireDubai_BestPizzaDubai_HellsKitchen_D_ytdkbu.mp4',
+                    tags: {connect: [{slug: 'italian'}, {slug: 'lunch'}, {slug: 'dinner'}]}
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/A70F94F174B79EC41EC1C471004F62A8",
@@ -759,6 +762,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "90.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763127015/iykyk_fedz3p.mp4',
+                    tags: {connect: [{slug: 'italian'}, {slug: 'lunch'}, {slug: 'dinner'}]}
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/9C6B8047AD1DB5CBCAA285124BC4B34E",
@@ -994,6 +998,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "42.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763126302/Baked_Mac_and_Cheese_tzjxtf.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'american'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'vegetarian'}, {slug: 'no-pork'}, {slug: 'no-beef'},
+                        {slug: 'no-shellfish'}, {slug: 'no-peanuts'}, {slug: 'no-tree-nuts'}
+                      ]
+                    }
                   },
                 ]
               }
@@ -1152,7 +1162,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'Alsafadi',
+    name: 'Alsafadi', // https://www.talabat.com/uae/restaurant/721680/al-safadi-al-rigga?aid=1200
     country: 'UAE',
     city: 'Dubai',
     address: 'Alsafadi restaurant, Al Rigga Rd Deira',
@@ -1249,6 +1259,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "360.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763145465/_%D9%84%D8%A7_%D8%AA%D9%81%D9%88%D9%91%D8%AA_%D8%B9%D9%8E_%D8%AD%D8%A7%D9%84%D9%83_%D8%A7%D9%84%D9%84%D8%B0%D9%91%D8%A9_%D8%A7%D8%AA%D9%91%D8%B5%D9%84_%D9%88%D8%A7%D8%B7%D9%84%D8%A8_%D8%A7%D9%84%D8%A7%D9%93%D9%86_%D8%B9%D9%84%D9%89600_500_601Rumor_has_it_that_this_season_our_delici_icdjkn.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'american'}, {slug: 'gluten-free'}, {slug: 'lunch'}, {slug: 'dinner'},
+                        {slug: 'no-shellfish'}, {slug: 'no-peanuts'}, {slug: 'lactose-free'}, {slug: 'no-tree-nuts'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/AD3BBBA0BD9892E3C29B2841FB24F4EC",
@@ -1419,7 +1435,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Chicken escalope with french fries, coleslaw, pickles and ketchup in a baguette bread.",
                     price: "27.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763134324/sandwitch_muaeuk.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763134324/sandwitch_muaeuk.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'american'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'snack'}, {slug: 'no-pork'},
+                        {slug: 'no-beef'}, {slug: 'no-shellfish'}, {slug: 'no-peanuts'}, {slug: 'no-tree-nuts'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/2678002EEDEFC2543C27141A0B3C8902",
@@ -1750,6 +1772,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "30.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763562696/Falafel._Crispy_golden_and_full_of_flavor._AlSafadi%D9%81%D9%84%D8%A7%D9%81%D9%84._%D9%85%D9%82%D8%B1%D9%85%D8%B4%D8%A9_%D8%B0%D9%87%D8%A8%D9%8A%D8%A9_%D9%88%D8%BA%D9%86%D9%8A%D8%A9_%D8%A8%D8%A7%D9%84%D9%86%D9%83%D9%87%D8%A9._%D8%A7%D9%84%D8%B5%D9%81%D8%AF%D9%8A_oewdgt.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'american'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'appetizer'}, {slug: 'vegetarian'},
+                        {slug: 'vegan'}, {slug: 'lactose-free'}, {slug: 'no-pork'}, {slug: 'no-beef'}, {slug: 'no-shellfish'},
+                        {slug: 'no-peanuts'}, {slug: 'no-tree-nuts'}, {slug: 'no-pork'}, {slug: 'no-beef'}, {slug: 'no-shellfish'},
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/147A7FF33ADB56DAC2F82D3A351014B2",
@@ -2393,7 +2422,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'Gazebo',
+    name: 'Gazebo', // https://www.talabat.com/uae/restaurant/733457/gazebo-marina-mall?aid=1473
     country: 'UAE',
     city: 'Abu Dhabi',
     address: 'Gazebo Marina Mall Marina Mall Ring Rd opposite Bounce, Ground Floor Al Kasir Al Marina',
@@ -2595,7 +2624,14 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Papdi topped with mashed potato, sev, green chutney and tamarind chutney.",
                     price: "18.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763569190/Dig_into_elevated_street-style_chaats_crafted_with_finesse_at_Gazebo._%EF%B8%8F__zzwouv.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763569190/Dig_into_elevated_street-style_chaats_crafted_with_finesse_at_Gazebo._%EF%B8%8F__zzwouv.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'indian'}, {slug: 'appetizer'}, {slug: 'snack'}, {slug: 'vegetarian'}, {slug: 'vegan'},
+                        {slug: 'lactose-free'}, {slug: 'no-pork'}, {slug: 'no-beef'}, {slug: 'no-shellfish'},
+                        {slug: 'no-peanuts'}, {slug: 'no-tree-nuts'}, {slug: 'medium'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/MASALA_FRIES638592414637080485.jpg",
@@ -2662,8 +2698,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/AFGHANI_MURGH638810201016736767.jpg",
                     name: "Afghani Murgh",
-                    description:
-                      "Classic grilled chicken marinated in traditional spices, cream and yoghurt served bone in.",
+                    description: "Classic grilled chicken marinated in traditional spices, cream and yoghurt served bone in.",
                     price: 60,
                   },
                   {
@@ -2673,11 +2708,9 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: 60,
                   },
                   {
-                    image:
-                      "https://images.deliveryhero.io/image/talabat/MenuItems/Murgh_Seekh_Bharwan638821213374548349.jpg",
+                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Murgh_Seekh_Bharwan638821213374548349.jpg",
                     name: "Murgh Seekh Bharwan",
-                    description:
-                      "Seekh made from cardamom infused chicken mince, stuffed with a creamy filling of cheese, mint, coriander and chargrilled.",
+                    description: "Seekh made from cardamom infused chicken mince, stuffed with a creamy filling of cheese, mint, coriander and chargrilled.",
                     price: "42.00",
                   },
                   {
@@ -2795,7 +2828,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Fine lamb mince mixed with spices, chopped green chillies and coriander, shaped into tikkis; shallow fried and served on a bed of reshmi paratha.",
                     price: "52.00",
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763569754/%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D0%B8%CC%86_u4rzib.mp4',
-                    highlighted: true
+                    highlighted: true,
+                    tags: {
+                      connect: [
+                        {slug: 'indian'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-pork'}, {slug: 'no-shellfish'},
+                        {slug: 'no-peanuts'}, {slug: 'no-tree-nuts'}, {slug: 'medium'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/Burrah_Chops_Lazeez638821213376414861.jpg",
@@ -3039,8 +3078,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/Dum_Murgh_Handi_Korma638641558308485374.jpg",
                     name: "Dum Murgh Handi Korma",
-                    description:
-                      "An aromatic dish made with boneless chicken in a cashew based gravy, delicately flavored with spices, finished with butter and cream; served in an earthen pot.",
+                    description: "An aromatic dish made with boneless chicken in a cashew based gravy, delicately flavored with spices, finished with butter and cream; served in an earthen pot.",
                     price: "55.00",
                   },
                   {
@@ -3179,8 +3217,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/TANDOORI_RAAN_MASALA638810206394240002.jpg",
                     name: "Tandoori Raan Masala",
-                    description:
-                      "Grilled leg of baby lamb, simmered in a mildly spiced tomato gravy.",
+                    description: "Grilled leg of baby lamb, simmered in a mildly spiced tomato gravy.",
                     price: "120.00",
                   },
                   {
@@ -3698,7 +3735,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Tender pieces of chicken marinated in a special Hyderabadi masala, layered with aromatic basmati rice, potato and fried onions; cooked on dum in a sealed earthen pot.",
                     price: '50',
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763569480/When_life_gets_messy_our_biryani_stays_perfect_Tell_us_which_one_brightens_your_day_We_now_h_vsunnm.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763569480/When_life_gets_messy_our_biryani_stays_perfect_Tell_us_which_one_brightens_your_day_We_now_h_vsunnm.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'indian'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-pork'}, {slug: 'no-beef'}, {slug: 'no-shellfish'},
+                        {slug: 'no-peanuts'}, {slug: 'no-tree-nuts'}, {slug: 'gluten-free'}, {slug: 'spicy'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/Murgh_Zafrani_Biryani638641558320521764.jpg",
@@ -4355,7 +4398,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'Couqley',
+    name: 'Couqley', // https://www.talabat.com/uae/restaurant/750233/couqley?aid=1252
     country: 'UAE',
     city: 'Dubai',
     address: 'Couqley French Brasserie Downtown Dubai Marasi Dr Business Bay',
@@ -4592,7 +4635,14 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Grilled portobello mushroom steak in Couqley’s signature pepper sauce, served with french fries and a side salad. Vegan.",
                     price: "69.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763629177/%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D0%B8%CC%86_n4wwuc.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763629177/%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D0%B8%CC%86_n4wwuc.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'french'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'vegan'}, {slug: 'vegetarian'},
+                        {slug: 'lactose-free'}, {slug: 'no-pork'}, {slug: 'no-beef'}, {slug: 'no-shellfish'},
+                        {slug: 'no-peanuts'}, {slug: 'no-tree-nuts'},
+                      ]
+                    }
                   },
                 ]
               }
@@ -4608,6 +4658,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "91.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763146986/tartar_qvbxz9.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'french'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-pork'}, {slug: 'no-shellfish'},
+                        {slug: 'no-peanuts'}, {slug: 'no-tree-nuts'}, {slug: 'no-tree-nuts'}, {slug: 'medium'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/Rib_Eye_Steak638715958293575258.jpg",
@@ -4659,7 +4715,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Top Scottish salmon, pan seared, served with potato purée, asparagus and Romesco sauce.",
                     price: "113.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763629728/%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D0%B8%CC%86_online-video-cutter.com_1_pggfrf.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763629728/%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D0%B8%CC%86_online-video-cutter.com_1_pggfrf.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'french'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-pork'}, {slug: 'no-shellfish'},
+                        {slug: 'no-beef'}, {slug: 'mild'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/Duck_confit638715959974100783.jpg",
@@ -4879,7 +4941,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'High Joint',
+    name: 'High Joint', // https://www.talabat.com/uae/restaurant/26916/high-joint?aid=1192
     country: 'UAE',
     city: 'Dubai',
     address: 'High joint Al Manara',
@@ -4901,6 +4963,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "59.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763147440/get_1_mnlrxu.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'american'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-pork'}, {slug: 'no-shellfish'},
+                        {slug: 'no-sweets'}, {slug: 'no-tree-nuts'}, {slug: 'no-peanuts'},
+                      ]
+                    }
                   },
                 ]
               },
@@ -4915,7 +4983,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Premium Wagyu patty, topped with provolone cheese, kimchi aioli and togarashi-tossed potato chips, tonkatsu sauce and kewpie mayo. Served in a soft-milk bun",
                     price: "57.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762471438/hightjoin3_f4dq4l.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762471438/hightjoin3_f4dq4l.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'japanese'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-pork'}, {slug: 'no-shellfish'},
+                        {slug: 'no-sweets'}, {slug: 'no-tree-nuts'}, {slug: 'no-peanuts'}, {slug: 'spicy'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/menu-import-gateway-prd/regions/ME/chains/TLBT%20Kitopi%20Plugin-New/7b12fa4db1075d0c0079292c03a22640.jpeg",
@@ -4967,6 +5041,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "49.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763147438/High_Jamz_fans_raise_your_hands___%EF%B8%8F___%EF%B8%8F_rfh2w5.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'american'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-pork'}, {slug: 'no-shellfish'},
+                        {slug: 'no-sweets'}, {slug: 'no-tree-nuts'}, {slug: 'no-peanuts'}, {slug: 'mild'}
+                      ]
+                    }
                   },
                 ]
               }
@@ -5230,1091 +5310,1091 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
       }
     }
   },
+  // {
+  //   name: 'Sushiart',
+  //   country: 'UAE',
+  //   city: 'Abu Dhabi',
+  //   address: 'The Galleria Al Maryah Island Hamouda Bin Ali Al Dhaheri Street',
+  //   latitude: 24.5010275,
+  //   longitude: 54.3902701,
+  //   placeId: 'ChIJgWk47lRmXj4RhGTNlpyfU-Y',
+  //   menu: {
+  //     create: {
+  //       categories: {
+  //         create: [
+  //           {
+  //             name: 'Summer Recipes',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Summer_Box_of_the_Moment638879992576969735.jpg",
+  //                   name: "Sushi Box Of The Moment 17 Pieces",
+  //                   description: "Our sushi box of the moment bursts with sunny flavours, making a vibrant stop in Latin America beautifully paired with our all-time favorites.\n2 salmon sushi, 3 California chicken curry, 3 cooked tuna avocado spring roll, 3 avocado cheese maki, 6 California Cancun.",
+  //                   price: "79.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Summer_Box_Gourmet638879992649858028.jpg",
+  //                   name: "Summer Box Gourmet 22 Pieces",
+  //                   description: "Delicious journey through beloved classics and bold new creations. This box blends our iconic recipes with three exciting, Latin-inspired innovations.\n2 Buenos Aires sushi, 3 Cancun roll, 6 cooked tuna avocado roll, 2 salmon sushi, 3 salmon Aburi roll, 6 Tulum spring roll",
+  //                   price: "109.00",
+  //                   highlighted: true,
+  //                   video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763148605/How_often_do_you_crave_SushiArt_c7lyo9.mp4'
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Tulum_Spring638879992870749183.jpg",
+  //                   name: "Tulum Spring Roll 6 Pieces",
+  //                   description: "Tulum is moment suspended in time wild coastline, whisper of palm leaves, and sense that anything is possible. This spring roll captures that spirit delicately wrapped with succulent Ebi shrimp and velvety guacamole, lifted by brightness of red onion and aromatic touch of coriander. Light, fresh, and full of life like Caribbean sunset on your plate. Shrimp, lettuce, coriander, guacamole, and red onion.",
+  //                   price: "37.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Cancun_Roll638879992923104439.jpg",
+  //                   name: "Cancun Roll 6 Pieces",
+  //                   description: "Cancun is bold, festive, and full of flavour. Where sea meets sunset, this roll captures spirit of celebration. Featuring rich salmon, creamy avocado, kick of spicy mayo, and the irresistible crunch of crispy chips. It's vibrant, sun-drenched creation made to satisfy your craving for warmth and joy. Salmon, spicy mayonnaise, white sesame seeds, avocado, and crisps.",
+  //                   price: "35.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Mexico_City_Handroll638879992983044812.jpg",
+  //                   name: "Mexico City Handroll 1 Piece",
+  //                   description: "Bubbling energy of Mexico City is captured in this handroll, made with prawn tempura, guacamole, and enhanced by onion and fresh coriander. Quick getaway under vibrant sun of capital. Shrimp tempura, red onion, guacamole, coriander.",
+  //                   price: "29.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Andes_Salad638879993104524390.jpg",
+  //                   name: "Andes Salad",
+  //                   description: "High in mountains of Latin America, quinoa has long been cherished staple. This salad pays tribute with blend of quinoa, sun-dried tomatoes, and fresh herbs refreshing pause, like crisp morning breeze in Andean peaks.\nQuinoa, Goma Ponzu Sauce, parsley, sundried tomatoes, mint, and coriander.",
+  //                   price: "37.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Omakase Handroll by Chef Gregoire Berger',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Seabream_Crudo638965488374256810.jpg",
+  //                   name: "Sea Bream Crudo",
+  //                   description: "A delicate preparation of sea bream lifted with calamansi gel and dill, with a shiso, yuzu dressing to add a perfect balance of citrus and freshness",
+  //                   price: "45.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Dynamite_Prawn_Tempura_Ha638965488351017836.jpg",
+  //                   name: "Dynamite Prawn Tempura Handroll",
+  //                   description: "Our signature dynamite shrimp reimagined crisp prawn tempura glazed with our bold dynamite sauce, paired with creamy guacamole, fresh coriander, sesame, and a touch of wasabi over delicate vinegared rice, wrapped in crisp nori.",
+  //                   price: "22.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Tuna_Kimchi_Nomoto_Handro638965488366291657.jpg",
+  //                   name: "Tuna Kimchi Nomoto Handroll",
+  //                   description: "A reimagined take on our Omakase favorite, the Tuna Kimchi Nomoto fresh tuna with togarashi heat, kimchi sesame, and kimchi ginger, accented with a touch of wasabi over delicate vinegared rice, wrapped in crisp nori.",
+  //                   price: "22.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Beef_Tartare_Handroll638965488701899476.jpg",
+  //                   name: "Beef Tartare Handroll",
+  //                   description: "Freshly prepared beef tartare with seared jalapeno, a touch of freshly crushed black pepper, and wasabi, layered over delicate vinegared rice and wrapped in crisp nori.",
+  //                   price: "32.00",
+  //                   highlighted: true,
+  //                   video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762472245/sushiartuae2_qxeaie.mp4',
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Salmon_Handroll638965488366270671.jpg",
+  //                   name: "Salmon Handroll",
+  //                   description: "Fresh salmon tartare with citrus yuzu and lemon zest, balanced with miso and a touch of wasabi, finished with spring onion and toasted sesame over delicate vinegared rice, wrapped in crisp nori.",
+  //                   price: "22.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Omakase_Handroll_Box_638965488374341831.jpg",
+  //                   name: "Omakase Handroll Box",
+  //                   description: "A curated handroll experience by Chef Gregoire Berger featuring delicate sea bream crudo and your choice of four handcrafted hand rolls, wrapped fresh in crisp nori.",
+  //                   price: "99.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Sushi Art Everyday Collection',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Little_Samurai_9pcs_638841014830527804.jpg",
+  //                   name: "Little Samurai 9 Pcs",
+  //                   description: "3 salmon avocado roll, 3 crispy kani roll and 3 prawn tempura roll.",
+  //                   price: "39.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Little_Salmon_9pcs_638841014861578942.jpg",
+  //                   name: "Little Salmon 9 Pcs",
+  //                   description: "3 Salmon avocado roll, 3 salmon maki, 3 spicy salmon spring roll",
+  //                   price: "39.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Sunny_Box_12pcs_638841014897447954.jpg",
+  //                   name: "Sunny Box 12 Pcs",
+  //                   description: "4 volcano roll, 3 prawn cucumber tempura roll, 3 surimi avocado and 2 salmon teriyaki.",
+  //                   price: "49.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Best_Of_13pcs_638841014917500703.jpg",
+  //                   name: "Best Of 13 Pcs",
+  //                   description: "4 Exotic roll, 3 salmon avocado roll, 3 crispy kani roll, 3 chicken katsu roll.",
+  //                   price: "49.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/Shrimpy_15_pcs_638841014956600016.jpg",
+  //                   name: "Shrimpy 15 Pcs",
+  //                   description: "4 Exotic roll, 6 prawn tempura roll, 3 prawn spring roll and 2 shrimp sushi.",
+  //                   price: "49.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Under 500kcal',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/2226AFE09280DEBBD1325811C59B960F",
+  //                   name: "Healthy  Salmon Platter - 12 pcs",
+  //                   description: "377 Kcal, 40.6g Carbs, 0.3g Sugar, 21.8g Protein, 13.2g Fat, 1.8g Dietary Fibers\n\n6 Healthy Naked Salmon Avocado Spring Roll, 3  Healthy Salmon Maki, 3 Healthy Salmon Sashimi",
+  //                   price: "79.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/990B25FBA2219A354AA5E5F5608C0D73",
+  //                   name: "Healthy Best Mix Platter - 15 pcs",
+  //                   description: "490 Kcal, 64.6g Carbs, 0.6g Sugar, 25.8g Protein, 12.6g Fat, 4.1g Dietary Fibers\n\n6 Healthy Tuna Avocado Roll, 6 Healthy Avocado Maki, 1 Healthy Shrimp Sushi, 1 Healthy Seabream Sushi, 1 Healthy Salmon Sushi",
+  //                   price: "99.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/934837490D631EB9B76FCFF277A9798C",
+  //                   name: "Healthy Shrimp Platter - 15 pcs",
+  //                   description: "488 Kcal, 64.6g Carbs, 0.6g Sugar, 33.3g Protein, 9.2g Fat, 0.6g Dietary Fibers\n\n3 Healthy Shrimp Sushi, 6 Healthy Shrimp Maki, 6 Healthy Tuscan Spring Roll",
+  //                   price: "99.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/0E092A195326C675D56FD20D758D28AB",
+  //                   name: "Healthy Special Mix Platter - 15 pcs",
+  //                   description: "498 Kcal, 62.4g Carbs, 0.7g Sugar, 34.9g Protein, 14.7g Fat, 1.4g Dietary Fibers\n\n3 Healthy Shrimp Sushi, 3 Healthy Seared Beef Sushi, 6 Healthy Tuna White Truffle Roll, 3 Healthy Salmon Avocado Roll",
+  //                   price: "99.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/EDF7550BD39A4D7B2730FBE52F1BA670",
+  //                   name: "Healthy Tuna Platter - 9 pcs",
+  //                   description: "267 Kcal, 29.8g Carbs, 0.2g Sugar, 21.5g Protein, 5.7g Fat, 1.9g Dietary Fibers\n\n6 Healthy Tuna Avocado Roll, 2 Healthy Tuna Sashimi, 1 Healthy Tuna Sushi",
+  //                   price: "59.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/1095B88FDCD2FCB9229E0A4E8FFA4D2A",
+  //                   name: "Healthy Veggie Platter - 12 pcs",
+  //                   description: "375 Kcal, 58.5g Carbs, 1.2g Sugar, 15.8g Protein, 7.1g Fat, 4.9g Dietary Fibers\n\n6 Healthy Cucumber Avocado Roll, 6 Healthy Maki Like Tabbouleh, Edamame",
+  //                   price: "49.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Box By You - 100% Customizable Box',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/B78554128BE75503ED2E3D808B57EB56",
+  //                   name: "Box By You For 2 (42 pieces)",
+  //                   description: "The best box made by you! Your most favorite SushiArt pieces hand picked by you. Choose from a selection of Sushi, Maki and Rolls to created your unique box of 42 pieces. 6 Sushi Rolls (3x2 pieces). 36 California Rolls (6x6 pieces )",
+  //                   price: "215.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/D38438E1027B0283EEC5144B66A5FA3F",
+  //                   name: "Box By You (18 pieces)",
+  //                   description: "The best box made by you! Your most favorite SushiArt pieces hand picked by you. Choose from a selection of Sushi, Maki and Rolls to created your unique box of 18 pieces. 6 Sushi Rolls (3x2 pieces) 12 California Rolls (2x6 pieces)",
+  //                   price: "112.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Platters',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/3B513D9E0592AC4B2A1F468DBA1CFB7C",
+  //                   name: "Salmon Classic",
+  //                   description: "10 Salmon Sushi",
+  //                   price: "82.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/A75312C9FCA5CC9EDEC4F557A6FFEF43",
+  //                   name: "Cooked 18",
+  //                   description: "6 Prawn Tempura Rolls\n6 Crispy Kani Rolls\n6 Chicken Katsu Rolls",
+  //                   price: "102.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/9C09344B7703ECC94C6847478D85BC60",
+  //                   name: "Classic Mix",
+  //                   description: "3 Salmon Sushi\n2 Tuna Sushi \n6 Salmon Avocado Rolls \n6 Tuna Maki",
+  //                   price: "102.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/4F540886BB6E4E0B658FCC9C3976B9C2",
+  //                   name: "Salmon Lovers",
+  //                   description: "6 Salmon Avocado Spring Rolls\n6 Salmon Avocado Rolls\n6 Salmon Sushi",
+  //                   price: "102.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/6B422E582DB648A443618C0F16F865E0",
+  //                   name: "Super Salmon",
+  //                   description: "6 Salmon Avocado Rolls 6 Salmon Avocado Spring Rolls 6 Salmon Roll Maki 6 Salmon Maki",
+  //                   price: "112.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/C500DE866A0CE891C7A762960784DB25",
+  //                   name: "California Dream",
+  //                   description: "6 Salmon Avocado Rolls 6 Crispy Kani Rolls 6 Prawn Tempura Rolls 6 Chicken Katsu Rolls",
+  //                   price: "112.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/8E1FC109AEC12EF85D1B6F3FCA7597CC",
+  //                   name: "Sunset",
+  //                   description: "5 Salmon Sashimi\n6 Prawn Tempura Rolls\n3 Salmon Sushi\n2 Salmon Teriyaki Sushi\n2 Tuna Sushi",
+  //                   price: "122.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/7CC5257E2E11B8EF7FB6190B6108BF6A",
+  //                   name: "Box For 2 Classic (42pcs)",
+  //                   description: "2 Tuna Sushi 2 Salmon Sushi 2 Teriyaki Salmon Sushi 6 Salmon Maki 6 Salmon Roll Maki 6 Salmon Avocado Rolls 6 Chicken Katsu Rolls 6 Salmon Spring Rolls 6 Cooked Tuna Avocado Spring Rolls",
+  //                   price: "205.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/A0753653FA7A24C246E2DA12AF16FE9A",
+  //                   name: "Box For 2 Deluxe (44pcs)",
+  //                   description: "2 Tuna Sushi\n2 Salmon Sushi\n2 Teriyaki Salmon Sushi\n6 Salmon Roll Maki\n6 Salmon Avocado Rolls\n6 Crispy Kani Rolls\n6 Salmon Tataki Spring Rolls\n6 Prawn Spring Rolls\n8 Rock N Roll Signature Rolls",
+  //                   price: "255.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/18723EC9039BDC79E3D73AFAEDE12400",
+  //                   name: "Cooked for Two",
+  //                   description: "6 Prawn Tempura Rolls\n6 Surimi Avocado Rolls\n6 Chicken Katsu Rolls\n6 Salmon Aburi Rolls\n6 Cooked Tuna Avocado Rolls\n8 Dragon Signature Rolls\n3 Prawn Sushi\n3 Seared Beef  Sushi",
+  //                   price: "245.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/950AF430CDED3EC9A497F9BAE56C4578",
+  //                   name: "Blackbox Classic (58pcs)",
+  //                   description: "2 Prawn Sushi\n4 Tuna Sushi\n4 Teriyaki Salmon Sushi\n6 Salmon Sushi\n6 Salmon Maki\n6 Salmon Roll Maki \n6 Salmon Avocado Rolls\n6 Cooked Tuna Avocado Rolls\n6 Chicken Katsu Rolls\n6 Salmon Avocado Spring Rolls\n6 Salmon Tataki Spring Rolls",
+  //                   price: "325.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/A7E0FA8160D959663AB1BC0B34C502B6",
+  //                   name: "Blackbox Deluxe (58 pieces)",
+  //                   description: "2 Tuna Sushi 2 Seabream Jalapeno Sushi 2 Prawn Sushi 4 Salmon Sushi 4 Teriyaki Salmon Sushi 6 Salmon Roll Maki 6 Pacific Rolls 6 Citrus Salmon Rolls 6 6 Crispy Kani Rolls 6 Tuscan Spring Rolls 6 Salmon Tataki Spring Rolls 8 Rock N Roll Signature Rolls",
+  //                   price: "425.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Signature Boxes',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/412F3F7DC188F207B8F669A6C6903106",
+  //                   name: "Signature Box",
+  //                   description: "4 Volcano Rolls 4 Fire Rolls 4 Dragon Rolls 4 Rainbow Rolls 4 Rock & Roll",
+  //                   price: "155.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/6BC0CC0F23B193C4336D58BC39D765D2",
+  //                   name: "Signature Box Deluxe (46pcs) - NEW",
+  //                   description: "4 Volcano Roll 4 Fire Roll 4 Dragon Roll 4 Exotic Roll 4 Rock N Roll 4 Crazy Shrimp Tempura Roll 6 Salmon Avocado Roll 6 Spicy Tuna Maki 4 Salmon Sushi 4 Tuna Sushi 2 Salmon Teriyaki Sushi",
+  //                   price: "285.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Starters',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/B90FE83AEA432E7F16E421CE342F43CE",
+  //                   name: "Edamame",
+  //                   description: "Rock Salt",
+  //                   price: "23.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/A97838071603852FCAE4F7CCFE0AE3C5",
+  //                   name: "Spicy Edamame",
+  //                   description: "Chili Garlic Sauce",
+  //                   price: "25.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Small Plates',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/5FD8B3355017EDD2C0F0671877947FC0",
+  //                   name: "Yusu Miso Marinated Salmon",
+  //                   description: "Salmon Marinated in Yuzu Miso Sauce, Sesame",
+  //                   price: "61.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/44F3CD724D81F42BE8699AE85AE897EB",
+  //                   name: "Salmon Tartare",
+  //                   description: "Diced Salmon, Avocado, Japanese Mayonnaise, Salmon Roe, Dill, Seaweed",
+  //                   price: "71.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/CBFEEC8364560B1D0F8EB744A2F278DB",
+  //                   name: "Marinated Tartare",
+  //                   description: "Diced Salmon & Tuna, Cucumber, Leek, Mint, Coriander, Marinade",
+  //                   price: "65.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/6BFE5C3600681D3D1508D0EA9D01A609",
+  //                   name: "Salmon Ceviche",
+  //                   description: "Salmon, Lime Juice, Coriander, Cucumber, Red Onion, Chili",
+  //                   price: "62.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/951EE67DA929EA815453C2682AE65E5E",
+  //                   name: "Seabream Ceviche",
+  //                   description: "Seabream, Lime Juice, Coriander, Cucumber, Red Onion, Chili",
+  //                   price: "78.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Nigiri - 1 piece',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/FECC26F86D191C35F5CA7C93488CD1A5",
+  //                   name: "Salmon",
+  //                   description: "Salmon, butter, spices, lemon.",
+  //                   price: "12.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/F3036C2EFB52627B48F50EEF3AF51D9E",
+  //                   name: "Salmon Teriyaki",
+  //                   description: "Seared Salmon, Teriyaki Sauce, Sesame",
+  //                   price: "13.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/D53CF87690D3D6E48532DA8E84EA1C6C",
+  //                   name: "Tuna",
+  //                   description: "Succulent and flavorful tuna",
+  //                   price: "14.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/316AE478C1DD0019D56197D6E9E774FF",
+  //                   name: "Salmon Roe",
+  //                   description: "Salmon eggs.",
+  //                   price: "38.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/84F5D8C96CD69A19AD624CC9C34830D1",
+  //                   name: "Seabream Jalapeno",
+  //                   description: "Yuzu Miso Sauce, Fresh Chili, Coriander",
+  //                   price: "14.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/1E88A0F915AC647B080570ECFA3DB5E7",
+  //                   name: "Shrimp",
+  //                   description: "Yuzu Miso Sauce, Kumquat, Coriander",
+  //                   price: "13.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/BA3FD84C817C7FA0727745DE7531614E",
+  //                   name: "Seared Beef",
+  //                   description: "Asparagus, Mild Chili, Goma Ponzu Sauce",
+  //                   price: "18.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/A079ACBEE84A3CCBA8A47467AF6530BE",
+  //                   name: "Kani Crab",
+  //                   description: "Crab meat known as Kani.",
+  //                   price: "12.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/AE2CE2719C2819AE5FE2BD077522D20D",
+  //                   name: "Seared Scallops",
+  //                   description: "Miso Yuzu Sauce",
+  //                   price: "16.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/20D6D4CCC15A0A4D6EFB1D8810F3BFD3",
+  //                   name: "Japanese Eel",
+  //                   description: "Teriyaki Sauce, Sesame",
+  //                   price: "20.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Signature Rolls - 8 pieces',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/96572B6F1E63F925255F8E718800FBB9",
+  //                   name: "Volcano Roll",
+  //                   description: "Topping: Surimi, Salmon, Spicy Mayonnaise, Sweet Chili Sauce, Masago, Chives, Coriander, Sesame\n\nInside: Salmon, Avocado",
+  //                   price: "59.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/D1891A5BEECC4BC0C6AE0EA31D87F01D",
+  //                   name: "Rock N Roll",
+  //                   description: "Topping: Glazed Salmon, Teriyaki Sauce, Chili, Crisps, Chives, Sesame\n\nInside: Tuna, Asparagus, Avocado, Masago, Spicy Mayonnaise",
+  //                   price: "59.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/60DC58A7BC73C060B443BFB19814B50A",
+  //                   name: "Fire Roll",
+  //                   description: "Topping: Tuna, Spicy Mayonnaise, Chives, Sesame, Spring Onion\n\nInside: Prawn Tempura, Avocado, Goma Ponzu Mayonnaise",
+  //                   price: "59.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/28_Rainbow_Roll638806697994723578.jpg",
+  //                   name: "Rainbow roll",
+  //                   description: "Topping: Salmon, Tuna, Avocado, Chili, Ponzu Sauce, Chives, Sesame,\n\nInside: Crab Meat, Avocado, Goma Ponzu Mayonnaise",
+  //                   price: "59.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/6A4E76641CB16BCE5E10A42BE35BE858",
+  //                   name: "Dragon Roll",
+  //                   description: "Topping: Avocado, Salmon Roe, Chili, Teriyaki Mayonnaise, Chives, Sesame\n\nInside: Prawn Tempura, Asparagus, Goma Ponzu Mayonnaise",
+  //                   price: "59.00",
+  //                   highlighted: true,
+  //                   video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763148449/Where_every_roll_tells_a_story_signaturebox_sushirolls_ybkux3.mp4',
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/B867F841825F5095C2D0477951D0047B",
+  //                   name: "The Exotic Roll",
+  //                   description: "Shrimp Tempura, Avocado, Coriander, Spicy Mayonnaise, Mango, Chives",
+  //                   price: "59.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/2A9544F1A715397D9B7104BC8ED9D91A",
+  //                   name: "Crazy Prawn Tempura",
+  //                   description: "Shrimp Tempura, Kani, Avocado, Tempura Flakes, Spicy Mayonnaise",
+  //                   price: "59.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/8D10228F05BD4FD4CDAC026A6BFD05FF",
+  //                   name: "The Black Dragon",
+  //                   description: "Shrimp Tempura, Eel, Avocado, Teriyaki Mayonnaise, Sesame",
+  //                   price: "59.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Maki - 6 pieces',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/D41FEF0DD5E2C2BB1CED6EE1B0937E20",
+  //                   name: "Tuna",
+  //                   description: "Succulent and flavorful tuna",
+  //                   price: "34.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/B353F52F29100435446CC143E6208526",
+  //                   name: "Spicy Tuna",
+  //                   description: "Spicy Mayonnaise, Chives",
+  //                   price: "36.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/4E23C077B56A1FE64465E04D11D5F84B",
+  //                   name: "Salmon",
+  //                   description: "Salmon, butter, spices, lemon.",
+  //                   price: "32.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/3347E2A9A4C9BC62F661978F86676FBE",
+  //                   name: "Salmon Roll",
+  //                   description: "Rice, Cheese Wrapped in Salmon",
+  //                   price: "38.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/BE0AD9E9A05846D4140082910951BA72",
+  //                   name: "Avocado",
+  //                   description: "Ripe avocado and packed with essential nutrients.",
+  //                   price: "21.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/C636337B86ED24C4341C2580979215BD",
+  //                   name: "Avocado & Cheese",
+  //                   description: "Dish with avocado and cheese.",
+  //                   price: "24.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/4872D51605A3E782BFA02AB22A668606",
+  //                   name: "Cucumber Sesame",
+  //                   description: "Cucumber with sesame seeds.",
+  //                   price: "20.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/2FC8B2101194D4CB4E9D16507CBFAC8A",
+  //                   name: "Eel Avocado",
+  //                   description: "Eel and avocado sushi.",
+  //                   price: "42.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Rolls - 6 pieces',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/0A749B2B282B773F295162DCF570FB41",
+  //                   name: "Veggie",
+  //                   description: "Cucumber, Chioggia Beetroot, Rocket, Carrot, Quinoa, Avocado, Olive Cream, Ponzu Sauce, Sesame Oil",
+  //                   price: "31.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/4D93E578AB3669B1CF9AD2A42E824ACD",
+  //                   name: "Cucumber Avocado",
+  //                   description: "Sesame",
+  //                   price: "26.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/BA77F9F9D0C1CDA0C240B00C038B4FCC",
+  //                   name: "Salmon and Avocado",
+  //                   description: "Sesame",
+  //                   price: "35.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/72C37AAE6337E392BBEF0293C3F050DB",
+  //                   name: "Tuna and Avocado",
+  //                   description: "Sesame",
+  //                   price: "37.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/965FA980F380693516097BA64218717A",
+  //                   name: "Dynamite",
+  //                   description: "Salmon, Spicy Mayonnaise, Masago, Cucumber, Sesame",
+  //                   price: "37.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/A8BD950ADA4548B8AB24AF1AB560CF1D",
+  //                   name: "Pacific",
+  //                   description: "Salmon Tartare, Spicy Mayonnaise, Cheese, Avocado, Sesame",
+  //                   price: "37.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/CB78E977D7CEE336330C639A5F1D1E3C",
+  //                   name: "Chicken Katsu",
+  //                   description: "Fried Chicken, Carrot, Rocket, Chives, Mayonnaise, Tonkatsu Sauce, Sesame",
+  //                   price: "37.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/393D657934EEFBC0C66A6FBADDE35FCD",
+  //                   name: "Cooked Tuna Avocado",
+  //                   description: "Sesame",
+  //                   price: "35.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/269EB0063A59D83A0542AA50E0CF7AAA",
+  //                   name: "Citrus Salmon",
+  //                   description: "Salmon, Avocado, Lime Mayonnaise, Sesame, Crusty Crouton, Chives, Masago",
+  //                   price: "40.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/5FCEBA95EB630C57A531F8F84BE04FAE",
+  //                   name: "Shrimp Tempura",
+  //                   description: "Shrimp Tempura, Avocado, Spicy Mayonnaise, Sesame",
+  //                   price: "42.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/1F630D18F117306A049C2E2DA573955C",
+  //                   name: "Tuna & White Truffle",
+  //                   description: "Tuna Tartare, Truffle Infused Mayonnaise, Chives",
+  //                   price: "42.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/E7C553BB7FE5B5E14745F24A55181978",
+  //                   name: "Crab Avocado",
+  //                   description: "Crab Meat, Lime Mayonnaise, Masago",
+  //                   price: "44.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/8153EC27BDA2B33A6CDC8F5F7A9BF796",
+  //                   name: "Surimi Avocado",
+  //                   description: "Masago",
+  //                   price: "36.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/AA43A5EABDC891FB269DDB3BB9733427",
+  //                   name: "Crispy Kani",
+  //                   description: "Kani, Avocado, Tempura Flakes, Spicy Mayonnaise, Chives",
+  //                   price: "42.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/9725F21F5676F6822EC0408B123F4C52",
+  //                   name: "Salmon Aburi",
+  //                   description: "Seared Salmon, Salmon, Cheese, Chives, 7 Spices",
+  //                   price: "42.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/F25A9DD7542CD490EC8673B492ED6B97",
+  //                   name: "Prawn Cucumber Tempura",
+  //                   description: "Prawn Tempura, Cucumber, Spicy Mayonnaise, Sesame",
+  //                   price: "38.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Sashimi & Tataki',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/7E50D37CFB9EAE73B787FBB52B75D56C",
+  //                   name: "Salmon Sashimi 5pcs",
+  //                   description: "Sashimi-grade salmon, wasabi, pickled ginger and soy sauce",
+  //                   price: "46.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/41EB702455344CD59C2E45DFAD6957B8",
+  //                   name: "Tuna Sashimi 5pcs",
+  //                   description: "Five pieces of raw tuna, Soy sauce,Wasabi, Pickled ginger",
+  //                   price: "55.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/4826012B188A1A3B95A7980CD37019A6",
+  //                   name: "Seabream Sashimi 5pcs",
+  //                   description: "Sea bream fillet, Wasabi, Pickled ginger, Soy sauce and Sesame seeds",
+  //                   price: "46.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/220AE700DDE28016D5ADBF40A601DFC5",
+  //                   name: "Shrimp Sashimi 5 pcs",
+  //                   description: "Shrimp, rice vinegar, sugar, salt, wasabi paste, pickled ginger, nori, and soy sauce.",
+  //                   price: "39.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/5E38B70EF209DA0C2A345E177EE6668F",
+  //                   name: "Assortment 15 pcs",
+  //                   description: "Salmon, Tuna, Seabream, Prawn",
+  //                   price: "125.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/E971F95F37A9F87FE6C40F7E87D502B3",
+  //                   name: "Salmon Tataki 10 pcs",
+  //                   description: "Seared Salmon, Chili, Spring Onion, Yuzu Miso Sauce, Coriander, Chives",
+  //                   price: "90.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/710D49692500C212C356CD4BCAD42E8B",
+  //                   name: "Tuna Tataki 10 pcs",
+  //                   description: "Seared Tuna, Chili, Chives, Yuzu Miso Sauce, Crisps",
+  //                   price: "99.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/E2C78B8C21624A63867295D8BABF74FA",
+  //                   name: "New Style Beef Tataki 10 pcs",
+  //                   description: "Finely Sliced Seared Beef, Asparagus, Chili, Goma Ponzu Mayonnaise, Chives",
+  //                   price: "99.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Spring Rolls - 6 pieces',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/5DA10370F55BB5F9AE40A14587DF7B4D",
+  //                   name: "Salmon Avocado",
+  //                   description: "Mint, Coriander, Lettuce",
+  //                   price: "39.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/CD755AA6C17E5E6B6F449601026B26D3",
+  //                   name: "Spicy Salmon",
+  //                   description: "Salmon, Avocado, Masago, Spicy Mayonnaise",
+  //                   price: "35.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/DA709AB6D47A17B29505753A5E9F74F5",
+  //                   name: "Tuna Avocado",
+  //                   description: "Mint, Coriander, Lettuce",
+  //                   price: "39.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/7DEE3BBD3017DF44D313A1180F42AE84",
+  //                   name: "Cooked Tuna and Avocado",
+  //                   description: "Lettuce",
+  //                   price: "35.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/8AC286CAF11916304F3202241C2E0802",
+  //                   name: "Salmon Tataki",
+  //                   description: "Seared Salmon, Radicchio, Chives, Sesame Oil Mayonnaise, Coriander, Sesame",
+  //                   price: "39.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/65126F659A4A5CC1931C3393CFAA2C34",
+  //                   name: "Shrimp",
+  //                   description: "Avocado, Mint, Coriander, Lettuce",
+  //                   price: "41.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/CA3DB657941350AEE45C3826ED56C097",
+  //                   name: "Tuscan",
+  //                   description: "Shrimp, Pine Nuts, Mesclun Salad, Truffle Infused Mayonnaise",
+  //                   price: "39.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/826BA416560F1BB4210581FE853FC3B7",
+  //                   name: "Avocado and Cheese",
+  //                   description: "Lettuce",
+  //                   price: "24.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/036228DEBDD12F69239119D9A4AC8E3C",
+  //                   name: "Fried Chicken Avocado",
+  //                   description: "Japanese Mayonnaise, Lettuce",
+  //                   price: "32.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Bowls',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/E29F961D912A2E4AB68A0A400367F0AD",
+  //                   name: "Salmon & Avocado Chirashi",
+  //                   description: "Salmon & Avocado on a Bowl of Sushi Rice, Sesame",
+  //                   price: "89.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/71AD8E3521BD045A37131D3CF442DB46",
+  //                   name: "Marinated Chirashi",
+  //                   description: "Diced Salmon & Tuna, Cucumber, Leek, Mint, Coriander & Marinade on a Bowl of Sushi Rice, Sesame",
+  //                   price: "89.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/742275373B5DE8B5BE26234BAFF029BD",
+  //                   name: "Veggie Poke Bowl",
+  //                   description: "Avocado, Edamame, Crisp Vegetables, Rocket, Coriander, Mint, Chives, Lemon Juice, Sesame",
+  //                   price: "58.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/16CA04964DF1569358883674C6F752CA",
+  //                   name: "Teriyaki Salmon Poke Bowl",
+  //                   description: "Salmon, Avocado, Cabbage Salad, Soy Sauce, Teriyaki Sauce, Furikake, Chives, Sesame",
+  //                   price: "75.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/9B879F9CD7811DFEA5E23087C9DE10DE",
+  //                   name: "Salmon Aburi Poke Bowl",
+  //                   description: "Seared Salmon With Teriyaki Sauce, Avocado, Edamame, Crisp Vegetables, Rocket, 7 spices, Sesame",
+  //                   price: "75.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/0DBB84568C92758E69829249AF43275B",
+  //                   name: "Spicy Tuna Poke Bowl",
+  //                   description: "Tuna, Avocado, Cabbage Salad, Masago, Spicy Mayonnaise, Coriander, Chives, Sesame",
+  //                   price: "75.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/50B3EA2DF005EF789B128D7C383DE87F",
+  //                   name: "Beef Poke Bowl",
+  //                   description: "Beef, Teriyaki Sauce, Avocado, Edamame, Crisp Vegetables, Rocket, Fried Onions, Coriander, Chives, Lemon Juice, Sesame",
+  //                   price: "98.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/025B3AAF6E687F80CC7B1F125FE8F879",
+  //                   name: "Eel Donburi",
+  //                   description: "Japanese rice bowl topped with eel.",
+  //                   price: "128.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Soups',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/5EBFD67B162ECF46032F7D00FB9BFB9B",
+  //                   name: "Miso Soup",
+  //                   description: "Tofu, Dried Wakame, Chives",
+  //                   price: "16.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/9920B774C5DCECCB08DD81845C74AA62",
+  //                   name: "Spicy Miso Soup",
+  //                   description: "Tofu, Dried Wakame, Chives, Togarashi",
+  //                   price: "17.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Salads',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/226F5C6E6CADA7DDBAD71E989FF7A34E",
+  //                   name: "Midori Salad",
+  //                   description: "Baby Spinach, Cucumber, Snow Peas, Edamame, Fennel, Avocado, Chives & Sesame with Goma dressing",
+  //                   price: "42.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/FE18B690513A0872B30523EAB4DA93C7",
+  //                   name: "Crazy Salad",
+  //                   description: "Shredded Crab, Cucumber, Carrot, Japanese Mayonnaise, Tempura Flakes, Tobiko",
+  //                   price: "56.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/6B4A75E60540E21A640933B708AD686C",
+  //                   name: "Sashimi Salad",
+  //                   description: "Salmon, Seabream, Tuna, Daikon, Carrot, Rocket, Baby Spinach, Cucumber, Red Onion & Pomegranate with our Signature Sashimi Sauce",
+  //                   price: "74.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/925AEF150C1206A636FEB620A147FBB5",
+  //                   name: "Six Stars Shrimp Salad",
+  //                   description: "Shrimp, Daikon, Carrot, Baby Spinach, Rocket, Cucumber, Onion, Coriander, Caramelized Walnuts, Six Stars Sauce",
+  //                   price: "66.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/9AF1076340DA161752028925B1F74E01",
+  //                   name: "Crispy Spicy Salmon",
+  //                   description: "Fresh Salmon, Tempura Flakes, Spicy Sauce, Chives, Masago",
+  //                   price: "67.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Sides',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/56A599CF7B93B06AB3B931DCF08CC052",
+  //                   name: "Plain Rice",
+  //                   description: "Perfectly cooked plain rice, fluffy and versatile",
+  //                   price: "12.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/CB0316E7F2475EA4270B350D89A65413",
+  //                   name: "Sushi Rice",
+  //                   description: "Sesame",
+  //                   price: "12.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/08E0C66977D74B1EFE1FFADA887A6D10",
+  //                   name: "Vegetable Noodles",
+  //                   description: "Udon Noodles with Cabbage, Carrot, Zucchini, Mushroom and Chives",
+  //                   price: "30.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/7E8262BCB8B1564CD4A58CAC8591D086",
+  //                   name: "Sauteed Vegetables",
+  //                   description: "Blend of crisp and tender veggies, expertly seasoned and cooked to perfection",
+  //                   price: "25.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/74854A6D384FEAFFC782A6702AEB7758",
+  //                   name: "Cabbage Salad",
+  //                   description: "A fresh and crunchy cabbage salad.",
+  //                   price: "12.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/1CB2DD32D0179CD98B4F8D141AA7D9A3",
+  //                   name: "Coleslaw Wasabi Salad",
+  //                   description: "Sesame",
+  //                   price: "17.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/E79892DAE9D8C0DAEA1580BF2192F7EC",
+  //                   name: "Carrot Salad with Citrus Dressing",
+  //                   description: "A carrot salad with citrus dressing.",
+  //                   price: "17.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/39BBFF19D8155D1F35FC2E5479FD48ED",
+  //                   name: "Baby Spinach Salad",
+  //                   description: "Sesame Sauce",
+  //                   price: "24.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/13B6EFD42A7FBC422198F261C8334F2C",
+  //                   name: "Kani Salad Small",
+  //                   description: "Shredded Crab, Cucumber, Carrots, Japanese Mayonnaise & Tobiko",
+  //                   price: "36.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/D7C75689952F88D0911300CBD0F411AA",
+  //                   name: "Seaweed Salad",
+  //                   description: "Sesame",
+  //                   price: "34.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Gathering Boxes',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/8D5CF03412C7A0C42109BC484BE58164",
+  //                   name: "Family Box Classic (108 pcs)",
+  //                   description: "Includes (8) rainbow roll, (8) volcano roll, (8) rock and roll, (6) cooked tuna roll, (6) salmon avocado roll, (6) salmon maki roll, (6) crispy kani roll, (6) crab avocado roll, (6) prawn tempura roll, (6) chicken katsu roll, (6) salmon avocado spring roll, (6) salmon tataki spring roll, (6) cucumber maki, (6) chicken avocado spring roll, (10) salmon sashimi and (8) salmon sushi.",
+  //                   price: "549.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/E65DF18F1A67E0817AE0B2C11DDB3EAB",
+  //                   name: "Family Box Gourmet (110 pcs)",
+  //                   description: "(12) Fresh salmon roll, (12) surimi avocado roll, (12) tuna avocado roll, (12) cucumber and avocado roll, (12) salmon avocado roll, (12) tuna maki, (12) salmon maki, (8) salmon sushi, (8) tuna sushi, (10) salmon sashimi",
+  //                   price: "599.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/52DB38D900DF59132DD87AEA74F0A369",
+  //                   name: "Family Box Deluxe (130 pcs)",
+  //                   description: "(8) Rock and roll, (8) volcano roll, (8) dragon roll, (12) salmon aburi roll, (6) chicken katsu roll, (12) crispy kani roll, (6) crab avocado roll, (12) cucumber cheese roll, (6) salmon maki, (6) salmon avocado roll, (6) prawn tempura roll, (4) salmon sushi, (4) tuna sushi, (3) salmon teriyaki sushi, (3) tuna teriyaki sushi, (6) prawn sushi, (10) tuna sashimi, (10) salmon sashimi.",
+  //                   price: "749.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Desserts',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/41AAC789114547EB8CD4EFCD4938DCAC",
+  //                   name: "Yuzu Choux",
+  //                   description: "A delightful and refreshing treat that combines the light and airy choux pastry with the bright and citrusy flavor of yuzu.",
+  //                   price: "38.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/0483363619928DB97C59048EB435754E",
+  //                   name: "Matcha Cheesecake",
+  //                   description: "A Japanese-inspired dessert that combines the creaminess of cheesecake with the earthy and slightly bitter flavor of matcha green tea",
+  //                   price: "44.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/70A9FC004976F1FA68053C611073EA67",
+  //                   name: "Mochi",
+  //                   description: "Glutinous rice flour, Water, Sugar and Sesame seeds",
+  //                   price: "36.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/D69B62512566714E165FB4B9204D48EF",
+  //                   name: "Fresh Mango",
+  //                   description: "Juicy and sweet mango fruit.",
+  //                   price: "21.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/BF4EFE12C996A6107657EE92116BB1FC",
+  //                   name: "Fresh Pineapple",
+  //                   description: "Pineapple, sugar, Water",
+  //                   price: "20.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //           {
+  //             name: 'Drinks',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/D01F34E980285438568F4E33ACD8107F",
+  //                   name: "Pepsi",
+  //                   description: "Carbonated soft drink",
+  //                   price: "11.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/77FF5638505E309D15A2B0E31F48A089",
+  //                   name: "Pepsi Diet",
+  //                   description: "Carbonated soft drink with zero sugar and zero calories",
+  //                   price: "11.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/4FFE09BD66BBAF217DD69C837BC84297",
+  //                   name: "7Up",
+  //                   description: "Non-caffeinated soft drink.",
+  //                   price: "11.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/B00BE94CE19F723266DFF838757343E7",
+  //                   name: "Diet 7Up",
+  //                   description: "Soft Drink",
+  //                   price: "11.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/EEE21EDF008C0A6C41E1897F90759085",
+  //                   name: "Imported Mineral Water Small",
+  //                   description: "Bottled mineral water, refreshing.",
+  //                   price: "15.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/1F8EB9A7A8FB345E9419D30D715D947A",
+  //                   name: "Imported Mineral Water Large",
+  //                   description: "Mineral Water",
+  //                   price: "22.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/CB246E8380EB34851FC05A78A09354F0",
+  //                   name: "Local Mineral Water Small",
+  //                   description: "Mineral Water",
+  //                   price: "9.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/EF06E513214E3357A2415EAB35904592",
+  //                   name: "Sparkling Water Large",
+  //                   description: "Refreshing carbonated water",
+  //                   price: "24.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/593E6BD380121FCBF5609EDE26EDC0F4",
+  //                   name: "Coconut Water",
+  //                   description: "330ml",
+  //                   price: "36.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/E3CE32D61AEA6A8FC666E0AD4A2F0BB2",
+  //                   name: "Fresh Mango Juice",
+  //                   description: "Made from the freshest, ripest mangos",
+  //                   price: "19.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/B6DE9FF0FF0373A65C7B2F90BA748807",
+  //                   name: "Fresh Orange Juice",
+  //                   description: "Made with freshly squeezed oranges, great source of vitamin c",
+  //                   price: "19.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/D08CA3D43A246231E476F70F4AC8C037",
+  //                   name: "Fresh Watermelon Juice",
+  //                   description: "Made from freshly squeezed watermelon. It is a natural source of vitamins and minerals",
+  //                   price: "24.00",
+  //                 },
+  //                 {
+  //                   image: "https://images.deliveryhero.io/image/talabat/MenuItems/B8385D7EF1076C9AE2B997BA24DA0D0C",
+  //                   name: "Organic Apple & Ginger",
+  //                   description: "Refreshing organic apple and ginger drink.",
+  //                   price: "25.00",
+  //                 },
+  //               ]
+  //             }
+  //           },
+  //         ]
+  //       }
+  //     }
+  //   }
+  // },
   {
-    name: 'Sushiart',
-    country: 'UAE',
-    city: 'Abu Dhabi',
-    address: 'The Galleria Al Maryah Island Hamouda Bin Ali Al Dhaheri Street',
-    latitude: 24.5010275,
-    longitude: 54.3902701,
-    placeId: 'ChIJgWk47lRmXj4RhGTNlpyfU-Y',
-    menu: {
-      create: {
-        categories: {
-          create: [
-            {
-              name: 'Summer Recipes',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Summer_Box_of_the_Moment638879992576969735.jpg",
-                    name: "Sushi Box Of The Moment 17 Pieces",
-                    description: "Our sushi box of the moment bursts with sunny flavours, making a vibrant stop in Latin America beautifully paired with our all-time favorites.\n2 salmon sushi, 3 California chicken curry, 3 cooked tuna avocado spring roll, 3 avocado cheese maki, 6 California Cancun.",
-                    price: "79.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Summer_Box_Gourmet638879992649858028.jpg",
-                    name: "Summer Box Gourmet 22 Pieces",
-                    description: "Delicious journey through beloved classics and bold new creations. This box blends our iconic recipes with three exciting, Latin-inspired innovations.\n2 Buenos Aires sushi, 3 Cancun roll, 6 cooked tuna avocado roll, 2 salmon sushi, 3 salmon Aburi roll, 6 Tulum spring roll",
-                    price: "109.00",
-                    highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763148605/How_often_do_you_crave_SushiArt_c7lyo9.mp4'
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Tulum_Spring638879992870749183.jpg",
-                    name: "Tulum Spring Roll 6 Pieces",
-                    description: "Tulum is moment suspended in time wild coastline, whisper of palm leaves, and sense that anything is possible. This spring roll captures that spirit delicately wrapped with succulent Ebi shrimp and velvety guacamole, lifted by brightness of red onion and aromatic touch of coriander. Light, fresh, and full of life like Caribbean sunset on your plate. Shrimp, lettuce, coriander, guacamole, and red onion.",
-                    price: "37.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Cancun_Roll638879992923104439.jpg",
-                    name: "Cancun Roll 6 Pieces",
-                    description: "Cancun is bold, festive, and full of flavour. Where sea meets sunset, this roll captures spirit of celebration. Featuring rich salmon, creamy avocado, kick of spicy mayo, and the irresistible crunch of crispy chips. It's vibrant, sun-drenched creation made to satisfy your craving for warmth and joy. Salmon, spicy mayonnaise, white sesame seeds, avocado, and crisps.",
-                    price: "35.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Mexico_City_Handroll638879992983044812.jpg",
-                    name: "Mexico City Handroll 1 Piece",
-                    description: "Bubbling energy of Mexico City is captured in this handroll, made with prawn tempura, guacamole, and enhanced by onion and fresh coriander. Quick getaway under vibrant sun of capital. Shrimp tempura, red onion, guacamole, coriander.",
-                    price: "29.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Andes_Salad638879993104524390.jpg",
-                    name: "Andes Salad",
-                    description: "High in mountains of Latin America, quinoa has long been cherished staple. This salad pays tribute with blend of quinoa, sun-dried tomatoes, and fresh herbs refreshing pause, like crisp morning breeze in Andean peaks.\nQuinoa, Goma Ponzu Sauce, parsley, sundried tomatoes, mint, and coriander.",
-                    price: "37.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Omakase Handroll by Chef Gregoire Berger',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Seabream_Crudo638965488374256810.jpg",
-                    name: "Sea Bream Crudo",
-                    description: "A delicate preparation of sea bream lifted with calamansi gel and dill, with a shiso, yuzu dressing to add a perfect balance of citrus and freshness",
-                    price: "45.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Dynamite_Prawn_Tempura_Ha638965488351017836.jpg",
-                    name: "Dynamite Prawn Tempura Handroll",
-                    description: "Our signature dynamite shrimp reimagined crisp prawn tempura glazed with our bold dynamite sauce, paired with creamy guacamole, fresh coriander, sesame, and a touch of wasabi over delicate vinegared rice, wrapped in crisp nori.",
-                    price: "22.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Tuna_Kimchi_Nomoto_Handro638965488366291657.jpg",
-                    name: "Tuna Kimchi Nomoto Handroll",
-                    description: "A reimagined take on our Omakase favorite, the Tuna Kimchi Nomoto fresh tuna with togarashi heat, kimchi sesame, and kimchi ginger, accented with a touch of wasabi over delicate vinegared rice, wrapped in crisp nori.",
-                    price: "22.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Beef_Tartare_Handroll638965488701899476.jpg",
-                    name: "Beef Tartare Handroll",
-                    description: "Freshly prepared beef tartare with seared jalapeno, a touch of freshly crushed black pepper, and wasabi, layered over delicate vinegared rice and wrapped in crisp nori.",
-                    price: "32.00",
-                    highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762472245/sushiartuae2_qxeaie.mp4',
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Salmon_Handroll638965488366270671.jpg",
-                    name: "Salmon Handroll",
-                    description: "Fresh salmon tartare with citrus yuzu and lemon zest, balanced with miso and a touch of wasabi, finished with spring onion and toasted sesame over delicate vinegared rice, wrapped in crisp nori.",
-                    price: "22.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Omakase_Handroll_Box_638965488374341831.jpg",
-                    name: "Omakase Handroll Box",
-                    description: "A curated handroll experience by Chef Gregoire Berger featuring delicate sea bream crudo and your choice of four handcrafted hand rolls, wrapped fresh in crisp nori.",
-                    price: "99.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Sushi Art Everyday Collection',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Little_Samurai_9pcs_638841014830527804.jpg",
-                    name: "Little Samurai 9 Pcs",
-                    description: "3 salmon avocado roll, 3 crispy kani roll and 3 prawn tempura roll.",
-                    price: "39.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Little_Salmon_9pcs_638841014861578942.jpg",
-                    name: "Little Salmon 9 Pcs",
-                    description: "3 Salmon avocado roll, 3 salmon maki, 3 spicy salmon spring roll",
-                    price: "39.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Sunny_Box_12pcs_638841014897447954.jpg",
-                    name: "Sunny Box 12 Pcs",
-                    description: "4 volcano roll, 3 prawn cucumber tempura roll, 3 surimi avocado and 2 salmon teriyaki.",
-                    price: "49.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Best_Of_13pcs_638841014917500703.jpg",
-                    name: "Best Of 13 Pcs",
-                    description: "4 Exotic roll, 3 salmon avocado roll, 3 crispy kani roll, 3 chicken katsu roll.",
-                    price: "49.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/Shrimpy_15_pcs_638841014956600016.jpg",
-                    name: "Shrimpy 15 Pcs",
-                    description: "4 Exotic roll, 6 prawn tempura roll, 3 prawn spring roll and 2 shrimp sushi.",
-                    price: "49.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Under 500kcal',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/2226AFE09280DEBBD1325811C59B960F",
-                    name: "Healthy  Salmon Platter - 12 pcs",
-                    description: "377 Kcal, 40.6g Carbs, 0.3g Sugar, 21.8g Protein, 13.2g Fat, 1.8g Dietary Fibers\n\n6 Healthy Naked Salmon Avocado Spring Roll, 3  Healthy Salmon Maki, 3 Healthy Salmon Sashimi",
-                    price: "79.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/990B25FBA2219A354AA5E5F5608C0D73",
-                    name: "Healthy Best Mix Platter - 15 pcs",
-                    description: "490 Kcal, 64.6g Carbs, 0.6g Sugar, 25.8g Protein, 12.6g Fat, 4.1g Dietary Fibers\n\n6 Healthy Tuna Avocado Roll, 6 Healthy Avocado Maki, 1 Healthy Shrimp Sushi, 1 Healthy Seabream Sushi, 1 Healthy Salmon Sushi",
-                    price: "99.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/934837490D631EB9B76FCFF277A9798C",
-                    name: "Healthy Shrimp Platter - 15 pcs",
-                    description: "488 Kcal, 64.6g Carbs, 0.6g Sugar, 33.3g Protein, 9.2g Fat, 0.6g Dietary Fibers\n\n3 Healthy Shrimp Sushi, 6 Healthy Shrimp Maki, 6 Healthy Tuscan Spring Roll",
-                    price: "99.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/0E092A195326C675D56FD20D758D28AB",
-                    name: "Healthy Special Mix Platter - 15 pcs",
-                    description: "498 Kcal, 62.4g Carbs, 0.7g Sugar, 34.9g Protein, 14.7g Fat, 1.4g Dietary Fibers\n\n3 Healthy Shrimp Sushi, 3 Healthy Seared Beef Sushi, 6 Healthy Tuna White Truffle Roll, 3 Healthy Salmon Avocado Roll",
-                    price: "99.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/EDF7550BD39A4D7B2730FBE52F1BA670",
-                    name: "Healthy Tuna Platter - 9 pcs",
-                    description: "267 Kcal, 29.8g Carbs, 0.2g Sugar, 21.5g Protein, 5.7g Fat, 1.9g Dietary Fibers\n\n6 Healthy Tuna Avocado Roll, 2 Healthy Tuna Sashimi, 1 Healthy Tuna Sushi",
-                    price: "59.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/1095B88FDCD2FCB9229E0A4E8FFA4D2A",
-                    name: "Healthy Veggie Platter - 12 pcs",
-                    description: "375 Kcal, 58.5g Carbs, 1.2g Sugar, 15.8g Protein, 7.1g Fat, 4.9g Dietary Fibers\n\n6 Healthy Cucumber Avocado Roll, 6 Healthy Maki Like Tabbouleh, Edamame",
-                    price: "49.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Box By You - 100% Customizable Box',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/B78554128BE75503ED2E3D808B57EB56",
-                    name: "Box By You For 2 (42 pieces)",
-                    description: "The best box made by you! Your most favorite SushiArt pieces hand picked by you. Choose from a selection of Sushi, Maki and Rolls to created your unique box of 42 pieces. 6 Sushi Rolls (3x2 pieces). 36 California Rolls (6x6 pieces )",
-                    price: "215.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/D38438E1027B0283EEC5144B66A5FA3F",
-                    name: "Box By You (18 pieces)",
-                    description: "The best box made by you! Your most favorite SushiArt pieces hand picked by you. Choose from a selection of Sushi, Maki and Rolls to created your unique box of 18 pieces. 6 Sushi Rolls (3x2 pieces) 12 California Rolls (2x6 pieces)",
-                    price: "112.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Platters',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/3B513D9E0592AC4B2A1F468DBA1CFB7C",
-                    name: "Salmon Classic",
-                    description: "10 Salmon Sushi",
-                    price: "82.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/A75312C9FCA5CC9EDEC4F557A6FFEF43",
-                    name: "Cooked 18",
-                    description: "6 Prawn Tempura Rolls\n6 Crispy Kani Rolls\n6 Chicken Katsu Rolls",
-                    price: "102.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/9C09344B7703ECC94C6847478D85BC60",
-                    name: "Classic Mix",
-                    description: "3 Salmon Sushi\n2 Tuna Sushi \n6 Salmon Avocado Rolls \n6 Tuna Maki",
-                    price: "102.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/4F540886BB6E4E0B658FCC9C3976B9C2",
-                    name: "Salmon Lovers",
-                    description: "6 Salmon Avocado Spring Rolls\n6 Salmon Avocado Rolls\n6 Salmon Sushi",
-                    price: "102.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/6B422E582DB648A443618C0F16F865E0",
-                    name: "Super Salmon",
-                    description: "6 Salmon Avocado Rolls 6 Salmon Avocado Spring Rolls 6 Salmon Roll Maki 6 Salmon Maki",
-                    price: "112.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/C500DE866A0CE891C7A762960784DB25",
-                    name: "California Dream",
-                    description: "6 Salmon Avocado Rolls 6 Crispy Kani Rolls 6 Prawn Tempura Rolls 6 Chicken Katsu Rolls",
-                    price: "112.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/8E1FC109AEC12EF85D1B6F3FCA7597CC",
-                    name: "Sunset",
-                    description: "5 Salmon Sashimi\n6 Prawn Tempura Rolls\n3 Salmon Sushi\n2 Salmon Teriyaki Sushi\n2 Tuna Sushi",
-                    price: "122.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/7CC5257E2E11B8EF7FB6190B6108BF6A",
-                    name: "Box For 2 Classic (42pcs)",
-                    description: "2 Tuna Sushi 2 Salmon Sushi 2 Teriyaki Salmon Sushi 6 Salmon Maki 6 Salmon Roll Maki 6 Salmon Avocado Rolls 6 Chicken Katsu Rolls 6 Salmon Spring Rolls 6 Cooked Tuna Avocado Spring Rolls",
-                    price: "205.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/A0753653FA7A24C246E2DA12AF16FE9A",
-                    name: "Box For 2 Deluxe (44pcs)",
-                    description: "2 Tuna Sushi\n2 Salmon Sushi\n2 Teriyaki Salmon Sushi\n6 Salmon Roll Maki\n6 Salmon Avocado Rolls\n6 Crispy Kani Rolls\n6 Salmon Tataki Spring Rolls\n6 Prawn Spring Rolls\n8 Rock N Roll Signature Rolls",
-                    price: "255.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/18723EC9039BDC79E3D73AFAEDE12400",
-                    name: "Cooked for Two",
-                    description: "6 Prawn Tempura Rolls\n6 Surimi Avocado Rolls\n6 Chicken Katsu Rolls\n6 Salmon Aburi Rolls\n6 Cooked Tuna Avocado Rolls\n8 Dragon Signature Rolls\n3 Prawn Sushi\n3 Seared Beef  Sushi",
-                    price: "245.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/950AF430CDED3EC9A497F9BAE56C4578",
-                    name: "Blackbox Classic (58pcs)",
-                    description: "2 Prawn Sushi\n4 Tuna Sushi\n4 Teriyaki Salmon Sushi\n6 Salmon Sushi\n6 Salmon Maki\n6 Salmon Roll Maki \n6 Salmon Avocado Rolls\n6 Cooked Tuna Avocado Rolls\n6 Chicken Katsu Rolls\n6 Salmon Avocado Spring Rolls\n6 Salmon Tataki Spring Rolls",
-                    price: "325.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/A7E0FA8160D959663AB1BC0B34C502B6",
-                    name: "Blackbox Deluxe (58 pieces)",
-                    description: "2 Tuna Sushi 2 Seabream Jalapeno Sushi 2 Prawn Sushi 4 Salmon Sushi 4 Teriyaki Salmon Sushi 6 Salmon Roll Maki 6 Pacific Rolls 6 Citrus Salmon Rolls 6 6 Crispy Kani Rolls 6 Tuscan Spring Rolls 6 Salmon Tataki Spring Rolls 8 Rock N Roll Signature Rolls",
-                    price: "425.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Signature Boxes',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/412F3F7DC188F207B8F669A6C6903106",
-                    name: "Signature Box",
-                    description: "4 Volcano Rolls 4 Fire Rolls 4 Dragon Rolls 4 Rainbow Rolls 4 Rock & Roll",
-                    price: "155.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/6BC0CC0F23B193C4336D58BC39D765D2",
-                    name: "Signature Box Deluxe (46pcs) - NEW",
-                    description: "4 Volcano Roll 4 Fire Roll 4 Dragon Roll 4 Exotic Roll 4 Rock N Roll 4 Crazy Shrimp Tempura Roll 6 Salmon Avocado Roll 6 Spicy Tuna Maki 4 Salmon Sushi 4 Tuna Sushi 2 Salmon Teriyaki Sushi",
-                    price: "285.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Starters',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/B90FE83AEA432E7F16E421CE342F43CE",
-                    name: "Edamame",
-                    description: "Rock Salt",
-                    price: "23.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/A97838071603852FCAE4F7CCFE0AE3C5",
-                    name: "Spicy Edamame",
-                    description: "Chili Garlic Sauce",
-                    price: "25.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Small Plates',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/5FD8B3355017EDD2C0F0671877947FC0",
-                    name: "Yusu Miso Marinated Salmon",
-                    description: "Salmon Marinated in Yuzu Miso Sauce, Sesame",
-                    price: "61.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/44F3CD724D81F42BE8699AE85AE897EB",
-                    name: "Salmon Tartare",
-                    description: "Diced Salmon, Avocado, Japanese Mayonnaise, Salmon Roe, Dill, Seaweed",
-                    price: "71.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/CBFEEC8364560B1D0F8EB744A2F278DB",
-                    name: "Marinated Tartare",
-                    description: "Diced Salmon & Tuna, Cucumber, Leek, Mint, Coriander, Marinade",
-                    price: "65.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/6BFE5C3600681D3D1508D0EA9D01A609",
-                    name: "Salmon Ceviche",
-                    description: "Salmon, Lime Juice, Coriander, Cucumber, Red Onion, Chili",
-                    price: "62.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/951EE67DA929EA815453C2682AE65E5E",
-                    name: "Seabream Ceviche",
-                    description: "Seabream, Lime Juice, Coriander, Cucumber, Red Onion, Chili",
-                    price: "78.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Nigiri - 1 piece',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/FECC26F86D191C35F5CA7C93488CD1A5",
-                    name: "Salmon",
-                    description: "Salmon, butter, spices, lemon.",
-                    price: "12.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/F3036C2EFB52627B48F50EEF3AF51D9E",
-                    name: "Salmon Teriyaki",
-                    description: "Seared Salmon, Teriyaki Sauce, Sesame",
-                    price: "13.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/D53CF87690D3D6E48532DA8E84EA1C6C",
-                    name: "Tuna",
-                    description: "Succulent and flavorful tuna",
-                    price: "14.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/316AE478C1DD0019D56197D6E9E774FF",
-                    name: "Salmon Roe",
-                    description: "Salmon eggs.",
-                    price: "38.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/84F5D8C96CD69A19AD624CC9C34830D1",
-                    name: "Seabream Jalapeno",
-                    description: "Yuzu Miso Sauce, Fresh Chili, Coriander",
-                    price: "14.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/1E88A0F915AC647B080570ECFA3DB5E7",
-                    name: "Shrimp",
-                    description: "Yuzu Miso Sauce, Kumquat, Coriander",
-                    price: "13.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/BA3FD84C817C7FA0727745DE7531614E",
-                    name: "Seared Beef",
-                    description: "Asparagus, Mild Chili, Goma Ponzu Sauce",
-                    price: "18.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/A079ACBEE84A3CCBA8A47467AF6530BE",
-                    name: "Kani Crab",
-                    description: "Crab meat known as Kani.",
-                    price: "12.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/AE2CE2719C2819AE5FE2BD077522D20D",
-                    name: "Seared Scallops",
-                    description: "Miso Yuzu Sauce",
-                    price: "16.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/20D6D4CCC15A0A4D6EFB1D8810F3BFD3",
-                    name: "Japanese Eel",
-                    description: "Teriyaki Sauce, Sesame",
-                    price: "20.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Signature Rolls - 8 pieces',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/96572B6F1E63F925255F8E718800FBB9",
-                    name: "Volcano Roll",
-                    description: "Topping: Surimi, Salmon, Spicy Mayonnaise, Sweet Chili Sauce, Masago, Chives, Coriander, Sesame\n\nInside: Salmon, Avocado",
-                    price: "59.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/D1891A5BEECC4BC0C6AE0EA31D87F01D",
-                    name: "Rock N Roll",
-                    description: "Topping: Glazed Salmon, Teriyaki Sauce, Chili, Crisps, Chives, Sesame\n\nInside: Tuna, Asparagus, Avocado, Masago, Spicy Mayonnaise",
-                    price: "59.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/60DC58A7BC73C060B443BFB19814B50A",
-                    name: "Fire Roll",
-                    description: "Topping: Tuna, Spicy Mayonnaise, Chives, Sesame, Spring Onion\n\nInside: Prawn Tempura, Avocado, Goma Ponzu Mayonnaise",
-                    price: "59.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/28_Rainbow_Roll638806697994723578.jpg",
-                    name: "Rainbow roll",
-                    description: "Topping: Salmon, Tuna, Avocado, Chili, Ponzu Sauce, Chives, Sesame,\n\nInside: Crab Meat, Avocado, Goma Ponzu Mayonnaise",
-                    price: "59.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/6A4E76641CB16BCE5E10A42BE35BE858",
-                    name: "Dragon Roll",
-                    description: "Topping: Avocado, Salmon Roe, Chili, Teriyaki Mayonnaise, Chives, Sesame\n\nInside: Prawn Tempura, Asparagus, Goma Ponzu Mayonnaise",
-                    price: "59.00",
-                    highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763148449/Where_every_roll_tells_a_story_signaturebox_sushirolls_ybkux3.mp4',
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/B867F841825F5095C2D0477951D0047B",
-                    name: "The Exotic Roll",
-                    description: "Shrimp Tempura, Avocado, Coriander, Spicy Mayonnaise, Mango, Chives",
-                    price: "59.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/2A9544F1A715397D9B7104BC8ED9D91A",
-                    name: "Crazy Prawn Tempura",
-                    description: "Shrimp Tempura, Kani, Avocado, Tempura Flakes, Spicy Mayonnaise",
-                    price: "59.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/8D10228F05BD4FD4CDAC026A6BFD05FF",
-                    name: "The Black Dragon",
-                    description: "Shrimp Tempura, Eel, Avocado, Teriyaki Mayonnaise, Sesame",
-                    price: "59.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Maki - 6 pieces',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/D41FEF0DD5E2C2BB1CED6EE1B0937E20",
-                    name: "Tuna",
-                    description: "Succulent and flavorful tuna",
-                    price: "34.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/B353F52F29100435446CC143E6208526",
-                    name: "Spicy Tuna",
-                    description: "Spicy Mayonnaise, Chives",
-                    price: "36.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/4E23C077B56A1FE64465E04D11D5F84B",
-                    name: "Salmon",
-                    description: "Salmon, butter, spices, lemon.",
-                    price: "32.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/3347E2A9A4C9BC62F661978F86676FBE",
-                    name: "Salmon Roll",
-                    description: "Rice, Cheese Wrapped in Salmon",
-                    price: "38.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/BE0AD9E9A05846D4140082910951BA72",
-                    name: "Avocado",
-                    description: "Ripe avocado and packed with essential nutrients.",
-                    price: "21.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/C636337B86ED24C4341C2580979215BD",
-                    name: "Avocado & Cheese",
-                    description: "Dish with avocado and cheese.",
-                    price: "24.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/4872D51605A3E782BFA02AB22A668606",
-                    name: "Cucumber Sesame",
-                    description: "Cucumber with sesame seeds.",
-                    price: "20.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/2FC8B2101194D4CB4E9D16507CBFAC8A",
-                    name: "Eel Avocado",
-                    description: "Eel and avocado sushi.",
-                    price: "42.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Rolls - 6 pieces',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/0A749B2B282B773F295162DCF570FB41",
-                    name: "Veggie",
-                    description: "Cucumber, Chioggia Beetroot, Rocket, Carrot, Quinoa, Avocado, Olive Cream, Ponzu Sauce, Sesame Oil",
-                    price: "31.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/4D93E578AB3669B1CF9AD2A42E824ACD",
-                    name: "Cucumber Avocado",
-                    description: "Sesame",
-                    price: "26.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/BA77F9F9D0C1CDA0C240B00C038B4FCC",
-                    name: "Salmon and Avocado",
-                    description: "Sesame",
-                    price: "35.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/72C37AAE6337E392BBEF0293C3F050DB",
-                    name: "Tuna and Avocado",
-                    description: "Sesame",
-                    price: "37.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/965FA980F380693516097BA64218717A",
-                    name: "Dynamite",
-                    description: "Salmon, Spicy Mayonnaise, Masago, Cucumber, Sesame",
-                    price: "37.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/A8BD950ADA4548B8AB24AF1AB560CF1D",
-                    name: "Pacific",
-                    description: "Salmon Tartare, Spicy Mayonnaise, Cheese, Avocado, Sesame",
-                    price: "37.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/CB78E977D7CEE336330C639A5F1D1E3C",
-                    name: "Chicken Katsu",
-                    description: "Fried Chicken, Carrot, Rocket, Chives, Mayonnaise, Tonkatsu Sauce, Sesame",
-                    price: "37.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/393D657934EEFBC0C66A6FBADDE35FCD",
-                    name: "Cooked Tuna Avocado",
-                    description: "Sesame",
-                    price: "35.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/269EB0063A59D83A0542AA50E0CF7AAA",
-                    name: "Citrus Salmon",
-                    description: "Salmon, Avocado, Lime Mayonnaise, Sesame, Crusty Crouton, Chives, Masago",
-                    price: "40.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/5FCEBA95EB630C57A531F8F84BE04FAE",
-                    name: "Shrimp Tempura",
-                    description: "Shrimp Tempura, Avocado, Spicy Mayonnaise, Sesame",
-                    price: "42.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/1F630D18F117306A049C2E2DA573955C",
-                    name: "Tuna & White Truffle",
-                    description: "Tuna Tartare, Truffle Infused Mayonnaise, Chives",
-                    price: "42.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/E7C553BB7FE5B5E14745F24A55181978",
-                    name: "Crab Avocado",
-                    description: "Crab Meat, Lime Mayonnaise, Masago",
-                    price: "44.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/8153EC27BDA2B33A6CDC8F5F7A9BF796",
-                    name: "Surimi Avocado",
-                    description: "Masago",
-                    price: "36.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/AA43A5EABDC891FB269DDB3BB9733427",
-                    name: "Crispy Kani",
-                    description: "Kani, Avocado, Tempura Flakes, Spicy Mayonnaise, Chives",
-                    price: "42.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/9725F21F5676F6822EC0408B123F4C52",
-                    name: "Salmon Aburi",
-                    description: "Seared Salmon, Salmon, Cheese, Chives, 7 Spices",
-                    price: "42.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/F25A9DD7542CD490EC8673B492ED6B97",
-                    name: "Prawn Cucumber Tempura",
-                    description: "Prawn Tempura, Cucumber, Spicy Mayonnaise, Sesame",
-                    price: "38.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Sashimi & Tataki',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/7E50D37CFB9EAE73B787FBB52B75D56C",
-                    name: "Salmon Sashimi 5pcs",
-                    description: "Sashimi-grade salmon, wasabi, pickled ginger and soy sauce",
-                    price: "46.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/41EB702455344CD59C2E45DFAD6957B8",
-                    name: "Tuna Sashimi 5pcs",
-                    description: "Five pieces of raw tuna, Soy sauce,Wasabi, Pickled ginger",
-                    price: "55.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/4826012B188A1A3B95A7980CD37019A6",
-                    name: "Seabream Sashimi 5pcs",
-                    description: "Sea bream fillet, Wasabi, Pickled ginger, Soy sauce and Sesame seeds",
-                    price: "46.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/220AE700DDE28016D5ADBF40A601DFC5",
-                    name: "Shrimp Sashimi 5 pcs",
-                    description: "Shrimp, rice vinegar, sugar, salt, wasabi paste, pickled ginger, nori, and soy sauce.",
-                    price: "39.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/5E38B70EF209DA0C2A345E177EE6668F",
-                    name: "Assortment 15 pcs",
-                    description: "Salmon, Tuna, Seabream, Prawn",
-                    price: "125.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/E971F95F37A9F87FE6C40F7E87D502B3",
-                    name: "Salmon Tataki 10 pcs",
-                    description: "Seared Salmon, Chili, Spring Onion, Yuzu Miso Sauce, Coriander, Chives",
-                    price: "90.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/710D49692500C212C356CD4BCAD42E8B",
-                    name: "Tuna Tataki 10 pcs",
-                    description: "Seared Tuna, Chili, Chives, Yuzu Miso Sauce, Crisps",
-                    price: "99.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/E2C78B8C21624A63867295D8BABF74FA",
-                    name: "New Style Beef Tataki 10 pcs",
-                    description: "Finely Sliced Seared Beef, Asparagus, Chili, Goma Ponzu Mayonnaise, Chives",
-                    price: "99.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Spring Rolls - 6 pieces',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/5DA10370F55BB5F9AE40A14587DF7B4D",
-                    name: "Salmon Avocado",
-                    description: "Mint, Coriander, Lettuce",
-                    price: "39.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/CD755AA6C17E5E6B6F449601026B26D3",
-                    name: "Spicy Salmon",
-                    description: "Salmon, Avocado, Masago, Spicy Mayonnaise",
-                    price: "35.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/DA709AB6D47A17B29505753A5E9F74F5",
-                    name: "Tuna Avocado",
-                    description: "Mint, Coriander, Lettuce",
-                    price: "39.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/7DEE3BBD3017DF44D313A1180F42AE84",
-                    name: "Cooked Tuna and Avocado",
-                    description: "Lettuce",
-                    price: "35.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/8AC286CAF11916304F3202241C2E0802",
-                    name: "Salmon Tataki",
-                    description: "Seared Salmon, Radicchio, Chives, Sesame Oil Mayonnaise, Coriander, Sesame",
-                    price: "39.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/65126F659A4A5CC1931C3393CFAA2C34",
-                    name: "Shrimp",
-                    description: "Avocado, Mint, Coriander, Lettuce",
-                    price: "41.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/CA3DB657941350AEE45C3826ED56C097",
-                    name: "Tuscan",
-                    description: "Shrimp, Pine Nuts, Mesclun Salad, Truffle Infused Mayonnaise",
-                    price: "39.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/826BA416560F1BB4210581FE853FC3B7",
-                    name: "Avocado and Cheese",
-                    description: "Lettuce",
-                    price: "24.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/036228DEBDD12F69239119D9A4AC8E3C",
-                    name: "Fried Chicken Avocado",
-                    description: "Japanese Mayonnaise, Lettuce",
-                    price: "32.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Bowls',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/E29F961D912A2E4AB68A0A400367F0AD",
-                    name: "Salmon & Avocado Chirashi",
-                    description: "Salmon & Avocado on a Bowl of Sushi Rice, Sesame",
-                    price: "89.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/71AD8E3521BD045A37131D3CF442DB46",
-                    name: "Marinated Chirashi",
-                    description: "Diced Salmon & Tuna, Cucumber, Leek, Mint, Coriander & Marinade on a Bowl of Sushi Rice, Sesame",
-                    price: "89.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/742275373B5DE8B5BE26234BAFF029BD",
-                    name: "Veggie Poke Bowl",
-                    description: "Avocado, Edamame, Crisp Vegetables, Rocket, Coriander, Mint, Chives, Lemon Juice, Sesame",
-                    price: "58.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/16CA04964DF1569358883674C6F752CA",
-                    name: "Teriyaki Salmon Poke Bowl",
-                    description: "Salmon, Avocado, Cabbage Salad, Soy Sauce, Teriyaki Sauce, Furikake, Chives, Sesame",
-                    price: "75.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/9B879F9CD7811DFEA5E23087C9DE10DE",
-                    name: "Salmon Aburi Poke Bowl",
-                    description: "Seared Salmon With Teriyaki Sauce, Avocado, Edamame, Crisp Vegetables, Rocket, 7 spices, Sesame",
-                    price: "75.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/0DBB84568C92758E69829249AF43275B",
-                    name: "Spicy Tuna Poke Bowl",
-                    description: "Tuna, Avocado, Cabbage Salad, Masago, Spicy Mayonnaise, Coriander, Chives, Sesame",
-                    price: "75.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/50B3EA2DF005EF789B128D7C383DE87F",
-                    name: "Beef Poke Bowl",
-                    description: "Beef, Teriyaki Sauce, Avocado, Edamame, Crisp Vegetables, Rocket, Fried Onions, Coriander, Chives, Lemon Juice, Sesame",
-                    price: "98.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/025B3AAF6E687F80CC7B1F125FE8F879",
-                    name: "Eel Donburi",
-                    description: "Japanese rice bowl topped with eel.",
-                    price: "128.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Soups',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/5EBFD67B162ECF46032F7D00FB9BFB9B",
-                    name: "Miso Soup",
-                    description: "Tofu, Dried Wakame, Chives",
-                    price: "16.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/9920B774C5DCECCB08DD81845C74AA62",
-                    name: "Spicy Miso Soup",
-                    description: "Tofu, Dried Wakame, Chives, Togarashi",
-                    price: "17.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Salads',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/226F5C6E6CADA7DDBAD71E989FF7A34E",
-                    name: "Midori Salad",
-                    description: "Baby Spinach, Cucumber, Snow Peas, Edamame, Fennel, Avocado, Chives & Sesame with Goma dressing",
-                    price: "42.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/FE18B690513A0872B30523EAB4DA93C7",
-                    name: "Crazy Salad",
-                    description: "Shredded Crab, Cucumber, Carrot, Japanese Mayonnaise, Tempura Flakes, Tobiko",
-                    price: "56.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/6B4A75E60540E21A640933B708AD686C",
-                    name: "Sashimi Salad",
-                    description: "Salmon, Seabream, Tuna, Daikon, Carrot, Rocket, Baby Spinach, Cucumber, Red Onion & Pomegranate with our Signature Sashimi Sauce",
-                    price: "74.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/925AEF150C1206A636FEB620A147FBB5",
-                    name: "Six Stars Shrimp Salad",
-                    description: "Shrimp, Daikon, Carrot, Baby Spinach, Rocket, Cucumber, Onion, Coriander, Caramelized Walnuts, Six Stars Sauce",
-                    price: "66.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/9AF1076340DA161752028925B1F74E01",
-                    name: "Crispy Spicy Salmon",
-                    description: "Fresh Salmon, Tempura Flakes, Spicy Sauce, Chives, Masago",
-                    price: "67.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Sides',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/56A599CF7B93B06AB3B931DCF08CC052",
-                    name: "Plain Rice",
-                    description: "Perfectly cooked plain rice, fluffy and versatile",
-                    price: "12.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/CB0316E7F2475EA4270B350D89A65413",
-                    name: "Sushi Rice",
-                    description: "Sesame",
-                    price: "12.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/08E0C66977D74B1EFE1FFADA887A6D10",
-                    name: "Vegetable Noodles",
-                    description: "Udon Noodles with Cabbage, Carrot, Zucchini, Mushroom and Chives",
-                    price: "30.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/7E8262BCB8B1564CD4A58CAC8591D086",
-                    name: "Sauteed Vegetables",
-                    description: "Blend of crisp and tender veggies, expertly seasoned and cooked to perfection",
-                    price: "25.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/74854A6D384FEAFFC782A6702AEB7758",
-                    name: "Cabbage Salad",
-                    description: "A fresh and crunchy cabbage salad.",
-                    price: "12.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/1CB2DD32D0179CD98B4F8D141AA7D9A3",
-                    name: "Coleslaw Wasabi Salad",
-                    description: "Sesame",
-                    price: "17.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/E79892DAE9D8C0DAEA1580BF2192F7EC",
-                    name: "Carrot Salad with Citrus Dressing",
-                    description: "A carrot salad with citrus dressing.",
-                    price: "17.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/39BBFF19D8155D1F35FC2E5479FD48ED",
-                    name: "Baby Spinach Salad",
-                    description: "Sesame Sauce",
-                    price: "24.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/13B6EFD42A7FBC422198F261C8334F2C",
-                    name: "Kani Salad Small",
-                    description: "Shredded Crab, Cucumber, Carrots, Japanese Mayonnaise & Tobiko",
-                    price: "36.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/D7C75689952F88D0911300CBD0F411AA",
-                    name: "Seaweed Salad",
-                    description: "Sesame",
-                    price: "34.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Gathering Boxes',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/8D5CF03412C7A0C42109BC484BE58164",
-                    name: "Family Box Classic (108 pcs)",
-                    description: "Includes (8) rainbow roll, (8) volcano roll, (8) rock and roll, (6) cooked tuna roll, (6) salmon avocado roll, (6) salmon maki roll, (6) crispy kani roll, (6) crab avocado roll, (6) prawn tempura roll, (6) chicken katsu roll, (6) salmon avocado spring roll, (6) salmon tataki spring roll, (6) cucumber maki, (6) chicken avocado spring roll, (10) salmon sashimi and (8) salmon sushi.",
-                    price: "549.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/E65DF18F1A67E0817AE0B2C11DDB3EAB",
-                    name: "Family Box Gourmet (110 pcs)",
-                    description: "(12) Fresh salmon roll, (12) surimi avocado roll, (12) tuna avocado roll, (12) cucumber and avocado roll, (12) salmon avocado roll, (12) tuna maki, (12) salmon maki, (8) salmon sushi, (8) tuna sushi, (10) salmon sashimi",
-                    price: "599.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/52DB38D900DF59132DD87AEA74F0A369",
-                    name: "Family Box Deluxe (130 pcs)",
-                    description: "(8) Rock and roll, (8) volcano roll, (8) dragon roll, (12) salmon aburi roll, (6) chicken katsu roll, (12) crispy kani roll, (6) crab avocado roll, (12) cucumber cheese roll, (6) salmon maki, (6) salmon avocado roll, (6) prawn tempura roll, (4) salmon sushi, (4) tuna sushi, (3) salmon teriyaki sushi, (3) tuna teriyaki sushi, (6) prawn sushi, (10) tuna sashimi, (10) salmon sashimi.",
-                    price: "749.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Desserts',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/41AAC789114547EB8CD4EFCD4938DCAC",
-                    name: "Yuzu Choux",
-                    description: "A delightful and refreshing treat that combines the light and airy choux pastry with the bright and citrusy flavor of yuzu.",
-                    price: "38.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/0483363619928DB97C59048EB435754E",
-                    name: "Matcha Cheesecake",
-                    description: "A Japanese-inspired dessert that combines the creaminess of cheesecake with the earthy and slightly bitter flavor of matcha green tea",
-                    price: "44.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/70A9FC004976F1FA68053C611073EA67",
-                    name: "Mochi",
-                    description: "Glutinous rice flour, Water, Sugar and Sesame seeds",
-                    price: "36.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/D69B62512566714E165FB4B9204D48EF",
-                    name: "Fresh Mango",
-                    description: "Juicy and sweet mango fruit.",
-                    price: "21.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/BF4EFE12C996A6107657EE92116BB1FC",
-                    name: "Fresh Pineapple",
-                    description: "Pineapple, sugar, Water",
-                    price: "20.00",
-                  },
-                ]
-              }
-            },
-            {
-              name: 'Drinks',
-              items: {
-                create: [
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/D01F34E980285438568F4E33ACD8107F",
-                    name: "Pepsi",
-                    description: "Carbonated soft drink",
-                    price: "11.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/77FF5638505E309D15A2B0E31F48A089",
-                    name: "Pepsi Diet",
-                    description: "Carbonated soft drink with zero sugar and zero calories",
-                    price: "11.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/4FFE09BD66BBAF217DD69C837BC84297",
-                    name: "7Up",
-                    description: "Non-caffeinated soft drink.",
-                    price: "11.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/B00BE94CE19F723266DFF838757343E7",
-                    name: "Diet 7Up",
-                    description: "Soft Drink",
-                    price: "11.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/EEE21EDF008C0A6C41E1897F90759085",
-                    name: "Imported Mineral Water Small",
-                    description: "Bottled mineral water, refreshing.",
-                    price: "15.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/1F8EB9A7A8FB345E9419D30D715D947A",
-                    name: "Imported Mineral Water Large",
-                    description: "Mineral Water",
-                    price: "22.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/CB246E8380EB34851FC05A78A09354F0",
-                    name: "Local Mineral Water Small",
-                    description: "Mineral Water",
-                    price: "9.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/EF06E513214E3357A2415EAB35904592",
-                    name: "Sparkling Water Large",
-                    description: "Refreshing carbonated water",
-                    price: "24.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/593E6BD380121FCBF5609EDE26EDC0F4",
-                    name: "Coconut Water",
-                    description: "330ml",
-                    price: "36.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/E3CE32D61AEA6A8FC666E0AD4A2F0BB2",
-                    name: "Fresh Mango Juice",
-                    description: "Made from the freshest, ripest mangos",
-                    price: "19.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/B6DE9FF0FF0373A65C7B2F90BA748807",
-                    name: "Fresh Orange Juice",
-                    description: "Made with freshly squeezed oranges, great source of vitamin c",
-                    price: "19.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/D08CA3D43A246231E476F70F4AC8C037",
-                    name: "Fresh Watermelon Juice",
-                    description: "Made from freshly squeezed watermelon. It is a natural source of vitamins and minerals",
-                    price: "24.00",
-                  },
-                  {
-                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/B8385D7EF1076C9AE2B997BA24DA0D0C",
-                    name: "Organic Apple & Ginger",
-                    description: "Refreshing organic apple and ginger drink.",
-                    price: "25.00",
-                  },
-                ]
-              }
-            },
-          ]
-        }
-      }
-    }
-  },
-  {
-    name: 'Zaatar w Zeit',
+    name: 'Zaatar w Zeit', // https://www.talabat.com/uae/restaurant/626019/zaatar-w-zeit-sheikh-zayed-road-jumeirah-1?aid=1256
     country: 'UAE',
     city: 'Dubai',
     address: 'Zaatar w Zeit Ground Floor, Al Meraikhi Towers - Sheikh Zayed Rd - Trade Center First',
@@ -6391,6 +6471,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "36.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762791341/zaatwar_kebab_wv9yuy.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'indian'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-beef'}, {slug: 'no-pork'},
+                        {slug: 'no-shellfish'}, {slug: 'no-sweets'}, {slug: 'no-tree-nuts'}, {slug: 'no-peanuts'},
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/6C79A594C39E1194BA35625BC3D03A67",
@@ -6503,8 +6589,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "27.00",
                   },
                   {
-                    image:
-                      "https://images.deliveryhero.io/image/talabat/MenuItems/334A4836028C79A497F5E431046F1E85",
+                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/334A4836028C79A497F5E431046F1E85",
                     name: "Taouk Wrap",
                     description: "Marinated chicken known as Taouk, Roasted to Perfection & Paired with Fries, Pickles & Garlic paste",
                     price: "32.00",
@@ -6661,7 +6746,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Simply Caesar with Fried chicken on top. Served with Caesar dressing",
                     price: "35.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762792132/zaatawr_salad_duwvpe.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762792132/zaatawr_salad_duwvpe.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'american'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-beef'}, {slug: 'no-pork'},
+                        {slug: 'no-shellfish'}, {slug: 'no-sweets'}, {slug: 'no-tree-nuts'}, {slug: 'no-peanuts'}, {slug: 'mild'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/5A36901AB68CBE785B419B377CA58ECA",
@@ -6803,6 +6894,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "18.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762791637/zaatarw_pizza_nt0hhx.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'breakfast'}, {slug: 'lunch'}, {slug: 'no-beef'}, {slug: 'no-pork'},
+                        {slug: 'no-shellfish'}, {slug: 'vegetarian'}, {slug: 'no-sweets'}, {slug: 'no-tree-nuts'},
+                        {slug: 'no-peanuts'}, {slug: 'mild'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/CBCC36AD0937E627B2E56FC0F0526621",
@@ -7474,7 +7572,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Dairy, gluten, plant based optional, onion and garlic, sesame,  nuts, Persian feta, avocado, spinach, red onion, grilled vegetables, sun-dried tomato beetroot hummus and macadamia pesto. Freshly made. Served with sea salt crisps",
                     price: "64.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763640809/Fresh_Vibrant_Delicious._Pick_from_our_signature_built_wraps_salads_to_go_or_build_your_own_p44g95.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763640809/Fresh_Vibrant_Delicious._Pick_from_our_signature_built_wraps_salads_to_go_or_build_your_own_p44g95.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'american'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-beef'}, {slug: 'no-shellfish'},
+                        {slug: 'no-sweets'}, {slug: 'no-pork'}, {slug: 'gluten-free'}, {slug: 'lactose-free'}, {slug: 'mild'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/MEXICAN_WRAP_1638519012895161643.jpg",
@@ -7556,7 +7660,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Plant based optional, onion and garlic, soy, nuts,  spicy satay sauce, glass noodles, carrot, cucumber, radish, edamame, toasted peanuts, fresh greens, cherry tomatoes, coriander, kaffir lime, citrus and ginger dressing",
                     price: "71.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763640428/Satay_Beef_Bowl_With_spicy_satay_sauce_glass_noodles_carrot_cucumber_radish_edamame_toas_yfbsl3.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763640428/Satay_Beef_Bowl_With_spicy_satay_sauce_glass_noodles_carrot_cucumber_radish_edamame_toas_yfbsl3.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'thai'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-pork'}, {slug: 'no-shellfish'},
+                        {slug: 'no-sweets'}, {slug: 'medium'}, {slug: 'lactose-free'}, {slug: 'spicy'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/CHIPOTLE_CHICKEN_SALAD638519013160928583.jpg",
@@ -7571,6 +7681,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "78.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762854541/salad_bowl_oqq56x.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'japanese'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-pork'}, {slug: 'no-beef'},
+                        {slug: 'no-sweets'}, {slug: 'medium'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/AVO_CAESAR_SALAD638519013195157440.jpg",
@@ -7735,7 +7851,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'Malay Al tawak',
+    name: 'Malay Al tawak', // https://www.talabat.com/uae/restaurant/44678/malak-al-tawouk?aid=1176
     country: 'UAE',
     city: 'Dubai',
     address: 'Malay Al tawak Hessa St - Al Barsha',
@@ -8008,7 +8124,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Crispy chicken fillet with garlic, ketchup, coleslaw, pickles and French fries",
                     price: "23.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762473787/malakaltawoukuae3_zjiyzn.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762473787/malakaltawoukuae3_zjiyzn.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'american'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-pork'}, {slug: 'no-beef'},
+                        {slug: 'no-shellfish'}, {slug: 'no-sweets'}, {slug: 'mild'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/9FAFF384184792D21129BAF9469D9848",
@@ -8228,8 +8350,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/C1A530C126AE2D71830F0036378E41D6",
                     name: "Side Fattoush",
-                    description:
-                      "Lettuce, Tomatoes, cucumbers, mint, radish, green pepper, purslane،Rocca, with oil vinegar dressing.",
+                    description: "Lettuce, Tomatoes, cucumbers, mint, radish, green pepper, purslane،Rocca, with oil vinegar dressing.",
                     price: "11.00",
                   },
                   {
@@ -8293,6 +8414,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "14.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762473787/malakaltawoukuae2_skcufp.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-pork'}, {slug: 'no-beef'}, {slug: 'no-shellfish'},
+                        {slug: 'no-sweets'}, {slug: 'mild'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/075B49D0DD8362D1961819FF3BBAC52C",
@@ -8513,6 +8640,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "55.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762856052/cake_tvzmg2.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'dessert'}, {slug: 'snack'}, {slug: 'no-pork'}, {slug: 'no-beef'}, {slug: 'no-shellfish'},
+                        {slug: 'vegetarian'}, {slug: 'no-tree-nuts'}, {slug: 'no-peanuts'}, {slug: 'mild'},
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/blob_637562562373098549",
@@ -8521,6 +8654,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "30.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762474304/findsalt1_wh9ehk.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'dessert'}, {slug: 'snack'}, {slug: 'no-pork'}, {slug: 'no-beef'}, {slug: 'no-shellfish'},
+                        {slug: 'vegetarian'}, {slug: 'no-tree-nuts'}, {slug: 'no-peanuts'}, {slug: 'mild'},
+                      ]
+                    }
                   },
                 ]
               }
@@ -8535,7 +8674,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: null,
                     price: "40.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762855813/burger_dlq3sk.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762855813/burger_dlq3sk.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'american'}, {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-shellfish'},
+                        {slug: 'no-sweets'}, {slug: 'medium'}, {slug: 'mild'},
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881922077384405",
@@ -8763,7 +8908,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Almond Financière, pecan nut praline, maple syrup mouse, maple syrup glaze and burnt butter with miso ganache.",
                     price: "32.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763652183/We_re_obsessed_and_you_will_be_too_THE_WAFFLE_is_now_officially_on_the_menu_kbobzz.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763652183/We_re_obsessed_and_you_will_be_too_THE_WAFFLE_is_now_officially_on_the_menu_kbobzz.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'dessert'}, {slug: 'snack'}, {slug: 'vegetarian'}, {slug: 'no-pork'}, {slug: 'no-beef'},
+                        {slug: 'no-shellfish'}, {slug: 'no-tree-nuts'}, {slug: 'no-peanuts'}, {slug: 'mild'}
+                      ]
+                    },
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/WhatsApp_Image_20251103_a638978339247966918.jpeg",
@@ -8789,7 +8940,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Ingredients: Honey sponge, honey cream and honey sable, a sweet and soft honey sponge cake layered with smooth honey cream, complemented by a crunchy honey sable.",
                     price: "28.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763652396/Every_bite_s_an_experience._Meet_our_Honey_Cake_now_available_zzvu4d.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763652396/Every_bite_s_an_experience._Meet_our_Honey_Cake_now_available_zzvu4d.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'dessert'}, {slug: 'snack'}, {slug: 'vegetarian'}, {slug: 'no-pork'}, {slug: 'no-beef'},
+                        {slug: 'no-shellfish'}, {slug: 'mild'}
+                      ]
+                    },
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/mmw_638768567827841612",
@@ -8821,7 +8978,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "A rich, creamy, and slightly caramelized cheesecake with a smooth texture and a deliciously tangy flavor, featuring a golden-brown top and a melt-in-your-mouth finish.",
                     price: "32.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763652268/One_slice_won_t_be_enough_Chef_Antonio_s_San_Sebastian_cheesecake_is_here_rich_creamy_and_rcjvol.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763652268/One_slice_won_t_be_enough_Chef_Antonio_s_San_Sebastian_cheesecake_is_here_rich_creamy_and_rcjvol.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'dessert'}, {slug: 'snack'}, {slug: 'vegetarian'}, {slug: 'no-pork'}, {slug: 'no-beef'},
+                        {slug: 'no-shellfish'}, {slug: 'mild'}, {slug: "lactose-free",}
+                      ]
+                    },
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/Pistachio_Strawberry_Tart638755175978405620.jpg",
@@ -9172,6 +9335,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "39.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762475026/acaiandco1_uun7f7.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'breakfast'}, {slug: 'snack'}, {slug: 'dessert'}, {slug: 'vegetarian'}, {slug: 'vegan'},
+                        {slug: 'no-pork'}, {slug: 'no-beef'}, {slug: 'no-shellfish'}, {slug: 'no-tree-nuts'}, {slug: 'mild'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/ECBA7B0271BA900970D8C4D2382544A3",
@@ -9180,6 +9349,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "38.00",
                     highlighted: true,
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762475027/acaiandco2_cohlof.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'breakfast'}, {slug: 'snack'}, {slug: 'dessert'}, {slug: 'vegetarian'}, {slug: 'vegan'},
+                        {slug: 'no-pork'}, {slug: 'no-beef'}, {slug: 'no-shellfish'}, {slug: 'mild'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/B98D4D7BEE7AED8DBA13F2FC1C141C23",
@@ -9187,7 +9362,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Acai blended with banana and strawberries, topped with kiwi, dragon fruit, pomegranate, mango and granola on the side.",
                     price: "39.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763656045/Plan_with_your_summer_with_our_Acai_Co_f12sxz.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763656045/Plan_with_your_summer_with_our_Acai_Co_f12sxz.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'breakfast'}, {slug: 'snack'}, {slug: 'dessert'}, {slug: 'vegetarian'}, {slug: 'vegan'},
+                        {slug: 'no-pork'}, {slug: 'no-beef'}, {slug: 'no-shellfish'}, {slug: 'no-tree-nuts'}, {slug: 'no-peanuts'}, {slug: 'mild'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/D909EAF809D224A6FA891350BBEC1D1E",
@@ -9666,7 +9847,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Fudge cake layered with a rich cream blend (pastry cream + ganache), drizzled with syrup, topped with another layer of cream, and finished with a crunchy chocolate feuilletine.",
                     price: "35.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763667248/%D8%B4%D9%88%D9%81%D8%AA_%D8%A7%D9%84%D9%81%D8%B2%D8%B9%D8%A9_%D9%88%D8%AD%D9%84%D8%A7%D9%88%D8%AA%D9%87%D8%A7_%D8%A8%D8%B3_%D8%A7%D9%86%D8%AA_%D8%A7%D9%83%D9%8A%D8%AF_%D9%85%D8%AC%D8%B1%D8%A8%D8%AA%D9%87%D8%A7%D8%B4_%D8%A8_%D8%A7%D9%84%D8%A7%D9%94%D9%8A%D8%B3_%D9%83%D8%B1%D9%8A%D9%85_ximwlv.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763667248/%D8%B4%D9%88%D9%81%D8%AA_%D8%A7%D9%84%D9%81%D8%B2%D8%B9%D8%A9_%D9%88%D8%AD%D9%84%D8%A7%D9%88%D8%AA%D9%87%D8%A7_%D8%A8%D8%B3_%D8%A7%D9%86%D8%AA_%D8%A7%D9%83%D9%8A%D8%AF_%D9%85%D8%AC%D8%B1%D8%A8%D8%AA%D9%87%D8%A7%D8%B4_%D8%A8_%D8%A7%D9%84%D8%A7%D9%94%D9%8A%D8%B3_%D9%83%D8%B1%D9%8A%D9%85_ximwlv.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'dessert'}, {slug: 'no-tree-nuts'}, {slug: 'no-peanuts'}
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/54FDF1830A3EE498C30CF4E58FC3E471",
@@ -9886,8 +10072,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/A2944DCF794E3168875C7DCAE482F125",
                     name: "Qashtota Ghost",
-                    description:
-                      "Rice with milk topped with cream, cream, Belgian lotus biscuits, Belgian lotus, spread and mixed nuts, nuts, pistachios and almonds. Calories 411",
+                    description: "Rice with milk topped with cream, cream, Belgian lotus biscuits, Belgian lotus, spread and mixed nuts, nuts, pistachios and almonds. Calories 411",
                     price: "29.00",
                   },
                   {
@@ -9990,8 +10175,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/69A4C96EC5208D2E75D0C647E4822E4B",
                     name: "alshaklakilitat rice",
-                    description:
-                      "Rice with milk, Italian nutella chocolate, American Oreo, Belgian white chocolate and nuts. Calories 380",
+                    description: "Rice with milk, Italian nutella chocolate, American Oreo, Belgian white chocolate and nuts. Calories 380",
                     price: "27.00",
                   },
                   {
@@ -10263,7 +10447,8 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: null,
                     price: "19.50",
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763666881/%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D0%B8%CC%86_xpxvfz.mp4',
-                    highlighted: true
+                    highlighted: true,
+                    tags: {connect: [{slug: 'dessert'}]}
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/A09A70D5293F7A58934D45B02606D9F0",
@@ -10302,7 +10487,8 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "280 calories per 100 grams",
                     price: "26.50",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763666650/%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D0%B8%CC%86_khdtol.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763666650/%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D0%B8%CC%86_khdtol.mp4',
+                    tags: {connect: [{slug: 'dessert'}]}
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/C57F31720BA24ACFCB4582F3155E8E4D",
@@ -10410,7 +10596,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     }
   },
   {
-    name: 'Zaroob',
+    name: 'Zaroob', // https://www.talabat.com/uae/restaurant/30281/zaroob-%D8%B2%D8%A7%D8%B1%D9%88%D8%A8-szr?aid=1256
     country: 'UAE',
     city: 'Dubai',
     address: 'Zaroob Restaurant - Sheikh Zayed Road Shop 1 - Sheikh Zayed Rd - Trade Center Second - DIFC',
@@ -10481,8 +10667,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "32.00",
                   },
                   {
-                    image:
-                      "https://images.deliveryhero.io/image/menu-import-gateway-prd/regions/ME/chains/TLBT%20Kitopi%20Plugin-New/cf7402bf16b64c6d39cce5d09f7c8023.jpeg",
+                    image: "https://images.deliveryhero.io/image/menu-import-gateway-prd/regions/ME/chains/TLBT%20Kitopi%20Plugin-New/cf7402bf16b64c6d39cce5d09f7c8023.jpeg",
                     name: "Puck & Honey Fateer",
                     description: "Simple. Sweet. Addictive. Creamy Puck cheese with honey in a warm, flaky fateer that melts in your mouth.",
                     price: "26.00",
@@ -10749,7 +10934,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Zaroobian specialty ! Toasted bread filled with grilled chicken, pickles, and creamy garlic spread—perfectly balanced for a flavourful bite.",
                     price: "29.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762857452/sandwitch_zkop1c.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1762857452/sandwitch_zkop1c.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-beef'}, {slug: 'no-pork'}, {slug: 'no-shellfish'}, {slug: 'mild'},
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/menu-import-gateway-prd/regions/ME/chains/TLBT%20Kitopi%20Plugin-New/8ecf967208be41bd3445df6b4fbc9de2.jpeg",
@@ -10976,8 +11166,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                   {
                     image: "https://images.deliveryhero.io/image/menu-import-gateway-prd/regions/ME/chains/TLBT%20Kitopi%20Plugin-New/a527694cec9befc5b0d6137526e3cb29.jpeg",
                     name: "Lahem B'ajeen Man'oushe",
-                    description:
-                      "Freshly baked manakeesh dough, topped with a mixture of minced meat, tomatoes, and onions.",
+                    description: "Freshly baked manakeesh dough, topped with a mixture of minced meat, tomatoes, and onions.",
                     price: "19.00",
                   },
                   {
@@ -11047,7 +11236,12 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Chicken tawouk , cucumber pickles, French fries, coleslaw, cheese, ketchup and garlic sauce, wrapped in freshly baked manakeesh dough.",
                     price: "34.00",
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763669469/%D0%91%D0%B5%D0%B7%D1%96%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D0%B8%CC%86_nxzvvo.mp4',
-                    highlighted: true
+                    highlighted: true,
+                    tags: {
+                      connect: [
+                        {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-beef'}, {slug: 'no-pork'}, {slug: 'no-shellfish'}, {slug: 'mild'},
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/menu-import-gateway-prd/regions/ME/chains/TLBT%20Kitopi%20Plugin-New/2649cf970885982c4581cd3c7620b3e4.jpeg",
@@ -11698,11 +11892,9 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     price: "36.00",
                   },
                   {
-                    image:
-                      "https://images.deliveryhero.io/image/talabat/MenuItems/20250214_TALABAT_UAE__Low638753836687042328.jpg",
+                    image: "https://images.deliveryhero.io/image/talabat/MenuItems/20250214_TALABAT_UAE__Low638753836687042328.jpg",
                     name: "Labneh and Zaatar Sandwich",
-                    description:
-                      "Low fat labneh, thyme\nCalories 247, Pro 7, Carb 31, Fat 10 and Sodium 463.",
+                    description: "Low fat labneh, thyme\nCalories 247, Pro 7, Carb 31, Fat 10 and Sodium 463.",
                     price: "17.00",
                   },
                   {
@@ -12256,7 +12448,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Chicken, hot breadcrumbs, brown pizza dough, dynamite sauce, mozzarella cheese, jalapeno and black olives (Calories 954, Pro 73, Carb 120, Fat 21, Sodium 915)",
                     price: "44.00",
                     highlighted: true,
-                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763671665/Gather_with_your_loved_ones_and_enjoy_with_our_pizza_lowcaloriesae_diet_mealplan_healhty_rjbcnj.mp4'
+                    video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763671665/Gather_with_your_loved_ones_and_enjoy_with_our_pizza_lowcaloriesae_diet_mealplan_healhty_rjbcnj.mp4',
+                    tags: {
+                      connect: [
+                        {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-beef'}, {slug: 'no-pork'}, {slug: 'no-shellfish'},
+                        {slug: 'medium'}, {slug: 'spicy'},
+                      ]
+                    }
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/20250214_TALABAT_UAE__Low638753836695469347.jpg",
@@ -12264,7 +12462,13 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Pizza bread, minced beef, onion, oregano, tomato sauce, capsicum, black pepper, mozzarella cheese and truffle oil (Calories 978, Pro 57, Carb 81, Fat 47, Sodium 1179)",
                     price: "53.00",
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763672037/Happy_World_Pizza_day_pizzaday_worldpizzaday_lowcalories_lowcaloriesae_healthypizza_bu_vnmtsm.mp4',
-                    highlighted: true
+                    highlighted: true,
+                    tags: {
+                      connect: [
+                        {slug: 'lunch'}, {slug: 'dinner'}, {slug: 'no-pork'}, {slug: 'no-shellfish'},
+                        {slug: 'mild'},
+                      ]
+                    }
                   },
                 ]
               }
@@ -12401,7 +12605,8 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description: "Flour, stevia sugar, butter, egg, salt, dark chocolate and protein powder (Calories 226, Pro 3, Carb 34, Fat 10, Sugar 4)",
                     price: "13.00",
                     video: 'https://res.cloudinary.com/doe6zvkod/video/upload/v1763672155/Melting_moment_of_joy_newonthemenu_lowcalories_lowcaloriesae_cookieart_healthysnack_uaer_mlw6je.mp4',
-                    highlighted: true
+                    highlighted: true,
+                    tags: {connect: [{slug: 'snack'}, {slug: 'dessert'}, {slug: 'no-peanuts'}]}
                   },
                   {
                     image: "https://images.deliveryhero.io/image/talabat/MenuItems/mmw_638749675811319131",

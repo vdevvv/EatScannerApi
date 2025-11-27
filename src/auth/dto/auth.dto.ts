@@ -1,5 +1,12 @@
-import {IsEmail, IsEnum, IsNotEmpty, IsString, Length} from 'class-validator';
-import {VerificationType} from '@prisma/client';
+import {
+  IsArray,
+  IsEmail,
+  IsEnum,
+  IsNotEmpty,
+  IsString,
+  Length,
+} from 'class-validator';
+import { VerificationType } from '@prisma/client';
 
 export class RequestEmailVerificationDto {
   @IsEmail()
@@ -14,6 +21,11 @@ export class SetPasswordDto {
   @IsString()
   @Length(8, 100)
   password: string;
+
+  @IsArray()
+  @IsNotEmpty()
+  @IsString({ each: true })
+  selectedAllergies: string[];
 }
 
 export class LoginDto {

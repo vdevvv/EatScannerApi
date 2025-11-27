@@ -13,12 +13,14 @@ model User {
   hashedPassword  String?  @map("hashed_password")
   hashedRt        String?  @map("hashed_rt")
   fullName        String?  @map("full_name")
-  userName        String?  @map("user_name")
+  userName        String?  @unique @map("user_name")
   phone           String?
   avatar          String   @default("https://res.cloudinary.com/doe6zvkod/image/upload/v1762349108/profile_m2necg.png")
+  bio             String?
   isEmailVerified Boolean  @default(false) @map("is_email_verified")
   createdAt       DateTime @default(now()) @map("created_at")
   updatedAt       DateTime @updatedAt @map("updated_at")
+  selectedTags    Tag[]    @relation("UserSelectedTags")
 
   verificationCodes      VerificationCode[]
   emailVerificationToken VerificationToken[]
@@ -125,9 +127,25 @@ model MenuItem {
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @updatedAt @map("updated_at")
 
+  tags Tag[]
+
   category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
 
   @@map("menu_items")
+}
+
+model Tag {
+  id           String     @id @default(uuid())
+  type         TagType
+  name         String     @unique
+  icon         String?
+  slug         String     @unique
+  createdAt    DateTime   @default(now()) @map("created_at")
+  isSelectable Boolean    @default(false) @map("is_selectable")
+  items        MenuItem[]
+  selectedBy   User[]     @relation("UserSelectedTags")
+
+  @@map("tags")
 }
 
 enum VerificationType {
@@ -139,4 +157,11 @@ enum FriendStatus {
   PENDING
   ACCEPTED
   REJECTED
+}
+
+enum TagType {
+  Cuisine
+  Meal_Type
+  Dietary_Restrictions
+  Spice_Level
 }

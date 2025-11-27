@@ -11,7 +11,7 @@ import { FriendshipModule } from '~/friendship/friendship.module';
 import { RestaurantModule } from './restaurant/restaurant.module';
 import { PlaceModule } from '~/place/place.module';
 import { CategoryModule } from './category/category.module';
-import { MenuItemModule } from './menu/menu-item.module';
+import { MenuModule } from './menu/menu.module';
 
 @Module({
   imports: [
@@ -27,7 +27,7 @@ import { MenuItemModule } from './menu/menu-item.module';
     RestaurantModule,
     PlaceModule,
     CategoryModule,
-    MenuItemModule,
+    MenuModule,
   ],
   providers: [
     {
