@@ -10,6 +10,7 @@ import {
 import { FriendshipService } from './friendship.service';
 import { GetUserId } from '~/common/decorators';
 import { PageOptionsDto } from '~/common/dto/page';
+import { SearchFriendDto } from '~/friendship/dto/friend.dto';
 
 @Controller('friends')
 export class FriendshipController {
@@ -73,5 +74,13 @@ export class FriendshipController {
     @Param('otherUserId') otherUserId: string,
   ) {
     return this.friendService.getMutualFriends(userId, otherUserId);
+  }
+
+  @Get('search')
+  async searchNewFriends(
+    @GetUserId() userId: string,
+    @Query() searchDto: SearchFriendDto,
+  ) {
+    return this.friendService.searchUsers(userId, searchDto);
   }
 }

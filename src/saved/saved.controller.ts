@@ -22,4 +22,12 @@ export class SavedController {
   ) {
     return this.savedService.getMySaved(userId, pageOptionsDto);
   }
+
+  @Get(':targetUserId')
+  async getUserSaved(
+    @Param('targetUserId') targetUserId: string,
+    @Query() pageOptionsDto: PageOptionsDto,
+  ) {
+    return this.savedService.getMySaved(targetUserId, pageOptionsDto);
+  }
 }

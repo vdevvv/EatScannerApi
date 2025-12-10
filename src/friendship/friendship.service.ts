@@ -6,6 +6,7 @@ import {
 import { PrismaService } from '~/prisma/prisma.service';
 import { FriendStatus, Prisma, User } from '@prisma/client';
 import { PageDto, PageMetaDto, PageOptionsDto } from '~/common/dto/page';
+import { FriendshipStatus, SearchFriendDto } from '~/friendship/dto/friend.dto';
 
 @Injectable()
 export class FriendshipService {
@@ -258,5 +259,88 @@ export class FriendshipService {
 
       WHERE u.id NOT IN (${currentUserId}, ${targetUserId})
     `;
+  }
+
+  async searchUsers(userId: string, searchDto: SearchFriendDto) {
+    const { q, take, skip } = searchDto;
+
+    if (!q) {
+      return new PageDto(
+        [],
+        new PageMetaDto({ itemsCount: 0, pageOptionsDto: searchDto }),
+      );
+    }
+
+    const whereClause: Prisma.UserWhereInput = {
+      AND: [
+        { id: { not: userId } },
+        {
+          OR: [
+            { userName: { contains: q, mode: 'insensitive' as const } },
+            { fullName: { contains: q, mode: 'insensitive' as const } },
+          ],
+        },
+      ],
+    };
+
+    const [users, itemsCount] = await Promise.all([
+      this.prisma.user.findMany({
+        where: whereClause,
+        take,
+        skip,
+        select: {
+          id: true,
+          fullName: true,
+          userName: true,
+          avatar: true,
+          sentFriendRequests: {
+            where: { receiverId: userId },
+            select: { status: true, id: true },
+          },
+          receivedFriendRequests: {
+            where: { requesterId: userId },
+            select: { status: true, id: true },
+          },
+        },
+      }),
+      this.prisma.user.count({ where: whereClause }),
+    ]);
+
+    const mappedUsers = users.map((user) => {
+      let status: FriendshipStatus = FriendshipStatus.NONE;
+      let friendshipId: string | null = null;
+
+      const requestFromMe = user.receivedFriendRequests[0];
+      const requestToMe = user.sentFriendRequests[0];
+
+      if (requestFromMe) {
+        friendshipId = requestFromMe.id;
+        if (requestFromMe.status === 'ACCEPTED') {
+          status = FriendshipStatus.FRIEND;
+        } else if (requestFromMe.status === 'PENDING') {
+          status = FriendshipStatus.SENT;
+        }
+      } else if (requestToMe) {
+        friendshipId = requestToMe.id;
+        if (requestToMe.status === 'ACCEPTED') {
+          status = FriendshipStatus.FRIEND;
+        } else if (requestToMe.status === 'PENDING') {
+          status = FriendshipStatus.RECEIVED;
+        }
+      }
+
+      const { sentFriendRequests, receivedFriendRequests, ...userData } = user;
+      return {
+        ...userData,
+        friendshipStatus: status,
+        friendshipId: friendshipId,
+      };
+    });
+
+    const pageMetaDto = new PageMetaDto({
+      itemsCount,
+      pageOptionsDto: searchDto,
+    });
+    return new PageDto(mappedUsers, pageMetaDto);
   }
 }
