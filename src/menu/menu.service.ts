@@ -1,7 +1,4 @@
-import {
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import {
   CreateMenuItemDto,
   SearchMenuItemsDto,
@@ -9,11 +6,15 @@ import {
 } from '~/menu/dto/menu.dto';
 import { PrismaService } from '~/prisma/prisma.service';
 import { Prisma } from '@prisma/client';
-import { PageDto, PageMetaDto } from '~/common/dto/page';
+import { PageDto, PageMetaDto, PageOptionsDto } from '~/common/dto/page';
+import { PlaceService } from '~/place/place.service';
 
 @Injectable()
 export class MenuService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly placeService: PlaceService,
+  ) {}
 
   async createMenuItem(dto: CreateMenuItemDto) {
     await this.checkIfCategoryExist(dto.categoryId);
@@ -76,26 +77,6 @@ export class MenuService {
     return raw[0]?.grouped;
   }
 
-  // async getItemsBySlug(dto: SearchMenuItemsDto) {
-  //   const { skip, take } = dto;
-  //   const where: Prisma.MenuItemWhereInput = {
-  //     tags: { some: { slug: { in: dto.tags } } },
-  //   };
-  //
-  //   const [data, itemsCount] = await Promise.all([
-  //     this.prisma.menuItem.findMany({
-  //       where,
-  //       include: this.getIncludes(),
-  //       take,
-  //       skip,
-  //     }),
-  //     this.prisma.menuItem.count({ where }),
-  //   ]);
-  //
-  //   const pageMetaDto = new PageMetaDto({ pageOptionsDto: dto, itemsCount });
-  //   return new PageDto(data, pageMetaDto);
-  // }
-
   async getDiscovery(userId: string) {
     const user = await this.prisma.user.findUnique({
       where: { id: userId },
@@ -115,7 +96,7 @@ export class MenuService {
     return { recommendedForYou, glutenFree, vegetarian, vegan };
   }
 
-  async search(dto: SearchMenuItemsDto) {
+  async search(userId: string, dto: SearchMenuItemsDto) {
     const { skip, take, query, tags } = dto;
     const conditions: Prisma.MenuItemWhereInput[] = [];
 
@@ -135,9 +116,23 @@ export class MenuService {
     }
 
     if (tags && tags.length > 0) {
-      conditions.push({
-        tags: { some: { slug: { in: tags } } },
-      });
+      if (tags.length === 1 && tags[0] === 'recommended-for-you') {
+        const user = await this.prisma.user.findUnique({
+          where: { id: userId },
+          include: { selectedTags: true },
+        });
+
+        const selectedTagSlugs = user?.selectedTags.map((tag) => tag.slug) || [];
+        if (selectedTagSlugs && selectedTagSlugs.length > 0) {
+          conditions.push({
+            tags: { some: { slug: { in: selectedTagSlugs } } },
+          });
+        }
+      } else {
+        conditions.push({
+          tags: { some: { slug: { in: tags } } },
+        });
+      }
     }
 
     const where: Prisma.MenuItemWhereInput = {
@@ -159,6 +154,61 @@ export class MenuService {
     return new PageDto(data, pageMetaDto);
   }
 
+  async getMenuItemById(id: string) {
+    const menuItem = await this.prisma.menuItem.findUnique({
+      where: { id },
+      select: {
+        name: true,
+        description: true,
+        image: true,
+        video: true,
+        price: true,
+        category: {
+          select: {
+            menu: {
+              select: {
+                restaurant: {
+                  select: {
+                    name: true,
+                    placeId: true,
+                    talabatUrl: true,
+                    careemUrl: true,
+                    noonFoodUrl: true,
+                    deliverooUrl: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+
+    if (!menuItem) {
+      throw new NotFoundException('Menu item not found');
+    }
+    const { placeId, name, careemUrl, talabatUrl, deliverooUrl, noonFoodUrl } =
+      menuItem.category.menu.restaurant;
+    const rating = await this.placeService.getPlacesRating([placeId]);
+
+    return {
+      name: menuItem.name,
+      description: menuItem.description,
+      image: menuItem.image,
+      video: menuItem.video,
+      price: menuItem.price,
+      restaurant: {
+        name,
+        placeId,
+        rating: rating[placeId]?.rating ?? null,
+        talabatUrl,
+        careemUrl,
+        noonFoodUrl,
+        deliverooUrl,
+      },
+    };
+  }
+
   private async getMenuItemsByTag(tagSlugs: string[]) {
     if (tagSlugs.length === 0) return [];
 
@@ -168,7 +218,7 @@ export class MenuService {
         NOT: { video: null },
       },
       include: this.getIncludes(),
-      take: 7,
+      take: 5,
     });
   }
 

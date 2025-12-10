@@ -1,9 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { PlaceService } from '~/place/place.service';
-import { CreateRestaurantDto } from '~/restaurant/dto/restaurant.dto';
+import {
+  CreateRestaurantDto,
+  GetRestaurantsDto,
+} from '~/restaurant/dto/restaurant.dto';
 import { PrismaService } from '~/prisma/prisma.service';
 import { PageDto, PageMetaDto, PageOptionsDto } from '~/common/dto/page';
-import { Prisma } from '@prisma/client';
 
 @Injectable()
 export class RestaurantService {
@@ -34,42 +36,125 @@ export class RestaurantService {
     });
   }
 
-  async getRestaurants(pageOptionsDto: PageOptionsDto) {
+  async getRestaurantsForAdmin(pageOptionsDto: PageOptionsDto) {
     const { skip, take } = pageOptionsDto;
-
-    const itemsWhere: Prisma.MenuItemWhereInput = {
-      video: { not: null, notIn: [''] },
-    };
-
-    const where: Prisma.RestaurantWhereInput = {
-      menu: { is: { categories: { some: { items: { some: itemsWhere } } } } },
-    };
     const [data, itemsCount] = await Promise.all([
       this.prisma.restaurant.findMany({
         skip,
         take,
-        where,
-        include: {
-          menu: {
-            include: {
-              categories: {
-                where: { items: { some: itemsWhere } },
-                include: { items: { where: itemsWhere } },
-              },
-            },
-          },
-        },
+        orderBy: { name: 'asc' },
       }),
-      this.prisma.restaurant.count({ where }),
+      this.prisma.restaurant.count({}),
     ]);
 
-    const pageMetaDto = new PageMetaDto({ pageOptionsDto, itemsCount });
+    const pageMetaDto = new PageMetaDto({ pageOptionsDto, itemsCount, });
     return new PageDto(data, pageMetaDto);
   }
 
-  async getMenu(menuId: string) {
+  async getRestaurants(userId: string, dto: GetRestaurantsDto) {
+    const { skip, take, latitude: lat, longitude: lon } = dto;
+
+    const [restaurants, totalCount] = await Promise.all([
+      this.prisma.$queryRaw<any[]>`
+      WITH paginated_restaurants AS (
+        SELECT r.id,
+               r.place_id AS "placeId",
+               r.name,
+               r.city,
+               r.latitude,
+               r.longitude,
+               (
+                 3958.8 * acos(
+                   cos(radians(${lat})) * cos(radians(r.latitude)) *
+                   cos(radians(r.longitude) - radians(${lon})) +
+                   sin(radians(${lat})) * sin(radians(r.latitude))
+                 )
+               ) AS distance
+        FROM restaurants r
+        WHERE EXISTS (
+          SELECT 1
+          FROM menus m
+          JOIN categories c ON c.menu_id = m.id
+          JOIN menu_items mi ON mi.category_id = c.id
+          WHERE m.restaurant_id = r.id
+            AND mi.video IS NOT NULL
+            AND mi.video <> ''
+        )
+        ORDER BY distance
+        LIMIT ${take} OFFSET ${skip}
+      )
+
+      SELECT 
+        pr.id,
+        pr."placeId",
+        pr.name,
+        pr.city,
+        pr.latitude,
+        pr.longitude,
+        pr.distance,
+        
+        COALESCE(
+          JSON_AGG(
+            JSON_BUILD_OBJECT(
+              'id', mi.id,
+              'name', mi.name,
+              'price', mi.price,
+              'description', mi.description,
+              'image', mi.image,
+              'video', mi.video,
+              'createdAt', mi.created_at,
+              'isLiked', (EXISTS (SELECT 1 FROM favorites f WHERE f.menu_item_id = mi.id AND f.user_id = ${userId})),
+              'isSaved', (EXISTS (SELECT 1 FROM saved_items s WHERE s.menu_item_id = mi.id AND s.user_id = ${userId}))
+            )
+          ) FILTER (WHERE mi.id IS NOT NULL), 
+          '[]'
+        ) as items
+
+      FROM paginated_restaurants pr
+      JOIN menus m ON m.restaurant_id = pr.id
+      JOIN categories c ON c.menu_id = m.id
+      JOIN menu_items mi ON mi.category_id = c.id
+      
+      WHERE mi.video IS NOT NULL 
+        AND mi.video <> ''
+      
+      GROUP BY pr.id, pr.name, pr.city, pr.latitude, pr.longitude, pr.distance, pr."placeId"
+      ORDER BY pr.distance
+    `,
+
+      this.prisma.$queryRaw<[{ count: bigint }]>`
+        SELECT COUNT(DISTINCT r.id) as count
+        FROM restaurants r
+               JOIN menus m ON m.restaurant_id = r.id
+               JOIN categories c ON c.menu_id = m.id
+               JOIN menu_items mi ON mi.category_id = c.id
+        WHERE mi.video IS NOT NULL
+          AND mi.video <> ''
+      `,
+    ]);
+
+    const formattedRestaurants = restaurants.map((r) => ({
+      ...r,
+      distance: Number(r.distance),
+      items: r.items.map((item: any) => ({
+        ...item,
+        price: Number(item.price),
+        isLiked: Boolean(item.isLiked),
+        isSaved: Boolean(item.isSaved),
+      })),
+    }));
+
+    const pageMetaDto = new PageMetaDto({
+      pageOptionsDto: dto,
+      itemsCount: Number(totalCount[0]?.count || 0),
+    });
+
+    return new PageDto(formattedRestaurants, pageMetaDto);
+  }
+
+  async getMenu(restaurantId: string) {
     return this.prisma.menu.findUnique({
-      where: { id: menuId },
+      where: { restaurantId },
       include: { categories: { include: { items: true } } },
     });
   }

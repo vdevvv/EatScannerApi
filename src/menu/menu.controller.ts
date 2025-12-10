@@ -1,10 +1,8 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { GetUserId, Public } from '~/common/decorators';
-import {
-  CreateMenuItemDto,
-  SearchMenuItemsDto,
-} from '~/menu/dto/menu.dto';
+import { CreateMenuItemDto, SearchMenuItemsDto } from '~/menu/dto/menu.dto';
 import { MenuService } from '~/menu/menu.service';
+import { PageOptionsDto } from '~/common/dto/page';
 
 @Controller('menu')
 export class MenuController {
@@ -27,13 +25,15 @@ export class MenuController {
   }
 
   @Get('/search')
-  async search(@Query() dto: SearchMenuItemsDto) {
-    return this.menuService.search(dto);
+  async search(
+    @GetUserId() userId: string,
+    @Query() dto: SearchMenuItemsDto
+  ) {
+    return this.menuService.search(userId, dto);
   }
 
-  // @Public()
-  // @Get('/by-tag')
-  // async getByTag(@Query() dto: SearchMenuItemsDto,) {
-  //   return this.menuService.getItemsBySlug(dto)
-  // }
+  @Get('/item/:id')
+  async getMenuItemById(@Param('id') id: string) {
+    return this.menuService.getMenuItemById(id);
+  }
 }

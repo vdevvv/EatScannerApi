@@ -12,6 +12,11 @@ import { RestaurantModule } from './restaurant/restaurant.module';
 import { PlaceModule } from '~/place/place.module';
 import { CategoryModule } from './category/category.module';
 import { MenuModule } from './menu/menu.module';
+import { CloudinaryModule } from '~/cloudinary/cloudinary.module';
+import { SavedModule } from './saved/saved.module';
+import { FavoritesModule } from './favorites/favorites.module';
+import { OrderModule } from './order/order.module';
+import { NotificationsModule } from './notifications/notifications.module';
 
 @Module({
   imports: [
@@ -20,6 +25,7 @@ import { MenuModule } from './menu/menu.module';
     }),
     ScheduleModule.forRoot(),
     PrismaModule,
+    CloudinaryModule,
     UserModule,
     AuthModule,
     VerificationCodeModule,
@@ -28,6 +34,10 @@ import { MenuModule } from './menu/menu.module';
     PlaceModule,
     CategoryModule,
     MenuModule,
+    SavedModule,
+    FavoritesModule,
+    OrderModule,
+    NotificationsModule,
   ],
   providers: [
     {

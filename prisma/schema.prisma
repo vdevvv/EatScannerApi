@@ -16,7 +16,9 @@ model User {
   userName        String?  @unique @map("user_name")
   phone           String?
   avatar          String   @default("https://res.cloudinary.com/doe6zvkod/image/upload/v1762349108/profile_m2necg.png")
+  avatarPublicId  String?
   bio             String?
+  pushToken       String?
   isEmailVerified Boolean  @default(false) @map("is_email_verified")
   createdAt       DateTime @default(now()) @map("created_at")
   updatedAt       DateTime @updatedAt @map("updated_at")
@@ -26,6 +28,10 @@ model User {
   emailVerificationToken VerificationToken[]
   sentFriendRequests     Friendship[]        @relation("SentRequests")
   receivedFriendRequests Friendship[]        @relation("ReceivedRequests")
+  favorites              Favorite[]
+  savedItems             SavedItem[]
+  order                  Order[]
+  Notification           Notification[]
 
   @@map("users")
 }
@@ -68,22 +74,29 @@ model Friendship {
   requester User @relation("SentRequests", fields: [requesterId], references: [id], onDelete: Cascade)
   receiver  User @relation("ReceivedRequests", fields: [receiverId], references: [id], onDelete: Cascade)
 
+  @@unique([requesterId, receiverId])
   @@map("friendships")
 }
 
 model Restaurant {
-  id        String   @id @default(uuid())
-  name      String
-  city      String
-  country   String
-  address   String
-  latitude  Float
-  longitude Float
-  placeId   String   @unique @map("place_id")
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
+  id           String         @id @default(uuid())
+  name         String
+  city         String
+  country      String
+  address      String
+  latitude     Float
+  longitude    Float
+  type         RestaurantType @default(RESTAURANT)
+  careemUrl    String?        @map("careem_url")
+  noonFoodUrl  String?        @map("noon_food_url")
+  talabatUrl   String?        @map("talabat_url")
+  deliverooUrl String?        @map("deliveroo_url")
+  placeId      String         @unique @map("place_id")
+  createdAt    DateTime       @default(now()) @map("created_at")
+  updatedAt    DateTime       @updatedAt @map("updated_at")
 
-  menu Menu?
+  menu  Menu?
+  order Order[]
 
   @@index([latitude, longitude])
   @@map("restaurants")
@@ -115,21 +128,25 @@ model Category {
 }
 
 model MenuItem {
-  id          String   @id @default(uuid())
+  id          String      @id @default(uuid())
   name        String
-  price       Decimal  @db.Decimal(10, 2)
-  discount    Int      @default(0)
+  price       Decimal     @db.Decimal(10, 2)
+  discount    Int         @default(0)
   description String?
   image       String
   video       String?
-  highlighted Boolean  @default(false)
-  categoryId  String   @map("category_id")
-  createdAt   DateTime @default(now()) @map("created_at")
-  updatedAt   DateTime @updatedAt @map("updated_at")
+  badges      DishBadge[] @map("badges")
+  highlighted Boolean     @default(false)
+  categoryId  String      @map("category_id")
+  createdAt   DateTime    @default(now()) @map("created_at")
+  updatedAt   DateTime    @updatedAt @map("updated_at")
 
-  tags Tag[]
+  tags        Tag[]
+  favoritedBy Favorite[]
+  savedBy     SavedItem[]
 
   category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  order    Order[]
 
   @@map("menu_items")
 }
@@ -148,6 +165,63 @@ model Tag {
   @@map("tags")
 }
 
+model Favorite {
+  userId     String   @map("user_id")
+  menuItemId String   @map("menu_item_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  user User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  item MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+
+  @@id([userId, menuItemId])
+  @@map("favorites")
+}
+
+model SavedItem {
+  userId     String   @map("user_id")
+  menuItemId String   @map("menu_item_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  user User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  item MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+
+  @@id([userId, menuItemId])
+  @@map("saved_items")
+}
+
+model Order {
+  id                String          @id @default(uuid())
+  userId            String          @map("user_id")
+  menuItemId        String          @map("menu_item_id")
+  restaurantId      String          @map("restaurant_id")
+  deliveryService   String          @map("delivery_service")
+  price             Decimal         @db.Decimal(10, 2)
+  createdAt         DateTime        @default(now()) @map("created_at")
+  updatedAt         DateTime        @updatedAt @map("updated_at")
+  badgesSnapshot    DishBadge[]     @map("badges_snapshot")
+  venueTypeSnapshot RestaurantType? @map("venue_type_snapshot")
+
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  menuItem   MenuItem   @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+  restaurant Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
+
+  @@map("orders")
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  title     String
+  body      String
+  data      Json?
+  isRead    Boolean  @default(false) @map("is_read")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  userId String @map("user_id")
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("notifications")
+}
+
 enum VerificationType {
   email_verification
   password_reset
@@ -164,4 +238,15 @@ enum TagType {
   Meal_Type
   Dietary_Restrictions
   Spice_Level
+}
+
+enum RestaurantType {
+  CAFE
+  RESTAURANT
+}
+
+enum DishBadge {
+  SPICY
+  DESSERT
+  HEALTHY
 }

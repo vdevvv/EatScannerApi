@@ -33,3 +33,8 @@ export class UpdatePasswordDto {
   @Length(8, 100)
   newPassword: string;
 }
+
+export class UpdatePushTokenDto {
+  @IsString()
+  expoPushToken: string;
+}
