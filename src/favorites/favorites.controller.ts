@@ -22,4 +22,12 @@ export class FavoritesController {
   ) {
     return this.favoritesService.getMyFavorites(userId, pageOptionsDto);
   }
+
+  @Get(':targetUserId')
+  async getUserFavorites(
+    @Param('targetUserId') targetUserId: string,
+    @Query() pageOptionsDto: PageOptionsDto,
+  ) {
+    return this.favoritesService.getMyFavorites(targetUserId, pageOptionsDto);
+  }
 }

@@ -5,6 +5,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Pickl Gardens Plaza',
     country: 'UAE',
     talabatUrl: 'https://www.talabat.com/uae/pickl-dubai-silicon-oasis',
+    deliverooUrl:
+      'https://deliveroo.ae/menu/abu-dhabi/khalifa-city/pickl-khalifa-city?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+    // noonFoodUrl: '' // none
+    // keetaUrl: '', // none
     city: 'Abu Dhabi',
     type: 'CAFE',
     address: 'Pickl Gardens Plaza, Khalifa City, SW18',
@@ -713,6 +717,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Pitfire Pizza',
     country: 'UAE',
     talabatUrl: 'https://www.talabat.com/uae/pitfire-pizza',
+    deliverooUrl:
+      'https://deliveroo.ae/menu/dubai/jumeirah-village-circle/pitfire-pizza-jvc?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+    noonFoodUrl: 'https://food.noon.com/en-ae/outlet/PTFRPZBQ9F',
+    keetaUrl: 'https://url-eu.mykeeta.com/m7GIooDz',
     type: 'CAFE',
     city: 'Dubai',
     address: 'Pitfire Pizza, Dubai Hills Estate',
@@ -1483,6 +1491,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Alsafadi',
     country: 'UAE',
     talabatUrl: 'https://www.talabat.com/uae/al-safadi02',
+    deliverooUrl:
+      'https://deliveroo.ae/menu/dubai/dubai-creek/al-safadi-al-rigga?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+    // noonFoodUrl: '' // none
+    // keetaUrl: '' //none
     city: 'Dubai',
     type: 'RESTAURANT',
     address: 'Alsafadi restaurant, Al Rigga Rd Deira',
@@ -3032,6 +3044,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Gazebo',
     country: 'UAE',
     talabatUrl: 'https://www.talabat.com/uae/gazebo--tgo',
+    deliverooUrl:
+      'https://deliveroo.ae/menu/abu-dhabi/marina-village/gazebo-marina-mall-abu-dhabi?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+    noonFoodUrl: 'https://food.noon.com/en-ae/outlet/GZBL12JYCZ',
+    // keetaUrl: '' // none
     city: 'Abu Dhabi',
     type: 'RESTAURANT',
     address:
@@ -5616,6 +5632,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Couqley',
     country: 'UAE',
     talabatUrl: 'https://www.talabat.com/uae/couqley-business-bay',
+    deliverooUrl:
+      'https://deliveroo.ae/menu/dubai/dubai-canal-walk/couqley-french-brasserie-downtown?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+    // noonFoodUrl: '', // none
+    // keetaUrl: '', // none
     city: 'Dubai',
     type: 'RESTAURANT',
     address: 'Couqley French Brasserie Downtown Dubai Marasi Dr Business Bay',
@@ -6297,6 +6317,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'High Joint',
     country: 'UAE',
     talabatUrl: 'https://www.talabat.com/uae/high-joint',
+    deliverooUrl:
+      'https://deliveroo.ae/menu/dubai/al-manara/high-joint?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+    noonFoodUrl: 'https://food.noon.com/en-ae/outlet/HGHJNTXZNX',
+    keetaUrl: 'https://url-eu.mykeeta.com/dNxyvrxz',
     city: 'Dubai',
     type: 'CAFE',
     address: 'High joint Al Manara',
@@ -7843,6 +7867,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Zaatar w Zeit',
     country: 'UAE',
     talabatUrl: 'https://www.talabat.com/uae/zaatar-w-zeit',
+    deliverooUrl:
+      'https://deliveroo.ae/menu/dubai/sheikh-zayed/zaatar-w-zeit-szr?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+    noonFoodUrl: 'https://food.noon.com/en-ae/outlet/ZTRWZTN8BV',
+    keetaUrl: 'https://url-eu.mykeeta.com/L7xXvcSz',
     city: 'Dubai',
     type: 'CAFE',
     address:
@@ -9054,10 +9082,15 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     },
   },
   {
-    name: 'Common Grounds', // !!!
+    name: 'Common Grounds',
     country: 'UAE',
     city: 'Dubai',
     type: 'CAFE',
+    deliverooUrl:
+      'https://deliveroo.ae/menu/dubai/al-barsha-1/common-grounds?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+    talabatUrl: 'https://www.talabat.com/uae/common-grounds',
+    // noonFoodUrl: '', // none
+    // keetaUrl: '', // none
     address: 'Common Grounds Mall of Level 2',
     latitude: 25.1191192,
     longitude: 55.2028445,
@@ -9692,7 +9725,11 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
   {
     name: 'Malay Al tawak',
     country: 'UAE',
-    talabatUrl: 'https://www.talabat.com/uae/malak-al-tawouk',
+    talabatUrl: 'https://www.talabat.com/uae/malak-al-tawouk1',
+    deliverooUrl:
+      'https://deliveroo.ae/menu/dubai/al-barsha-3/malak-al-tawouk?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+    noonFoodUrl: 'https://food.noon.com/en-ae/outlet/MLKLTWEIDP',
+    keetaUrl: 'https://url-eu.mykeeta.com/vzkl8zlz',
     city: 'Dubai',
     address: 'Malay Al tawak Hessa St - Al Barsha',
     latitude: 25.0935306,
@@ -10610,384 +10647,392 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
       },
     },
   },
-  {
-    name: 'Find Salt',
-    country: 'UAE',
-    talabatUrl: 'https://www.talabat.com/uae/salt-bbq-box',
-    city: 'Dubai',
-    type: 'CAFE',
-    address: 'DMM-GF004 Marina Mall',
-    latitude: 25.0768462,
-    longitude: 55.1395452,
-    placeId: 'ChIJd9jlX2QVXz4R2TFoyPfinxQ',
-    menu: {
-      create: {
-        categories: {
-          create: [
-            {
-              name: 'Hard Softies',
-              items: {
-                create: [
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637577043431490819',
-                    name: 'Popsies Bag Of 6',
-                    description:
-                      'A bag of your choice of 6 push pops. Choose what you like of our signature flavors: mango, mango coconut, mango lotus, chocolate brownie, salted caramel and lotus.',
-                    price: '80.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637575464024351191',
-                    name: 'Popsies Bag Of 12',
-                    description:
-                      'A bag of your choice of 12 push pops. Choose what you like of our signature flavors: mango, mango coconut, mango lotus, chocolate brownie, salted caramel and lotus.',
-                    price: '120.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637558194598668917',
-                    name: 'Mango Pint',
-                    description:
-                      'Mangoes have a rich texture that balance with lemon juice',
-                    price: '55.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637558194817653300',
-                    name: 'Mango Lotus Pint',
-                    description:
-                      'Dairy lotus ice cream, Mangos and crunchy lotus biscuits',
-                    price: '55.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637558195258851696',
-                    name: 'Lotus Pint',
-                    description:
-                      'Dairy lotus ice cream, lotus sauce and crunchy lotus biscuits',
-                    price: '55.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637558195706590987',
-                    name: 'Chocolate Brownie Pint',
-                    description:
-                      'Fully baked brownies chocolate ice creams and chocolate fudge at the core',
-                    price: '55.00',
-                    highlighted: true,
-                    video:
-                      'https://res.cloudinary.com/djdf9jke8/video/upload/v1764961925/Find-Salt_Chocolate_Brownie_Pint_ikvqbc.mp4', // +
-                    tags: {
-                      connect: [
-                        { slug: 'dessert' },
-                        { slug: 'snack' },
-                        { slug: 'no-pork' },
-                        { slug: 'no-beef' },
-                        { slug: 'no-shellfish' },
-                        { slug: 'vegetarian' },
-                        { slug: 'no-tree-nuts' },
-                        { slug: 'no-peanuts' },
-                        { slug: 'mild' },
-                      ],
-                    },
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637562562373098549',
-                    name: 'Salt Ice Cream Cone And Spoons',
-                    description: '12 pieces wafer cone inside and spoons',
-                    price: '30.00',
-                    highlighted: true,
-                    video:
-                      'https://res.cloudinary.com/djdf9jke8/video/upload/v1764962165/Find-Salt_Salt_Ice_Cream_Cone_And_Spoons_odu3on.mp4', // +
-                    tags: {
-                      connect: [
-                        { slug: 'dessert' },
-                        { slug: 'snack' },
-                        { slug: 'no-pork' },
-                        { slug: 'no-beef' },
-                        { slug: 'no-shellfish' },
-                        { slug: 'vegetarian' },
-                        { slug: 'no-tree-nuts' },
-                        { slug: 'no-peanuts' },
-                        { slug: 'mild' },
-                      ],
-                    },
-                  },
-                ],
-              },
-            },
-            {
-              name: 'Sliders',
-              items: {
-                create: [
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881921545435863',
-                    name: 'Original Slider',
-                    description: null,
-                    price: '40.00',
-                    highlighted: true,
-                    video:
-                      'https://res.cloudinary.com/djdf9jke8/video/upload/v1764962249/Find-Salt_Original_Slider_tkusrp.mp4', // +
-                    tags: {
-                      connect: [
-                        { slug: 'american' },
-                        { slug: 'lunch' },
-                        { slug: 'dinner' },
-                        { slug: 'no-shellfish' },
-                        { slug: 'no-sweets' },
-                        { slug: 'medium' },
-                        { slug: 'mild' },
-                      ],
-                    },
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881922077384405',
-                    name: 'Jalapenos Slider',
-                    description: null,
-                    price: '47.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881922536457767',
-                    name: 'Truffle Slider',
-                    description: null,
-                    price: '54.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881924177898945',
-                    name: 'Crispy Chicken Slider',
-                    description:
-                      'chicken, cheese, vegetables and served in bun',
-                    price: '45.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881924594188872',
-                    name: 'Chicken Cheetos Slider',
-                    description: null,
-                    price: '47.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881925987237900',
-                    name: 'Lettuce Wrap',
-                    description: 'Dish with lettuce wraps.',
-                    price: '47.00',
-                  },
-                ],
-              },
-            },
-            {
-              name: 'Fries',
-              items: {
-                create: [
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637883720929907766',
-                    name: 'Original Fries',
-                    description: 'Classic fries with spices',
-                    price: '17.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637883721338492041',
-                    name: 'Cheetos Fries',
-                    description:
-                      'Crunchy and cheesy with our cheetos fries, featuring crispy golden fries coated in a delectable layer of crushed cheetos.',
-                    price: '31.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637883721730778022',
-                    name: 'Fire Fries',
-                    description: null,
-                    price: '31.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637883722260505376',
-                    name: 'Sweet Potato Fries',
-                    description:
-                      'Indulge in the perfect balance of crispy and tender with our Sweet Potato Fries, expertly seasoned and lightly golden, delivering a mouthwatering experience that will have you craving their delightful sweetness with every bite.',
-                    price: '27.00',
-                  },
-                ],
-              },
-            },
-            {
-              name: 'Ready To Cook',
-              items: {
-                create: [
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/WhatsApp_Image_2021-_637500408307209166.jpg',
-                    name: 'Ready To Cook Salt Camp Kit',
-                    description:
-                      '10 wagyu beef patties, 10 marinated chicken breast patties, 20 slider buns, lettuce, cheese slices, 12 small corn cobs, 6 potatoes,  chopped pickles, sliced onions, salt and pepper, buttered corn, salt and vinegar sauce, chic sauce, buffalo sauce, candy pepper sauce, truffle aioli sauce and proper sauce.',
-                    price: '450.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/item_637213579386785335.jpg',
-                    name: 'Ready To Cook Salt Home Kit - Mini',
-                    description:
-                      '10 wagyu beef patties, 10 buns, lettuce, cheese slices, jalapeno, pickles, chopped onions, tomato slices, original salt sauce, fire salt sauce, bbq sriracha sauce, salt and pepper.',
-                    price: '210.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/item_637213579399257297.jpg',
-                    name: 'Ready To Cook Salt Home Kit - Large',
-                    description:
-                      '20 wagyu beef patties, 20 buns, lettuce, cheese slices, jalapeno, pickles, chopped onions, tomato slices, original salt sauce, fire salt sauce, bbq sriracha sauce, salt and pepper.',
-                    price: '375.00',
-                  },
-                ],
-              },
-            },
-            {
-              name: 'Salt Dips',
-              items: {
-                create: [
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Original_Sauce_637209431271012625.jpg',
-                    name: 'Original Salt Sauce',
-                    description: null,
-                    price: '5.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Cheese_sauce_637209431280091329.jpg',
-                    name: 'Cheese Salt Sauce',
-                    description: null,
-                    price: '5.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Cheetos_Sauce_637209431290881673.jpg',
-                    name: 'Cheetos Salt Sauce',
-                    description: null,
-                    price: '5.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Chic_Sauce_637209431301331614.jpg',
-                    name: 'Chic Salt Sauce',
-                    description: null,
-                    price: '5.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Fire_sauce_637209431314138538.jpg',
-                    name: 'Fire Salt Sauce',
-                    description: null,
-                    price: '5.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Honey_mustard_sauce_637209431325549477.jpg',
-                    name: 'Honey Mustard Salt Sauce',
-                    description: null,
-                    price: '5.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Hook_Sauce_637209431339262623.jpg',
-                    name: 'Hook Salt Sauce',
-                    description: null,
-                    price: '5.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Labneh_Sauce2020_637214426548378000.jpg',
-                    name: 'Labneh Salt Sauce',
-                    description: null,
-                    price: '5.00',
-                  },
-                ],
-              },
-            },
-            {
-              name: 'Drinks',
-              items: {
-                create: [
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637629901301275831',
-                    name: 'Mango Milkshake',
-                    description:
-                      "Made with mangoes, milk and ice cream, it's a perfect blend of sweet and creamy, perfect to enjoy on a hot summer day or any time you crave something sweet.",
-                    price: '35.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881930728361803',
-                    name: 'Mineral Water',
-                    description: '330 ml.',
-                    price: '13.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/black_lemonade_637214426580108446.jpg',
-                    name: 'Black Lemonade',
-                    description: 'Refreshing black lemonade drink.',
-                    price: '27.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Orange_juice_2020_637214426570018765.jpg',
-                    name: 'Orange Juice',
-                    description:
-                      "Made capturing all the natural sweetness and tangy citrus flavor. Packed with Vitamin C, it's the perfect thirst quencher and a healthy addition to your daily diet.",
-                    price: '21.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Coca-Cola_330ML_637283596545439188.jpg',
-                    name: 'Coca-Cola',
-                    description: 'Carbonated soft drink',
-                    price: '13.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Coca_Cola_Zero_355_ml_637283596558541430.jpg',
-                    name: 'Coca-Cola Zero',
-                    description:
-                      'Carbonated soft drink with zero sugar & zero calories',
-                    price: '13.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Sprite_330ML_637283596567509814.jpg',
-                    name: 'Sprite',
-                    description: 'Non-caffeinated soft drink',
-                    price: '13.00',
-                  },
-                  {
-                    image:
-                      'https://images.deliveryhero.io/image/talabat/MenuItems/Fanta_orange_355_ml_637283597600014542.jpg',
-                    name: 'Fanta',
-                    description: 'Carbonated soft drink',
-                    price: '13.00',
-                  },
-                ],
-              },
-            },
-          ],
-        },
-      },
-    },
-  },
+  // {
+  //   name: 'Find Salt',
+  //   country: 'UAE',
+  //   talabatUrl: 'https://www.talabat.com/uae/salt-bbq-box',
+  //   deliverooUrl:
+  //     'https://deliveroo.ae/menu/dubai/downtown-canal/salt-editions-dt?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+  //   // noonFoodUrl: '', // none
+  //   // keetaUrl: '', // none
+  //   city: 'Dubai',
+  //   type: 'CAFE',
+  //   address: 'DMM-GF004 Marina Mall',
+  //   latitude: 25.0768462,
+  //   longitude: 55.1395452,
+  //   placeId: 'ChIJd9jlX2QVXz4R2TFoyPfinxQ',
+  //   menu: {
+  //     create: {
+  //       categories: {
+  //         create: [
+  //           {
+  //             name: 'Hard Softies',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637577043431490819',
+  //                   name: 'Popsies Bag Of 6',
+  //                   description:
+  //                     'A bag of your choice of 6 push pops. Choose what you like of our signature flavors: mango, mango coconut, mango lotus, chocolate brownie, salted caramel and lotus.',
+  //                   price: '80.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637575464024351191',
+  //                   name: 'Popsies Bag Of 12',
+  //                   description:
+  //                     'A bag of your choice of 12 push pops. Choose what you like of our signature flavors: mango, mango coconut, mango lotus, chocolate brownie, salted caramel and lotus.',
+  //                   price: '120.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637558194598668917',
+  //                   name: 'Mango Pint',
+  //                   description:
+  //                     'Mangoes have a rich texture that balance with lemon juice',
+  //                   price: '55.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637558194817653300',
+  //                   name: 'Mango Lotus Pint',
+  //                   description:
+  //                     'Dairy lotus ice cream, Mangos and crunchy lotus biscuits',
+  //                   price: '55.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637558195258851696',
+  //                   name: 'Lotus Pint',
+  //                   description:
+  //                     'Dairy lotus ice cream, lotus sauce and crunchy lotus biscuits',
+  //                   price: '55.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637558195706590987',
+  //                   name: 'Chocolate Brownie Pint',
+  //                   description:
+  //                     'Fully baked brownies chocolate ice creams and chocolate fudge at the core',
+  //                   price: '55.00',
+  //                   highlighted: true,
+  //                   video:
+  //                     'https://res.cloudinary.com/djdf9jke8/video/upload/v1764961925/Find-Salt_Chocolate_Brownie_Pint_ikvqbc.mp4', // +
+  //                   tags: {
+  //                     connect: [
+  //                       { slug: 'dessert' },
+  //                       { slug: 'snack' },
+  //                       { slug: 'no-pork' },
+  //                       { slug: 'no-beef' },
+  //                       { slug: 'no-shellfish' },
+  //                       { slug: 'vegetarian' },
+  //                       { slug: 'no-tree-nuts' },
+  //                       { slug: 'no-peanuts' },
+  //                       { slug: 'mild' },
+  //                     ],
+  //                   },
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637562562373098549',
+  //                   name: 'Salt Ice Cream Cone And Spoons',
+  //                   description: '12 pieces wafer cone inside and spoons',
+  //                   price: '30.00',
+  //                   highlighted: true,
+  //                   video:
+  //                     'https://res.cloudinary.com/djdf9jke8/video/upload/v1764962165/Find-Salt_Salt_Ice_Cream_Cone_And_Spoons_odu3on.mp4', // +
+  //                   tags: {
+  //                     connect: [
+  //                       { slug: 'dessert' },
+  //                       { slug: 'snack' },
+  //                       { slug: 'no-pork' },
+  //                       { slug: 'no-beef' },
+  //                       { slug: 'no-shellfish' },
+  //                       { slug: 'vegetarian' },
+  //                       { slug: 'no-tree-nuts' },
+  //                       { slug: 'no-peanuts' },
+  //                       { slug: 'mild' },
+  //                     ],
+  //                   },
+  //                 },
+  //               ],
+  //             },
+  //           },
+  //           {
+  //             name: 'Sliders',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881921545435863',
+  //                   name: 'Original Slider',
+  //                   description: null,
+  //                   price: '40.00',
+  //                   highlighted: true,
+  //                   video:
+  //                     'https://res.cloudinary.com/djdf9jke8/video/upload/v1764962249/Find-Salt_Original_Slider_tkusrp.mp4', // +
+  //                   tags: {
+  //                     connect: [
+  //                       { slug: 'american' },
+  //                       { slug: 'lunch' },
+  //                       { slug: 'dinner' },
+  //                       { slug: 'no-shellfish' },
+  //                       { slug: 'no-sweets' },
+  //                       { slug: 'medium' },
+  //                       { slug: 'mild' },
+  //                     ],
+  //                   },
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881922077384405',
+  //                   name: 'Jalapenos Slider',
+  //                   description: null,
+  //                   price: '47.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881922536457767',
+  //                   name: 'Truffle Slider',
+  //                   description: null,
+  //                   price: '54.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881924177898945',
+  //                   name: 'Crispy Chicken Slider',
+  //                   description:
+  //                     'chicken, cheese, vegetables and served in bun',
+  //                   price: '45.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881924594188872',
+  //                   name: 'Chicken Cheetos Slider',
+  //                   description: null,
+  //                   price: '47.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881925987237900',
+  //                   name: 'Lettuce Wrap',
+  //                   description: 'Dish with lettuce wraps.',
+  //                   price: '47.00',
+  //                 },
+  //               ],
+  //             },
+  //           },
+  //           {
+  //             name: 'Fries',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637883720929907766',
+  //                   name: 'Original Fries',
+  //                   description: 'Classic fries with spices',
+  //                   price: '17.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637883721338492041',
+  //                   name: 'Cheetos Fries',
+  //                   description:
+  //                     'Crunchy and cheesy with our cheetos fries, featuring crispy golden fries coated in a delectable layer of crushed cheetos.',
+  //                   price: '31.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637883721730778022',
+  //                   name: 'Fire Fries',
+  //                   description: null,
+  //                   price: '31.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637883722260505376',
+  //                   name: 'Sweet Potato Fries',
+  //                   description:
+  //                     'Indulge in the perfect balance of crispy and tender with our Sweet Potato Fries, expertly seasoned and lightly golden, delivering a mouthwatering experience that will have you craving their delightful sweetness with every bite.',
+  //                   price: '27.00',
+  //                 },
+  //               ],
+  //             },
+  //           },
+  //           {
+  //             name: 'Ready To Cook',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/WhatsApp_Image_2021-_637500408307209166.jpg',
+  //                   name: 'Ready To Cook Salt Camp Kit',
+  //                   description:
+  //                     '10 wagyu beef patties, 10 marinated chicken breast patties, 20 slider buns, lettuce, cheese slices, 12 small corn cobs, 6 potatoes,  chopped pickles, sliced onions, salt and pepper, buttered corn, salt and vinegar sauce, chic sauce, buffalo sauce, candy pepper sauce, truffle aioli sauce and proper sauce.',
+  //                   price: '450.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/item_637213579386785335.jpg',
+  //                   name: 'Ready To Cook Salt Home Kit - Mini',
+  //                   description:
+  //                     '10 wagyu beef patties, 10 buns, lettuce, cheese slices, jalapeno, pickles, chopped onions, tomato slices, original salt sauce, fire salt sauce, bbq sriracha sauce, salt and pepper.',
+  //                   price: '210.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/item_637213579399257297.jpg',
+  //                   name: 'Ready To Cook Salt Home Kit - Large',
+  //                   description:
+  //                     '20 wagyu beef patties, 20 buns, lettuce, cheese slices, jalapeno, pickles, chopped onions, tomato slices, original salt sauce, fire salt sauce, bbq sriracha sauce, salt and pepper.',
+  //                   price: '375.00',
+  //                 },
+  //               ],
+  //             },
+  //           },
+  //           {
+  //             name: 'Salt Dips',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Original_Sauce_637209431271012625.jpg',
+  //                   name: 'Original Salt Sauce',
+  //                   description: null,
+  //                   price: '5.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Cheese_sauce_637209431280091329.jpg',
+  //                   name: 'Cheese Salt Sauce',
+  //                   description: null,
+  //                   price: '5.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Cheetos_Sauce_637209431290881673.jpg',
+  //                   name: 'Cheetos Salt Sauce',
+  //                   description: null,
+  //                   price: '5.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Chic_Sauce_637209431301331614.jpg',
+  //                   name: 'Chic Salt Sauce',
+  //                   description: null,
+  //                   price: '5.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Fire_sauce_637209431314138538.jpg',
+  //                   name: 'Fire Salt Sauce',
+  //                   description: null,
+  //                   price: '5.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Honey_mustard_sauce_637209431325549477.jpg',
+  //                   name: 'Honey Mustard Salt Sauce',
+  //                   description: null,
+  //                   price: '5.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Hook_Sauce_637209431339262623.jpg',
+  //                   name: 'Hook Salt Sauce',
+  //                   description: null,
+  //                   price: '5.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Labneh_Sauce2020_637214426548378000.jpg',
+  //                   name: 'Labneh Salt Sauce',
+  //                   description: null,
+  //                   price: '5.00',
+  //                 },
+  //               ],
+  //             },
+  //           },
+  //           {
+  //             name: 'Drinks',
+  //             items: {
+  //               create: [
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/blob_637629901301275831',
+  //                   name: 'Mango Milkshake',
+  //                   description:
+  //                     "Made with mangoes, milk and ice cream, it's a perfect blend of sweet and creamy, perfect to enjoy on a hot summer day or any time you crave something sweet.",
+  //                   price: '35.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/mmw_637881930728361803',
+  //                   name: 'Mineral Water',
+  //                   description: '330 ml.',
+  //                   price: '13.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/black_lemonade_637214426580108446.jpg',
+  //                   name: 'Black Lemonade',
+  //                   description: 'Refreshing black lemonade drink.',
+  //                   price: '27.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Orange_juice_2020_637214426570018765.jpg',
+  //                   name: 'Orange Juice',
+  //                   description:
+  //                     "Made capturing all the natural sweetness and tangy citrus flavor. Packed with Vitamin C, it's the perfect thirst quencher and a healthy addition to your daily diet.",
+  //                   price: '21.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Coca-Cola_330ML_637283596545439188.jpg',
+  //                   name: 'Coca-Cola',
+  //                   description: 'Carbonated soft drink',
+  //                   price: '13.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Coca_Cola_Zero_355_ml_637283596558541430.jpg',
+  //                   name: 'Coca-Cola Zero',
+  //                   description:
+  //                     'Carbonated soft drink with zero sugar & zero calories',
+  //                   price: '13.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Sprite_330ML_637283596567509814.jpg',
+  //                   name: 'Sprite',
+  //                   description: 'Non-caffeinated soft drink',
+  //                   price: '13.00',
+  //                 },
+  //                 {
+  //                   image:
+  //                     'https://images.deliveryhero.io/image/talabat/MenuItems/Fanta_orange_355_ml_637283597600014542.jpg',
+  //                   name: 'Fanta',
+  //                   description: 'Carbonated soft drink',
+  //                   price: '13.00',
+  //                 },
+  //               ],
+  //             },
+  //           },
+  //         ],
+  //       },
+  //     },
+  //   },
+  // },
   {
     name: 'Rascals Bakehouse',
     country: 'UAE',
     talabatUrl: 'https://www.talabat.com/uae/rascals-bakehouse',
+    deliverooUrl:
+      'https://deliveroo.ae/menu/dubai/al-safa-1/rascals-bakehouse?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+    noonFoodUrl: 'https://food.noon.com/en-ae/outlet/RSCLSBTEP6',
+    // keetaUrl: '', // none
     city: 'Dubai',
     type: 'CAFE',
     address: 'Rascals Bakehouse Wasl Square Shop 32',
@@ -11447,6 +11492,10 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'Acai And Co',
     country: 'UAE',
     talabatUrl: 'https://www.talabat.com/uae/acai-and-co',
+    deliverooUrl:
+      'https://deliveroo.ae/menu/sharjah/al-zahiya-south/acai-and-co-sharjah?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+    noonFoodUrl: 'https://food.noon.com/en-ae/outlet/CCZDTS6TDM',
+    keetaUrl: 'https://url-eu.mykeeta.com/d28Tzsgz',
     type: 'CAFE',
     city: 'Sharjah',
     address: 'Acai And Co 8F39+RX - Muwaileh Commercial Industrial Area',
@@ -12039,6 +12088,9 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
     name: 'B.laban',
     country: 'UAE',
     talabatUrl: 'https://www.talabat.com/uae/blaban-abu-dhabi',
+    deliverooUrl: '', // none
+    noonFoodUrl: 'https://food.noon.com/en-ae/outlet/BLBNJKC5XK',
+    // keetaUrl: '', // none
     type: 'CAFE',
     city: 'Ajman',
     address: 'B.laban 9FQ5+V3V - Al Rashidiya 1',
@@ -13145,7 +13197,11 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
   {
     name: 'Zaroob',
     country: 'UAE',
-    talabatUrl: 'https://www.talabat.com/uae/zaroob',
+    talabatUrl: 'https://www.talabat.com/uae/zaroob-restaurant',
+    deliverooUrl:
+      'https://deliveroo.ae/menu/dubai/difc/zaroob-trade-centre?utm_campaign=organic&utm_medium=referrer&utm_source=menu_share',
+    noonFoodUrl: 'https://food.noon.com/en-ae/outlet/ZRBKTPZTZH',
+    keetaUrl: 'https://url-eu.mykeeta.com/MK53LtMz',
     city: 'Dubai',
     type: 'RESTAURANT',
     address:
@@ -14688,6 +14744,9 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
   {
     name: 'Low Calories',
     talabatUrl: 'https://www.talabat.com/uae/low-calories3',
+    // deliverooUrl: '' // none
+    // noonFoodUrl: '' // none
+    // keetaUrl: '' // none
     country: 'UAE',
     city: 'Dubai',
     type: 'CAFE',

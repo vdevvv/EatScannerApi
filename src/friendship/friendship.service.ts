@@ -343,4 +343,8 @@ export class FriendshipService {
     });
     return new PageDto(mappedUsers, pageMetaDto);
   }
+
+  async getUserFriends() {
+
+  }
 }

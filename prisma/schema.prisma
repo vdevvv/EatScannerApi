@@ -90,6 +90,7 @@ model Restaurant {
   careemUrl    String?        @map("careem_url")
   noonFoodUrl  String?        @map("noon_food_url")
   talabatUrl   String?        @map("talabat_url")
+  keetaUrl     String?        @map("keeta_url")
   deliverooUrl String?        @map("deliveroo_url")
   placeId      String         @unique @map("place_id")
   createdAt    DateTime       @default(now()) @map("created_at")
