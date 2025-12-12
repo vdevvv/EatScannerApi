@@ -3,6 +3,7 @@ import {
   IsEmail,
   IsEnum,
   IsNotEmpty,
+  IsOptional,
   IsString,
   Length,
 } from 'class-validator';
@@ -22,10 +23,11 @@ export class SetPasswordDto {
   @Length(8, 100)
   password: string;
 
+  @IsOptional()
   @IsArray()
   @IsNotEmpty()
   @IsString({ each: true })
-  selectedAllergies: string[];
+  selectedAllergies?: string[];
 }
 
 export class LoginDto {

@@ -15,6 +15,7 @@ model User {
   fullName        String?  @map("full_name")
   userName        String?  @unique @map("user_name")
   phone           String?
+  role            Role     @default(USER)
   avatar          String   @default("https://res.cloudinary.com/doe6zvkod/image/upload/v1762349108/profile_m2necg.png")
   avatarPublicId  String?
   bio             String?
@@ -250,4 +251,9 @@ enum DishBadge {
   SPICY
   DESSERT
   HEALTHY
+}
+
+enum Role {
+  USER
+  ADMIN
 }

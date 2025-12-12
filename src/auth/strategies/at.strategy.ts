@@ -19,6 +19,7 @@ export class AtStrategy extends PassportStrategy(Strategy, 'jwt') {
     return {
       userId: payload.userId,
       email: payload.email,
+      role: payload.role,
     };
   }
 }

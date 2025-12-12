@@ -81,11 +81,15 @@ export class UserService {
       }
     }
 
-    await this.prisma.user.update({
+    return this.prisma.user.update({
       where: { id: userId },
       data: {
         avatar: uploadResult.secure_url,
         avatarPublicId: uploadResult.public_id,
+      },
+      omit: {
+        hashedRt: true,
+        hashedPassword: true,
       },
     });
   }
@@ -94,6 +98,10 @@ export class UserService {
     const user = await this.prisma.user.update({
       where: { id: userId },
       data: { avatar: DEFAULT_AVATAR },
+      omit: {
+        hashedRt: true,
+        hashedPassword: true,
+      },
     });
 
     if (user.avatar && user.avatar !== DEFAULT_AVATAR) {
@@ -102,7 +110,7 @@ export class UserService {
       }
     }
 
-    return { status: true };
+    return user;
   }
 
   async updatePassword(userId: string, dto: UpdatePasswordDto) {
@@ -195,7 +203,7 @@ export class UserService {
       color2: string;
     }> = [];
 
-    if (stats.spicyCount >= 10 || (stats.spicyCount / total) >= 0.25) {
+    if (stats.spicyCount >= 10 || stats.spicyCount / total >= 0.25) {
       earnedBadges.push({
         emoji: '🌶️',
         text: 'Spice Lord',
@@ -213,7 +221,7 @@ export class UserService {
       });
     }
 
-    if (stats.dessertCount >= 8 || (stats.dessertCount / total) >= 0.30) {
+    if (stats.dessertCount >= 8 || stats.dessertCount / total >= 0.3) {
       earnedBadges.push({
         emoji: '🍰',
         text: 'Sweet Tooth',
@@ -222,7 +230,7 @@ export class UserService {
       });
     }
 
-    if (stats.healthyCount >= 10 && (stats.healthyCount / total) >= 0.40) {
+    if (stats.healthyCount >= 10 && stats.healthyCount / total >= 0.4) {
       earnedBadges.push({
         emoji: '🥬',
         text: 'Healthy Hustler',

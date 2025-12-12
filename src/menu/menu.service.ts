@@ -6,7 +6,7 @@ import {
 } from '~/menu/dto/menu.dto';
 import { PrismaService } from '~/prisma/prisma.service';
 import { Prisma } from '@prisma/client';
-import { PageDto, PageMetaDto, PageOptionsDto } from '~/common/dto/page';
+import { PageDto, PageMetaDto } from '~/common/dto/page';
 import { PlaceService } from '~/place/place.service';
 
 @Injectable()
@@ -42,10 +42,6 @@ export class MenuService {
 
   async delete(id: string) {
     return this.prisma.menuItem.delete({ where: { id } });
-  }
-
-  async findByCategory(categoryId: string) {
-    return this.prisma.menuItem.findMany({ where: { categoryId } });
   }
 
   private async checkIfCategoryExist(categoryId: string) {
@@ -122,7 +118,8 @@ export class MenuService {
           include: { selectedTags: true },
         });
 
-        const selectedTagSlugs = user?.selectedTags.map((tag) => tag.slug) || [];
+        const selectedTagSlugs =
+          user?.selectedTags.map((tag) => tag.slug) || [];
         if (selectedTagSlugs && selectedTagSlugs.length > 0) {
           conditions.push({
             tags: { some: { slug: { in: selectedTagSlugs } } },
@@ -207,6 +204,15 @@ export class MenuService {
         deliverooUrl,
       },
     };
+  }
+
+  async getCategories(restaurantId: string) {
+    const menu = await this.prisma.menu.findUnique({
+      where: { restaurantId },
+      include: { categories: true },
+    });
+
+    return menu?.categories;
   }
 
   private async getMenuItemsByTag(tagSlugs: string[]) {

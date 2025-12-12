@@ -37,6 +37,6 @@ export class SearchMenuItemsDto extends PageOptionsDto {
   @IsOptional()
   @IsArray()
   @IsString({ each: true })
-  @Transform(({ value }) => Array.isArray(value) ? value : [value])
+  @Transform(({ value }) => (Array.isArray(value) ? value : [value]))
   tags?: string[];
 }

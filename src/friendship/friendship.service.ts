@@ -41,11 +41,11 @@ export class FriendshipService {
     });
   }
 
-  async acceptRequest(userId: string, requestId: string) {
+  async acceptRequest(currentUserId: string, targetUserId: string) {
     const request = await this.prisma.friendship.findFirst({
       where: {
-        id: requestId,
-        receiverId: userId,
+        requesterId: targetUserId,
+        receiverId: currentUserId,
         status: 'PENDING',
       },
     });
@@ -58,10 +58,10 @@ export class FriendshipService {
     });
   }
 
-  async rejectRequest(userId: string, requestId: string) {
+  async rejectRequest(userId: string, targetUserId: string) {
     const request = await this.prisma.friendship.findFirst({
       where: {
-        id: requestId,
+        requesterId: targetUserId,
         receiverId: userId,
         status: 'PENDING',
       },
@@ -74,10 +74,10 @@ export class FriendshipService {
     });
   }
 
-  async cancelRequest(userId: string, requestId: string) {
+  async cancelRequest(userId: string, targetUserId: string) {
     const request = await this.prisma.friendship.findFirst({
       where: {
-        id: requestId,
+        receiverId: targetUserId,
         requesterId: userId,
         status: FriendStatus.PENDING,
       },
@@ -85,9 +85,7 @@ export class FriendshipService {
 
     if (!request) throw new NotFoundException('No pending request');
     return this.prisma.friendship.delete({
-      where: {
-        id: requestId,
-      },
+      where: { id: request.id },
     });
   }
 
@@ -344,7 +342,66 @@ export class FriendshipService {
     return new PageDto(mappedUsers, pageMetaDto);
   }
 
-  async getUserFriends() {
+  async getUserFriends(
+    targetUserId: string,
+    currentUserId: string,
+    pageOptionsDto: PageOptionsDto,
+  ) {
+    const { skip, take, search } = pageOptionsDto;
+    const searchParam = search ? `%${search}%` : null;
 
+    const [friends, countResult] = await Promise.all([
+      this.prisma.$queryRaw<any[]>`
+        SELECT u.id,
+               u.user_name as "userName",
+               u.full_name as "fullName",
+               u.avatar,
+               CASE
+                 WHEN u.id = ${currentUserId} THEN 'ME'
+                 WHEN my_f.status = 'ACCEPTED' THEN 'FRIEND'
+                 WHEN my_f.status = 'PENDING' AND my_f.requester_id = ${currentUserId} THEN 'SENT'
+                 WHEN my_f.status = 'PENDING' AND my_f.receiver_id = ${currentUserId} THEN 'RECEIVED'
+                 ELSE 'NONE'
+                 END       as "friendshipStatus"
+
+        FROM users u
+               INNER JOIN friendships target_f ON
+          (target_f.requester_id = ${targetUserId} AND target_f.receiver_id = u.id)
+            OR
+          (target_f.receiver_id = ${targetUserId} AND target_f.requester_id = u.id)
+               LEFT JOIN friendships my_f ON
+          (my_f.requester_id = ${currentUserId} AND my_f.receiver_id = u.id)
+            OR
+          (my_f.receiver_id = ${currentUserId} AND my_f.requester_id = u.id)
+        WHERE target_f.status = 'ACCEPTED'
+        AND (
+          ${searchParam}::text IS NULL OR
+          u.user_name ILIKE ${searchParam} OR
+          u.full_name ILIKE ${searchParam}
+        )
+        ORDER BY u.full_name
+        LIMIT ${take}
+          OFFSET ${skip}
+      `,
+      this.prisma.$queryRaw<[{ count: bigint }]>`
+        SELECT COUNT(u.id) as count
+        FROM users u
+               INNER JOIN friendships target_f ON
+          (target_f.requester_id = ${targetUserId} AND target_f.receiver_id = u.id)
+            OR
+          (target_f.receiver_id = ${targetUserId} AND target_f.requester_id = u.id)
+        WHERE target_f.status = 'ACCEPTED'
+          AND (
+          ${searchParam}::text IS NULL OR
+          u.user_name ILIKE ${searchParam} OR
+          u.full_name ILIKE ${searchParam}
+          )
+      `,
+    ]);
+
+    const itemsCount = Number(countResult[0].count);
+
+    const pageMetaDto = new PageMetaDto({ pageOptionsDto, itemsCount });
+    return new PageDto(friends, pageMetaDto);
   }
 }

@@ -24,19 +24,19 @@ export class FriendshipController {
     return this.friendService.sendFriendRequest(userId, targetId);
   }
 
-  @Patch('accept/:requestId')
-  accept(@GetUserId() userId: string, @Param('requestId') requestId: string) {
-    return this.friendService.acceptRequest(userId, requestId);
+  @Patch('accept/:targetUserId')
+  accept(@GetUserId() currentUserId: string, @Param('targetUserId') targetUserId: string) {
+    return this.friendService.acceptRequest(currentUserId, targetUserId);
   }
 
-  @Patch('reject/:requestId')
-  reject(@GetUserId() userId: string, @Param('requestId') requestId: string) {
-    return this.friendService.rejectRequest(userId, requestId);
+  @Patch('reject/:targetUserId')
+  reject(@GetUserId() userId: string, @Param('targetUserId') targetUserId: string) {
+    return this.friendService.rejectRequest(userId, targetUserId);
   }
 
-  @Patch('/cancel/:requestId')
-  async cancelRequest(@GetUserId() userId: string, @Param('requestId') requestId: string) {
-    return this.friendService.cancelRequest(userId, requestId);
+  @Patch('/cancel/:targetUserId')
+  async cancelRequest(@GetUserId() userId: string, @Param('targetUserId') targetUserId: string) {
+    return this.friendService.cancelRequest(userId, targetUserId);
   }
 
   @Delete(':friendId')
@@ -82,5 +82,14 @@ export class FriendshipController {
     @Query() searchDto: SearchFriendDto,
   ) {
     return this.friendService.searchUsers(userId, searchDto);
+  }
+
+  @Get('user-friends/:id')
+  async getUserFriends(
+    @Param('id') targetUserId: string,
+    @GetUserId() currentUserId: string,
+    @Query() pageOptionsDto: PageOptionsDto,
+  ) {
+    return this.friendService.getUserFriends(targetUserId, currentUserId, pageOptionsDto);
   }
 }

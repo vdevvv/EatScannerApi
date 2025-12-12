@@ -33,7 +33,13 @@ export class AuthService {
     });
 
     if (existing) {
-      throw new ConflictException('User with this email already exists');
+      if (!existing.isEmailVerified) {
+        await this.prisma.user.delete({
+          where: { email: dto.email },
+        });
+      } else {
+        throw new ConflictException('User with this email already exists');
+      }
     }
 
     const tempUser = await this.prisma.user.create({
@@ -105,7 +111,7 @@ export class AuthService {
       data: {
         hashedPassword,
         selectedTags: {
-          connect: dto.selectedAllergies.map((id) => ({ id })),
+          connect: dto?.selectedAllergies?.map((id) => ({ id })),
         },
       },
     });
@@ -144,10 +150,11 @@ export class AuthService {
     const { accessToken, refreshToken } = await this.jwtService.signTokens({
       userId: user.id,
       email: user.email,
+      role: user.role
     });
 
     await this.updateRt(user.id, refreshToken);
-    return { accessToken, refreshToken };
+    return { accessToken, refreshToken, role: user.role };
   }
 
   async forgotPassword(forgotPasswordDto: ForgotPasswordDto) {
@@ -174,6 +181,7 @@ export class AuthService {
     const tokens = await this.jwtService.signTokens({
       email: user.email,
       userId: user.id,
+      role: user.role
     });
 
     await this.updateRt(user.id, tokens.refreshToken);

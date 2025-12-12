@@ -3,7 +3,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { Module } from '@nestjs/common';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
-import { AtGuard } from './common/guards';
+import { AtGuard, RoleGuard } from './common/guards';
 import { PrismaModule } from './prisma/prisma.module';
 import { VerificationCodeModule } from '~/verification-code/verification-code.module';
 import { ScheduleModule } from '@nestjs/schedule';
@@ -43,6 +43,10 @@ import { NotificationsModule } from './notifications/notifications.module';
     {
       provide: APP_GUARD,
       useClass: AtGuard,
+    },
+    {
+      provide: APP_GUARD,
+      useClass: RoleGuard,
     },
   ],
 })
