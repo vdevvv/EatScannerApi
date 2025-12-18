@@ -1,4 +1,5 @@
 import {
+  Body,
   Controller,
   Delete,
   Get,
@@ -10,7 +11,7 @@ import {
 import { FriendshipService } from './friendship.service';
 import { GetUserId } from '~/common/decorators';
 import { PageOptionsDto } from '~/common/dto/page';
-import { SearchFriendDto } from '~/friendship/dto/friend.dto';
+import { SearchFriendDto, SyncContactsDto } from '~/friendship/dto/friend.dto';
 
 @Controller('friends')
 export class FriendshipController {
@@ -91,5 +92,13 @@ export class FriendshipController {
     @Query() pageOptionsDto: PageOptionsDto,
   ) {
     return this.friendService.getUserFriends(targetUserId, currentUserId, pageOptionsDto);
+  }
+
+  @Post('/sync-contacts')
+  async syncContacts(
+    @GetUserId() userId: string,
+    @Body() dto: SyncContactsDto
+  ) {
+    return this.friendService.syncContacts(userId, dto);
   }
 }

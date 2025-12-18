@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import {
   CreateMenuItemDto,
   SearchMenuItemsDto,
@@ -17,26 +21,107 @@ export class MenuService {
   ) {}
 
   async createMenuItem(dto: CreateMenuItemDto) {
-    await this.checkIfCategoryExist(dto.categoryId);
+    let finalCategoryId = dto.categoryId;
+
+    if (dto.isNewCategory) {
+      if (!dto.newCategoryName) {
+        throw new BadRequestException(
+          'New category name is required when isNewCategory is true',
+        );
+      }
+
+      let menu = await this.prisma.menu.findUnique({
+        where: { restaurantId: dto.restaurantId },
+      });
+
+      if (!menu) {
+        menu = await this.prisma.menu.create({
+          data: { restaurantId: dto.restaurantId },
+        });
+      }
+
+      const newCategory = await this.prisma.category.create({
+        data: {
+          name: dto.newCategoryName,
+          menuId: menu.id,
+        },
+      });
+
+      finalCategoryId = newCategory.id;
+    }
+
     return this.prisma.menuItem.create({
       data: {
         name: dto.name,
         price: dto.price,
         description: dto.description,
         image: dto.image,
-        categoryId: dto.categoryId,
+        video: dto.video,
+        badges: dto.badges,
+        highlighted: !!dto.video,
+
+        category: {
+          connect: { id: finalCategoryId },
+        },
+      },
+      include: {
+        category: true,
       },
     });
   }
 
-  async update(id: string, dto: UpdateMenuItemDto) {
-    if (dto.categoryId) {
-      await this.checkIfCategoryExist(dto.categoryId);
+  async updateMenuItem(id: string, dto: UpdateMenuItemDto) {
+    let finalCategoryId = dto.categoryId;
+    if (dto.isNewCategory && dto.newCategoryName) {
+      const currentItem = await this.prisma.menuItem.findUnique({
+        where: { id },
+        include: {
+          category: true,
+        },
+      });
+
+      if (!currentItem) {
+        throw new NotFoundException('Menu item not found');
+      }
+
+      const menuId = currentItem.category.menuId;
+
+      const newCategory = await this.prisma.category.create({
+        data: {
+          name: dto.newCategoryName,
+          menuId: menuId,
+        },
+      });
+
+      finalCategoryId = newCategory.id;
     }
+
+    const tagsUpdate = dto.tagIds
+      ? {
+          set: dto.tagIds.map((tagId) => ({ id: tagId })),
+        }
+      : undefined;
 
     return this.prisma.menuItem.update({
       where: { id },
-      data: dto,
+      data: {
+        name: dto.name,
+        price: dto.price,
+        description: dto.description,
+        image: dto.image,
+        video: dto.video,
+        badges: dto.badges,
+        highlighted: !!dto.video,
+        category: finalCategoryId
+          ? { connect: { id: finalCategoryId } }
+          : undefined,
+
+        tags: tagsUpdate,
+      },
+      include: {
+        category: true,
+        tags: true,
+      },
     });
   }
 

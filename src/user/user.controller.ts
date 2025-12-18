@@ -8,12 +8,15 @@ import {
   Param,
   ParseFilePipe,
   Patch,
+  Post,
   UploadedFile,
   UseInterceptors,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import {
+  ConfirmPhoneChangeDto,
   UpdatePasswordDto,
+  UpdatePhoneDto,
   UpdatePushTokenDto,
   UpdateUserDto,
 } from '~/user/dto/user.dto';
@@ -103,5 +106,21 @@ export class UserController {
     @Body() dto: UpdatePushTokenDto,
   ) {
     return this.usersService.updatePushToken(userId, dto.expoPushToken);
+  }
+
+  @Post('/phone/initiate')
+  async initiatePhoneChange(
+    @GetUserId() userId: string,
+    @Body() dto: UpdatePhoneDto,
+  ) {
+    return this.usersService.initiatePhoneChange(userId, dto.phone);
+  }
+
+  @Post('/phone/confirm')
+  async confirmPhoneChange(
+    @GetUserId() userId: string,
+    @Body() dto: ConfirmPhoneChangeDto,
+  ) {
+    return this.usersService.confirmPhoneChange(userId, dto.code);
   }
 }

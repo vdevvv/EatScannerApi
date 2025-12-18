@@ -36,6 +36,7 @@ export class NotificationsService {
 
     const messages: ExpoPushMessage[] = [];
     for (const user of users) {
+      console.log(user.id, user.pushToken);
       if (user.pushToken && Expo.isExpoPushToken(user.pushToken)) {
         messages.push({
           to: user.pushToken,
@@ -53,6 +54,7 @@ export class NotificationsService {
       await Promise.all(
         chunks.map(async (chunk) => {
           try {
+            console.log(chunk);
             await this.expo.sendPushNotificationsAsync(chunk);
           } catch (e) {
             this.logger.error('Error sending chunk', e);

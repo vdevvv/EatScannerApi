@@ -3,6 +3,7 @@ import { PlaceService } from '~/place/place.service';
 import {
   CreateRestaurantDto,
   GetRestaurantsDto,
+  UpdateRestaurantDto,
 } from '~/restaurant/dto/restaurant.dto';
 import { PrismaService } from '~/prisma/prisma.service';
 import { PageDto, PageMetaDto, PageOptionsDto } from '~/common/dto/page';
@@ -30,6 +31,11 @@ export class RestaurantService {
         address: dto.address,
         latitude,
         longitude,
+        careemUrl: dto.careemUrl,
+        noonFoodUrl: dto.noonFoodUrl,
+        talabatUrl: dto.talabatUrl,
+        keetaUrl: dto.keetaUrl,
+        deliverooUrl: dto.deliverooUrl,
         menu: { create: {} },
       },
       include: { menu: true },
@@ -47,7 +53,7 @@ export class RestaurantService {
       this.prisma.restaurant.count({}),
     ]);
 
-    const pageMetaDto = new PageMetaDto({ pageOptionsDto, itemsCount, });
+    const pageMetaDto = new PageMetaDto({ pageOptionsDto, itemsCount });
     return new PageDto(data, pageMetaDto);
   }
 
@@ -163,5 +169,18 @@ export class RestaurantService {
     return this.prisma.menuItem.findUnique({
       where: { id },
     });
+  }
+
+  async updateRestaurant(id: string, dto: UpdateRestaurantDto) {
+    return this.prisma.restaurant.update({
+      where: { id },
+      data: { ...dto },
+    });
+  }
+
+  async getRestaurantById(id: string) {
+    return this.prisma.restaurant.findUnique({
+      where: { id },
+    })
   }
 }

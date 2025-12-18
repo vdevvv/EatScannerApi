@@ -1,6 +1,18 @@
-import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Patch,
+  Post,
+  Query,
+} from '@nestjs/common';
 import { GetUserId, Public } from '~/common/decorators';
-import { CreateMenuItemDto, SearchMenuItemsDto } from '~/menu/dto/menu.dto';
+import {
+  CreateMenuItemDto,
+  SearchMenuItemsDto,
+  UpdateMenuItemDto,
+} from '~/menu/dto/menu.dto';
 import { MenuService } from '~/menu/menu.service';
 import { Roles } from '~/common/decorators/roles.decorator';
 import { Role } from '@prisma/client';
@@ -13,6 +25,15 @@ export class MenuController {
   @Post('/item')
   async createMenuItem(@Body() dto: CreateMenuItemDto) {
     return this.menuService.createMenuItem(dto);
+  }
+
+  @Patch('/item/:id')
+  @Roles(Role.ADMIN)
+  async updateMenuItem(
+    @Param('id') id: string,
+    @Body() dto: UpdateMenuItemDto,
+  ) {
+    return this.menuService.updateMenuItem(id, dto);
   }
 
   @Public()

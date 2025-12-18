@@ -7,7 +7,6 @@ import {
 import { PrismaService } from '~/prisma/prisma.service';
 import {
   UpdatePasswordDto,
-  UpdatePushTokenDto,
   UpdateUserDto,
 } from '~/user/dto/user.dto';
 import { DEFAULT_AVATAR } from '~/common/constants/images';
@@ -15,13 +14,23 @@ import * as bcrypt from 'bcryptjs';
 import { CloudinaryService } from '~/cloudinary/cloudinary.service';
 import { UserOrderStats } from '~/user/types/user.types';
 import { DishBadge, RestaurantType } from '@prisma/client';
+import * as Twilio from 'twilio';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class UserService {
+  private twilioClient: Twilio.Twilio;
+
   constructor(
     private readonly prisma: PrismaService,
     private readonly cloudinaryService: CloudinaryService,
-  ) {}
+    private readonly config: ConfigService,
+  ) {
+    this.twilioClient = Twilio(
+      this.config.getOrThrow('TWILIO_ACCOUNT_SID'),
+      this.config.getOrThrow('TWILIO_AUTH_TOKEN'),
+    );
+  }
 
   async findAll() {
     return this.prisma.user.findMany();
@@ -240,5 +249,72 @@ export class UserService {
     }
 
     return earnedBadges;
+  }
+
+  async initiatePhoneChange(userId: string, newPhone: string) {
+    const existingUser = await this.prisma.user.findFirst({
+      where: { phone: newPhone },
+    });
+
+    if (existingUser) {
+      throw new ConflictException('Phone number is already in use');
+    }
+
+    const code = Math.floor(100000 + Math.random() * 900000).toString();
+
+    await this.prisma.verificationCode.create({
+      data: {
+        userId,
+        code,
+        type: 'phone_verification',
+        payload: newPhone,
+        expiresAt: new Date(Date.now() + 10 * 60 * 1000),
+      },
+    });
+
+    try {
+      await this.twilioClient.messages.create({
+        body: `Your verification code is: ${code}`,
+        from: this.config.getOrThrow('TWILIO_PHONE_NUMBER'),
+        to: newPhone,
+      });
+    } catch (error) {
+      console.log(error);
+      throw new BadRequestException('Failed to send SMS');
+    }
+
+    return { message: 'Verification code sent' };
+  }
+
+  async confirmPhoneChange(userId: string, code: string) {
+    const verificationRecord = await this.prisma.verificationCode.findFirst({
+      where: {
+        userId,
+        code,
+        type: 'phone_verification',
+        expiresAt: { gt: new Date() },
+      },
+    });
+
+    if (!verificationRecord || !verificationRecord.payload) {
+      throw new BadRequestException('Invalid or expired code');
+    }
+
+    const newPhone = verificationRecord.payload;
+
+    const updatedUser = await this.prisma.user.update({
+      where: { id: userId },
+      data: { phone: newPhone },
+      omit: {
+        hashedRt: true,
+        hashedPassword: true,
+      },
+    });
+
+    await this.prisma.verificationCode.delete({
+      where: { id: verificationRecord.id },
+    });
+
+    return updatedUser;
   }
 }

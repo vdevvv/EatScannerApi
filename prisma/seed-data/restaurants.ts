@@ -46,6 +46,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'all beef hot dog, jalapenos, fth spice, buffalo sauce, ranch sauce, potato bun',
                     price: '23.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -142,6 +143,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'single patty, cheese, feel the heat spice, fried onions, ranch & potato bun',
                     price: '32.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -150,6 +152,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'double patty, cheese, feel the heat spice, fried onions, ranch & potato bun',
                     price: '49.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -290,6 +293,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'single patty, cheese, feel the heat spice, fried onions, ranch & potato bun, side & drink',
                     price: '59.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -298,6 +302,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'double patty, cheese, feel the heat spice, fried onions, ranch & potato bun, side & drink',
                     price: '76.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -384,6 +389,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'single plant-based patty, cheese, potato bun, your choice of toppings & sauces',
                     price: '42.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -392,6 +398,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'double plant-based patty, cheese, potato bun, your choice of toppings & sauces',
                     price: '62.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -423,6 +430,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'little plant-based cheeseburger, ketchup, potato bun, fries or carrot sticks & drink',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -476,6 +484,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'skinny fries, plant based meat, dill pickles, lettuce, parsley, secret sauce',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -484,6 +493,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'fresh rocket, sliced white onion, parmesan, balsamic',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -492,6 +502,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'your choice of dill, onion or jalepeno pickles',
                     price: '15.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -500,6 +511,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "need an extra hit of spice? Jeff will make you 'feel the heat'.",
                     price: '5.00',
+                    badges: ['SPICY'],
                   },
                 ],
               },
@@ -536,6 +548,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'contains water, tastes like water, could be straight up water',
                     price: '6.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -543,6 +556,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sparkling Water',
                     description: 'contains water, and it sparkles',
                     price: '7.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -551,6 +565,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'contains water, and it sparkles, with a touch of peach',
                     price: '12.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -559,6 +574,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'contains water, and it sparkles, with a touch of lime',
                     price: '12.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -602,6 +618,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'real vanilla ice cream & milk, blended and whizzed for a proper shake',
                     price: '26.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -610,6 +627,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'real chocolate ice cream & milk, blended and whizzed for a proper shake',
                     price: '26.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -618,6 +636,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'real strawberry ice cream & milk, blended and whizzed for a proper shake',
                     price: '26.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -626,6 +645,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'real salted caramel ice cream & milk, blended and whizzed for a proper shake',
                     price: '26.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -641,6 +661,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'small-ish but mighty and packed with chewy, gooey, and tangy sweets.',
                     price: '35.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -649,6 +670,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'go big-ish with chewy, gooey, and tangy sweets.',
                     price: '60.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -758,6 +780,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crushed tomato base topped with provolone and gorgonzola cheese, jalapeno peppers, grilled chicken and finished with a drizzle of house-made spicy buffalo chicken wing sauce.',
                     price: '65.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -782,6 +805,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'House made spicy hawaiian bbq sauce base, mozzarella, provolone, shredded chicken, pineapple and red onion, a sprinkling of fresh coriander finishes this pie after bake',
                     price: '65.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -790,6 +814,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cheese pizza with pepperoni, mushrooms, black olives, jalapenos and chili flakes',
                     price: '65.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -856,6 +881,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tomato sauce base, topped with our cheese blend and thinly sliced Italian spicy salami and a sprinkle of chili flakes',
                     price: '67.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -935,6 +961,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crushed tomato base topped with provolone and gorgonzola cheese, jalapeno peppers, grilled chicken and finished with a drizzle of house-made spicy buffalo chicken wing sauce.',
                     price: '92.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -959,6 +986,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'House made spicy hawaiian bbq sauce base, mozzarella, provolone, shredded chicken, pineapple and red onion, a sprinkling of fresh coriander finishes this pie after bake',
                     price: '92.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -967,6 +995,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cheese pizza with pepperoni, mushrooms, black olives, jalapenos and chili flakes',
                     price: '90.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -1033,6 +1062,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tomato sauce base, topped with our cheese blend and thinly sliced Italian spicy salami and a sprinkle of chili flakes',
                     price: '90.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -1124,6 +1154,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Pasta Arrabbiata',
                     description: 'Light spicy red sauce, basil.',
                     price: '59.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -1155,6 +1186,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Spring mix, sweet yellow capsicum, radish and cherry tomatoes',
                     price: '35.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1187,6 +1219,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Peppery rocket leaves with fresh sliced mushrooms, cherry tomatoes and parmesan shavings',
                     price: '37.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -1236,6 +1269,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Acqua Panna 500mL',
                     description: 'Acqua Panna 500mL',
                     price: '14.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1243,6 +1277,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Acqua Panna 1L',
                     description: 'Acqua Panna 1L',
                     price: '24.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1250,6 +1285,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Pellegrino 500mL',
                     description: 'Pellegrino 500mL',
                     price: '14.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1257,6 +1293,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Pellegrino 1L',
                     description: 'Pellegrino 1L',
                     price: '24.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -1280,6 +1317,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tossed in our home made spicy wing sauce or bbq sauce served with celery & carrot sticks & our gorgonzola ranch dressing.',
                     price: '45.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -1288,6 +1326,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tossed in sweet & spicy gochujang sauce with extra for dipping. Topped with sesame seeds.',
                     price: '45.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -1361,6 +1400,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Spicy Buffalo Sauce',
                     description: 'Spicy Buffalo Sauce',
                     price: '8.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -1368,6 +1408,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Vegan Garlic Mayo',
                     description: 'Vegan Garlic Mayo',
                     price: '8.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1382,6 +1423,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Marinara Sauce',
                     description: 'Tomatobased sauce used in Italian cuisine.',
                     price: '8.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1389,6 +1431,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Roasted Garlic Paste',
                     description: 'Roasted Garlic Paste',
                     price: '8.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -1404,6 +1447,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A family recipe. Fresh apples spiced with cinnamon and nutmeg, homemade crust and a buttery crumble topping.',
                     price: '28.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -1412,6 +1456,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Gooey choclate brownie baked together with chocolate chip cookies on top yummy.',
                     price: '28.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -1420,6 +1465,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Gooey house-made salted caramel blondie with chocolate chunks and pretzels.',
                     price: '28.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -1441,6 +1487,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Buffalo Wings Combo',
                     description: 'Buffalo Wings Combo',
                     price: '65.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -1516,6 +1563,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cooked rice with plant based meat with green peas and nuts',
                     price: '44.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1524,6 +1572,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Plant-based kafta with hummus, chili paste and bewaz.',
                     price: '30.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1532,6 +1581,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Plant-based minced meat seasoned with onions and parsley on a layer of mouttabal',
                     price: '35.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1548,6 +1598,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Plant-based minced meat mixed with spices & vegetables',
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1601,6 +1652,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '10 Skewers of grilled kafta served with grilled tomatoes, grilled onions.',
                     price: '270.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1624,6 +1676,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'no-tree-nuts' },
                       ],
                     },
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1632,6 +1685,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '10 Skewers of shish tawouk served with grilled tomatoes, grilled onions.',
                     price: '270.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1648,6 +1702,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '10 skewers of meat, shish tawouk and kafta served with grilled tomatoes, grilled onions, bewaz and garlic paste.',
                     price: '297.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1656,6 +1711,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '3 skewers of meat cubes, shish tawouk and kafta with grilled tomatoes, grilled onions, bewaz and garlic paste.',
                     price: '90.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1664,6 +1720,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '2 skewers of marinated meat cubes with grilled tomatoes, grilled onions and bewaz.',
                     price: '72.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1680,6 +1737,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '2 skewers of kafta with grilled tomatoes and bewaz.',
                     price: '54.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1719,6 +1777,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '2 skewers of minced meat with chili paste served with grilled tomatoes & bewaz.',
                     price: '56.00',
+                    badges: ['SPICY', 'HEALTHY'],
                   },
                   {
                     image:
@@ -1727,6 +1786,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '2 skewers of minced meat with chili paste served with grilled eggplant cubes, grilled tomatoes, grilled onions and bewaz.',
                     price: '56.00',
+                    badges: ['SPICY', 'HEALTHY'],
                   },
                 ],
               },
@@ -1742,6 +1802,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled meat minced with green chili and eggplant, with hummus, pickles and bewaz.',
                     price: '28.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -1870,6 +1931,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Minced grilled meat with hummus, pickles and bewaz.',
                     price: '28.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -1900,6 +1962,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Meat Shawarma Platter',
                     description: 'With tahini sauce, vegetables and pickles.',
                     price: '50.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1928,6 +1991,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Hummus with Meat Shawarma',
                     description: 'Hummus with meat shawarma slices.',
                     price: '48.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1935,6 +1999,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Hummus with Chicken Shawarma',
                     description: 'Hummus with chicken shawarma slices.',
                     price: '46.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1957,6 +2022,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cooked Oriental rice with lamb meat topped with mixed nuts, and a side of yoghurt.',
                     price: '60.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1973,6 +2039,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cooked rice with fish topped with mixed nuts, and a side of tajan sauce.',
                     price: '60.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1981,6 +2048,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cooked Oriental rice with chicken topped with mixed nuts, and a side of yoghurt.',
                     price: '52.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -1996,6 +2064,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Vermicelli Rice',
                     description: 'Cooked rice with vermicelli.',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2004,6 +2073,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cooked basmati rice with chicken and spices topped with mixed nuts.',
                     price: '52.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2020,6 +2090,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cooked basmati rice with lamb meat and spices topped with mixed nuts.',
                     price: '60.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2027,6 +2098,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Saffron Rice',
                     description: 'Cooked basmati rice with saffron.',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2034,6 +2106,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Grilled Salmon',
                     description: 'With mashed potatoes and vegetables.',
                     price: '86.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2064,6 +2137,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Hummus',
                     description: 'Chickpeas, tahini and lemon juice.',
                     price: '29.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2072,6 +2146,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mixed vegetables, herbs salad topped with fried bread.',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2079,6 +2154,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Tabouleh',
                     description: 'Parsley, tomato and onion salad.',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2086,6 +2162,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Vine Leaves',
                     description: 'Rice stuffed grape leaves in oil.',
                     price: '34.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2094,6 +2171,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mashed eggplant blended with tahini and lemon juice.',
                     price: '30.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2101,6 +2179,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Hummus Beiruty',
                     description: 'Hummus with parsley, cumin and garlic.',
                     price: '31.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2109,6 +2188,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Avocado lettuce cucumber tomato mintpomegranate seeds.',
                     price: '44.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2116,6 +2196,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Rocca Salad',
                     description: 'Rocca leaves, tomato & onion salad',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2124,6 +2205,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "Everyone's favorite parsley salad, injected with Lentil grenadine",
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2131,6 +2213,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Hendbeh',
                     description: 'Cooked dandelion leaves.',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2139,6 +2222,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mixed herbs, cheese and beetroot salad with walnuts.',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2146,6 +2230,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Muhammara',
                     description: 'Chili paste blended with onion.',
                     price: '32.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -2153,6 +2238,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Baba Ghanouj',
                     description: 'Grilled eggplant with vegetables.',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2160,6 +2246,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sliced Vegetable Platter',
                     description: null,
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2167,6 +2254,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Eggplant Moussaka',
                     description: 'Cooked eggplant with mixed vegetables.',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2174,6 +2262,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Yogurt Cucumber',
                     description: 'Seasoned yogurt with cucumber.',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2181,6 +2270,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Labneh (Add Garlic)',
                     description: 'Fresh creamy yogurt.',
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2189,6 +2279,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Halloumi cheese with mixed lettuceleaves tomato black olives fresh zaatar',
                     price: '42.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2224,6 +2315,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Spiced Potato',
                     description: 'Seasoned deep fried potato cubes.',
                     price: '30.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -2283,6 +2375,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'no-shellfish' },
                       ],
                     },
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2290,6 +2383,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Hummus with Meat and Pine',
                     description: 'Hummus with fried meat and pine nuts.',
                     price: '45.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2306,6 +2400,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fried chicken liver with pomegranate molasses sauce.',
                     price: '41.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2320,6 +2415,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Grilled Halloumi',
                     description: 'Grilled white halloumi cheese.',
                     price: '35.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2342,6 +2438,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Hummus with Pine',
                     description: 'Hummus with fried pine nuts.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2363,6 +2460,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Lahme Ras Asfour',
                     description: 'Fried meat cubes with lemon juice.',
                     price: '48.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2371,6 +2469,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled shrimp sauteed with garlic, lemon and coriander.',
                     price: '52.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2378,6 +2477,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Lamb Tongues',
                     description: 'Seasoned lamb tongues.',
                     price: '44.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2385,6 +2485,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fried Sujuk',
                     description: 'Fried spicy sausage.',
                     price: '40.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -2393,6 +2494,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fava beans seasoned with lemon juice and garlic.',
                     price: '30.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2425,6 +2527,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled fish sauteed with garlic lemon and coriander.',
                     price: '48.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2432,6 +2535,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Meat with Onion and Tomato',
                     description: 'Fried meat with onion and tomato.',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2439,6 +2543,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Hummus Balila',
                     description: 'Chickpeas seasoned with cumin and garlic.',
                     price: '30.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2461,6 +2566,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Lentil Soup',
                     description: 'With fried bread.',
                     price: '23.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2468,6 +2574,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Seafood',
                     description: 'Creamy seafood soup.',
                     price: '31.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2475,6 +2582,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Chicken Soup',
                     description: 'Chicken soup with vegetable.',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -2511,6 +2619,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Hummus with Meat and Pine',
                     description: 'Hummus with fried meat and pine nuts.',
                     price: '45.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2518,6 +2627,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Eggs with Meat',
                     description: '3 scrambled eggs with meat.',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2533,6 +2643,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fava beans seasoned with olive oil, lemon juice and garlic.',
                     price: '30.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2547,6 +2658,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Hummus with Pine',
                     description: 'Hummus with fried pine nuts.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2570,6 +2682,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Labneh',
                     description: 'Fresh creamy yogurt.',
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2577,6 +2690,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Grilled Halloumi',
                     description: 'Grilled white halloumi cheese.',
                     price: '35.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2585,6 +2699,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chickpeas seasoned with olive oil, lemon juice,  garlic and cumin.',
                     price: '30.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2593,6 +2708,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Your choice of 3 sunny side up or scrambled eggs.',
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2600,6 +2716,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Eggs with Sujuk',
                     description: '3 scrambled eggs with sujuk.',
                     price: '38.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -2614,6 +2731,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Eggs with Tomato',
                     description: '3 scrambled eggs with tomato.',
                     price: '30.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2681,6 +2799,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Pickles',
                     description: null,
                     price: '13.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2688,6 +2807,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Olives',
                     description: null,
                     price: '13.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2702,6 +2822,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Shattah (Chilli Paste)',
                     description: null,
                     price: '18.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -2709,6 +2830,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Yogurt',
                     description: null,
                     price: '18.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2716,6 +2838,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Grilled Onion Skewer',
                     description: null,
                     price: '15.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2730,6 +2853,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Grilled Chilli Skewer',
                     description: null,
                     price: '15.00',
+                    badges: ['SPICY', 'HEALTHY'],
                   },
                   {
                     image:
@@ -2737,6 +2861,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Grilled Mushroom Skewer',
                     description: null,
                     price: '15.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2751,6 +2876,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Grilled Tomato Skewer',
                     description: null,
                     price: '15.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2758,6 +2884,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Bakdounsia',
                     description: null,
                     price: '19.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -2772,6 +2899,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Mixed Fruit Platter',
                     description: 'Assorted fruits.',
                     price: '48.00',
+                    badges: ['DESSERT', 'HEALTHY'],
                   },
                   {
                     image:
@@ -2779,6 +2907,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Cheese Kunafa',
                     description: 'Baked semolina pastry with cheese.',
                     price: '34.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -2786,6 +2915,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Halawet El Jibn',
                     description: 'Creamy sweet cheese rolls.',
                     price: '34.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -2793,6 +2923,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Riz Bi Haleeb',
                     description: 'Rice pudding.',
                     price: '20.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -2800,6 +2931,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Othmaliye',
                     description: 'Cream filled semolina pastry.',
                     price: '34.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -2807,6 +2939,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Katayef Kashta',
                     description: 'Cream filled pancakes.',
                     price: '34.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -2814,6 +2947,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Banana and Chocolate',
                     description: 'Banana and chocolate bread spread.',
                     price: '26.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -2821,6 +2955,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sweet Melon Platter',
                     description: 'Sliced sweet melon.',
                     price: '37.00',
+                    badges: ['DESSERT', 'HEALTHY'],
                   },
                   {
                     image:
@@ -2828,6 +2963,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Cream with Honey',
                     description: 'Cream scoops with honey.',
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -2842,6 +2978,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Guava',
                     description: null,
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2849,6 +2986,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Laban Ayran',
                     description: null,
                     price: '20.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2856,6 +2994,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Cocktail Juice',
                     description: null,
                     price: '29.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2863,6 +3002,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Pomegranate',
                     description: null,
                     price: '35.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2870,6 +3010,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sliced Fruit Cocktail',
                     description: null,
                     price: '37.00',
+                    badges: ['HEALTHY', 'DESSERT'],
                   },
                   {
                     image:
@@ -2877,6 +3018,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Orange',
                     description: null,
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2884,6 +3026,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Pineapple',
                     description: null,
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2891,6 +3034,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Avocado',
                     description: null,
                     price: '37.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2898,6 +3042,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Melon',
                     description: null,
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2912,6 +3057,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Carrot',
                     description: null,
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2919,6 +3065,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Mango',
                     description: null,
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2933,6 +3080,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Strawberry',
                     description: null,
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2940,6 +3088,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Banana and Milk',
                     description: null,
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2954,6 +3103,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Grapefruit',
                     description: null,
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -2961,6 +3111,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Apple',
                     description: null,
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -2989,6 +3140,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sparkling Water',
                     description: null,
                     price: '18.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3070,6 +3222,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cubes of cucumber and chicken tikka mixed with spinach and lettuce, tossed in a yoghurt based dressing.',
                     price: '30.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3078,6 +3231,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A green salad made of kale, iceberg lettuce, croutons, parmesan cheese, cranberry and black pepper in an olive oil and lemon juice dressing.',
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3086,6 +3240,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A mix of rocket leaves, parsley, tomatoes, onions and radish, drizzled with a dressing made of olive oil, lemon juice and seasoning.',
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3094,6 +3249,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A mix of jarjeer leaves, sliced raw mango and white onion in a lime dressing.',
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3102,6 +3258,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "Lebanon's most famous salad made with a mix of fresh herbs, cucumber, tomatoes and crisp pita, bright with a flavor of sumac",
                     price: '24.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3110,6 +3267,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A refreshing parsley salad made with bulgur wheat, cucumber and tomatoes, all dressed with a lemon vinaigrette.',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3118,6 +3276,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A salad made with olives, paneer and mushrooms in a yoghurt-based dressing.',
                     price: '20.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3126,6 +3285,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A salad made of chopped lettuce, capsicum, tomatoes, carrot and cucumber in an olive oil dressing.',
                     price: '20.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3134,6 +3294,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A salad made with chickpeas, nuts, raisins, green peas and fresh corn, tossed in a mint-flavoured dressing.',
                     price: '18.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3142,6 +3303,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A mix of cooked kidney beans, onions, tomatoes, cucumber, capsicum, cabbage and American corn, all tossed with a paste of tomato, green chilli, mustard and spices.',
                     price: '20.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3150,6 +3312,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crudites of carrot, tomato, radish and cucumber.',
                     price: '14.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3158,6 +3321,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A salad made with a combination of chopped onions, tomatoes, cucumber, green chillies and coriander, in a lime dressing.',
                     price: '13.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -3166,6 +3330,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Spiced yoghurt with rocket leaves and pomegranate seeds.',
                     price: '15.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3174,6 +3339,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Spiced yoghurt with mint leaves and pomegranate seeds.',
                     price: '15.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3181,6 +3347,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Ananas Raita',
                     description: 'Spiced yoghurt with pineapple.',
                     price: '14.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3189,6 +3356,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Spiced yoghurt with vegetables or boondi or cucumber.',
                     price: '13.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3196,6 +3364,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Burhani Raita',
                     description: 'Garlic-infused yoghurt.',
                     price: '9.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3203,6 +3372,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Dahi',
                     description: 'Plain yoghurt.',
                     price: '9.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3211,6 +3381,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fried lentil papadums topped with a tangy mix of onions, tomatoes, cucumber, green chillies, coriander, lemon juice and chaat masala.',
                     price: '5.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -3266,6 +3437,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'An all time favourite, fried pastry pyramids stuffed with steamed potatoes and green peas tempered with cumin, ginger, green chillies and coriander seeds.',
                     price: '23.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -3322,7 +3494,6 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'no-shellfish' },
                         { slug: 'no-peanuts' },
                         { slug: 'no-tree-nuts' },
-                        { slug: 'medium' },
                       ],
                     },
                   },
@@ -3332,6 +3503,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Masala Fries',
                     description: 'Cajun spiced french fries.',
                     price: '17.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -3354,6 +3526,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A delectable soup made from a full-bodied lamb stock; garnished with shredded lamb.',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3362,6 +3535,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A delectable soup made from lamb trotters simmered overnight on a slow fire; garnished with trotter meat.',
                     price: '20.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3370,6 +3544,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Exotic chicken soup flavoured with Indian herbs and spices.',
                     price: '19.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3378,6 +3553,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Soup made of spinach paste and lentil, cooked with a blend of Indian spices.',
                     price: '18.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3385,6 +3561,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Shorba Dil Pasand',
                     description: 'Lentil soup with a blend of Indian spices.',
                     price: '18.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3393,6 +3570,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A delectable soup made with smooth tomato puree, spices and vegetable stock; garnished with namak para.',
                     price: '18.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -3408,6 +3586,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Classic grilled chicken marinated in traditional spices, cream and yoghurt served bone in.',
                     price: 60,
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3416,6 +3595,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Classic grilled chicken marinated in a special tandoori masala flavoured yoghurt served bone in.',
                     price: 60,
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3424,6 +3604,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Seekh made from cardamom infused chicken mince, stuffed with a creamy filling of cheese, mint, coriander and chargrilled.',
                     price: '42.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3432,6 +3613,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless chunks of chicken marinated in yoghurt spiced with freshly ground black pepper; chargrilled.',
                     price: '41.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -3440,6 +3622,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Spiced chicken mince seekh, coated in finely chopped onions, bell peppers and chargrilled',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3448,6 +3631,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mildly spiced chicken mince seekh and chargrilled.',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3456,6 +3640,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless chunks of chicken marinated in green chilli paste; chargrilled.',
                     price: '40.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -3464,6 +3649,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chargrilled boneless chunks of chicken marinated in yoghurt, white onion paste and saffron.',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3472,6 +3658,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless chunks of chicken marinated in yoghurt, flavoured with cream and cheese; chargrilled.',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3480,6 +3667,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless breast of chicken marinated in yoghurt, cheddar cheese, ginger, garlic, green chilli, spices and lemon juice; chargrilled.',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3488,6 +3676,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless chunks of chicken marinated in hot and sour sauce, skewered with pieces of pineapple and chargrilled.',
                     price: '40.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -3496,6 +3685,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless chunks of chicken marinated in yoghurt flavoured with fenugreek; chargrilled.',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3504,6 +3694,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless chunks of chicken marinated in a mixture of yoghurt, roasted gram flour, cream and eggs; chargrilled.',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3512,6 +3703,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless chunks of chicken marinated in yoghurt, aromatic spices, garlic and ginger,  chargrilled.',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3520,6 +3712,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless chunks of chicken marinated in pickle flavoured yoghurt; chargrilled.',
                     price: '40.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -3528,6 +3721,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless chunks of chicken marinated in tandoori masala flavoured yoghurt; chargrilled.',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -3543,6 +3737,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Leg of baby lamb marinated overnight in ginger, garlic, garam masala, yoghurt, lime juice and chilli powder; slow-roasted for several hours.',
                     price: '115.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3551,6 +3746,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Leg of baby lamb marinated in tandoori masala spices infused yoghurt; chargrilled.',
                     price: '105.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3559,6 +3755,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mutton cubes marinated in yoghurt, aromatic spices, garlic, ginger and young papaya; chargrilled.',
                     price: '55.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3567,6 +3764,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mutton cubes marinated in yoghurt spiced with freshly ground black pepper; chargrilled.',
                     price: '55.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -3590,6 +3788,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'medium' },
                       ],
                     },
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -3598,6 +3797,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tender mutton chops marinated in yoghurt and cream, delicately flavoured with pepper and other spices; chargrilled.',
                     price: '48.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3606,6 +3806,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Seekh made from mutton mince, coated in finely chopped onions and bell peppers; chargrilled.',
                     price: '50.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3614,6 +3815,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Seekh made from mutton mince, blended with spices and finely chopped onions; chargrilled.',
                     price: '48.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3622,6 +3824,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Seekh made from mutton mince blended with fresh coriander, mint, ginger, onion and mild spices; chargrilled.',
                     price: '48.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -3637,6 +3840,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Lobster marinated in tandoori masala infused yoghurt; grilled.',
                     price: '105.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3645,6 +3849,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Lobster marinated in ginger, garlic, cream and cashew paste, delicately flavoured with white pepper and cardamom; chargrilled.',
                     price: '105.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -3660,6 +3865,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "Jumbo prawns marinated in chef's special masala, chargrilled.",
                     price: '75.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3668,6 +3874,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Jumbo prawns marinated in yoghurt and tandoori masala; chargrilled.',
                     price: '75.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3676,6 +3883,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Jumbo prawns marinated in cream and cashew paste, delicately flavoured with ginger and garlic, white pepper and cardamom; chargrilled.',
                     price: '75.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3684,6 +3892,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Medium-sized prawns marinated in peppercorn-infused yoghurt and spices; chargrilled.',
                     price: '55.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -3692,6 +3901,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Medium-sized prawns marinated in pickle flavoured yoghurt; chargrilled.',
                     price: '55.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -3700,6 +3910,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Medium-sized prawns marinated with lemon and a paste of green chili, coriander and spring onion chargrilled.',
                     price: '55.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                 ],
               },
@@ -3715,6 +3926,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Whole hammour marinated with ginger garlic paste, lemon juice, mustard oil, fenugreek and mixed spices; chargrilled.',
                     price: '76.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3723,6 +3935,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Whole white pomfret marinated in tandoori masala infused yoghurt, chargrilled.',
                     price: '75.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3731,6 +3944,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless cubes of hammour marinated in yoghurt spiced with freshly ground black pepper and chargrilled.',
                     price: '55.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -3739,6 +3953,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless cubes of hammour marinated in yoghurt, aromatic spices, garlic and ginger chargrilled.',
                     price: '55.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3747,6 +3962,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless cubes of salmon or hammour marinated in a paste of coriander, green chilli, ginger, garlic and spices; chargrilled.',
                     price: '55.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -3755,6 +3971,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fillet fish From your choice marinated in a refreshing citrusy blend of lemon juice, garlic and yoghurt; chargrilled.',
                     price: '55.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -3770,6 +3987,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fillet of Salmon or Hammour marinated in a refreshing citrusy blend of lemon juice, thymol seeds and yoghurt; chargrilled.',
                     price: '55.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3778,6 +3996,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mince vegetables mixed with spices, chopped green chillies and coriander, shaped into tikkis; shallow fried and served on a bed of reshmi paratha.',
                     price: '44.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -3786,6 +4005,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Roundels of cottage cheese marinated in yoghurt and spices, stuffed with a mixture of cottage cheese, cashew and raisins; chargrilled.',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3794,6 +4014,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Pieces of cottage cheese marinated in yoghurt flavoured with tandoori masala; chargrilled.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3802,6 +4023,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Pieces of cottage cheese marinated in a tangy sauce, chargrilled.',
                     price: '36.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -3810,6 +4032,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Pieces of cottage cheese marinated in yoghurt spiced with freshly ground black pepper; chargrilled.',
                     price: '36.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -3818,6 +4041,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Pieces of cottage cheese marinated in yoghurt flavoured with cream and cheese; chargrilled.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3826,6 +4050,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Pieces of cottage cheese marinated with yoghurt and garam masala, delicately flavoured with garlic; chargrilled.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3834,6 +4059,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Pieces of cottage cheese marinated in pickle flavoured yoghurt; chargrilled.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3842,6 +4068,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Florets of broccoli marinated in tandoori masala infused yoghurt and spices; chargrilled.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3850,6 +4077,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Florets of broccoli marinated with cream, cheese and infused with spices; chargrilled.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3858,6 +4086,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Seekh made with grated cottage cheese, potatoes and fresh fenugreek leaves, seasoned with green chillies, fresh coriander and chaat masala; chargrilled.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3866,6 +4095,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Seekh made with minced seasonal vegetables, flavoured with fresh herbs, green chillies and chaat masala; chargrilled.',
                     price: '35.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3874,6 +4104,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fresh button mushrooms marinated in a mixture of yoghurt, cream, coconut powder, ginger, spices and fresh coriander; chargrilled.',
                     price: '35.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3882,6 +4113,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fresh mushrooms stuffed with spinach and cottage cheese, marinated in yoghurt and spices; chargrilled.',
                     price: '35.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -3890,6 +4122,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Yoghurt marinated potatoes with a spiced stuffing of cottage cheese; chargrilled.',
                     price: '34.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                 ],
               },
@@ -3913,6 +4146,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chargrilled chicken kalimirch kabab, cooked with cashew-onion gravy, flavoured with ginger, garlic, chilli and spices, delicately flavoured with pepper.',
                     price: '54.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -3953,6 +4187,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chargrilled chicken mince seekh, cooked in a spicy masala gravy.',
                     price: '53.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -3985,6 +4220,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless pieces of chicken cooked with fried onions, red chillies, pounded garam masala and tomatoes.',
                     price: '43.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4001,6 +4237,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Minced chicken cooked with onions and tomatoes, flavoured with ginger, garlic and green chillies, finished with butter.',
                     price: '42.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4017,6 +4254,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A typical north frontier kadai preparation - A speciality of the Chef.',
                     price: '42.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4033,6 +4271,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A piquant, aromatic dish of chicken, cooked in traditional pickling spices, flavoured with red chillies.',
                     price: '42.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4041,6 +4280,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless pieces of chicken in a spicy masala of red chillies, onion, coriander, tomato and garam masala.',
                     price: '42.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4065,6 +4305,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tender chicken pieces stewed with onions, fresh herbs and spices in a tomato based gravy, prepared in a kadai.',
                     price: '42.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4096,6 +4337,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled pieces of mutton kalimirch tikka in an onion-cashew gravy, delicately flavoured with pepper.',
                     price: '67.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4112,6 +4354,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'An aromatic dish made with boneless mutton in a cashew-onion gravy with chilli powder and other spices served in an earthen pot.',
                     price: '62.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4120,6 +4363,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chargrilled mutton mince seekh, cooked in a spicy masala gravy.',
                     price: '62.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4144,6 +4388,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless pieces of mutton cooked in a medium thick gravy made of cashew paste, cumin, dry coconut powder and coriander, delicately flavoured with ginger garlic paste and red chillies.',
                     price: '54.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4160,6 +4405,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mutton curry with whole spices, garlic, cloves, ginger batons, chillies and red onion cooked on a slow fire.',
                     price: '52.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4168,6 +4414,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tender mutton cubes and spices sautéed or ‘bhuna’ till well browned, simmered in a gravy of tomatoes, onions, ginger, garlic and red chilli powder.',
                     price: '52.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4176,6 +4423,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tender boneless cubes of mutton spiced with mustard, fennel and curry leaves, simmered in a sauce of tomatoes and tamarind.',
                     price: '52.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4184,6 +4432,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless pieces of mutton cooked with capsicum, onions, green chillies and tomatoes, flavoured with peppercorns and garam masala.',
                     price: '52.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4216,6 +4465,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Minced lamb cooked with onions, ginger, garlic, chillies, yoghurt, garam masala and lime juice.',
                     price: '46.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4224,6 +4474,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Minced lamb and green peas cooked with onions, tomatoes, ginger garlic paste and ground spices.',
                     price: '46.00',
+                    badges: ['SPICY'],
                   },
                 ],
               },
@@ -4247,6 +4498,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Pieces of lobster stir fried with capsicum and tomatoes, spiced with black pepper.',
                     price: '105.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4286,6 +4538,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled medium-sized prawns, cooked in a mildly spiced gravy of onion, cashew, ginger, garlic and spices, laced with butter.',
                     price: '68.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4318,6 +4571,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Prawns stir fried with capsicum and tomatoes, spiced with green chillies and black pepper.',
                     price: '55.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4326,6 +4580,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Succulent prawns in a spicy masala of red chillies, onions, tomatoes, coriander and garam masala.',
                     price: '55.00',
+                    badges: ['SPICY'],
                   },
                 ],
               },
@@ -4341,6 +4596,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tandoori Pomfret laced with a tomato based masala; made tangy with pomegranate and sprinkled with pepper.',
                     price: '90.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4365,6 +4621,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cubes of Salmon or Hammour sauteed with ginger, garlic and capsicum, tossed with a tomato-onion-cashew sauce, flavoured with spices.',
                     price: '58.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4373,6 +4630,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cubes of salmon or hammour laced with a tomato based masala, made tangy with pomegranate and sprinkled with pepper.',
                     price: '58.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4381,6 +4639,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fillet of Salmon or Hammour cooked in a gravy of onion, tomato and red chilli.',
                     price: '58.00',
+                    badges: ['SPICY'],
                   },
                 ],
               },
@@ -4404,6 +4663,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled broccoli sauteed with spices, simmered in a gravy of tomato, onion, ginger, garlic and chilli powder.',
                     price: '46.00',
+                    badges: ['SPICY', 'HEALTHY'],
                   },
                   {
                     image:
@@ -4420,6 +4680,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled stuffed potatoes sauteed with ginger, garlic and green chillies, cooked in an onion-cashew gravy, flavoured with spices.',
                     price: '45.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4436,6 +4697,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Paneer cooked in a thick creamy tomato based gravy, infused with a blend of spices and flavors.',
                     price: '36.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4452,6 +4714,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chopped cottage cheese tempered with spices, sautéed with onions, tomatoes and green chillies.',
                     price: '35.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4460,6 +4723,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chopped cottage cheese and spinach tempered with spices, sautéed with onions, tomatoes and green chillies.',
                     price: '35.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4484,6 +4748,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fresh cottage cheese stir fried with capsicum and tomatoes, seasoned with black pepper.',
                     price: '35.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4500,6 +4765,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cubes of cottage cheese, onions, tomatoes and capsicum in a sweet and sour sauce.',
                     price: '34.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4532,6 +4798,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Vegetables and spices sauteed on a griddle simmered in a gravy of tomatoes, onions, ginger, garlic and chilli powder.',
                     price: '32.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4556,6 +4823,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A blend of fresh garden vegetables and mushrooms in a hot and spicy red chilli sauce; tempered with curry leaves.',
                     price: '32.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4564,6 +4832,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Garden fresh vegetables and mushrooms stewed with onions, tomatoes, green chillies and ginger slices cooked with kadai masala.',
                     price: '32.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4580,6 +4849,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Stir fried stuffed chillies in a special sauce of sesame seeds, peanuts and coconut; flavoured with spices.',
                     price: '32.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4588,6 +4858,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Baby potatoes cooked in a tangy sauce of tomatoes, yoghurt, red chilli powder, ginger and garlic; infused with fenugreek powder.',
                     price: '30.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4604,6 +4875,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Diced potatoes tempered with curry leaves, cumin and chillies; sauteed with fried fenugreek.',
                     price: '30.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4612,6 +4884,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Diced potatoes and cauliflower florets tossed with cubes of onion, tomatoes, chillies;  flavoured with ginger.',
                     price: '32.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4620,6 +4893,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fresh mustard leaves, puréed and cooked with onions and tomatoes, tempered with spices and green chillies, finished with butter.',
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -4628,6 +4902,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chickpeas tempered with onions, cumin seeds, red chillies, turmeric powder, garam masala, kadai masala and green chillies.',
                     price: '28.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4644,6 +4919,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Split yellow lentils tempered with cumin, garlic, tomatoes and red chillies.',
                     price: '27.00',
+                    badges: ['SPICY', 'HEALTHY'],
                   },
                   {
                     image:
@@ -4652,6 +4928,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chargrilled paneer kalimirch tikka, cooked with cashew-onion gravy, flavoured with ginger, garlic, chilli and spices, delicately flavoured with pepper.',
                     price: '46.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4763,6 +5040,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tender pieces of chicken marinated in a special Hyderabadi masala, layered with aromatic basmati rice, potato and fried onions; cooked on dum in a sealed earthen pot.',
                     price: '50',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4811,6 +5089,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless chunks of chicken marinated in a special Bombay-style biryani masala, layered with basmati rice; cooked on dum in a sealed earthen pot.',
                     price: '45',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4819,6 +5098,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Bhuna chicken spiced with masala and layered with aromatic basmati rice; cooked on dum in a sealed earthen pot.',
                     price: '43',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4827,6 +5107,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Leg of baby lamb marinated overnight and slow roasted in the oven, layered with aromatic basmati rice cooked in a full-bodied lamb stock on dum in a sealed earthen pot.',
                     price: '170.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4835,6 +5116,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless chunks of mutton marinated in a special Hyderabadi masala, layered with aromatic spices, basmati rice, potato and fried onions; cooked on dum in a sealed earthen pot.',
                     price: '60',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4843,6 +5125,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mutton Roganjosh layered with aromatic basmati rice; cooked on dum in a sealed earthen pot.',
                     price: '60',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4867,6 +5150,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boneless chunks of mutton marinated in garam masala, ginger, garlic, chillies and yoghurt, layered with saffron-infused basmati rice; cooked on dum in a sealed earthen pot.',
                     price: '55',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4883,6 +5167,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mutton mince cooked with garam masala, ginger, garlic, chillies and yoghurt, layered with saffron-infused basmati rice; cooked on dum in a sealed earthen pot.',
                     price: '53',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4899,6 +5184,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chunks of mutton and chops marinated in a special Hyderabadi masala, layered with aromatic basmati rice and fried onions; cooked on dum in a sealed earthen pot.',
                     price: '50',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4915,6 +5201,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chunks of mutton and chops marinated in garam masala, ginger, garlic, chillies and yoghurt, layered with saffron-infused basmati rice; cooked on dum in a sealed earthen pot.',
                     price: '46',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4923,6 +5210,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chargrilled jumbo prawns, layered with spices and aromatic basmati rice; cooked on dum in a sealed earthen pot.',
                     price: '85',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4931,6 +5219,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Prawns marinated in a special Hyderabadi masala, layered with aromatic basmati rice and fried onions; cooked on dum in a sealed earthen pot.',
                     price: '62',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4939,6 +5228,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Prawns marinated with garam masala, ginger and chillies, layered with saffron-infused basmati rice; cooked on dum in a sealed earthen pot.',
                     price: '58',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -4955,6 +5245,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fillet of hammour marinated in a special Hyderabadi masala, layered with aromatic basmati rice and fried onions; cooked on dum in a sealed earthen pot.',
                     price: '62',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -5052,6 +5343,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boiled eggs in a special masala layered with aromatic basmati rice; cooked on dum in a sealed earthen pot.',
                     price: '42',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -5060,6 +5352,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A medley of vegetables and paneer cubes layered in a special Hyderabadi masala, aromatic spices and basmati rice; cooked on dum in a sealed earthen pot.',
                     price: '46',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -5068,6 +5361,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A medley of vegetables, layered with aromatic basmati rice and a tangy sweet and sour masala; cooked on dum in a sealed earthen pot.',
                     price: '41',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -5084,6 +5378,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Assorted vegetables and paneer, flavoured with garam masala and green chillies, layered with saffron-infused basmati rice.',
                     price: '32.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -5115,6 +5410,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sada Chawal (Plain Rice)',
                     description: 'Plain and simple aromatic basmati rice.',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -5241,6 +5537,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tandoori white flour bread baked with a filling of cheese, topped with chillies.',
                     price: '15.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -5249,6 +5546,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'White flour bread flavoured with chopped chillies and baked in a tandoor.',
                     price: '10.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -5310,6 +5608,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Whole wheat flour bread baked in a tandoor, flavoured with carom seeds.',
                     price: '6.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5318,6 +5617,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A traditional bread made with sweet cornmeal and white flour, baked and served topped with butter.',
                     price: '7.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5341,6 +5641,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Tandoori Roti',
                     description: 'Whole wheat flour bread baked in a tandoor.',
                     price: '5.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -5356,6 +5657,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Butterscotch brittle, buttery chocolate cake, semi-sweet dark chocolate ganache, roasted almonds.',
                     price: '27.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5364,6 +5666,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mango milk-soaked sponge, chantilly cream center, mango ganache, whipped mango ganache topping.',
                     price: '25.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5372,6 +5675,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Homemade bread soaked in sweetened milk, topped with nuts and cardamom; served hot in an earthen pot.',
                     price: '22.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5380,6 +5684,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Homemade dough, deep fried in ghee and soaked in a cardamom and rose infused syrup, topped with white chocolate rabdi and slivered nuts.',
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5388,6 +5693,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A light dessert of milk and cream cooked with powdered basmati rice, flavoured with saffron, pistachio and kewda water served in an earthen pot.',
                     price: '20.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5396,6 +5702,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Miniature dumplings of curd cheese dipped in saffron and cardamom flavoured milk; garnished with nuts.',
                     price: '18.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5404,6 +5711,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "Curd cheese balls soaked in saffron-infused sweetened, thickened milk or 'rabdi'. served in an earthen pot.",
                     price: '18.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5412,6 +5720,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A tropical twist on a classic, prepared with sweet thickened milk and tender coconut pulp, garnished with pomegranate seeds; served chilled in an earthen pot.',
                     price: '18.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5420,6 +5729,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Deep fried milk dumplings stuffed with saffron and pistachio, dipped in sugar syrup; garnished with nuts',
                     price: '16.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5428,6 +5738,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grated carrots glazed in butter, cooked in sweetened milk and khoya; garnished with nuts.',
                     price: '16.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5436,6 +5747,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A milk based frozen dessert flavoured with saffron and pistachio, traditionally made in an earthen pot.',
                     price: '17.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -5451,6 +5763,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dry Fruit, Badam Pista, Mango, Strawberry, Apple, Watermelon, Banana, Chocolate, Vanilla, Rose',
                     price: '24',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5459,6 +5772,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mango, Pomegranate, Cocktail, Orange, Watermelon, Pineapple, Black Grapes, Apple, Carrot, Lemon Mint',
                     price: '22',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5467,6 +5781,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A refreshing combination of orange and green lime juice.',
                     price: '19.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5475,6 +5790,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A concoction made of milk, rose syrup and vermicelli, served in a tall glass topped with a scoop of vanilla ice cream.',
                     price: '22.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5483,6 +5799,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Thick saffron and pistachio flavoured yoghurt shake.',
                     price: '22.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5491,6 +5808,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Thick yoghurt and pomegranate seeds blended together.',
                     price: '22.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5498,6 +5816,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Mango Lassi',
                     description: 'Thick mango flavoured yoghurt shake.',
                     price: '22.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -5514,6 +5833,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A drink made of lime juice, ginger ale and jaggery.',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5522,6 +5842,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A combination of tender coconut water, with fresh mint and honey.',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5530,6 +5851,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Freshly squeezed lime juice, churned with water or soda served sweet or salted.',
                     price: '16',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -5544,6 +5866,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Zafrani Tea',
                     description: 'Tea flavored with saffron.',
                     price: '12.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5560,6 +5883,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rich flavor and excellent tea taste, expertly blended.',
                     price: '8.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5568,6 +5892,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Popular beverage with a complex flavor, good source of caffeine and antioxidants',
                     price: '7.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5576,6 +5901,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Green tea, harvested and processed to preserve natural antioxidants and health benefits.',
                     price: '7.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5583,6 +5909,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Coffee',
                     description: 'fresh coffee',
                     price: '10.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5598,6 +5925,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sparkling Water',
                     description: 'Sparkling water, fizzy and bubble',
                     price: '12.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5612,6 +5940,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Still Water Large',
                     description: 'Mineral water.',
                     price: '7.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5619,6 +5948,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Still Water Small',
                     description: 'Mineral water.',
                     price: '4.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -5704,6 +6034,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Local fisherman’s daily catch, marinated & grilled to perfection, dressed in a light lemon-oil vinaigrette & served with a green leaf salad.',
                     price: '59.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5720,6 +6051,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Top Scottish raw salmon gently chopped in a tartare infused with ginger, basil, lemon and French thyme.',
                     price: '74.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5728,6 +6060,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Marinated top-grade raw tuna tartare, asiatique sauce with sesame seeds, scallions, fresh herbs, topped with crispy leeks tempura.',
                     price: '73.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -5742,6 +6075,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Build Your Own Healthy Salad',
                     description: null,
                     price: '49.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5750,6 +6084,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fresh, creamy and classic, served on a bed of heirloom tomatoes, topped with hazelnuts, plums and truffle balsamic served on the side.',
                     price: '74.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5766,6 +6101,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Quinoa, avocado, pickled beetroot, Arugula salad, fromage frais, pine nuts and cranberries, topped with a balsamic vinaigrette.',
                     price: '66.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5782,6 +6118,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'An assortment of baby salad leaves dressed with a sherry vinaigrette.',
                     price: '37.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -5790,6 +6127,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Healthy & light lentils, mixed with finely diced vegetables, fresh herbs & a light Dijon sauce.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -5860,6 +6198,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled shrimps, avocado, lettuce, coriander, and chipotle mayo in a white ciabatta bread.  Enjoy the best of couqley in our freshly baked bread.',
                     price: '73.00',
+                    badges: ['SPICY'],
                   },
                 ],
               },
@@ -6094,6 +6433,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tender marinated calamari and black tiger shrimp, sautéed with fresh red chili (mild), garlic, paprika & parsley.',
                     price: '109.00',
+                    badges: ['SPICY', 'HEALTHY'],
                   },
                 ],
               },
@@ -6140,6 +6480,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled Portobello Mushroom topped with Parmesan cheese.',
                     price: '29.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -6168,6 +6509,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Petit Green Leaf Salad',
                     description: null,
                     price: '19.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -6176,6 +6518,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled asparagus, asparagus spears grilled for a tender texture.',
                     price: '29.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -6183,6 +6526,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Wild Rice',
                     description: null,
                     price: '19.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -6205,6 +6549,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'French toast, drizzled with caramel sauce and served with vanilla ice cream.',
                     price: '43.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -6213,6 +6558,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Delicious rich French custard topped with a layer of hard caramel.',
                     price: '35.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -6220,6 +6566,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Tart of the Day',
                     description: null,
                     price: '33.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -6283,6 +6630,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Premium Still Water (750 ml)',
                     description: 'drinking water',
                     price: '24.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -6290,6 +6638,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Premium Sparkling Water (750 ml)',
                     description: 'drinking water',
                     price: '24.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -6297,6 +6646,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Premium Still Water (330 ml)',
                     description: 'drinking water',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -6304,6 +6654,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Premium Sparkling Water (330 ml)',
                     description: 'drinking water',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -6357,6 +6708,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'no-peanuts' },
                       ],
                     },
+                    badges: ['SPICY'],
                   },
                 ],
               },
@@ -6388,6 +6740,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'spicy' },
                       ],
                     },
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -6419,6 +6772,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Our premium beef patty topped with a secret spicy sauce, cheddar cheese, caramelized onion and pickled jalapenos',
                     price: '39.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -6443,6 +6797,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Premium Angus beef patty, beef bacon, melted pepper jack cheese, crispy tempura onions, drizzled with BBQ sauce, homemade ranch and chipotle sauce.',
                     price: '47.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -6490,6 +6845,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crispy fried chicken, tossed in buffalo sauce, topped with pepper jack cheese, jalapenos, and mango slaw. Drizzled with spicy mayo.',
                     price: '46.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -6536,6 +6892,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Our signature crispy Chicken mango slaw burger tossed in buffalo sauce, fries, soft drink and choice of two homemade sauces',
                     price: '65.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -6568,6 +6925,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Our signature Ribeye burger, fries, soft drink and choice of two homemade sauces',
                     price: '69.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -6576,6 +6934,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Our signature Tokyo burger, fries, soft drink and choice of two homemade sauces',
                     price: '68.00',
+                    badges: ['SPICY'],
                   },
                 ],
               },
@@ -6615,6 +6974,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crispy chicken strips tossed in Nashville butter, spicy honey, sesame seeds & spring onion.',
                     price: '37.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -6651,6 +7011,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A soft Korean-style bun filled with rich Lotus Biscoff cheesecake cream and topped with Lotus crumbs',
                     price: '19.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -6659,6 +7020,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A soft Korean-style bun filled with a luscious blend of tropical passionfruit, mango and coconut cream',
                     price: '19.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -6666,6 +7028,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Nutella Bun',
                     description: 'A soft Korean-style bun filled with Nutella',
                     price: '19.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -6750,6 +7113,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Arwa Water 500Ml',
                     description: 'Arwa Water 500Ml',
                     price: '8.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -6757,6 +7121,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sparkling Water',
                     description: 'Sparkling Water',
                     price: '12.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -7916,6 +8281,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Romaine lettuce, parmesan cheese, and oven baked croutons. Served with Caesar dressing',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -7924,6 +8290,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A Blend Of Lettuce, Rocket Leaves, Baked Halloumi, Roasted Almonds, Sundried Tomato & Purslane. Best Enjoyed With Balsamic Dressing',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -7948,6 +8315,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A combination of blended yellow lentil with carrots, onion, & garlic. Served with oven baked croutons',
                     price: '18.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -8011,6 +8379,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Deliciously spiced soujouk, flavoured with tomato, pickles, and mayo on top',
                     price: '34.00',
+                    badges: ['SPICY'],
                   },
                 ],
               },
@@ -8079,6 +8448,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Marinated chicken with bell pepper, rocket leaves, onions, melted cheese and our mild spicy sauce on top',
                     price: '36.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -8119,6 +8489,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Delicately spiced falafel mix & baked to perfection. Seasoned with tahini sauce & Topped with tomato, pickled turnip, Fresh Mint & Radish. Garnished with freshly chopped parsley mix, wrapped in multigrain flatbread',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8215,6 +8586,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tune mixed with light mayo sauce with romaine lettuce, sesame seeds and corn. Wrapped in our freshly crafted protein dough',
                     price: '31.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8223,6 +8595,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Irresistible roasted chicken topped with tomatoes, lettuce, pickles, and light garlic mayo sauce, wrapped in our freshly crafted protein dough',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8231,6 +8604,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A classic combination of melted four cheeses topped with slices of smoked deli turkey, pickles, lettuce & tomato seasoned with our light mayo mustard sauce. Wrapped in our freshly crafted protein dough',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8239,6 +8613,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Our signature hummus on oat flat bread with chili spread & topped with avocado, tomato, olive oil, basil & a mix of grilled eggplant, bell pepper & sesame seeds',
                     price: '27.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                 ],
               },
@@ -8254,6 +8629,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A hearty blend of kale, red & white quinoa, grated carrots, black beans, coriander leaves, and pomegranate seeds. Topped with chicken paprika, avocado, and tortilla sticks',
                     price: '39.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8262,6 +8638,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Savor the Mediterranean flavors! A blend of orzo pasta, arugula, cherry tomato, cucumber, green bell pepper, diced onion, black olives, green thyme, topped with feta cheese. Served with our special orzo dressing',
                     price: '34.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8270,6 +8647,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A Bright Mix Of Beans, Boiled Egg, Cherry Tomato, Corn, Black Olives, Grilled Chicken & A Blend Of Lettuce. Best Enjoyed With Mustard Vinegar Dressing',
                     price: '39.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8278,6 +8656,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A Bright Mix Of Beans, Boiled Egg, Cherry Tomato, Corn, Black Olives, Tuna & A Blend Of Lettuce. Best Enjoyed With Mustard Vinegar Dressing',
                     price: '37.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8286,6 +8665,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Lettuce, rocket leaves, roasted almonds, sun-dried tomato and purslane, topped with grilled chicken. Served with balsamic dressing',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8294,6 +8674,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tomatoes, cucumbers, mint, parsley, green onions, green pepper, purslane, lettuce, halloumi cheese and oven baked bread squares. Served with our special vinaigrette dressing',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -8309,6 +8690,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Romaine lettuce, parmesan cheese, and oven baked croutons. Served with Caesar dressing',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8317,6 +8699,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Simply Caesar with grilled chicken on top. Served with Caesar dressing',
                     price: '35.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8350,6 +8733,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A Blend Of Lettuce, Rocket Leaves, Baked Halloumi, Roasted Almonds, Sundried Tomato & Purslane. Best Enjoyed With Balsamic Dressing',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8358,6 +8742,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Quinoa, chopped tomatoes, green onions, parsley, and mint. Served with Tomato Lemon Dressing (small portion)',
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8366,6 +8751,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A fresh mix of kale, red quinoa, cranberry, sweet potatoes, almonds, chia seeds, topped with feta cheese. Served with our special lemon balsamic dressing',
                     price: '37.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8374,6 +8760,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A tasty bowl of fusilli pasta with greens, olives, sundried tomatoes, fresh basil, boiled eggs, and oregano. Topped with grilled chicken & served with honey garlic mustard dressing',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8382,6 +8769,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Kale, flax seeds, dried apricots, green thyme, purslane & grilled chicken. Served with Lemon Balsamic Dressing',
                     price: '39.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8390,6 +8778,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Quinoa, grilled vegetables, black beans, peas, slices of cherry tomatoes, topped with grilled halloumi cubes, chia seeds & pumpkin seeds. Served with Tomato Lemon Dressing  (small portion)',
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8398,6 +8787,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A bed of fresh lettuce & rocket leaves with oven roasted carrots & beetroot, cherry tomatoes, fresh green & red bell pepper topped with our signature grilled chicken. Served with our special honey garlic mustard dressing',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8406,6 +8796,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Side Portion - Romaine lettuce, parmesan cheese, and oven baked croutons. Served with Caesar dressing',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8414,6 +8805,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Side Portion - Tomatoes, cucumbers, mint, parsley, green onions, green pepper, purslane, lettuce, halloumi cheese and oven baked bread squares. Served with our special vinaigrette dressing',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8422,6 +8814,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Our Version Of A National Dish. Chickpeas Pureed With Tahini Sauce, Lemon Juice & Spices. Served With Grilled Vegetables, Toasted Multigrain Crackers, Garnished With Tomato, Parsley, Sesame Seeds & Olive Oil',
                     price: '21.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8470,6 +8863,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fried potato wedges served with our signatures spicy sauce',
                     price: '19.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -8501,6 +8895,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A combination of blended yellow lentil with carrots, onion, & garlic. Served with oven baked croutons',
                     price: '18.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -8608,6 +9003,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Slices of baked halloumi cheese. Served with freshly baked bread, mint leaves, tomatoes, cucumbers and olives',
                     price: '35.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8616,6 +9012,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '3 eggs cooked your way. Served with freshly baked bread, mint leaves, tomatoes, cucumbers and olives',
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8624,6 +9021,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Creamy yogurt drizzled with olive oil. Served with freshly baked bread, mint leaves, tomatoes, cucumbers and olives',
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -8647,6 +9045,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Golden taouk served with fresh mushrooms & fries. Served with Hummus dip, pickles & authentic garlic paste & mini thyme bread on the side',
                     price: '47.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8655,6 +9054,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Roasted chicken with baked potatoes & cherry tomatoes marinated in a garlic lemon and coriander sauce. Served with freshly baked bread on the side',
                     price: '46.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8663,6 +9063,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Deliciously Baked Kafta With Potato Slices, Fresh Tomato & Tomato Sauce. Garnished With Freshly Chopped Parsley Mix. Served With Freshly Baked Bread & Sour Cream On The Side',
                     price: '46.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8780,6 +9181,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Melted hazelnut milk chocolate spread, topped with slices of banana and hazelnut',
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -8788,6 +9190,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Our new pistachio dough, filled with nutella spread & creamy pistachio butter mixed with baked osmaliyeh. Drizzled with nutella, & a sprinkle of crushed pistachios',
                     price: '29.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -8796,6 +9199,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Our famous cheesecake with a strawberry twist',
                     price: '11.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -8804,6 +9208,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Wonderful wobbly fruitiness. Less guilt, more indulgence! Not suitable for sharing',
                     price: '9.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -8812,6 +9217,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Our famous cheesecake with a blueberry twist. Less guilt, more indulgence! Not suitable for sharing',
                     price: '11.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -8820,6 +9226,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A delicious mix of chocolate cake & chocolate mousse. Less guilt, more indulgence! Not suitable for sharing',
                     price: '13.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -8828,6 +9235,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Our heavenly version of the famous tiramisu dessert',
                     price: '11.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -8836,6 +9244,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A cup of delicious flavors! Our famous creamy cheesecake mixed & topped with Oreo cookies.',
                     price: '13.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -8859,6 +9268,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Orange, Lemon, Ginger, and Turmeric Improves skin health and acts as a natural anti-aging supplement while reducing blood sugar levels',
                     price: '21.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8866,6 +9276,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Orange Juice (330 Ml)',
                     description: 'Cold-pressed Orange Juice',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8873,6 +9284,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Carrot Juice (330 Ml)',
                     description: 'Cold-pressed carrot juice',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8880,6 +9292,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Apple Juice (330 Ml)',
                     description: 'Cold-pressed Apple Juice',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8887,6 +9300,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Lemonade (330 Ml)',
                     description: 'Cold-pressed Lemonade',
                     price: '18.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8894,6 +9308,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fresh Yoghurt (330 Ml)',
                     description: 'Home-made Yogurt drink',
                     price: '19.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8901,6 +9316,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Evian Water',
                     description: '500 ml',
                     price: '14.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8908,6 +9324,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Rim Water',
                     description: '500 ml',
                     price: '8.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -8915,6 +9332,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sparkling Water',
                     description: '330 ml',
                     price: '14.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9065,6 +9483,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Spizy Sauce Dip',
                     description: null,
                     price: '3.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -9110,6 +9529,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Açaí blend, house-made granola, exotic fruits, coconut , plant based, seasame and nuts',
                     price: '64.00',
+                    badges: ['HEALTHY', 'DESSERT'],
                   },
                   {
                     image:
@@ -9118,6 +9538,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Coconut soaked chia seeds, mixed berries, strawberry granita and plant based',
                     price: '64.00',
+                    badges: ['HEALTHY', 'DESSERT'],
                   },
                   {
                     image:
@@ -9126,6 +9547,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Poached plum, salted caramel, crème anglaise, dairy, gluten, vegetarian and eggs',
                     price: '60.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -9134,6 +9556,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Maple syrup, blueberry, whipped mascarpone, caramelized banana, dairy, vegetarian and eggs',
                     price: '68.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -9149,6 +9572,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'creamy milkshake that is made with ice cream, milk, salted caramel sauce, and whipped cream.',
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -9156,6 +9580,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Banana Milkshake',
                     description: 'Made with ripe bananas and creamy milk',
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -9164,6 +9589,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Made with strawberries and creamy vanilla ice cream',
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -9172,6 +9598,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Made with fresh milk, smooth chocolate for a creamy taste',
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -9187,6 +9614,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Made with freshly squeezed oranges, great source of vitamin c',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9194,6 +9622,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fresh Apple Juice',
                     description: 'Made with a blend of juicy apples',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -9208,6 +9637,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Ginger Kombucha',
                     description: null,
                     price: '34.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -9222,6 +9652,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Still Large',
                     description: null,
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9229,6 +9660,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Still Small',
                     description: null,
                     price: '20.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9236,6 +9668,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sparkling Large',
                     description: null,
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9243,6 +9676,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sparkling Small',
                     description: null,
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -9308,6 +9742,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Gluten, plant based, onion and garlic served with toasted sourdough',
                     price: '45.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9316,6 +9751,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Gluten, plant based, onion and garlic, spicy red mojo sauce and black lime salt',
                     price: '38.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -9324,6 +9760,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Plant based, onion and garlic, tortilla chips, tomatillo and mint salsa',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9332,6 +9769,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Plant based, onion and garlic, sesame, crisp raw vegetables, glass noodles, fresh herbs, sprouts, seaweed, black sesame dipping sauce',
                     price: '58.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9372,6 +9810,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'mild' },
                       ],
                     },
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9380,6 +9819,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dairy, gluten, plant based optional onion and garlic, wild rice, corn, avocado, fresh greens, red onion, black beans, coriander, jalapeño, persian feta, toasted sunflower seeds and Mexican dressing. Freshly made. Served with sea salt crisps',
                     price: '64.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -9404,6 +9844,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dairy, gluten, plant based optional, onion and garlic, fresh greens, spiced chickpeas, mango, mixed greens, red cabbage, coconut yoghurt raita and tomato. Freshly made. Served with sea salt crisps',
                     price: '64.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -9434,6 +9875,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Gluten, plant based, mustad, nuts, with toasted sunflower seeds, croutons, macadamia pesto and apple cider vinaigrette',
                     price: '29.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9442,6 +9884,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Plant based, onion and garlic, sesame with beetroot hummus, black sesame and olive oil',
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9450,6 +9893,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dairy products, vegetarian, mustard with labneh and toasted hazelnut',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -9465,6 +9909,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dairy, gluten, plant based optional, onion and garlic, mustard, nuts, fresh greens, spinach, cucumber, cherry tomato, avocado, Persian feta, corn, basil, sourdough croutons, herbs, green beans, macadamia pesto, toasted sunflower seeds and apple cider vinaigrette',
                     price: '72.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9473,6 +9918,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Plant based optional, onion and garlic, soy, nuts,  spicy satay sauce, glass noodles, carrot, cucumber, radish, edamame, toasted peanuts, fresh greens, cherry tomatoes, coriander, kaffir lime, citrus and ginger dressing',
                     price: '71.00',
+                    badges: ['HEALTHY', 'SPICY'],
                     // highlighted: true,
                     // video:
                     //   'https://res.cloudinary.com/doe6zvkod/video/upload/v1763640428/Satay_Beef_Bowl_With_spicy_satay_sauce_glass_noodles_carrot_cucumber_radish_edamame_toas_yfbsl3.mp4', // -
@@ -9497,6 +9943,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dairy, plant based optional, onion and garlic , nuts, grilled corn, avocado, fresh greens, red onions, black beans, coriander, jalapeño, Persian feta, toasted sunflower seeds and Mexican dressing',
                     price: '71.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -9519,6 +9966,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'medium' },
                       ],
                     },
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9535,6 +9983,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dairy, onion and garlic, plant based optional, sesame, nuts, baked sweet potato, fresh greens, shredded kale, avocado, beetroot hummus, cucumber, parmesan, green beans, toasted cashews, wild rice, broccoli, red onion, roasted sunflower seeds, maple and balsamic dressing',
                     price: '69.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -9550,6 +9999,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Gluten, plant based, onion and garlic, mustard, tempura palm heart, house-made lentil tacos, avocado, pickled mango salsa, green papaya slaw, jalapeño, spicy red mojo sauce and pickled habanero',
                     price: '64.00',
+                    badges: ['SPICY', 'HEALTHY'],
                   },
                   {
                     image:
@@ -9558,6 +10008,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dairy, gluten, onion and garlic, seafood, grilled prawns, spicy red mojo sauce, jalapeño, Persian feta, mango slaw, fresh herbs and flour tortilla',
                     price: '78.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -9566,6 +10017,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dairy, onion and garlic, plant based, plant based optional, nuts, preserved lemon, rocket leaves, mint, parsley, capers, toasted pine nuts, parmesan and olive oil',
                     price: '72.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -9574,6 +10026,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dairy, onion and garlic, sesame, nuts, seafood, wild rice, charred leeks, green beans, labneh, lemon zest, toasted hazelnuts, almond dukkah, fresh herbs and chilli oil',
                     price: '94.00',
+                    badges: ['SPICY', 'HEALTHY'],
                   },
                   {
                     image:
@@ -9590,6 +10043,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Gluten, onion and garlic, soy, coconut rice, pickled capsicum, mango, mint, jalapeño, spring onion, lime, mango chutney and plantain chips',
                     price: '84.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -9598,6 +10052,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Gluten, onion and garlic, plant based, sesame, mustard, crumbed avocado and chickpea patty, beetroot hummus, pickled onion, vegan mayo, vegan potato bun, lettuce and choice of sweet potato fries or green salad option to replace bun with lettuce wrap',
                     price: '64.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9606,6 +10061,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dairy, gluten, onion garlic, soy, sesame, nuts, eggs, crispy panko chicken, chilli and lime aioli, satay sauce, kewpie mayo, Vietnamese slaw and sweet potato fries',
                     price: '74.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -9629,6 +10085,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Beetroot, pomegranate, watermelon and strawberry',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9637,6 +10094,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Carrot, orange, pineapple, lemon, turmeric and ginger',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9645,6 +10103,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Kale, cucumber, celery, apple, lemon and ginger',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9652,6 +10111,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Black Lemonade',
                     description: 'Activated charcoal, organic lemon and agave',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -9667,6 +10127,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Plant based. Apple, kale, kiwi, avocado, passion fruit, pear and spirulina. reduces blood pressure',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9675,6 +10136,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Plant based. Mango, banana, pineapple, orange, date, macadamia, coconut milk and chia. reduces blood pressure',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9683,6 +10145,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Vegetarian and nuts. Acai, strawberry, blueberry, banana, honey and almond milk. reduces blood pressure',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9691,6 +10154,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dairy, vegetarian, soy and nuts. Banana, vanilla protein, honey, almond milk, sea salt, cinnamon and greek yoghurt. reduces blood pressure',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9699,6 +10163,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Plant based, soy and nuts. 70 % dark chocolate, almond milk, cacao nib, date, encounter espresso, banana, vanilla and peanut butter. reduces blood pressure',
                     price: '40.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -9713,6 +10178,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Drinking Coconut',
                     description: null,
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -9760,6 +10226,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                       'Grilled chicken breast,avocado,cheese, red beans,cherry tomato,icerberg lettuce,shredded carrot,corn, tortilla chips served with  mexican dressing',
                     price: '32.00',
                     discount: 30,
+                    badges: ['SPICY', 'HEALTHY'],
                   },
                   {
                     image:
@@ -9784,6 +10251,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Build your own salad or bowl from your choice of ingredients',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9792,6 +10260,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*603 Kcal* Two Grilled Chicken breast, grilled potatoes, side salad',
                     price: '44.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9800,6 +10269,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*740 Kcal* Grilled chicken breast, steamed rice, avocado, cherry tomatoes, red beans, iceberg lettuce, and corn. Served with Mexican dressing',
                     price: '34.00',
+                    badges: ['SPICY', 'HEALTHY'],
                   },
                   {
                     image:
@@ -9808,6 +10278,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*522 Kcal* Grilled chicken breast, steamed rice, iceberg lettuce, cucumber, shredded red cabbage, onion, coriander and roasted sesame seeds. Served with teriyaki sauce',
                     price: '29.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9816,6 +10287,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*617 Kcal* Grilled chicken breast, steamed rice, iceberg lettuce, cucumber, cherry tomatoes, onions, olives and green capsicum. Topped with creamy Greek goat cheese and served with tzatziki dressing',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9824,6 +10296,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*483 Kcal* Grilled chicken breast, avocado, shredded red cabbage, romaine lettuce, coriander, shredded carrots, roasted sesame seed and crispy tortilla chips. Served with peanut honey vinaigrette dressing.',
                     price: '29.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9832,6 +10305,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*634 Kcal* Grilled chicken breast, quinoa, avocado, beetroot, rocca leaves, iceberg lettuce and seasoned roasted chickpeas. Served with balsamic dressing.',
                     price: '29.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9840,6 +10314,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*667 Kcal* Grilled chicken breast,avocado,cheese, red beans,cherry tomato,icerberg lettuce,shredded carrot,corn, tortilla chips served with  mexican dressing',
                     price: '32.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -9848,6 +10323,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*572 Kcal* Grilled chicken breast, shredded Emmental cheese, smoked turkey, boiled egg, iceberg lettuce, corn and cherry tomatoes. Served with mayo-mustard dressing.',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9856,6 +10332,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*467 Kcal* Grilled chicken breast,avocado,green mix ,cherry tomato served with balsamic dressing',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9864,6 +10341,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*563 Kcal* Grilled chicken breast, parmesan cheese,croutons, romaine lettuce served with caesar dressing.',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9872,6 +10350,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*392 Kcal* Romaine lettuce ,parmesan cheese,croutons served with  ceaser dressing',
                     price: '20.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9880,6 +10359,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*278 Kcal* Parsley, chopped tomatoes, onions, and mint. Served with Oil & Lemon Dressing.',
                     price: '19.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9888,6 +10368,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '*408 Kcal* Lettuce, Tomatoes, cucumbers, mint, radish, green pepper, Rocca, purslane, with vinaigrette dressing.',
                     price: '19.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -9896,6 +10377,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Charcoal griled tawouk, hummus, rocca leaves ,pickles served in brown bread',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -9933,6 +10415,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Two Grilled Chicken breast, grilled potatoes, side salad',
                     price: '44.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10027,6 +10510,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Charcoal griled tawouk, hummus, rocca leaves ,pickles served in brown bread',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10042,6 +10526,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Hummus Sandwich',
                     description: 'Hummus, pickles, fries , mint and tomato',
                     price: '15.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10057,6 +10542,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Soujouk (spicy sausages), tomato, pickles, french fries and mayo in Arabic Bread',
                     price: '21.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -10096,6 +10582,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Marinated chicken breast, Mixed pepper, Onion, Lettuce, Tomatoes, Mayo, Cheese, and Mexican Sauce',
                     price: '26.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -10119,6 +10606,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Soujouk (spicy sausages), tomato, pickles and mayo',
                     price: '21.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -10266,6 +10754,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled Switch™ plant-based chicken chunks, avocado, red beans, cherry tomato,  iceberg lettuce, shredded carrot, corn, tortilla chips served with Mexican dressing',
                     price: '34.00',
+                    badges: ['SPICY', 'HEALTHY'],
                   },
                   {
                     image:
@@ -10274,6 +10763,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled Switch™  plant-based chicken chunks, steamed rice, iceberg lettuce, cucumber, shredded red cabbage, onion, coriander and roasted sesame, served with teriyaki sauce',
                     price: '34.00',
+                    badges: ['SPICY', 'HEALTHY'],
                   },
                 ],
               },
@@ -10349,6 +10839,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Hummus - side portion served with bread and pickles',
                     price: '11.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10357,6 +10848,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Lettuce, rocket leaves, purslane, Cucumber and Thyme served with mayo mustard dressing',
                     price: '11.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10365,6 +10857,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Lettuce, Tomatoes, cucumbers, mint, radish, green pepper, purslane،Rocca, with oil vinegar dressing.',
                     price: '11.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10373,6 +10866,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Parsley, chopped tomatoes, spring onion, and mint. Served with Lemon Oil Dressing.',
                     price: '11.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10387,6 +10881,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Grilled Potato',
                     description: 'Grilled Potato Slices',
                     price: '6.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10408,6 +10903,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Chili Dip',
                     description: 'Chili Sauce',
                     price: '2.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -10415,6 +10911,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Pickles plate',
                     description: 'Small Cucumber Pickles Plate',
                     price: '4.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10467,6 +10964,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Soujouk (spicy sausages), tomato, pickles, french fries and mayo in Arabic Bread',
                     price: '14.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -10482,6 +10980,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled chicken breast, steamed rice, iceberg lettuce, cucumber, shredded red cabbage, onion, coriander and roasted sesame seeds. Served with teriyaki sauce',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10490,6 +10989,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled chicken breast, steamed rice, avocado, cherry tomatoes, red beans, iceberg lettuce, and corn. Served with Mexican dressing',
                     price: '22.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -10498,6 +10998,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled chicken breast, steamed rice, iceberg lettuce, cucumber, cherry tomatoes, onions, olives and green capsicum. Topped with creamy Greek goat cheese and served with tzatziki dressing',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -10512,6 +11013,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Local Water',
                     description: 'Local Water',
                     price: '5.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10568,6 +11070,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Orange Juice',
                     description: 'Orange Juice, 350 ml',
                     price: '8.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10575,6 +11078,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Laban',
                     description: 'Laban Ayran, 225ml',
                     price: '6.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -10610,6 +11114,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sparkling Water',
                     description: 'San Pellegrino Sparkling Water, 250 ml',
                     price: '10.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -11070,6 +11575,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'mild' },
                       ],
                     },
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11078,6 +11584,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Layers of espresso-soaked ladyfingers and creamy mascarpone, topped with cocoa perfection.',
                     price: '34.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11086,6 +11593,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "Our PB and J is a cheeky twist on the classic with layers of peanut butter cream, raspberry jam, brioche whipped ganache, peanut crunch, and caramelized French toast. It's not what it seems",
                     price: '28.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11094,6 +11602,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Ingredients: Chocolate sponge, cocoa syrup and double chocolate ganache, a rich, fluffy chocolate sponge cake soaked in cocoa syrup and topped with creamy double chocolate ganache.',
                     price: '34.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11116,6 +11625,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'mild' },
                       ],
                     },
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11124,6 +11634,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A rich, chewy cookie packed with intense chocolate flavor, featuring a combination of cocoa and chunks of smooth chocolate throughout.',
                     price: '18.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11132,6 +11643,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A classic, chewy cookie loaded with semi-sweet chocolate chips.',
                     price: '16.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11140,6 +11652,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A soft, slightly earthy matcha cookie combined with sweet white chocolate chips.',
                     price: '16.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11148,6 +11661,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Soft, chewy, and coated in perfect blend of cinnamon and sugar. A real melt in your mouth experience.',
                     price: '16.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11156,6 +11670,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A rich, creamy, and slightly caramelized cheesecake with a smooth texture and a deliciously tangy flavor, featuring a golden-brown top and a melt-in-your-mouth finish.',
                     price: '32.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11164,6 +11679,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Ingredients: Sable crust, pistachio frangipane, strawberry compote and white chocolate cream, a delicious tart with a buttery sable crust, filled with nutty pistachio frangipane, topped with tangy strawberry compote, and finished with smooth white chocolate cream for a perfect balance of flavors.',
                     price: '32.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11172,6 +11688,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Ingredients: Sable crust, poached apples in cinnamon sauce and ginger crumble, a warm, flavorful tart with a buttery sable crust, filled with poached apples in cinnamon sauce, and topped with a crunchy ginger crumble for a perfect mix of sweetness and spice.',
                     price: '32.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11180,6 +11697,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Ingredients sable crust, vanilla tahiti and custard cream',
                     price: '28.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11188,6 +11706,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Ingredients: Sable crust, lemon curd and meringue flambee, a zesty lemon tart with a buttery sable crust, filled with smooth lemon curd and topped with a lightly caramelized meringue, offering a perfect balance of tart and sweet flavors.',
                     price: '32.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11196,6 +11715,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Ingredients: Cocoa sable crust, caramel cream, chocolate ganache and mascarpone chantilly, a rich choco caramel tart with a cocoa sable crust, filled with smooth caramel cream, topped with velvety chocolate ganache and mascarpone chantilly for a luscious, indulgent treat.',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11204,6 +11724,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Our san Sebastián cheesecake is smooth, rich and perfectly baked all the way through. No gooey centers just pure, creamy goodness in every bite.',
                     price: '240.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -11227,6 +11748,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A sweet, soft pastry with layers of cinnamon filling, offering a perfect balance of warmth and spice, wrapped in a buttery, flaky dough.',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11243,6 +11765,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A rich, buttery croissant filled with creamy pistachio paste, then baked again for extra crispiness.',
                     price: '32.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11251,6 +11774,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A flaky, buttery croissant topped with a smooth, sweet glaze, adding a hint of sweetness to its crisp, golden exterior and soft interior.',
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11273,6 +11797,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'mild' },
                       ],
                     },
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11289,6 +11814,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A buttery croissant filled with almond cream, then baked again for extra crispiness.',
                     price: '28.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11297,6 +11823,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A classic French pastry with layers of buttery, flaky dough wrapped around rich, melty chocolate.',
                     price: '26.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -11336,6 +11863,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A drink infused with the sweet, caramelized flavor of cookies, combining a smooth espresso base with a touch of spiced sweetness.',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11415,6 +11943,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A chilled latte infused with the sweet, caramelized flavor of Biscoff cookies, offering a spiced sweetness in a refreshing iced drink.',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11455,6 +11984,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A sweet and creamy strawberry-flavored iced drink, offering a refreshing burst of fruity sweetness.',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11479,6 +12009,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A freshly squeezed orange juice served chilled, offering a naturally sweet and refreshing citrus flavor.',
                     price: '15.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -11517,6 +12048,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Choice of toast, served with choice of small acai.',
                     price: '59.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11525,6 +12057,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Choice of flatbread, served with choice of smoothie or protein shake.',
                     price: '59.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11533,6 +12066,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Choice of overnight oats, served with choice of protein shake.',
                     price: '59.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -11548,6 +12082,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Acai blended with banana, topped with banana, peanut butter, paçoquita crumbs, condensed milk drizzle and granola on the side.',
                     price: '39.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -11579,6 +12114,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled chicken strips, garlic aioli, avocado, tomato, arugula in toasted flatbread, freshly made.',
                     price: '43.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11587,6 +12123,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Sliced steak, caramelized onions, melted cheese, chipotle aioli, jalapeno, arugula, smoky, spicy finish.',
                     price: '49.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -11595,6 +12132,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Creamy tuna salad, avocado, tomato, pesto, garlic aioli, lemon-olive oil on warm flatbread.',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11635,6 +12173,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'mild' },
                       ],
                     },
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11644,6 +12183,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                       'Acai blended with banana, topped with banana, peanut butter, fresh strawberries, sliced almonds and granola on the side.',
                     price: '38.00',
                     highlighted: true,
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11670,6 +12210,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'mild' },
                       ],
                     },
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11678,6 +12219,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Acai blended with banana, topped with strawberry, banana, kiwi, chia seeds and granola on the side.',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11686,6 +12228,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Acai blended with strawberries and banana, topped with dates, coconut flakes, pistachios, mango, pomegranate and granola on the side.',
                     price: '39.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11694,6 +12237,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Pick your blend, 2 toppings, 1 crunch. Fresh, fast, customizable.',
                     price: '39.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -11709,6 +12253,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Greek yogurt, granola, kiwi, strawberry, pineapple, honey, chia.',
                     price: '45.00',
+                    badges: ['HEALTHY', 'DESSERT'],
                   },
                   {
                     image:
@@ -11735,6 +12280,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'mild' },
                       ],
                     },
+                    badges: ['HEALTHY', 'DESSERT'],
                   },
                   {
                     image:
@@ -11743,6 +12289,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Banana-blend açaí base with almond-milk chia; berries, passion fruit; granola side.',
                     price: '49.00',
+                    badges: ['HEALTHY', 'DESSERT'],
                   },
                   {
                     image:
@@ -11751,6 +12298,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Almond-milk oats with Greek yogurt; strawberries, raspberries, blueberries.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11759,6 +12307,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Almond-milk oats; mango, green apple, strawberries, raspberries, blueberries.',
                     price: '39.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11767,6 +12316,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Almond-milk oats layered with Greek yogurt; banana, mixed nuts, granola.',
                     price: '34.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -11782,6 +12332,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'The classic combo of cream cheese, sliced avocado, red onion, smoked salmon, arugula, capers, and your choice of toasted bread.',
                     price: '43.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11790,6 +12341,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'The perfect combination of mashed avocado, cherry tomatoes, mozzarella balls, basil, balsamic glaze, black pepper on your choice of toasted bread.',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11798,6 +12350,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mediterranean flavors of mashed avocado, cucumber, cherry tomatoes, kalamata olives, feta cheese, olive oil and zaatar on your choice of toasted bread.',
                     price: '35.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11806,6 +12359,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Choice of toasted bread with avo mash, poached eggs, drizzled with olive oil.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11814,6 +12368,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Choose bread, spread, 2 toppings, 3 seasonings. Vegan-friendly options available.',
                     price: '35.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -11829,6 +12384,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Peanut butter, oats, almonds, raisins; milk choice; whey vanilla; creamy sustained energy blend.',
                     price: '33.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11837,6 +12393,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Strawberries, raspberries, blueberries; milk choice; whey vanilla; refreshing, bright, juicy antioxidant boost shake.',
                     price: '39.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11845,6 +12402,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Dates, oats, chia, peanut butter, cinnamon; milk choice; whey chocolate; fiber-rich fuel shake.',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -11859,6 +12417,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Acai Berry',
                     description: 'Acai, blueberry, mango, banana, apple juice.',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11867,6 +12426,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Broccoli, spinach, celery, mango, pineapple, banana, apple juice.',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11874,6 +12434,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Mango Madness',
                     description: 'Mango, Passion Fruit, Pineapple, Apple Juice',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11882,6 +12443,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Strawberry, banana, papaya, cherry, apple juice.',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11889,6 +12451,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Caribbean Chill',
                     description: 'Mango, melon, strawberry, apple juice.',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11896,6 +12459,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Tropi-Colada',
                     description: 'Coconut, pineapple, banana, apple juice.',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -11911,6 +12475,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fudgy vegan brookie—gluten-free brownie-cookie with dark chocolate chips, walnuts & mixed nuts.',
                     price: '17.00',
+                    badges: ['HEALTHY', 'DESSERT'],
                   },
                   {
                     image:
@@ -11919,6 +12484,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rich vegan brownie made gluten-free with cocoa, dark-chocolate chips, walnuts & a hint of coffee.',
                     price: '15.00',
+                    badges: ['HEALTHY', 'DESSERT'],
                   },
                   {
                     image:
@@ -11927,6 +12493,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crunchy vegan choc-almond cookies—buckwheat & GF flours, dark-chocolate chunks, vanilla.',
                     price: '11.00',
+                    badges: ['HEALTHY', 'DESSERT'],
                   },
                   {
                     image:
@@ -11935,6 +12502,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Soft vegan chocolate cookies with GF flour, coconut oil & chocolate chips, lightly sweetened.',
                     price: '11.00',
+                    badges: ['HEALTHY', 'DESSERT'],
                   },
                   {
                     image:
@@ -11943,6 +12511,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Decadent vegan choc-paste cookies—GF flour, dark chocolate, cocoa & a touch of coffee.',
                     price: '15.00',
+                    badges: ['HEALTHY', 'DESSERT'],
                   },
                   {
                     image:
@@ -11950,6 +12519,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Rocky Road',
                     description: 'Mini marshmallows, biscuits, dark chocolate.',
                     price: '19.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11958,6 +12528,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A cold Italian silky and creamy dessert serving the sweet and sour taste of the mango and the passion fruit.',
                     price: '20.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -11966,6 +12537,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Almond-milk chia with agave, vanilla; topped with berries and pomegranate.',
                     price: '33.00',
+                    badges: ['DESSERT', 'HEALTHY'],
                   },
                 ],
               },
@@ -11981,6 +12553,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A refreshing blend of zesty lemon and invigorating tea, perfect for a revitalizing sip.',
                     price: '7.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11989,6 +12562,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A harmonious fusion of spicy ginger, tangy lemon, and soothing tea, guaranteed to awaken your taste buds',
                     price: '7.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -11997,6 +12571,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A dynamic trio of tangy lemon, tart hibiscus, and warm cinnamon, delivering a refreshing burst of flavor with every sip',
                     price: '7.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -12005,6 +12580,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A vibrant concoction of earthy beetroot infused with fresh basil, creating a cool and revitalizing beverage bursting with natural goodness',
                     price: '7.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -12012,6 +12588,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Arwa Water - 500ml',
                     description: 'Arwa Water',
                     price: '5.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -12019,6 +12596,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Acqua Panna',
                     description: 'Acqua Panna',
                     price: '13.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -12026,6 +12604,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'San Pellegrino',
                     description: 'San Pellegrino',
                     price: '15.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -12033,6 +12612,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Freshly Squeezed Orange Juice',
                     description: 'Fresh orange juice.',
                     price: '15.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -12040,6 +12620,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fresh Coconut Water',
                     description: 'Whole coconut.',
                     price: '18.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -12112,6 +12693,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "A layer of ganache cream topped with layers of chocolate cake, drizzled with Nutella sauce, white chocolate sauce, pistachio sauce, feuilletine chocolate, and M&M's",
                     price: '45.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12120,6 +12702,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "A layer of cream cheese topped with layers of red velvet cake, cream cheese, white chocolate sauce, raspberry sauce, and M&M's",
                     price: '45.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12135,6 +12718,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Overall French Fudge, melted into rich French Chantilly cream, topped with a luxurious Valrhona-style ganache blending fine dark and milk French chocolate, and crowned with wild strawberries and a Parisian chocolate sauce',
                     price: '54.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12143,6 +12727,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Overall French Fudge, melted into rich French Chantilly cream, topped with a luxurious Valrhona-style ganache blending fine dark and milk French chocolate, and crowned with wild strawberries and a Parisian chocolate sauce',
                     price: '54.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12151,6 +12736,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Overall French Fudge, melted into rich French Chantilly cream, topped with a luxurious Valrhona-style ganache blending fine dark and milk French chocolate, and crowned with wild strawberries and a Parisian chocolate sauce',
                     price: '54.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12166,6 +12752,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A combination of crunchy French butter cookies with Philadelphia cream cheese and raspberries',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12174,6 +12761,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A combination of crunchy French butter cookies with Philadelphia cream cheese and raspberries and Nutella',
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12182,6 +12770,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A combination of crunchy French butter cookies with Philadelphia cream cheese and raspberries and Nutella Pistachio',
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12190,6 +12779,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A combination of crunchy French butter cookies with Philadelphia cream cheese and raspberries and Kinder',
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12204,6 +12794,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Dabdob',
                     description: null,
                     price: '12.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12211,6 +12802,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Lazy Cake Large',
                     description: null,
                     price: '60.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12218,6 +12810,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Lazy Cake Small',
                     description: null,
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12225,6 +12818,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Rmontada',
                     description: null,
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12232,6 +12826,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Dabadibo London Box',
                     description: null,
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12240,6 +12835,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Creamy Philadelphia cheesecake swirled with layers of classic French red velvet cake, drenched in juicy mango popping boba that bursts with flavor in every bite',
                     price: '34.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12248,6 +12844,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Creamy Philadelphia cheesecake swirled with layers of classic French red velvet cake, drenched in juicy Strawberry popping boba that bursts with flavor in every bite',
                     price: '34.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12256,6 +12853,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Creamy Philadelphia cheesecake swirled with layers of classic French red velvet cake, drenched in juicy Green Apple popping boba that bursts with flavor in every bite',
                     price: '34.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12263,6 +12861,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Choco burger',
                     description: null,
                     price: '39.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12270,6 +12869,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Labobo Mangogo',
                     description: null,
                     price: '26.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12288,6 +12888,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'no-peanuts' },
                       ],
                     },
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12295,6 +12896,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fazea Chocolate Gold',
                     description: null,
                     price: '60.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12310,6 +12912,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Pistachio kunafa with cream cheese with cream inside and mixed with, the finest types of Belgian chocolate and luxurious pistachio sauce',
                     price: '32.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12317,6 +12920,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Dubai Chocolate',
                     description: null,
                     price: '35.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12324,6 +12928,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Dubai Bomb Hazelnut',
                     description: null,
                     price: '29.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12331,6 +12936,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Dubai Bomb Plain',
                     description: null,
                     price: '25.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12338,6 +12944,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Creme de la Creme Dubai',
                     description: null,
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12345,6 +12952,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Eloqa',
                     description: null,
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12352,6 +12960,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Frawlita Alniyta Kawanita',
                     description: null,
                     price: '27.60',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12367,6 +12976,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Super creamy Qeshtoota with Dubai Kunafa drowned in Pistachio, topped with a modern French touch of luxurious Crème Brûlée, and finished with Strawberry Kinder',
                     price: '35.40',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12375,6 +12985,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Super creamy Qeshtoota with Dubai Kunafa drowned in Pistachio, topped with a modern French touch of luxurious Crème Brûlée, and finished with Mango',
                     price: '35.40',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12383,6 +12994,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Super creamy Qeshtoota with Dubai Kunafa drowned in Pistachio, topped with a modern French touch of luxurious Crème Brûlée, and finished with Strawberry Nutella',
                     price: '35.40',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12391,6 +13003,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Super creamy Qeshtoota with Dubai Kunafa drowned in Pistachio, topped with a modern French touch of luxurious Crème Brûlée, and finished with Strawberry Pistachio',
                     price: '35.40',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12406,6 +13019,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fudge cake, kunafa mix with pistachio sauce, chocolate mousse, crispy rice and Belgian milk chocolate sauce.',
                     price: '50.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12414,6 +13028,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fudge cake, kunafa mix with pistachio sauce, chocolate mousse, crispy rice and Belgian milk chocolate sauce.',
                     price: '40.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12422,6 +13037,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fudge cake, kunafa mix with pistachio sauce, chocolate mousse, crispy rice and Belgian milk chocolate sauce.',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12437,6 +13053,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fudge cake topped with a layer of kunafa mixture with pistachio sauce topped with belgian milk chocolate sauce and white chocolate',
                     price: '39.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12445,6 +13062,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fudge cake topped with a layer of kunafa mixture with pistachio sauce topped with swiss milk chocolate sauce and hazelnut',
                     price: '39.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12453,6 +13071,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fudge cake with a layer of kunafa mixture with pistachio sauce covered with kinder sauce and pistachio',
                     price: '39.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12461,6 +13080,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fudge cake topped with a layer of kunafa mixture with pistachio sauce topped with belgian milk chocolate sauce and white chocolate',
                     price: '66.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12469,6 +13089,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fudge cake topped with a layer of kunafa mixture with pistachio sauce topped with swiss milk chocolate sauce and hazelnuts',
                     price: '66.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12477,6 +13098,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fudge cake with a layer of kunafa mixture with pistachio sauce covered with kinder and pistachio sauce',
                     price: '66.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12492,6 +13114,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'cream, cream, Italian pistachio, pistachio. Calories 372',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12500,6 +13123,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chocolate cream Ferrero Rocher Italian nuts. Calories 380',
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12508,6 +13132,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cream cream and rice with milk Chocolate Ferrero Rocher Italian nuts. Calories 370',
                     price: '29.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12516,6 +13141,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cream cream and rice with milk Italian Nutella. Calories 411',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12523,6 +13149,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Qashtata cream + pecans',
                     description: 'Calories 364',
                     price: '21.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12530,6 +13157,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Qashtota Caramel',
                     description: '220 Calories',
                     price: '19.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12537,6 +13165,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Qashtota cream',
                     description: '320 Calories',
                     price: '16.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12544,6 +13173,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Qashtota cream + Italian Nutella',
                     description: 'Calories 364',
                     price: '21.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12551,6 +13181,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Qashtota cream + mango butter pieces',
                     description: '372 Calories',
                     price: '21.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12559,6 +13190,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rice with milk topped with cream, cream, Belgian lotus biscuits, Belgian lotus, spread and mixed nuts, nuts, pistachios and almonds. Calories 411',
                     price: '29.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12566,6 +13198,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Qashtota Lotus',
                     description: 'A traditional dish made from lotus.',
                     price: '21.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12573,6 +13206,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Qashtota Nuts',
                     description: '328 Calories',
                     price: '21.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12580,6 +13214,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Qashtota Rice with milk + lotus',
                     description: '410 Calories',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12587,6 +13222,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Qashtota Rice with milk + mango butter pieces',
                     description: '380 Calories',
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12594,6 +13230,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Qashtota Rice with milk + nuts',
                     description: '380 Calories',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12601,6 +13238,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Qashtota Rice with milk plain',
                     description: 'Calories 280',
                     price: '19.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12608,6 +13246,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Qashtouta Chocolate',
                     description: 'cream cream and swiss chocolate sauce',
                     price: '22.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12616,6 +13255,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'cream cream and swiss chocolate sauce and crunchy',
                     price: '23.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12624,6 +13264,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'cream cream and swiss chocolate sauce, crunchy and nuts',
                     price: '29.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12632,6 +13273,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cream with rice with milk, Italian chocolate top, Italian nutella, American Oreo, Belgian white chocolate and nuts. Calories 390.',
                     price: '29.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12640,6 +13282,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'cream cream and rice with milk Italian Pistachio pistachios. Calories 406',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12648,6 +13291,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rice with milk and topped with cream cream and topped with Italian pistachio, Belgian lotus, Italian pecan, pistachio and chocolate chips.411 calories',
                     price: '37.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12656,6 +13300,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Lotus qashtuta, mango qashtuta, caramel nut qashtuta, strawberry and banana qashtuta',
                     price: '90.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12664,6 +13309,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Caramel qashtuta, half Nutella qashtuta, half pecan, half lotus qashtota, half pistachio, half mango qashtota, half strawberry and banana',
                     price: '102.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12671,6 +13317,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Dalaa dish',
                     description: null,
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12686,6 +13333,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rice with milk, Italian nutella chocolate, American Oreo, Belgian white chocolate and nuts. Calories 380',
                     price: '27.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12694,6 +13342,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rice with milk, 4 pieces basbousa, nuts, calories 400',
                     price: '20.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12701,6 +13350,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Rice with milk + Belgian lotus',
                     description: 'Calories 297',
                     price: '20.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12708,6 +13358,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Rice with milk + Italian pistachio + aleppo pistachios',
                     description: '. Calories 285',
                     price: '27.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12715,6 +13366,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Rice with milk + Italian Rocher chocolate',
                     description: 'Calories 275',
                     price: '20.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12722,6 +13374,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Rice with milk + nuts',
                     description: 'Calories 221',
                     price: '17.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12729,6 +13382,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Rice with milk + nuts + Nutella',
                     description: 'Calories 282',
                     price: '23.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12736,6 +13390,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Rice with milk + pecan',
                     description: 'Calories 297',
                     price: '21.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12743,6 +13398,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Rice with milk Plain',
                     description: 'Calories 206',
                     price: '12.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12758,6 +13414,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rice with milk, roasted kunafa, whipped cream, lotus powder, roasted goulash and pistachio. Calories411',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12766,6 +13423,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rice with milk and roasted kunafa. Whipped cream, mango pieces and roasted goulash. Calories 411',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12774,6 +13432,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rice with milk, roasted kunafa, whipped cream, nutella and roasted goulash. 411 Calories',
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12782,6 +13441,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rice with milk and roasted napkin. Whipped cream, Nutella, Oreo, roasted goulash and white chocolate. Calories 411',
                     price: '27.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12790,6 +13450,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rice with milk, roasted kunafa, whipped cream, pecan and roasted goulash. 411 Calories',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12798,6 +13459,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rice with milk and roasted kunafa. Whipped cream, pistachio and roasted goulash calories 411',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12806,6 +13468,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rice with milk, roasted kunafa, whipped cream, lotus powder, roasted goulash and lotus sauce. Calories 411',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12821,6 +13484,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crème brulee topped with caramelized sugar and consistent cream Milk, kunafa, hazelnut chocolate and Oreo biscuits Calories 1064',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12829,6 +13493,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cream burielée, caramelized sugar, cream, cream, knafeh and kinder sauce calories 875.',
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12837,6 +13502,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cream burielée, caramelized sugar, cream, cream, knafeh and lotus calories 690.',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12845,6 +13511,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crème brulee topped with caramelized sugar and topped with cream, milk and cream; Kunafa and mango calories 659.',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12853,6 +13520,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crème brulee topped with caramelized sugar and consistent cream Milk, kunafa and hazelnut chocolate Calories 875',
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12861,6 +13529,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cream burielée with caramelized sugar and topped with cream Consistent milk, cream, knafeh and pecan sauce 810 calories',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12869,6 +13538,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cream Borlée with caramelized sugar and topped with consistent cream Milk, cream, Kunafa, Pistachio sauce and pistachio Calories 740',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12877,6 +13547,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crème brulee topped with caramelized sugar and creamed with milk and lotus powder and pistachio calories 875',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12885,6 +13556,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crème brulee topped with caramelized sugar and consistent cream milk and chocolate Ferrero Rocher Italian nuts calories 1120.',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12900,6 +13572,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crème brulee topped with caramelized sugar and topped with whipped cream, milk, cream and hazelnut chocolate',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12908,6 +13581,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crème brulee topped with caramelized sugar and topped with whipped cream, milk, cream and banana',
                     price: '21.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12916,6 +13590,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cream burielée with caramelized sugar and topped with cream with milk cream and kinder sauce',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12924,6 +13599,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cream of Borlais with caramelized sugar and topped with cream with milk cream and lotus',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12932,6 +13608,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crème brulee topped with caramelized sugar and topped with whipped cream, milk, cream and mango.',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12940,6 +13617,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crème brulee topped with caramelized sugar and topped with whipped cream, milk, cream and nuts.',
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12948,6 +13626,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crème brulee topped with caramelized sugar and topped with whipped cream, milk, cream and oreo',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12955,6 +13634,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Ambaleeh pecan',
                     description: 'A delicious dessert made from walnuts.',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12963,6 +13643,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cream burielette with caramelized sugar and topped with cream with milk and cream and pistachio sauce',
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12970,6 +13651,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Ambaleeh Rocher',
                     description: null,
                     price: '26.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12977,6 +13659,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Ambaleeh strawberry',
                     description: null,
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -12984,6 +13667,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Ambaleeh strawberry + banana',
                     description: null,
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -12998,6 +13682,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Nutella Jar',
                     description: null,
                     price: '18.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -13012,6 +13697,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Belgian tagine',
                     description: null,
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13023,6 +13709,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                       'https://res.cloudinary.com/djdf9jke8/video/upload/v1764965721/B-laban_umm_ali_and_nuts_kocqsi.mov', // +
                     highlighted: true,
                     tags: { connect: [{ slug: 'dessert' }] },
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13030,6 +13717,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Umm Ali nuts + Italian Nutella',
                     description: null,
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13037,6 +13725,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'umm ali plain',
                     description: null,
                     price: '17.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -13052,6 +13741,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Crepe and Belgian chocolate. 270 calories per 100 grams',
                     price: '18.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13060,6 +13750,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Stuffed with kunafa and pistachio with chocolate sauce hazelnut and white chocolate from the top',
                     price: '39.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13071,6 +13762,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     video:
                       'https://res.cloudinary.com/djdf9jke8/video/upload/v1764965855/B-laban_Oreo_chocolate_nuts_crepe_ct0kpq.mp4', // +
                     tags: { connect: [{ slug: 'dessert' }] },
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13079,6 +13771,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Stuffed with kunafa and pistachio with chocolate sauce hazelnut and white chocolate from the top With fudge cake',
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -13093,6 +13786,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Add Aleppo Pistachio',
                     description: 'A traditional dessert made from pistachios.',
                     price: '7.50',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13101,6 +13795,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fresh bananas, excellent for adding to dishes.',
                     price: '7.50',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13108,6 +13803,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Add Basbousa',
                     description: '60 g candy semolina cake dipped in syrup.',
                     price: '7.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13115,6 +13811,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Add Kinder',
                     description: null,
                     price: '7.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13122,6 +13819,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Add Kunafa',
                     description: 'Sweet pastries stuffed with cheese or nuts.',
                     price: '7.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13129,6 +13827,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Add Lotus Powder',
                     description: 'Flavor made from lotus seeds.',
                     price: '7.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13136,6 +13835,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Add Lotus Sauce',
                     description: 'Sweet sauce made from lotus flowers.',
                     price: '7.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13143,6 +13843,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Add Mango',
                     description: 'Fresh mango slices, perfect for desserts.',
                     price: '7.50',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13150,6 +13851,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Add Nutella',
                     description: 'Chocolate cream and hazelnut.',
                     price: '7.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13157,6 +13859,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Add Nuts',
                     description: 'A variety of nuts.',
                     price: '7.50',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13164,6 +13867,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Add Oreo',
                     description: 'Add crushed Oreo biscuits for flavor',
                     price: '7.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13171,6 +13875,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Add Pistachio Sauce',
                     description: 'Creamy sauce made from pistachios.',
                     price: '7.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13178,6 +13883,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Add Rocher Sauce',
                     description: 'Chocolate sauce inspired by Ferrero Rocher',
                     price: '7.50',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13185,6 +13891,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Mineral Water',
                     description: 'Refreshing water.',
                     price: '2.50',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -13296,6 +14003,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Bold and loaded creamy Puck cheese with juicy sujuk, mayo drizzle, diced tomatoes, and pickles, all wrapped in freshly baked fateer bread. Pure street flavor.',
                     price: '29.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -13312,6 +14020,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Simple. Sweet. Addictive. Creamy Puck cheese with honey in a warm, flaky fateer that melts in your mouth.',
                     price: '26.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13320,6 +14029,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Nutella topped with Puck cheese drizzle, peanut butter, honey, and a sprinkle of fresh pistachio. A street dessert that slaps.',
                     price: '31.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -13344,6 +14054,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Creamy Puck cheese with a spicy kick - bold, fiery, and made for flavor chasers.',
                     price: '5.00',
+                    badges: ['SPICY'],
                   },
                 ],
               },
@@ -13399,6 +14110,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Warm sourdough stacked with peanut butter, Nutella, melty cheese, banana slices, and a sprinkle of halawa. Sweet, salty, messy—and totally worth it.',
                     price: '29.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -13414,6 +14126,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Mashed chickpeas mixed with tahini, lemon, and drizzled with olive oil, served with fresh bread.',
                     price: '24.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13430,6 +14143,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled eggplant blended with tahini, garlic, and lemon juice topped with pomegranate seeds, served with fresh bread',
                     price: '21.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13438,6 +14152,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Smoothly blended lentils drizzled with a squeeze of lemon, topped with fried pita bread.',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13446,6 +14161,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fried potato cubes tosed in our special shatta spices',
                     price: '24.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -13501,6 +14217,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled halloumi, cherry tomatoes, black sesame seeds, mint leaves, served with fresh bread.',
                     price: '29.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13517,6 +14234,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Labneh mixed with fresh vegetables, served with zaatar crackers',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13533,6 +14251,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Vine leaves stuffed with seasoned rice, tomatoes, and parsley, garnished with a drizzle of olive oil.',
                     price: '28.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13549,6 +14268,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Spicy beef Soujouk sausage with tomatoes and onions, served with fresh bread.',
                     price: '35.00',
+                    badges: ['SPICY'],
                   },
                 ],
               },
@@ -13651,6 +14371,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Zaroobian specialty ! Toasted bread filled with grilled chicken, pickles, and creamy garlic spread—perfectly balanced for a flavourful bite.',
                     price: '29.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13659,6 +14380,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Zaroobian specialty !Toasted bread loaded with flavorful sujuk,  pickles, fresh tomatoes, and creamy mayonnaise !',
                     price: '24.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -13776,6 +14498,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "2 skewers of charcoal-grilled chicken tawouk served with Zaroob's French fries, mixed pickles, garlic sauce, and fresh bread on the side",
                     price: '44.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13784,6 +14507,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "3 skewers of charcoal-grilled kafta served with Zaroob's French fries, mixed pickles, biwaz, hummus, grilled tomatoes, grilled onions, and fresh bread on the side",
                     price: '45.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13792,6 +14516,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "1 chicken tawouk skewer, 1 kabab Khachkhach skewer, 1 kafta skewer served with Zaroob's French fries, mixed pickles, biwaz, hummus, garlic sauce, grilled tomatoes, grilled onions,  and fresh bread on the side",
                     price: '55.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13800,6 +14525,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "Half charcoal-grilled chicken served with Zaroob's French fries, mixed pickles, garlic sauce, spicy garlic sauce, and fresh bread on the side",
                     price: '47.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -13808,6 +14534,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "Full charcoal-grilled chicken served with Zaroob's French fries, mixed pickles, garlic sauce, spicy garlic sauce, and fresh bread on the side",
                     price: '85.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14004,6 +14731,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chicken shawarma, lettuce, cucumber pickles, cheese, French fries, garlic sauce and dynamite sauce wrapped in freshly baked manakeesh dough',
                     price: '34.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -14057,6 +14785,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Spicy soujouk ,tomato, cucumber pickles, lettuce and mayonnaise, wrapped in freshly baked manakeesh dough.',
                     price: '27.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -14088,6 +14817,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fava beans with lemon & garlic — Abu Shady made it so good, they named him The Foul Man.',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14096,6 +14826,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chickpeas with cumin and lemon — the snack Abu Shady eats while gossiping with the baker.',
                     price: '27.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14104,6 +14835,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chunky hummus with whole chickpeas — Abu Shady eats it straight from the pot, no plate.',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -14182,6 +14914,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Stewed okra with tender meat chunks, topped with roasted nuts and fresh coriander, served with vermicelli rice.',
                     price: '45.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14190,6 +14923,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Traditional Mouloukhiye cooked with tender poached chicken, served with Egyptian rice, vinegar, and fresh Arabic Bread',
                     price: '48.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -14236,6 +14970,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Lettuce, rocca, cucumber, radish, tomato, and purslane leaves mixed with pomegranate molasses dressing, topped with fried bread.',
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14244,6 +14979,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chopped parsley mixed with tomatoes, onions and lemon oil dressing.',
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14252,6 +14988,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fresh rocca leaves mixed with roasted beetroot, white sesame seeds, and sumac, drizzled with lemon juice and olive oil.',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -14267,6 +15004,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Your choice of scrambled, omelette, or sunny side up eggs, served with fresh bread.',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14283,6 +15021,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Peeled fresh tomatoes scrambled with eggs, garlic and chili, served with fresh bread',
                     price: '25.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -14291,6 +15030,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Soujouk sausage mixed with scrambled eggs, served with fresh bread',
                     price: '30.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -14307,6 +15047,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fresh tomatoes, cucumber, mint leaves, olives and mixed pickles',
                     price: '7.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -14431,6 +15172,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Lettuce, cucumber, radish, tomato, fresh thyme, and purslane leaves mixed with pomegranate molasses dressing, topped with toasted sesame seeds, fried bread, and fresh pomegranate seeds. Serves 4 to 6 People',
                     price: '60.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14439,6 +15181,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chopped parsley mixed with tomatoes, onions and lemon oil dressing. Serves 4-6 People',
                     price: '65.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -14454,6 +15197,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'x4 pcs made with Dabke biscuits and rich chocolate, this classic brings you that perfect balance of crunch and fudgy goodness—simple, nostalgic, and irresistible',
                     price: '22.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -14462,6 +15206,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'x3 Biscuits filled with silky Raha and fully dipped in rich chocolate! A perfect bite of Levantine sweetness with a chocolatey twist!',
                     price: '28.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -14470,6 +15215,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Baked puff pastry with sweetened milk and cream, topped with raisins.',
                     price: '29.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -14478,6 +15224,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Traditional baked Arabic pastry dough topped with Nutella chocolate spread and chunky banana pieces',
                     price: '24.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -14486,6 +15233,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Sweet cheese topped with warm semolina dough and soaked in sugar syrup and orange blossom water, served with sugar syrup on the side',
                     price: '29.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -14494,6 +15242,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Creamy Ashta topped with fresh strawberries, banana slices, and a sprinkle of crushed pistachios, drizzled with golden honey in Arabic',
                     price: '35.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -14509,6 +15258,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Avocado juice mix topped with ashta, mixed nuts and honey',
                     price: '35.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -14517,6 +15267,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fresh mango, raspberry, kiwi, pomegranate, blueberry mixed with a mango, guava, strawberry, blueberry juice blend',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -14525,6 +15276,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fresh apple, kiwi, mango, pineapple, banana, strawberry, pistachio, raisins mixed with an avocado, guava, strawberry juice blend, topped with ashta, mixed nuts and honey',
                     price: '35.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -14539,6 +15291,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fresh Orange Juice',
                     description: 'Freshly squeezed orange juice',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14546,6 +15299,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fresh Pomegranate Juice',
                     description: 'Freshly squeezed pomegranate juice',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14553,6 +15307,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fresh Watermelon Juice',
                     description: 'Freshley squeezed watermelon juice',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14560,6 +15315,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fresh Lemon Mint',
                     description: 'Fresh lemonade mixed with mint',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14567,6 +15323,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fresh Mango Juice',
                     description: 'Fresh Mango Juice',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14574,6 +15331,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fresh Guava Juice',
                     description: 'Fresh Guava Juice',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14581,6 +15339,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fresh Lemonade',
                     description: 'Fresh lemonade',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14588,6 +15347,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Fresh Strawberry Juice',
                     description: 'Fresh Strawberry Juice',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14596,6 +15356,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A smooth and refreshing blend of ripe bananas and juicy strawberries — sweet, creamy, and perfectly chilled for that fruity street-side vibe.',
                     price: '25.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -14610,6 +15371,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Laban',
                     description: 'Laban',
                     price: '11.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14652,6 +15414,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Water',
                     description: 'Water',
                     price: '7.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14659,6 +15422,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Sparkling Water',
                     description: 'San Pellegrino 500ml',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -14709,6 +15473,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Honey',
                     description: 'Honey',
                     price: '3.00',
+                    badges: ['DESSERT'],
                   },
                 ],
               },
@@ -14770,6 +15535,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chicken pieces cooked with Arabic spices, saffron, and tomato with basmati rice (calories 601, pro 49, carb 45, fat 25 and  sodium 148)',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14778,6 +15544,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fish cooked with Arabic spices, saffron and tomato with basmati rice (calories 587, pro 45, carb 46, fat 25 and  sodium 137)',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -14808,6 +15575,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '150 gram of tender chicken served with 100 gram of fluffy rice and a refreshing drink. A satisfying meal that offers the perfect balance of protein and carbohydrates.',
                     price: '43.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14816,6 +15584,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '150 grams of fish served with 100 grams rice and a 330 ml drink. Perfect meal combination for seafood lovers',
                     price: '43.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14824,6 +15593,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '150 gram tender Beef served with 100 gram fluffy Rice and a refreshing 330ml Drink',
                     price: '50.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -14839,6 +15609,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Beans, tomato, lemon, tobasco sauce, cheese, onion, salt, cumin, tortilla bread\nCalories 117, Protein 4, Carb 19, Fat 4 and Sodium 232',
                     price: '14.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -14847,6 +15618,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'your choice from the following flavors:Chocolate, caramel, strawberry.\nCalories 113, Pro 11, Carb 15, Fat 1 and Sodium 37.',
                     price: '39.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -14863,6 +15635,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Low fat labneh, thyme\nCalories 247, Pro 7, Carb 31, Fat 10 and Sodium 463.',
                     price: '17.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14871,6 +15644,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Protein Bread, EGG, Caramelized Onions, Cream Cheese, Honey Mustard Powder, Black Pepper, Chili Flakes (Calories 592, Pro 47, Carb 34, Fat 30, Sodium 1047)',
                     price: '30.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -14879,6 +15653,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Vermicelli, cardamom, saffron, stevia suger, pine, egg white and honey.\nCalories 157, Pro 13, Carb 13, Fat 6, Sodium 352.',
                     price: '36.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -14887,6 +15662,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Croissant, Philadelphia cheese, Truffle powder,Red pepper sauce, Egg,  Chili flakes, Black sesame (Calories 693, Pro 19, Carb 45.96, Fat 49, Sodium 669.6)',
                     price: '31.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -14895,6 +15671,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Burger bun, Egg white, labneh, truffle sauce, mayonnaise and chives.\nCalories 493, Pro 29, Carb 25, Fat 31, Sodium 1018',
                     price: '30.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14903,6 +15680,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Egg white, tomato, Parsley, onion, pepper and salt.\nCalories 280, Pro 21, Carb 6, Fat 18, Sodium 205',
                     price: '26.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14911,6 +15689,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Milk, Cinnamon powder,  Peanut butter , Philadelphia cheese , Blackberry jam , Dry fruit mix, French toast Brioche bread, EGG, Protein powder ( cal 651, protein 30, carbs 66, fat 34 , Sodium 588)',
                     price: '21.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -14919,6 +15698,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Croissant, Red pepper sauce, Egg, Chili flakes, Black sesame, beefbacon, labneh ( cal 700, protein 27, carbs 68.6, fat 35)',
                     price: '35.00',
+                    badges: ['SPICY'],
                   },
                 ],
               },
@@ -14934,6 +15714,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Red lentil, carrot, onion, leeks, celery, garlic, cumin, turmeric and hot water.\n Calories 99, Pro 5, Carb 17, Fat 2, Sodium 413',
                     price: '12.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14942,6 +15723,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Onions, leeks, celery, carrots, potatoes, red beans, tomato paste, tomatoes, oregano, basil, parmesan cheese and black pepper.\nCalories 57, Pro 2, Carb 8, Fat 2, Sodium 302',
                     price: '12.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14950,6 +15732,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Molokhia, garlic, salt, coriander, chicken stock and hot water.\nCalories 64, Pro 4, Carb 3, Fat 4, Sodium 29',
                     price: '12.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14958,6 +15741,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Broccoli, onion, leek, celery, salt,\ncooked cream, chicken stock Calories 70.9, Pro 2.7, Carb 7.6, Fat 3.3',
                     price: '12.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -14973,6 +15757,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Salmon, paprika, pickled cucumber, iceberg lettuce, onion with vinegar and salt, watercress, broccoli, roasted white sesame, boiled white basmati rice and bread crumbs.\nCalories 301, Pro 22, Carb 18, Fat 16, Sodium 677',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14981,6 +15766,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Boiled chicken,onion, pomegranate molasses, sumac powder, iceberg lettuce, toasted tortilla bread, pomegranate, parsley\ncalories 250, pro 26, carb 24, fat 6, sodium 540',
                     price: '20.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14989,6 +15775,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chicken breasts, iceberg lettuce, rocca, pomegranate, eggplant, olive oil, paprika, salt, black pepper powder, feta cheese, roasted peanuts.\ncalories 290, pro 27, carb 13, fat 15, sodium 1005',
                     price: '22.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -14997,6 +15784,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cucumber, tomato, lettuce, lemon\nCalories 18, Pro 1, Carb 2, Fat 1, Sodium 254.',
                     price: '17.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15005,6 +15793,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Shrimps, peri peri sauce, iceberg lettuce, cucumber, sweet potato, carrot, red capsicum, green coriander.\ncalories 115, pro 16, carb 10, fat 1, sodium 436',
                     price: '20.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                 ],
               },
@@ -15020,6 +15809,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Salmon, onion, red bell pepper, green bell pepper, garlic, dill, parsley, Cajun seasoning, ground black pepper, panko breadcrumbs and egg whites.\nCalories 593, Pro 42, Carb 52, Fat 24, Sodium 859',
                     price: '48.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15028,6 +15818,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Beef, brown bread, truffle mayonnaise, cheese, caramelized onions.\nCalories 539, Pro 36, Carb 30, Fat 31, Sodium 862',
                     price: '39.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15036,6 +15827,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Beef, brown bun bread, truffle mayonnaise sauce, cheese, caramelized onion.\nCalories 355, Pro 31, Carb 31, Fat 12, Sodium 442.',
                     price: '44.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15044,6 +15836,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chicken, spicy breadcrumbs, brown bread, dynamite sauce, cheese and iceberg lettuce \nCalories 360, Pro 39, Carb 31, Fat 9, Sodium 534',
                     price: '40.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15052,6 +15845,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Brown bread, chicken, paprika, buffalo sauce, lettuce, jalapeno and a slice of cheese.\nCalories 504, Pro 50, Carb 32, Fat 20, Sodium 349',
                     price: '38.00',
+                    badges: ['SPICY'],
                   },
                 ],
               },
@@ -15067,6 +15861,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tortilla bread, beef fillet, onion, tomato, parsley, pickled cucumber and tahini sauce.\nCalories 449, Pro 31, Carb 29, Fat 23, Sodium 518',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15075,6 +15870,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tortilla bread, chicken, spicy breadcrumbs, cream cheese, dynamite sauce, cheese, iceberg lettuce and jalapenos.\nCalories 79, Pro 10, Carb 6, Fat 2, Sodium 164',
                     price: '35.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15083,6 +15879,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tortilla bread, chicken breast, tandoori sauce, lettuce, tomato, cucumber and cheese.\nCalories 322, Pro 30, Carb 33, Fat 7, Sodium 759',
                     price: '30.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15091,6 +15888,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tortilla bread, chicken breast, tikka sauce, lettuce, cucumber and tomato.\nCalories 318, Pro 29, Carb 33, Fat 9, Sodium 310',
                     price: '30.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15099,6 +15897,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Shrimp,  Egg white, cashews, bread crumbs, mozzarella cheese, iceberg lettuce, jalapeno, tortilla bread and mayonnaise truffle sauce.\nCalories 309, Pro 17, Carb 35, Fat 11, Sodium 608',
                     price: '48.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15107,6 +15906,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Marinated chicken breasts with Al Jarak shawarma spices, tortilla bread, pickled cucumber, pickled onions, yogurt.\nCalories 433, Pro 43, Carb 31, Fat 15, Sodium 626',
                     price: '33.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -15122,6 +15922,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Beef slices, salt, hot pepper, paprika.\nCalories 239, Pro 30, Carb 0, Fat 15, Sodium 55',
                     price: '41.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -15138,6 +15939,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Marinated steak with fresh mushroom and homemade demi-glace sauce.\nCalories 254, Pro 34, Carb 5, Fat 10, Sodium 85',
                     price: '41.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15146,6 +15948,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Soy sauce, sweet pepper, ginger oyster sauce\nCalories 220, Pro 25, Carb 8, Fat 10, Sodium 77',
                     price: '41.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15154,6 +15957,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled tenderloin steak marinated in barbecue sauce\nCalories 262, Pro 33, Carb 7, Fat 11, Sodium 328',
                     price: '41.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15162,6 +15966,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'beef fillet marinated with arabic spices, grilled and cooked inside tomato sauce.\nCalories 130, Pro 11, Carb 4, Fat 8, Sodium 172',
                     price: '41.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15178,6 +15983,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Minced beef with red beans, bell pepper, corn, tomato sauce\nCalories 234, Pro 27, Carb 19, Fat 8, Sodium 67',
                     price: '41.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -15186,6 +15992,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Julienne beef, soy sauce, oyster sauce, sesame oil, coriander, onion, garlic, red pepper, ginger, toasted sesame, green pepper, yellow pepper, carrot and broccoli.\nCalories 151, Pro 22, Carb 9, Fat 3, Sodium 389',
                     price: '41.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -15209,6 +16016,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Marinated chicken cube with bread crumb, buffalo sauce, dynamite sauce, onion, capsicum, parsley, paprika, and Cajun spices Calories: 257, Protein: 24 g, Carb: 6 g, Fat: 15 g, Sodium: 683 mg',
                     price: '32.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15217,6 +16025,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'salt, chili, paprika Calories 152, Pro 30, Carb 0, Fat 4, Sodium 50',
                     price: '32.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -15233,6 +16042,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'chicken, paprika, cumin, ginger, coriander, pepper, garlic, onions, saffron, parsley, green olives, pickled lemon, cream Lebanese Calories 196g, Pro 25g, Carb 5g, Fat 9g, Sodium 535mg',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15241,6 +16051,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chicken, kraft, garlic, cream cheese, tobacco Calories 189, Pro 25, Carb 3, Fat 8, Sodium 309',
                     price: '32.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15249,6 +16060,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chicken, hot breadcrumbs, dynamite sauce Calories 209, Pro 29, Carb 10, Fat 6, Sodium 874',
                     price: '32.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15257,6 +16069,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Marinated chicken cube with bread crumb, served with our special buffalo sauce Calories 209, Pro 29, Carb 10, Fat 6, Sodium 874',
                     price: '32.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15265,6 +16078,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'chicken balls mixed with spinach tomato sauce Calories 158, Pro 26, Carb 8, Fat 3, Sodium 306',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15273,6 +16087,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Traditional Indian tandoori chicken breasts Calories 149, Pro 25, Carb 6, Fat 2, Sodium 500',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15298,6 +16113,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                       'chicken, cajun spiced, onion, garlic, chicken stock, apple vinegar, parsley, cooking creamy Calories 179, Pro 24, Carb 6, Fat 5, Sodium 73',
                     price: '32.00',
                     discount: 30,
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15306,6 +16122,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'marinated Mexican style chicken strips with colored capsicum and fresh herbs Calories 184, Pro 25, Carb 16, Fat 2, Sodium 404',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15329,6 +16146,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fish fillet,garlic, mustard, lemon, salt, pepper Calories 122, Pro 20, Carb 4, Fat 1, Sodium 392',
                     price: '32.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15353,6 +16171,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Grilled salmon cajun marinated served with healthy slice avocado calories 226, pro 26, carb 5, fat 11, sodium 475',
                     price: '39.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15361,6 +16180,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'onion,  lemon dry, Arabic spices, green coriander Calories 293, Pro 28, Carb 7, Fat 17, Sodium 352',
                     price: '39.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15369,6 +16189,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'salt, pepper, paprika, lemon, dill sauce Calories 200, Pro 26, Carb 6, Fat 8, Sodium 488',
                     price: '39.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15377,6 +16198,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Healthy style dynamite shrimp coat with dynamite sauce Calories 20, Pro 3, Carb 19, Fat 9',
                     price: '41.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15385,6 +16207,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Marinated shrimp mix with BBQ sauce Calories 15, Pro 3, Carb 0, Fat 0, Sodium 100',
                     price: '41.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15393,6 +16216,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Shrimp cooked with herbs , tomato sauce , sweet pepper , and cheese Calories 22, Pro 3, Carb 1, Fat 1, Sodium 76',
                     price: '41.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -15408,6 +16232,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Calories 61, pro 2, carb 11, fat 1 and sodium 119',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15416,6 +16241,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'White basmati rice. Calories 137, pro 3, carb 29, fat 1 and sodium 1',
                     price: '9.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15424,6 +16250,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Egyptian rice Calories 137, Pro 3, Carb 29, Fat 1, Sodium 1',
                     price: '9.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15432,6 +16259,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Rice cooking with dill, parsley, garlic, green coriander, olive oil and salt. Calories 130, pro 2, carb 28, fat 2 and sodium 50',
                     price: '9.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15440,6 +16268,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Indian masala and basmati rice calories 124, protein 3, carb 27, fat 0, sodium 4',
                     price: '9.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15448,6 +16277,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Onions, garlic, tomatoes, cumin, cinnamon, salt, pepper Calories 137, Protein 3, Carbs 29, Fat 1',
                     price: '9.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15456,6 +16286,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Carrot, zucchini, broccoli and green beans boiled with salt (calories 41, pro 2, carb 7, fat 0, sodium 42)',
                     price: '9.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15464,6 +16295,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cajun spice, garlic, olive oil, herbs. Calories 152, pro 2, carb 20, fat 7 and sodium 161',
                     price: '9.00',
+                    badges: ['HEALTHY', 'SPICY'],
                   },
                   {
                     image:
@@ -15472,6 +16304,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Saltwater potato Calories 92, Pro 2, Carb 15, Fat 0',
                     price: '10.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15480,6 +16313,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Sweet potato oregano & garlic olive oil (calories 87, protein 2, carbs 20, fat 0, sodium 55)',
                     price: '10.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -15495,6 +16329,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chicken breast cooked with Indian masala and basmati rice (calories 309, pro 28, carb 35, fat 6 and  sodium 155)',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15503,6 +16338,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chicken, burghul, black pepper, cumin, paprika, cinnamon, onion, garlic, tomato, coriander and mansaf masala (calories 486, pro 54.9, carb 50, fat 6.6 - 300g)',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15511,6 +16347,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Shrimp cooked with Indian masala and basmati rice (calories 415, pro 32, carb 55, fat 3 - 300g)',
                     price: '55.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15519,6 +16356,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chicken pieces cooked with Arabic spices, saffron, and tomato with basmati rice (calories 601, pro 49, carb 45, fat 25 and  sodium 148)',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15527,6 +16365,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fish cooked with Arabic spices, saffron and tomato with basmati rice (calories 587, pro 45, carb 46, fat 25 and  sodium 137)',
                     price: '38.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15535,6 +16374,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Shrimp cooked with Arabic spices, saffron and tomato with basmati rice (calories 540, pro 63, carb 25, fat 20 - 300g)',
                     price: '53.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15543,6 +16383,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Chicken peri peri, basmati rice, red sweet pepper, turmeric, green peas and tomato sauce (calories 645, Pro 42, carb 78, fat 15 - 300g)',
                     price: '36.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -15566,6 +16407,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Pizza bread, chicken, tomato sauce , mozzarella cheese, paprika, pepper, black olives, jalapeno, capsicum and buffalo sauce (Calories 944, Pro 58, Carb 119, Fat 23, Sodium 1250)',
                     price: '44.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15588,6 +16430,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'spicy' },
                       ],
                     },
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15654,6 +16497,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Spaghetti, beef, bolognese sauce and parmesan cheese on top (Calories 473, Pro 41, Carb 41, Fat 16, Sodium 162)',
                     price: '46.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15693,6 +16537,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cinnamon, salt, eggs, vanilla, carrots, cheese, stevia sugar and flour (Calories 152, Pro 2, Carb 15, Fat 9, Sugar 7.1)',
                     price: '12.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15701,6 +16546,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Oats, coffee, dates, chocolate powder, cinnamon, vanilla and coconut oil (Calories 110, Pro 2, Carb 21, Fat 3, Sugar 12)',
                     price: '18.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15709,6 +16555,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Oats, milk, coconut, dates, tea, saffron and cinnamon (Calories 125, Pro 2, Carb 26, Fat 3, Sugar 13.3)',
                     price: '18.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15717,6 +16564,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Eggs, water, oil, chia, cheese and flour (Calories 72, Pro 1, Carb 9, Fat 3, Sugar 0.032)',
                     price: '12.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15725,6 +16573,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Coconut powder, almond batter, coconuts oil, Turkish caffe, almond powder, vanilla protein (Calories 261, Pro 4.5, Carb 9, Fat 25, Sugar 2.3)',
                     price: '17.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15733,6 +16582,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Philadelphia cheese, Wapping cream, Saffron, Cardamom powder, Biscuit digestive, Mix granola, Vanilla protein\n (Calories 220, Pro 4, Carb 13, Fat 17.5, Sugar 5)',
                     price: '33.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15741,6 +16591,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Biscuit digestive, milk, Philadelphia cheese, protein powder, caramel powder, sugar stevia and cacao (Calories 694, Pro 39, Carb 52, Fat 36, Sugar 22.4)',
                     price: '30.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15749,6 +16600,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Corn flakes crushed, peanut butter, honey, melted chocolate and chocolate protein (Calories 198, Pro 4, Carb 38, Fat 4, Sugar 8.5)',
                     price: '18.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15757,6 +16609,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cocoa powder, butter, chocolate, stevia and eggs (Calories 153, Pro 2, Carb 6, Fat 13, Sugar 3.6)',
                     price: '22.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15765,6 +16618,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Cream cheese, cream, protein, biscuit, stevia sugar, chocolate, caramel, cappuccino, strawberry and lotus (Calories 364, Pro 14, Carb 11, Fat 29, Sugar 7.7)',
                     price: '35.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15773,6 +16627,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Corn flax, vanilla protein, almond batter, dark chocolate, Pecan nuts (Calories 196, Pro 8.5, Carb 23.4, Fat 8.5)',
                     price: '14.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15791,6 +16646,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                         { slug: 'no-peanuts' },
                       ],
                     },
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15799,6 +16655,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Flour, stevia sugar, butter, egg, salt, peanut butter and protein powder (Calories 233, Pro 4, Carb 31, Fat 11, Sugar 0.7)',
                     price: '13.00',
+                    badges: ['DESSERT'],
                   },
                   {
                     image:
@@ -15807,6 +16664,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Pure acai with banana, strawberry, berry and peanut butter (Calories 328, Pro 10, Carb 27, Fat 20, Sugar 4)',
                     price: '32.00',
+                    badges: ['DESSERT', 'HEALTHY'],
                   },
                 ],
               },
@@ -15845,6 +16703,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Mineral Water',
                     description: 'Arwa mineral water (500ml)',
                     price: '3.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15852,6 +16711,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     name: 'Apple Juice',
                     description: '100% pure, naturally sweet and refreshing.',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15860,6 +16720,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fresh, naturally sweet, and packed with nutrients.',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15868,6 +16729,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       '100% pure freshly squeezed oranges for a naturally sweet and refreshing boost of vitamin C.',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15876,6 +16738,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Hydrating, naturally sweet, and refreshingly crisp.',
                     price: '16.00',
+                    badges: ['HEALTHY'],
                   },
                 ],
               },
@@ -15891,6 +16754,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Creamy avocado sauce blended with fresh herbs and zesty lime for a perfect accompaniment to your favorite dishes',
                     price: '3.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15899,6 +16763,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Tangy and spicy Buffalo Sauce served separately to add your desired heat level to any dish',
                     price: '3.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15915,6 +16780,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A bold and zesty sauce with a unique blend of spices that adds an exciting kick to any dish Perfect for dipping or drizzling',
                     price: '3.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15923,6 +16789,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Spicy and flavorful Dynamite Sauce served separately to add an explosive kick to your meal',
                     price: '3.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15931,6 +16798,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Fresh dill herb blended into a creamy sauce with hints of garlic and lemon Perfect for fish dishes and vegetables',
                     price: '3.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15939,6 +16807,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A guilt-free flavor enhancer that adds zest to your meal without the extra calories Perfect for health-conscious diners who refuse to compromise on taste',
                     price: '3.00',
+                    badges: ['HEALTHY'],
                   },
                   {
                     image:
@@ -15955,6 +16824,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       "Spicy African-Portuguese sauce made with bird's eye chili peppers and aromatic herbs Perfect for adding a fiery kick to your favorite dishes",
                     price: '3.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15963,6 +16833,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'Spicy and flavorful hot sauce that adds a fiery kick to any dish Perfect for those who enjoy an extra burst of heat',
                     price: '3.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:
@@ -15971,6 +16842,7 @@ export const restaurants: Prisma.RestaurantCreateInput[] = [
                     description:
                       'A rich and aromatic sauce with authentic tandoori spices Perfect for dipping or as a marinade for grilled meats and vegetables',
                     price: '3.00',
+                    badges: ['SPICY'],
                   },
                   {
                     image:

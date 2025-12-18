@@ -38,3 +38,13 @@ export class UpdatePushTokenDto {
   @IsString()
   expoPushToken: string;
 }
+
+export class UpdatePhoneDto {
+  @IsPhoneNumber()
+  phone: string;
+}
+
+export class ConfirmPhoneChangeDto {
+  @IsString()
+  code: string
+}

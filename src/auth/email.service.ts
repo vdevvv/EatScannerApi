@@ -1,6 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as sgMail from '@sendgrid/mail';
+import { VerificationType } from '@prisma/client';
 
 @Injectable()
 export class EmailService {
@@ -16,7 +17,7 @@ export class EmailService {
   async sendVerificationCode(
     email: string,
     code: string,
-    type: 'email_verification' | 'password_reset',
+    type: VerificationType,
   ) {
     try {
       const subject =
@@ -51,7 +52,7 @@ export class EmailService {
 
   private getEmailTemplate(
     code: string,
-    type: 'email_verification' | 'password_reset',
+    type: VerificationType,
   ): string {
     const title =
       type === 'email_verification'
@@ -108,7 +109,7 @@ export class EmailService {
 
   private getTextTemplate(
     code: string,
-    type: 'email_verification' | 'password_reset',
+    type: VerificationType,
   ): string {
     const title =
       type === 'email_verification'
