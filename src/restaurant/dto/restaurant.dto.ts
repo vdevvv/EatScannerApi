@@ -1,7 +1,8 @@
-import { IsNumber, IsOptional, IsString, IsUrl } from 'class-validator';
+import { IsEnum, IsNumber, IsOptional, IsString, IsUrl } from 'class-validator';
 import { PageOptionsDto } from '~/common/dto/page';
 import { Type } from 'class-transformer';
 import { PartialType } from '@nestjs/mapped-types';
+import { RestaurantType } from '@prisma/client';
 
 export class CreateRestaurantDto {
   @IsString()
@@ -15,6 +16,9 @@ export class CreateRestaurantDto {
 
   @IsString()
   address: string;
+
+  @IsEnum(RestaurantType)
+  type: RestaurantType
 
   @IsOptional()
   @IsUrl()

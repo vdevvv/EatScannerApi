@@ -29,6 +29,7 @@ export class RestaurantService {
         city: dto.city,
         country: dto.country,
         address: dto.address,
+        type: dto.type,
         latitude,
         longitude,
         careemUrl: dto.careemUrl,

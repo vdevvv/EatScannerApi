@@ -5,10 +5,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { PrismaService } from '~/prisma/prisma.service';
-import {
-  UpdatePasswordDto,
-  UpdateUserDto,
-} from '~/user/dto/user.dto';
+import { UpdatePasswordDto, UpdateUserDto } from '~/user/dto/user.dto';
 import { DEFAULT_AVATAR } from '~/common/constants/images';
 import * as bcrypt from 'bcryptjs';
 import { CloudinaryService } from '~/cloudinary/cloudinary.service';
@@ -316,5 +313,18 @@ export class UserService {
     });
 
     return updatedUser;
+  }
+
+  async toggleNotifications(userId: string, notificationsEnabled: boolean) {
+    return this.prisma.user.update({
+      where: { id: userId },
+      data: {
+        notificationsEnabled,
+      },
+      omit: {
+        hashedRt: true,
+        hashedPassword: true,
+      },
+    });
   }
 }

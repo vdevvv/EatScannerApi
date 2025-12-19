@@ -15,6 +15,7 @@ import {
 import { UserService } from './user.service';
 import {
   ConfirmPhoneChangeDto,
+  ToggleNotificationsDto,
   UpdatePasswordDto,
   UpdatePhoneDto,
   UpdatePushTokenDto,
@@ -51,13 +52,14 @@ export class UserController {
     @UploadedFile(
       new ParseFilePipe({
         validators: [
-          new MaxFileSizeValidator({maxSize: MAX_FILE_SIZE}),
+          new MaxFileSizeValidator({ maxSize: MAX_FILE_SIZE }),
           new FileTypeValidator({ fileType: '.(png|jpeg|jpg|webp)' }),
-        ]
-      })
-    ) file: Express.Multer.File,
+        ],
+      }),
+    )
+    file: Express.Multer.File,
   ) {
-    return this.usersService.updateAvatar(userId, file)
+    return this.usersService.updateAvatar(userId, file);
   }
 
   @Delete('/avatar')
@@ -74,9 +76,7 @@ export class UserController {
   }
 
   @Get('/my-stats')
-  async getMyStats(
-    @GetUserId() userId: string,
-  ) {
+  async getMyStats(@GetUserId() userId: string) {
     return this.usersService.getStats(userId);
   }
 
@@ -122,5 +122,16 @@ export class UserController {
     @Body() dto: ConfirmPhoneChangeDto,
   ) {
     return this.usersService.confirmPhoneChange(userId, dto.code);
+  }
+
+  @Patch('notifications')
+  toggleNotifications(
+    @GetUserId() userId: string,
+    @Body() dto: ToggleNotificationsDto,
+  ) {
+    return this.usersService.toggleNotifications(
+      userId,
+      dto.notificationsEnabled,
+    );
   }
 }

@@ -48,3 +48,7 @@ export class ConfirmPhoneChangeDto {
   @IsString()
   code: string
 }
+
+export class ToggleNotificationsDto {
+  notificationsEnabled: boolean;
+}

@@ -8,22 +8,23 @@ datasource db {
 }
 
 model User {
-  id              String   @id @default(uuid())
-  email           String   @unique
-  hashedPassword  String?  @map("hashed_password")
-  hashedRt        String?  @map("hashed_rt")
-  fullName        String?  @map("full_name")
-  userName        String?  @unique @map("user_name")
-  phone           String?  @unique
-  role            Role     @default(USER)
-  avatar          String   @default("https://res.cloudinary.com/djdf9jke8/image/upload/v1765534297/profile_m2necg_fdne3f.png")
-  avatarPublicId  String?
-  bio             String?
-  pushToken       String?
-  isEmailVerified Boolean  @default(false) @map("is_email_verified")
-  createdAt       DateTime @default(now()) @map("created_at")
-  updatedAt       DateTime @updatedAt @map("updated_at")
-  selectedTags    Tag[]    @relation("UserSelectedTags")
+  id                   String   @id @default(uuid())
+  email                String   @unique
+  hashedPassword       String?  @map("hashed_password")
+  hashedRt             String?  @map("hashed_rt")
+  fullName             String?  @map("full_name")
+  userName             String?  @unique @map("user_name")
+  phone                String?  @unique
+  role                 Role     @default(USER)
+  avatar               String   @default("https://res.cloudinary.com/djdf9jke8/image/upload/v1765534297/profile_m2necg_fdne3f.png")
+  avatarPublicId       String?
+  bio                  String?
+  pushToken            String?
+  isEmailVerified      Boolean  @default(false) @map("is_email_verified")
+  notificationsEnabled Boolean  @default(true) @map("notifications_enabled")
+  createdAt            DateTime @default(now()) @map("created_at")
+  updatedAt            DateTime @updatedAt @map("updated_at")
+  selectedTags         Tag[]    @relation("UserSelectedTags")
 
   verificationCodes      VerificationCode[]
   emailVerificationToken VerificationToken[]
