@@ -34,6 +34,7 @@ model User {
   savedItems             SavedItem[]
   order                  Order[]
   Notification           Notification[]
+  Restaurant             Restaurant[]
 
   @@map("users")
 }
@@ -90,6 +91,7 @@ model Restaurant {
   latitude     Float
   longitude    Float
   type         RestaurantType @default(RESTAURANT)
+  ownerId      String?
   careemUrl    String?        @map("careem_url")
   noonFoodUrl  String?        @map("noon_food_url")
   talabatUrl   String?        @map("talabat_url")
@@ -101,6 +103,7 @@ model Restaurant {
 
   menu  Menu?
   order Order[]
+  owner User?   @relation(fields: [ownerId], references: [id], onDelete: Cascade)
 
   @@index([latitude, longitude])
   @@map("restaurants")

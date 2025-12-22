@@ -1,5 +1,5 @@
 import {
-  BadRequestException,
+  BadRequestException, ForbiddenException,
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
@@ -8,19 +8,22 @@ import {
   SearchMenuItemsDto,
   UpdateMenuItemDto,
 } from '~/menu/dto/menu.dto';
-import { PrismaService } from '~/prisma/prisma.service';
-import { Prisma } from '@prisma/client';
-import { PageDto, PageMetaDto } from '~/common/dto/page';
-import { PlaceService } from '~/place/place.service';
+import {PrismaService} from '~/prisma/prisma.service';
+import {Prisma, Role} from '@prisma/client';
+import {PageDto, PageMetaDto} from '~/common/dto/page';
+import {PlaceService} from '~/place/place.service';
 
 @Injectable()
 export class MenuService {
   constructor(
     private readonly prisma: PrismaService,
     private readonly placeService: PlaceService,
-  ) {}
+  ) {
+  }
 
-  async createMenuItem(dto: CreateMenuItemDto) {
+  async createMenuItem(dto: CreateMenuItemDto, userId: string, userRole: Role) {
+    await this.checkIfOwnerOrAdmin(dto.restaurantId, userId, userRole);
+
     let finalCategoryId = dto.categoryId;
 
     if (dto.isNewCategory) {
@@ -31,12 +34,12 @@ export class MenuService {
       }
 
       let menu = await this.prisma.menu.findUnique({
-        where: { restaurantId: dto.restaurantId },
+        where: {restaurantId: dto.restaurantId},
       });
 
       if (!menu) {
         menu = await this.prisma.menu.create({
-          data: { restaurantId: dto.restaurantId },
+          data: {restaurantId: dto.restaurantId},
         });
       }
 
@@ -59,9 +62,8 @@ export class MenuService {
         video: dto.video,
         badges: dto.badges,
         highlighted: !!dto.video,
-
         category: {
-          connect: { id: finalCategoryId },
+          connect: {id: finalCategoryId},
         },
       },
       include: {
@@ -70,11 +72,29 @@ export class MenuService {
     });
   }
 
-  async updateMenuItem(id: string, dto: UpdateMenuItemDto) {
+  async updateMenuItem(id: string, dto: UpdateMenuItemDto, userId: string, userRole: Role) {
+    const existingItem = await this.prisma.menuItem.findUnique({
+      where: { id },
+      include: {
+        category: {
+          include: {
+            menu: true,
+          },
+        },
+      },
+    });
+
+    if (!existingItem) {
+      throw new NotFoundException('Menu item not found');
+    }
+
+    const restaurantId = existingItem.category.menu.restaurantId;
+    await this.checkIfOwnerOrAdmin(restaurantId, userId, userRole);
+
     let finalCategoryId = dto.categoryId;
     if (dto.isNewCategory && dto.newCategoryName) {
       const currentItem = await this.prisma.menuItem.findUnique({
-        where: { id },
+        where: {id},
         include: {
           category: true,
         },
@@ -98,12 +118,12 @@ export class MenuService {
 
     const tagsUpdate = dto.tagIds
       ? {
-          set: dto.tagIds.map((tagId) => ({ id: tagId })),
-        }
+        set: dto.tagIds.map((tagId) => ({id: tagId})),
+      }
       : undefined;
 
     return this.prisma.menuItem.update({
-      where: { id },
+      where: {id},
       data: {
         name: dto.name,
         price: dto.price,
@@ -113,7 +133,7 @@ export class MenuService {
         badges: dto.badges,
         highlighted: !!dto.video,
         category: finalCategoryId
-          ? { connect: { id: finalCategoryId } }
+          ? {connect: {id: finalCategoryId}}
           : undefined,
 
         tags: tagsUpdate,
@@ -126,12 +146,12 @@ export class MenuService {
   }
 
   async delete(id: string) {
-    return this.prisma.menuItem.delete({ where: { id } });
+    return this.prisma.menuItem.delete({where: {id}});
   }
 
   private async checkIfCategoryExist(categoryId: string) {
     const category = await this.prisma.category.findUnique({
-      where: { id: categoryId },
+      where: {id: categoryId},
     });
 
     if (!category) {
@@ -160,8 +180,8 @@ export class MenuService {
 
   async getDiscovery(userId: string) {
     const user = await this.prisma.user.findUnique({
-      where: { id: userId },
-      include: { selectedTags: true },
+      where: {id: userId},
+      include: {selectedTags: true},
     });
 
     const selectedTagSlugs = user?.selectedTags.map((tag) => tag.slug) || [];
@@ -174,21 +194,21 @@ export class MenuService {
         this.getMenuItemsByTag(['vegan']),
       ]);
 
-    return { recommendedForYou, glutenFree, vegetarian, vegan };
+    return {recommendedForYou, glutenFree, vegetarian, vegan};
   }
 
   async search(userId: string, dto: SearchMenuItemsDto) {
-    const { skip, take, query, tags } = dto;
+    const {skip, take, query, tags} = dto;
     const conditions: Prisma.MenuItemWhereInput[] = [];
 
     if (query) {
       conditions.push({
         OR: [
-          { name: { contains: query, mode: 'insensitive' } },
+          {name: {contains: query, mode: 'insensitive'}},
           {
             category: {
               menu: {
-                restaurant: { name: { contains: query, mode: 'insensitive' } },
+                restaurant: {name: {contains: query, mode: 'insensitive'}},
               },
             },
           },
@@ -199,27 +219,27 @@ export class MenuService {
     if (tags && tags.length > 0) {
       if (tags.length === 1 && tags[0] === 'recommended-for-you') {
         const user = await this.prisma.user.findUnique({
-          where: { id: userId },
-          include: { selectedTags: true },
+          where: {id: userId},
+          include: {selectedTags: true},
         });
 
         const selectedTagSlugs =
           user?.selectedTags.map((tag) => tag.slug) || [];
         if (selectedTagSlugs && selectedTagSlugs.length > 0) {
           conditions.push({
-            tags: { some: { slug: { in: selectedTagSlugs } } },
+            tags: {some: {slug: {in: selectedTagSlugs}}},
           });
         }
       } else {
         conditions.push({
-          tags: { some: { slug: { in: tags } } },
+          tags: {some: {slug: {in: tags}}},
         });
       }
     }
 
     const where: Prisma.MenuItemWhereInput = {
       AND: conditions,
-      video: { not: null },
+      video: {not: null},
     };
 
     const [data, itemsCount] = await Promise.all([
@@ -229,16 +249,16 @@ export class MenuService {
         skip,
         take,
       }),
-      this.prisma.menuItem.count({ where }),
+      this.prisma.menuItem.count({where}),
     ]);
 
-    const pageMetaDto = new PageMetaDto({ pageOptionsDto: dto, itemsCount });
+    const pageMetaDto = new PageMetaDto({pageOptionsDto: dto, itemsCount});
     return new PageDto(data, pageMetaDto);
   }
 
   async getMenuItemById(id: string) {
     const menuItem = await this.prisma.menuItem.findUnique({
-      where: { id },
+      where: {id},
       select: {
         name: true,
         description: true,
@@ -269,7 +289,7 @@ export class MenuService {
     if (!menuItem) {
       throw new NotFoundException('Menu item not found');
     }
-    const { placeId, name, careemUrl, talabatUrl, deliverooUrl, noonFoodUrl } =
+    const {placeId, name, careemUrl, talabatUrl, deliverooUrl, noonFoodUrl} =
       menuItem.category.menu.restaurant;
     const rating = await this.placeService.getPlacesRating([placeId]);
 
@@ -293,8 +313,8 @@ export class MenuService {
 
   async getCategories(restaurantId: string) {
     const menu = await this.prisma.menu.findUnique({
-      where: { restaurantId },
-      include: { categories: true },
+      where: {restaurantId},
+      include: {categories: true},
     });
 
     return menu?.categories;
@@ -305,8 +325,8 @@ export class MenuService {
 
     return this.prisma.menuItem.findMany({
       where: {
-        tags: { some: { slug: { in: tagSlugs } } },
-        NOT: { video: null },
+        tags: {some: {slug: {in: tagSlugs}}},
+        NOT: {video: null},
       },
       include: this.getIncludes(),
       take: 5,
@@ -318,10 +338,28 @@ export class MenuService {
       category: {
         include: {
           menu: {
-            include: { restaurant: { select: { name: true, city: true } } },
+            include: {restaurant: {select: {name: true, city: true}}},
           },
         },
       },
     };
+  }
+
+  private async checkIfOwnerOrAdmin(restaurantId: string, userId: string, userRole: Role) {
+    const restaurant = await this.prisma.restaurant.findUnique({
+      where: {id: restaurantId},
+      select: {id: true, ownerId: true},
+    });
+
+    if (!restaurant) {
+      throw new NotFoundException('Restaurant not found');
+    }
+
+    const isOwner = restaurant.ownerId === userId;
+    const isAdmin = userRole === Role.ADMIN;
+
+    if (!isAdmin && !isOwner) {
+      throw new ForbiddenException('You are not allowed to manage this restaurant');
+    }
   }
 }

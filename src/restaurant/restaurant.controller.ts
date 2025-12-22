@@ -13,17 +13,19 @@ import {
   UpdateRestaurantDto,
 } from '~/restaurant/dto/restaurant.dto';
 import { GetUserId, Public } from '~/common/decorators';
-import { Roles } from '~/common/decorators/roles.decorator';
 import { Role } from '@prisma/client';
+import {GetUserRole} from "~/common/decorators/get-role.decorator";
 
 @Controller('restaurants')
 export class RestaurantController {
   constructor(private readonly restaurantService: RestaurantService) {}
 
-  @Roles(Role.ADMIN)
   @Post()
-  async createRestaurant(@Body() dto: CreateRestaurantDto) {
-    return this.restaurantService.createRestaurant(dto);
+  async createRestaurant(
+    @Body() dto: CreateRestaurantDto,
+    @GetUserId() userId: string,
+  ) {
+    return this.restaurantService.createRestaurant(dto, userId);
   }
 
   @Get()
@@ -45,13 +47,16 @@ export class RestaurantController {
     return this.restaurantService.getMenuItem(id);
   }
 
-  @Roles(Role.ADMIN)
   @Patch(':id')
-  async updateRestaurant(@Param('id') id: string, @Body() dto: UpdateRestaurantDto) {
-    return this.restaurantService.updateRestaurant(id, dto);
+  async updateRestaurant(
+    @Param('id') id: string,
+    @Body() dto: UpdateRestaurantDto,
+    @GetUserId() userId: string,
+    @GetUserRole() userRole: Role
+  ) {
+    return this.restaurantService.updateRestaurant(id, dto, userId, userRole);
   }
 
-  @Roles(Role.ADMIN)
   @Get(':id')
   async getRestaurant(@Param('id') id: string) {
     return this.restaurantService.getRestaurantById(id);

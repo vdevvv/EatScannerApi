@@ -1,22 +1,24 @@
-import { Injectable } from '@nestjs/common';
-import { PlaceService } from '~/place/place.service';
+import {ForbiddenException, Injectable, NotFoundException} from '@nestjs/common';
+import {PlaceService} from '~/place/place.service';
 import {
   CreateRestaurantDto,
   GetRestaurantsDto,
   UpdateRestaurantDto,
 } from '~/restaurant/dto/restaurant.dto';
-import { PrismaService } from '~/prisma/prisma.service';
-import { PageDto, PageMetaDto, PageOptionsDto } from '~/common/dto/page';
+import {PrismaService} from '~/prisma/prisma.service';
+import {PageDto, PageMetaDto, PageOptionsDto} from '~/common/dto/page';
+import {Role} from "@prisma/client";
 
 @Injectable()
 export class RestaurantService {
   constructor(
     private readonly placeService: PlaceService,
     private readonly prisma: PrismaService,
-  ) {}
+  ) {
+  }
 
-  async createRestaurant(dto: CreateRestaurantDto) {
-    const { latitude, longitude, placeId } = await this.placeService.geocode(
+  async createRestaurant(dto: CreateRestaurantDto, userId: string) {
+    const {latitude, longitude, placeId} = await this.placeService.geocode(
       dto.address,
       dto.city,
       dto.country,
@@ -32,34 +34,39 @@ export class RestaurantService {
         type: dto.type,
         latitude,
         longitude,
+        ownerId: userId,
         careemUrl: dto.careemUrl,
         noonFoodUrl: dto.noonFoodUrl,
         talabatUrl: dto.talabatUrl,
         keetaUrl: dto.keetaUrl,
         deliverooUrl: dto.deliverooUrl,
-        menu: { create: {} },
+        menu: {create: {}},
       },
-      include: { menu: true },
+      include: {menu: true},
     });
   }
 
-  async getRestaurantsForAdmin(pageOptionsDto: PageOptionsDto) {
-    const { skip, take } = pageOptionsDto;
+  async getRestaurantsForAdmin(userId: string, userRole: Role, pageOptionsDto: PageOptionsDto) {
+    const where = userRole === Role.ADMIN
+      ? {}
+      : {ownerId: userId};
+    const {skip, take} = pageOptionsDto;
     const [data, itemsCount] = await Promise.all([
       this.prisma.restaurant.findMany({
         skip,
         take,
-        orderBy: { name: 'asc' },
+        where,
+        orderBy: {name: 'asc'},
       }),
-      this.prisma.restaurant.count({}),
+      this.prisma.restaurant.count({where}),
     ]);
 
-    const pageMetaDto = new PageMetaDto({ pageOptionsDto, itemsCount });
+    const pageMetaDto = new PageMetaDto({pageOptionsDto, itemsCount});
     return new PageDto(data, pageMetaDto);
   }
 
   async getRestaurants(userId: string, dto: GetRestaurantsDto) {
-    const { skip, take, latitude: lat, longitude: lon } = dto;
+    const {skip, take, latitude: lat, longitude: lon} = dto;
 
     const [restaurants, totalCount] = await Promise.all([
       this.prisma.$queryRaw<any[]>`
@@ -161,27 +168,43 @@ export class RestaurantService {
 
   async getMenu(restaurantId: string) {
     return this.prisma.menu.findUnique({
-      where: { restaurantId },
-      include: { categories: { include: { items: true } } },
+      where: {restaurantId},
+      include: {categories: {include: {items: true}}},
     });
   }
 
   async getMenuItem(id: string) {
     return this.prisma.menuItem.findUnique({
-      where: { id },
+      where: {id},
     });
   }
 
-  async updateRestaurant(id: string, dto: UpdateRestaurantDto) {
+  async updateRestaurant(id: string, dto: UpdateRestaurantDto, userId: string, userRole: Role) {
+    const restaurant = await this.prisma.restaurant.findUnique({
+      where: {id},
+      select: {id: true, ownerId: true},
+    });
+
+    if (!restaurant) {
+      throw new NotFoundException('Restaurant not found');
+    }
+
+    const isOwner = restaurant.ownerId === userId;
+    const isAdmin = userRole === Role.ADMIN;
+
+    if (!isAdmin && !isOwner) {
+      throw new ForbiddenException('You are not allowed to manage this restaurant');
+    }
+
     return this.prisma.restaurant.update({
-      where: { id },
-      data: { ...dto },
+      where: {id},
+      data: {...dto},
     });
   }
 
   async getRestaurantById(id: string) {
     return this.prisma.restaurant.findUnique({
-      where: { id },
+      where: {id},
     })
   }
 }

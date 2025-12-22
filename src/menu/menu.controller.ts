@@ -14,26 +14,30 @@ import {
   UpdateMenuItemDto,
 } from '~/menu/dto/menu.dto';
 import { MenuService } from '~/menu/menu.service';
-import { Roles } from '~/common/decorators/roles.decorator';
 import { Role } from '@prisma/client';
+import {GetUserRole} from "~/common/decorators/get-role.decorator";
 
 @Controller('menu')
 export class MenuController {
   constructor(private readonly menuService: MenuService) {}
 
-  @Roles(Role.ADMIN)
   @Post('/item')
-  async createMenuItem(@Body() dto: CreateMenuItemDto) {
-    return this.menuService.createMenuItem(dto);
+  async createMenuItem(
+    @Body() dto: CreateMenuItemDto,
+    @GetUserId() userId: string,
+    @GetUserRole() userRole: Role
+  ) {
+    return this.menuService.createMenuItem(dto, userId, userRole);
   }
 
   @Patch('/item/:id')
-  @Roles(Role.ADMIN)
   async updateMenuItem(
     @Param('id') id: string,
     @Body() dto: UpdateMenuItemDto,
+    @GetUserId() userId: string,
+    @GetUserRole() userRole: Role
   ) {
-    return this.menuService.updateMenuItem(id, dto);
+    return this.menuService.updateMenuItem(id, dto, userId, userRole);
   }
 
   @Public()
