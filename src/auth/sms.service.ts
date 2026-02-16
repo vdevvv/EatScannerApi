@@ -36,8 +36,8 @@ export class EmailService {
     try {
       const subject =
         type === 'email_verification'
-          ? 'Verify your email address - UberProject'
-          : 'Reset your password - UberProject';
+          ? 'Verify your email address - Taal Eat'
+          : 'Reset your password - Taal Eat';
 
       const htmlContent = this.getEmailTemplate(code, type);
       const textContent = this.getTextTemplate(code, type);
@@ -46,7 +46,7 @@ export class EmailService {
         to: email,
         from:
           this.configService.get<string>('SENDGRID_FROM_EMAIL') ||
-          'noreply@uberproject.com',
+          'noreply@taaleats.com',
         subject,
         text: textContent,
         html: htmlContent,
@@ -87,7 +87,7 @@ export class EmailService {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>${title} - UberProject</title>
+        <title>${title} - Taal Eat</title>
         <style>
           body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
           .container { max-width: 600px; margin: 0 auto; padding: 20px; }
@@ -102,7 +102,7 @@ export class EmailService {
       <body>
         <div class="container">
           <div class="header">
-            <h1>🚗 UberProject</h1>
+            <h1>🍽️ Taal Eat</h1>
             <h2>${title}</h2>
           </div>
           <div class="content">
@@ -116,7 +116,7 @@ export class EmailService {
             <p>If you didn't request this code, please ignore this email.</p>
           </div>
           <div class="footer">
-            <p>© 2024 UberProject. All rights reserved.</p>
+            <p>© 2024 Taal Eat. All rights reserved.</p>
             <p>This is an automated message, please do not reply.</p>
           </div>
         </div>
@@ -139,7 +139,7 @@ export class EmailService {
         : 'Use this code to reset your password.';
 
     return `
-${title} - UberProject
+${title} - Taal Eat
 
 Hello!
 
@@ -152,7 +152,7 @@ Your verification code is: ${code}
 If you didn't request this code, please ignore this email.
 
 ---
-© 2024 UberProject. All rights reserved.
+© 2024 Taal Eat. All rights reserved.
 This is an automated message, please do not reply.
     `;
   }
