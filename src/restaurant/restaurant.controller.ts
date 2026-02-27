@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  UseGuards,
   Param, Patch,
   Post,
   Query,
@@ -15,6 +16,7 @@ import {
 import { GetUserId, Public } from '~/common/decorators';
 import { Role } from '@prisma/client';
 import {GetUserRole} from "~/common/decorators/get-role.decorator";
+import { OptionalAtGuard } from '~/common/guards';
 
 @Controller('restaurants')
 export class RestaurantController {
@@ -28,9 +30,11 @@ export class RestaurantController {
     return this.restaurantService.createRestaurant(dto, userId);
   }
 
+  @Public()
+  @UseGuards(OptionalAtGuard)
   @Get()
   async getRestaurants(
-    @GetUserId() userId: string,
+    @GetUserId() userId: string | undefined,
     @Query() dto: GetRestaurantsDto,
   ) {
     return this.restaurantService.getRestaurants(userId, dto);

@@ -7,7 +7,7 @@ import {
 } from '~/restaurant/dto/restaurant.dto';
 import {PrismaService} from '~/prisma/prisma.service';
 import {PageDto, PageMetaDto, PageOptionsDto} from '~/common/dto/page';
-import {Role} from "@prisma/client";
+import {Prisma, Role} from "@prisma/client";
 
 @Injectable()
 export class RestaurantService {
@@ -65,8 +65,22 @@ export class RestaurantService {
     return new PageDto(data, pageMetaDto);
   }
 
-  async getRestaurants(userId: string, dto: GetRestaurantsDto) {
+  async getRestaurants(userId: string | undefined, dto: GetRestaurantsDto) {
     const {skip, take, latitude: lat, longitude: lon} = dto;
+    const likedExpr = userId
+      ? Prisma.sql`EXISTS (
+          SELECT 1
+          FROM favorites f
+          WHERE f.menu_item_id = mi.id AND f.user_id = ${userId}::text
+        )`
+      : Prisma.sql`FALSE`;
+    const savedExpr = userId
+      ? Prisma.sql`EXISTS (
+          SELECT 1
+          FROM saved_items s
+          WHERE s.menu_item_id = mi.id AND s.user_id = ${userId}::text
+        )`
+      : Prisma.sql`FALSE`;
 
     const [restaurants, totalCount] = await Promise.all([
       this.prisma.$queryRaw<any[]>`
@@ -79,9 +93,9 @@ export class RestaurantService {
                r.longitude,
                (
                  3958.8 * acos(
-                   cos(radians(${lat})) * cos(radians(r.latitude)) *
-                   cos(radians(r.longitude) - radians(${lon})) +
-                   sin(radians(${lat})) * sin(radians(r.latitude))
+                   cos(radians(${lat}::float8)) * cos(radians(r.latitude)) *
+                   cos(radians(r.longitude) - radians(${lon}::float8)) +
+                   sin(radians(${lat}::float8)) * sin(radians(r.latitude))
                  )
                ) AS distance
         FROM restaurants r
@@ -95,7 +109,7 @@ export class RestaurantService {
             AND mi.video <> ''
         )
         ORDER BY distance
-        LIMIT ${take} OFFSET ${skip}
+        LIMIT ${take}::int OFFSET ${skip}::int
       )
 
       SELECT 
@@ -117,8 +131,8 @@ export class RestaurantService {
               'image', mi.image,
               'video', mi.video,
               'createdAt', mi.created_at,
-              'isLiked', (EXISTS (SELECT 1 FROM favorites f WHERE f.menu_item_id = mi.id AND f.user_id = ${userId})),
-              'isSaved', (EXISTS (SELECT 1 FROM saved_items s WHERE s.menu_item_id = mi.id AND s.user_id = ${userId}))
+              'isLiked', ${likedExpr},
+              'isSaved', ${savedExpr}
             )
           ) FILTER (WHERE mi.id IS NOT NULL), 
           '[]'

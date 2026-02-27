@@ -6,6 +6,7 @@ import {
   Patch,
   Post,
   Query,
+  UseGuards,
 } from '@nestjs/common';
 import { GetUserId, Public } from '~/common/decorators';
 import {
@@ -16,6 +17,7 @@ import {
 import { MenuService } from '~/menu/menu.service';
 import { Role } from '@prisma/client';
 import {GetUserRole} from "~/common/decorators/get-role.decorator";
+import { OptionalAtGuard } from '~/common/guards';
 
 @Controller('menu')
 export class MenuController {
@@ -46,16 +48,24 @@ export class MenuController {
     return this.menuService.getFilters(isSelectable);
   }
 
+  @Public()
+  @UseGuards(OptionalAtGuard)
   @Get('/discovery')
-  async getDiscovery(@GetUserId() userId: string) {
+  async getDiscovery(@GetUserId() userId: string | undefined) {
     return this.menuService.getDiscovery(userId);
   }
 
+  @Public()
+  @UseGuards(OptionalAtGuard)
   @Get('/search')
-  async search(@GetUserId() userId: string, @Query() dto: SearchMenuItemsDto) {
+  async search(
+    @GetUserId() userId: string | undefined,
+    @Query() dto: SearchMenuItemsDto,
+  ) {
     return this.menuService.search(userId, dto);
   }
 
+  @Public()
   @Get('/item/:id')
   async getMenuItemById(@Param('id') id: string) {
     return this.menuService.getMenuItemById(id);

@@ -178,17 +178,26 @@ export class MenuService {
     return raw[0]?.grouped;
   }
 
-  async getDiscovery(userId: string) {
-    const user = await this.prisma.user.findUnique({
-      where: {id: userId},
-      include: {selectedTags: true},
-    });
+  async getDiscovery(userId?: string) {
+    let selectedTagSlugs: string[] = [];
 
-    const selectedTagSlugs = user?.selectedTags.map((tag) => tag.slug) || [];
+    if (userId) {
+      const user = await this.prisma.user.findUnique({
+        where: {id: userId},
+        include: {selectedTags: true},
+      });
+
+      selectedTagSlugs = user?.selectedTags.map((tag) => tag.slug) || [];
+    }
+
+    const recommendedPromise =
+      selectedTagSlugs.length > 0
+        ? this.getMenuItemsByTag(selectedTagSlugs)
+        : this.getFallbackDiscoveryItems();
 
     const [recommendedForYou, glutenFree, vegetarian, vegan] =
       await Promise.all([
-        this.getMenuItemsByTag(selectedTagSlugs),
+        recommendedPromise,
         this.getMenuItemsByTag(['gluten-free']),
         this.getMenuItemsByTag(['vegetarian']),
         this.getMenuItemsByTag(['vegan']),
@@ -197,7 +206,7 @@ export class MenuService {
     return {recommendedForYou, glutenFree, vegetarian, vegan};
   }
 
-  async search(userId: string, dto: SearchMenuItemsDto) {
+  async search(userId: string | undefined, dto: SearchMenuItemsDto) {
     const {skip, take, query, tags} = dto;
     const conditions: Prisma.MenuItemWhereInput[] = [];
 
@@ -218,17 +227,19 @@ export class MenuService {
 
     if (tags && tags.length > 0) {
       if (tags.length === 1 && tags[0] === 'recommended-for-you') {
-        const user = await this.prisma.user.findUnique({
-          where: {id: userId},
-          include: {selectedTags: true},
-        });
-
-        const selectedTagSlugs =
-          user?.selectedTags.map((tag) => tag.slug) || [];
-        if (selectedTagSlugs && selectedTagSlugs.length > 0) {
-          conditions.push({
-            tags: {some: {slug: {in: selectedTagSlugs}}},
+        if (userId) {
+          const user = await this.prisma.user.findUnique({
+            where: {id: userId},
+            include: {selectedTags: true},
           });
+
+          const selectedTagSlugs =
+            user?.selectedTags.map((tag) => tag.slug) || [];
+          if (selectedTagSlugs.length > 0) {
+            conditions.push({
+              tags: {some: {slug: {in: selectedTagSlugs}}},
+            });
+          }
         }
       } else {
         conditions.push({
@@ -329,6 +340,17 @@ export class MenuService {
         NOT: {video: null},
       },
       include: this.getIncludes(),
+      take: 5,
+    });
+  }
+
+  private async getFallbackDiscoveryItems() {
+    return this.prisma.menuItem.findMany({
+      where: {
+        NOT: {video: null},
+      },
+      include: this.getIncludes(),
+      orderBy: {createdAt: 'desc'},
       take: 5,
     });
   }

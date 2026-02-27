@@ -3,6 +3,7 @@ import {Public} from "~/common/decorators";
 import {PlaceService} from "~/place/place.service";
 import {GetGoogleRatingDto} from "~/place/dto/place.dto";
 
+@Public()
 @Controller('place')
 export class PlaceController {
   constructor(private readonly placeService: PlaceService) {}
