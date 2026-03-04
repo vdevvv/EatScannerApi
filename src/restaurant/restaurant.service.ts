@@ -7,7 +7,7 @@ import {
 } from '~/restaurant/dto/restaurant.dto';
 import {PrismaService} from '~/prisma/prisma.service';
 import {PageDto, PageMetaDto, PageOptionsDto} from '~/common/dto/page';
-import {Prisma, Role} from "@prisma/client";
+import {Role} from "@prisma/client";
 
 @Injectable()
 export class RestaurantService {
@@ -67,24 +67,13 @@ export class RestaurantService {
 
   async getRestaurants(userId: string | undefined, dto: GetRestaurantsDto) {
     const {skip, take, latitude: lat, longitude: lon} = dto;
-    const likedExpr = userId
-      ? Prisma.sql`EXISTS (
-          SELECT 1
-          FROM favorites f
-          WHERE f.menu_item_id = mi.id AND f.user_id = ${userId}::text
-        )`
-      : Prisma.sql`FALSE`;
-    const savedExpr = userId
-      ? Prisma.sql`EXISTS (
-          SELECT 1
-          FROM saved_items s
-          WHERE s.menu_item_id = mi.id AND s.user_id = ${userId}::text
-        )`
-      : Prisma.sql`FALSE`;
 
     const [restaurants, totalCount] = await Promise.all([
       this.prisma.$queryRaw<any[]>`
-      WITH paginated_restaurants AS (
+      WITH user_context AS (
+        SELECT ${userId ?? null}::text AS user_id
+      ),
+      paginated_restaurants AS (
         SELECT r.id,
                r.place_id AS "placeId",
                r.name,
@@ -131,8 +120,20 @@ export class RestaurantService {
               'image', mi.image,
               'video', mi.video,
               'createdAt', mi.created_at,
-              'isLiked', ${likedExpr},
-              'isSaved', ${savedExpr}
+              'isLiked', EXISTS (
+                SELECT 1
+                FROM favorites f
+                CROSS JOIN user_context uc
+                WHERE f.menu_item_id = mi.id
+                  AND f.user_id = uc.user_id
+              ),
+              'isSaved', EXISTS (
+                SELECT 1
+                FROM saved_items s
+                CROSS JOIN user_context uc
+                WHERE s.menu_item_id = mi.id
+                  AND s.user_id = uc.user_id
+              )
             )
           ) FILTER (WHERE mi.id IS NOT NULL), 
           '[]'
