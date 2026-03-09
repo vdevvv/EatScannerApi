@@ -4,6 +4,8 @@ import {
   Delete,
   FileTypeValidator,
   Get,
+  HttpCode,
+  HttpStatus,
   MaxFileSizeValidator,
   Param,
   ParseFilePipe,
@@ -38,6 +40,12 @@ export class UserController {
   @Get('/me')
   async getMe(@GetUserId() userId: string) {
     return this.usersService.findById(userId);
+  }
+
+  @Delete('/me')
+  @HttpCode(HttpStatus.OK)
+  async deleteMe(@GetUserId() userId: string) {
+    return this.usersService.deleteAccount(userId);
   }
 
   @Patch('/me')

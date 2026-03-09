@@ -4,6 +4,7 @@ import { ExtractJwt, Strategy } from 'passport-jwt';
 import { ConfigService } from '@nestjs/config';
 import { Request } from 'express';
 import { JwtPayload } from '../types/jwt.types';
+import { PrismaService } from '~/prisma/prisma.service';
 
 interface RefreshRequest extends Request {
   body: {
@@ -13,7 +14,10 @@ interface RefreshRequest extends Request {
 
 @Injectable()
 export class RtStrategy extends PassportStrategy(Strategy, 'jwt-refresh') {
-  constructor(config: ConfigService) {
+  constructor(
+    config: ConfigService,
+    private readonly prisma: PrismaService,
+  ) {
     const rtSecret = config.getOrThrow<string>('JWT_REFRESH_SECRET');
     super({
       jwtFromRequest: ExtractJwt.fromBodyField('refreshToken'),
@@ -22,10 +26,18 @@ export class RtStrategy extends PassportStrategy(Strategy, 'jwt-refresh') {
     });
   }
 
-  validate(req: RefreshRequest, payload: JwtPayload) {
+  async validate(req: RefreshRequest, payload: JwtPayload) {
     const refreshToken = req.body?.refreshToken;
     if (!refreshToken) {
       throw new UnauthorizedException('Refresh token not found');
+    }
+
+    const user = await this.prisma.user.findUnique({
+      where: { id: payload.userId },
+      select: { id: true },
+    });
+    if (!user) {
+      throw new UnauthorizedException('User no longer exists');
     }
 
     return {

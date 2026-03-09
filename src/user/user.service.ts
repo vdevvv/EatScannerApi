@@ -43,6 +43,40 @@ export class UserService {
     });
   }
 
+  async deleteAccount(userId: string) {
+    const user = await this.prisma.user.findUnique({
+      where: { id: userId },
+      select: { id: true, avatarPublicId: true },
+    });
+
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+
+    await this.prisma.$transaction(async (tx) => {
+      // Preserve restaurant catalog while removing user linkage.
+      await tx.restaurant.updateMany({
+        where: { ownerId: userId },
+        data: { ownerId: null },
+      });
+
+      // Related user data is removed via ON DELETE CASCADE constraints.
+      await tx.user.delete({
+        where: { id: userId },
+      });
+    });
+
+    if (user.avatarPublicId) {
+      try {
+        await this.cloudinaryService.deleteFile(user.avatarPublicId);
+      } catch {
+        // Do not fail account deletion if external avatar cleanup fails.
+      }
+    }
+
+    return { message: 'Account deleted successfully' };
+  }
+
   async checkIfUserExists(id: string) {
     const user = await this.prisma.user.findUnique({ where: { id } });
     if (!user) throw new NotFoundException('User not found');
