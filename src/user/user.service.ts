@@ -306,7 +306,9 @@ export class UserService {
     try {
       await this.twilioClient.messages.create({
         body: `Your verification code is: ${code}`,
-        from: this.config.getOrThrow('TWILIO_PHONE_NUMBER'),
+        messagingServiceSid: this.config.getOrThrow(
+          'TWILIO_MESSAGING_SERVICE_SID',
+        ),
         to: newPhone,
       });
     } catch (error) {
