@@ -97,6 +97,7 @@ export class RestaurantService {
             AND mi.video IS NOT NULL
             AND mi.video <> ''
         )
+          AND r.country IS DISTINCT FROM 'UAE'
         ORDER BY distance
         LIMIT ${take}::int OFFSET ${skip}::int
       )
@@ -159,6 +160,7 @@ export class RestaurantService {
                JOIN menu_items mi ON mi.category_id = c.id
         WHERE mi.video IS NOT NULL
           AND mi.video <> ''
+          AND r.country IS DISTINCT FROM 'UAE'
       `,
     ]);
 
