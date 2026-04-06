@@ -366,7 +366,9 @@ export class MenuService {
       category: {
         include: {
           menu: {
-            include: {restaurant: {select: {name: true, city: true}}},
+            include: {
+              restaurant: {select: {name: true, city: true, country: true}},
+            },
           },
         },
       },
