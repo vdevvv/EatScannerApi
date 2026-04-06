@@ -14,9 +14,17 @@ async function main() {
   }
 
   await Promise.all(
-    restaurants.map((restaurant) =>
-      prisma.restaurant.create({ data: restaurant }),
-    ),
+    restaurants.map(async (restaurant) => {
+      try {
+        await prisma.restaurant.create({ data: restaurant });
+      } catch (error: any) {
+        if (error?.code === 'P2002') {
+          // Restaurant already seeded (place_id unique). Skip.
+          return;
+        }
+        throw error;
+      }
+    }),
   );
 }
 
