@@ -65,9 +65,13 @@ export class MenuService {
         category: {
           connect: {id: finalCategoryId},
         },
+        tags: dto.tagIds?.length
+          ? { connect: dto.tagIds.map((id) => ({ id })) }
+          : undefined,
       },
       include: {
         category: true,
+        tags: true,
       },
     });
   }
@@ -276,6 +280,7 @@ export class MenuService {
         image: true,
         video: true,
         price: true,
+        tags: { select: { id: true } },
         category: {
           select: {
             menu: {
@@ -310,6 +315,7 @@ export class MenuService {
       image: menuItem.image,
       video: menuItem.video,
       price: menuItem.price,
+      tagIds: menuItem.tags.map((tag) => tag.id),
       restaurant: {
         name,
         placeId,

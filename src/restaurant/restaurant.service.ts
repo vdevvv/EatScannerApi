@@ -186,14 +186,36 @@ export class RestaurantService {
   async getMenu(restaurantId: string) {
     return this.prisma.menu.findUnique({
       where: {restaurantId},
-      include: {categories: {include: {items: true}}},
+      include: {
+        categories: {
+          include: {
+            items: {
+              include: {
+                tags: true,
+              },
+            },
+          },
+        },
+      },
     });
   }
 
   async getMenuItem(id: string) {
-    return this.prisma.menuItem.findUnique({
+    const item = await this.prisma.menuItem.findUnique({
       where: {id},
+      include: {
+        tags: { select: { id: true } },
+      },
     });
+
+    if (!item) {
+      throw new NotFoundException('Menu item not found');
+    }
+
+    return {
+      ...item,
+      tagIds: item.tags.map((tag) => tag.id),
+    };
   }
 
   async updateRestaurant(id: string, dto: UpdateRestaurantDto, userId: string, userRole: Role) {
