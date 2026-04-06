@@ -7,3 +7,8 @@ export class CreateCategoryDto {
   @IsUUID()
   menuId: string;
 }
+
+export class UpdateCategoryDto {
+  @IsString()
+  name: string;
+}
