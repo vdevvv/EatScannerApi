@@ -97,6 +97,8 @@ model Restaurant {
   talabatUrl   String?        @map("talabat_url")
   keetaUrl     String?        @map("keeta_url")
   deliverooUrl String?        @map("deliveroo_url")
+  uberEatsUrl  String?        @map("uber_eats_url")
+  justEatUrl   String?        @map("just_eat_url")
   placeId      String         @unique @map("place_id")
   createdAt    DateTime       @default(now()) @map("created_at")
   updatedAt    DateTime       @updatedAt @map("updated_at")

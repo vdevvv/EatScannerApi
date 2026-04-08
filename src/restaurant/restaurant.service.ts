@@ -40,6 +40,8 @@ export class RestaurantService {
         talabatUrl: dto.talabatUrl,
         keetaUrl: dto.keetaUrl,
         deliverooUrl: dto.deliverooUrl,
+        uberEatsUrl: dto.uberEatsUrl,
+        justEatUrl: dto.justEatUrl,
         menu: {create: {}},
       },
       include: {menu: true},
@@ -237,7 +239,11 @@ export class RestaurantService {
 
     return this.prisma.restaurant.update({
       where: {id},
-      data: {...dto},
+      data: {
+        ...dto,
+        uberEatsUrl: dto.uberEatsUrl,
+        justEatUrl: dto.justEatUrl,
+      },
     });
   }
 

@@ -39,6 +39,14 @@ export class CreateRestaurantDto {
   @IsOptional()
   @IsUrl()
   deliverooUrl?: string;
+
+  @IsOptional()
+  @IsUrl()
+  uberEatsUrl?: string;
+
+  @IsOptional()
+  @IsUrl()
+  justEatUrl?: string;
 }
 
 export class UpdateRestaurantDto extends PartialType(CreateRestaurantDto) {}
