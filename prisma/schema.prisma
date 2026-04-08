@@ -150,9 +150,9 @@ model MenuItem {
   createdAt   DateTime    @default(now()) @map("created_at")
   updatedAt   DateTime    @updatedAt @map("updated_at")
 
-  tags        Tag[]
-  favoritedBy Favorite[]
-  savedBy     SavedItem[]
+  tags           Tag[]
+  favoritedBy    Favorite[]
+  savedBy        SavedItem[]
   deliveryPrices MenuItemDeliveryPrice[]
 
   category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
@@ -162,10 +162,10 @@ model MenuItem {
 }
 
 model MenuItemDeliveryPrice {
-  id         String   @id @default(uuid())
-  menuItemId String   @map("menu_item_id")
+  id         Int     @id @default(autoincrement())
+  menuItemId String  @map("menu_item_id")
   provider   String
-  price      Float
+  price      Decimal @db.Decimal(10, 2)
 
   menuItem MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
 
