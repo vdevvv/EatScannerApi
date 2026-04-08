@@ -65,6 +65,10 @@ export class CreateMenuItemDto {
   @IsUUID('4', { each: true })
   @IsOptional()
   tagIds?: string[];
+
+  @IsArray()
+  @IsOptional()
+  deliveryPrices?: { provider: string; price: number }[];
 }
 
 export class UpdateMenuItemDto extends PartialType(CreateMenuItemDto) {}

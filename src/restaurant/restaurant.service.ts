@@ -194,6 +194,7 @@ export class RestaurantService {
             items: {
               include: {
                 tags: true,
+                deliveryPrices: true,
               },
             },
           },
@@ -207,6 +208,7 @@ export class RestaurantService {
       where: {id},
       include: {
         tags: { select: { id: true } },
+        deliveryPrices: true,
       },
     });
 

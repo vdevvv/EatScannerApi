@@ -153,11 +153,24 @@ model MenuItem {
   tags        Tag[]
   favoritedBy Favorite[]
   savedBy     SavedItem[]
+  deliveryPrices MenuItemDeliveryPrice[]
 
   category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   order    Order[]
 
   @@map("menu_items")
+}
+
+model MenuItemDeliveryPrice {
+  id         String   @id @default(uuid())
+  menuItemId String   @map("menu_item_id")
+  provider   String
+  price      Float
+
+  menuItem MenuItem @relation(fields: [menuItemId], references: [id], onDelete: Cascade)
+
+  @@unique([menuItemId, provider])
+  @@map("menu_item_delivery_prices")
 }
 
 model Tag {

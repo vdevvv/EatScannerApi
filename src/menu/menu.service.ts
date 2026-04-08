@@ -68,10 +68,21 @@ export class MenuService {
         tags: dto.tagIds?.length
           ? { connect: dto.tagIds.map((id) => ({ id })) }
           : undefined,
+        deliveryPrices: dto.deliveryPrices?.length
+          ? {
+            createMany: {
+              data: dto.deliveryPrices.map((p) => ({
+                provider: p.provider,
+                price: p.price,
+              })),
+            },
+          }
+          : undefined,
       },
       include: {
         category: true,
         tags: true,
+        deliveryPrices: true,
       },
     });
   }
@@ -125,6 +136,17 @@ export class MenuService {
         set: dto.tagIds.map((tagId) => ({id: tagId})),
       }
       : undefined;
+    const deliveryPricesUpdate = dto.deliveryPrices
+      ? {
+        deleteMany: {},
+        createMany: {
+          data: dto.deliveryPrices.map((p) => ({
+            provider: p.provider,
+            price: p.price,
+          })),
+        },
+      }
+      : undefined;
 
     return this.prisma.menuItem.update({
       where: {id},
@@ -141,10 +163,12 @@ export class MenuService {
           : undefined,
 
         tags: tagsUpdate,
+        deliveryPrices: deliveryPricesUpdate,
       },
       include: {
         category: true,
         tags: true,
+        deliveryPrices: true,
       },
     });
   }
@@ -280,6 +304,7 @@ export class MenuService {
         image: true,
         video: true,
         price: true,
+        deliveryPrices: true,
         tags: { select: { id: true } },
         category: {
           select: {
@@ -315,6 +340,7 @@ export class MenuService {
       image: menuItem.image,
       video: menuItem.video,
       price: menuItem.price,
+      deliveryPrices: menuItem.deliveryPrices,
       tagIds: menuItem.tags.map((tag) => tag.id),
       restaurant: {
         name,
@@ -372,6 +398,7 @@ export class MenuService {
           },
         },
       },
+      deliveryPrices: true,
     };
   }
 
