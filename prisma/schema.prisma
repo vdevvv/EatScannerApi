@@ -144,6 +144,9 @@ model MenuItem {
   description String?
   image       String
   video       String?
+  deliverooUrl String?     @map("deliveroo_url")
+  uberEatsUrl  String?     @map("uber_eats_url")
+  justEatUrl   String?     @map("just_eat_url")
   badges      DishBadge[] @map("badges")
   highlighted Boolean     @default(false)
   categoryId  String      @map("category_id")

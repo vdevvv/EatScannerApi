@@ -69,6 +69,18 @@ export class CreateMenuItemDto {
   @IsArray()
   @IsOptional()
   deliveryPrices?: { provider: string; price: number }[];
+
+  @IsOptional()
+  @IsUrl()
+  deliverooUrl?: string;
+
+  @IsOptional()
+  @IsUrl()
+  uberEatsUrl?: string;
+
+  @IsOptional()
+  @IsUrl()
+  justEatUrl?: string;
 }
 
 export class UpdateMenuItemDto extends PartialType(CreateMenuItemDto) {}
