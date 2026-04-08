@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   UseGuards,
   Param, Patch,
@@ -59,6 +60,15 @@ export class RestaurantController {
     @GetUserRole() userRole: Role
   ) {
     return this.restaurantService.updateRestaurant(id, dto, userId, userRole);
+  }
+
+  @Delete(':id')
+  async deleteRestaurant(
+    @Param('id') id: string,
+    @GetUserId() userId: string,
+    @GetUserRole() userRole: Role,
+  ) {
+    return this.restaurantService.deleteRestaurant(id, userId, userRole);
   }
 
   @Get(':id')

@@ -249,6 +249,28 @@ export class RestaurantService {
     });
   }
 
+  async deleteRestaurant(id: string, userId: string, userRole: Role) {
+    const restaurant = await this.prisma.restaurant.findUnique({
+      where: {id},
+      select: {id: true, ownerId: true},
+    });
+
+    if (!restaurant) {
+      throw new NotFoundException('Restaurant not found');
+    }
+
+    const isOwner = restaurant.ownerId === userId;
+    const isAdmin = userRole === Role.ADMIN;
+
+    if (!isAdmin && !isOwner) {
+      throw new ForbiddenException('You are not allowed to manage this restaurant');
+    }
+
+    return this.prisma.restaurant.delete({
+      where: {id},
+    });
+  }
+
   async getRestaurantById(id: string) {
     return this.prisma.restaurant.findUnique({
       where: {id},
