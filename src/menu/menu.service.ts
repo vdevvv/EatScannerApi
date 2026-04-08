@@ -323,10 +323,9 @@ export class MenuService {
                   select: {
                     name: true,
                     placeId: true,
-                    talabatUrl: true,
-                    careemUrl: true,
-                    noonFoodUrl: true,
                     deliverooUrl: true,
+                    uberEatsUrl: true,
+                    justEatUrl: true,
                   },
                 },
               },
@@ -339,7 +338,7 @@ export class MenuService {
     if (!menuItem) {
       throw new NotFoundException('Menu item not found');
     }
-    const {placeId, name, careemUrl, talabatUrl, deliverooUrl, noonFoodUrl} =
+    const {placeId, name, deliverooUrl, uberEatsUrl, justEatUrl} =
       menuItem.category.menu.restaurant;
     const rating = await this.placeService.getPlacesRating([placeId]);
 
@@ -348,17 +347,21 @@ export class MenuService {
       description: menuItem.description,
       image: menuItem.image,
       video: menuItem.video,
+      deliverooUrl: menuItem.deliverooUrl ?? deliverooUrl ?? null,
+      uberEatsUrl: menuItem.uberEatsUrl ?? uberEatsUrl ?? null,
+      justEatUrl: menuItem.justEatUrl ?? justEatUrl ?? null,
       price: menuItem.price,
-      deliveryPrices: menuItem.deliveryPrices,
+      deliveryPrices: menuItem.deliveryPrices.filter((p) =>
+        ['deliveroo', 'uberEats', 'justEat'].includes(p.provider),
+      ),
       tagIds: menuItem.tags.map((tag) => tag.id),
       restaurant: {
         name,
         placeId,
         rating: rating[placeId]?.rating ?? null,
-        talabatUrl,
-        careemUrl,
-        noonFoodUrl,
         deliverooUrl,
+        uberEatsUrl,
+        justEatUrl,
       },
     };
   }
