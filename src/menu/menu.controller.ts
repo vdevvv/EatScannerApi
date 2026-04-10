@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Delete,
   Get,
   Param,
   Patch,
@@ -40,6 +41,15 @@ export class MenuController {
     @GetUserRole() userRole: Role
   ) {
     return this.menuService.updateMenuItem(id, dto, userId, userRole);
+  }
+
+  @Delete('/item/:id')
+  async deleteMenuItem(
+    @Param('id') id: string,
+    @GetUserId() userId: string,
+    @GetUserRole() userRole: Role,
+  ) {
+    return this.menuService.delete(id, userId, userRole);
   }
 
   @Public()

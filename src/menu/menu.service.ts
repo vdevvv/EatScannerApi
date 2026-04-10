@@ -179,8 +179,26 @@ export class MenuService {
     });
   }
 
-  async delete(id: string) {
-    return this.prisma.menuItem.delete({where: {id}});
+  async delete(id: string, userId: string, userRole: Role) {
+    const existingItem = await this.prisma.menuItem.findUnique({
+      where: { id },
+      include: {
+        category: {
+          include: {
+            menu: true,
+          },
+        },
+      },
+    });
+
+    if (!existingItem) {
+      throw new NotFoundException('Menu item not found');
+    }
+
+    const restaurantId = existingItem.category.menu.restaurantId;
+    await this.checkIfOwnerOrAdmin(restaurantId, userId, userRole);
+
+    return this.prisma.menuItem.delete({ where: { id } });
   }
 
   private async checkIfCategoryExist(categoryId: string) {
